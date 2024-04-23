@@ -1,0 +1,17 @@
+.footer {
+  display: flex;
+  background-color: var(--secondary-color-1);
+  color: color-mix(in srgb, var(--contrast-color), transparent 40%);
+}
+
+.footer__link {
+  color: color-mix(in srgb, var(--contrast-color), transparent 40%);
+}
+
+.footer__item {
+  color: var(--contrast-color);
+}
+
+.footer__link--small {
+  font-size: var(--font-s);
+}

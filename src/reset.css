@@ -1,4 +1,4 @@
-/* https: //www.joshwcomeau.com/css/custom-css-reset/ */
+/* Based on: https: //www.joshwcomeau.com/css/custom-css-reset/ */
 
 /*
   1. Use a more-intuitive box-sizing model.
@@ -10,10 +10,11 @@
 }
 
 /*
-  2. Remove default margin
+  2. Remove default margin and padding
 */
 * {
   margin: 0;
+  padding: 0;
 }
 
 /*
@@ -59,4 +60,28 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+}
+
+/*
+  8. Remove default style of anchor elements
+*/
+a {
+  text-decoration: none;
+}
+
+/*
+  9. Remove default style of list elements
+*/
+ul,
+ol {
+  list-style: none;
+}
+
+/*
+  10. Remove default style of buttons
+*/
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
 }

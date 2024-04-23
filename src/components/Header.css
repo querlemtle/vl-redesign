@@ -1,0 +1,37 @@
+.header,
+.header__logo,
+.header__list {
+  display: flex;
+}
+
+.header {
+  margin: 4rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  flex-direction: column;
+  align-items: center;
+}
+
+.header__title {
+  font-size: var(--font-s);
+  letter-spacing: calc(var(--font-s) * 0.8);
+}
+
+.header__list {
+  column-gap: 3.75rem;
+}
+
+.header__link {
+  color: var(--secondary-color-1);
+  font-weight: 700;
+}
+
+.header__cta {
+  background-color: var(--secondary-color-1);
+  color: var(--contrast-color);
+  padding: 1rem 2rem;
+  border-radius: 99rem;
+}

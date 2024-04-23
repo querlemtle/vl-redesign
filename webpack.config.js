@@ -78,8 +78,9 @@ module.exports = {
         use: ["babel-loader"],
       },
       {
-        test: /\.(jpe?g|png|gif|ogg|mp3|wav)$/i,
-        type: "asset/resource",
+        // `asset` automatically chooses between exporting a data URI and emitting a separate file.
+        test: /\.(jpe?g|png|svg|gif|ogg|mp3|wav)$/i,
+        type: "asset",
       },
       {
         test: /\.css$/i,
