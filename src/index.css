@@ -6,16 +6,16 @@
   --font-m: 1.25rem; /* 20px */
   --font-base: 1.125rem; /* 18px */
   --font-s: 0.875rem; /* 14px */
-  --primary-color-1: #E06897;
+  --primary-color-1: #e06897;
   --primary-color-2: #fa8fba;
-  --secondary-color-1: #132D46;
-  --secondary-color-2: #070913;
-  --secondary-color-3: #7C97BB;
-  --accent-color-1: #31A4DB;
-  --accent-color-2: #F75192;
-  --accent-color-3: #F5932E;
-  --accent-color-4: #19C575;
-  --contrast-color: #fff;
+  --secondary-color-1: #112144;
+  --secondary-color-2: #2d5993;
+  --secondary-color-3: #7c97bb;
+  --accent-color-1: #31a4db;
+  --accent-color-2: #f75192;
+  --accent-color-3: #f5932e;
+  --accent-color-4: #19c575;
+  --light-color: #fff;
 }
 
 html,

@@ -1,11 +1,11 @@
 .footer {
   background-color: var(--secondary-color-1);
-  color: color-mix(in srgb, var(--contrast-color), transparent 40%);
+  color: color-mix(in srgb, var(--light-color), transparent 40%);
   padding: 2rem 6rem;
 }
 
 .footer__container {
-  border-bottom: 1px solid color-mix(in srgb, var(--contrast-color), transparent 40%);
+  border-bottom: 1px solid color-mix(in srgb, var(--light-color), transparent 40%);
   justify-content: space-between;
 }
 
@@ -29,11 +29,11 @@
 }
 
 .footer__link {
-  color: color-mix(in srgb, var(--contrast-color), transparent 40%);
+  color: color-mix(in srgb, var(--light-color), transparent 40%);
 }
 
 .footer__item {
-  color: var(--contrast-color);
+  color: var(--light-color);
   display: flex;
   flex-direction: column;
   row-gap: 2rem;

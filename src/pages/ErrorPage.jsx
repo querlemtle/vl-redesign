@@ -4,9 +4,9 @@ function ErrorPage() {
   const error = useRouteError();
 
   return (
-    <div>
-      <h1>頁面出錯了😣</h1>
-      <p>錯誤代碼：{error.status}</p>
+    <div className="section">
+      <h1 className="section__title">頁面出錯了😣</h1>
+      <p className="section__context">錯誤代碼：{error.status}</p>
     </div>
   );
 }

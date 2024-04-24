@@ -8,7 +8,7 @@ function Header() {
         <a href="#">
           <img src={logo} alt="Vlive Lab logo" />
         </a>
-        <p className="header__title">未來實驗室</p>
+        <p className="header__title">未來實驗所</p>
       </div>
       <nav className="header__nav">
         <ul className="header__list">
@@ -39,7 +39,11 @@ function Header() {
           </li>
         </ul>
       </nav>
-      <button className="header__cta">JOIN US</button>
+      <button className="header__btn header__btn--fill">
+        <a href="#" className="header__link header__link--contrast">
+          JOIN US
+        </a>
+      </button>
     </header>
   );
 }

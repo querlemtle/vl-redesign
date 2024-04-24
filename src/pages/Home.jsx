@@ -1,15 +1,22 @@
 import aboutTitle from "./../assets/about-title.png";
 import heartIcon from "./../assets/heart-icon.png";
+import talentsTitle from "./../assets/talents-title.png";
+import newsTitle from "./../assets/news-title.png";
+import shopTitle from "./../assets/shop-title.svg";
 import "./Home.css";
 
 function Home() {
   return (
     <>
-      <section className="section"></section>
+      <section className="section section--full"></section>
       <section className="section section--bg">
         <div className="section__title">
-          <img src={aboutTitle} alt="About" />
-          <img src={heartIcon} alt="heart-icon" />
+          <img src={aboutTitle} alt="About" className="section__title-text" />
+          <img
+            src={heartIcon}
+            alt="heart-icon"
+            className="section__title-icon"
+          />
         </div>
         <h3 className="section__context section__context--stroke">
           Vlive
@@ -17,11 +24,36 @@ function Home() {
           <br />
           你努力的未來有沒有你，我們覺得很重要。
         </h3>
-        <button>More</button>
+        <button className="section__btn section__btn--border">
+          <a href="#" className="section__link">
+            More
+          </a>
+        </button>
       </section>
-      <section className="section"></section>
-      <section className="section"></section>
-      <section className="section"></section>
+      <section className="section">
+        <div className="section__title">
+          <img src={talentsTitle} alt="Talents" />
+          <h2 className="section__subtitle">
+            ｜Vlive Lab一期生｜冥界SCP事務所
+          </h2>
+        </div>
+      </section>
+      <section className="section">
+        <div className="section__title">
+          <img src={newsTitle} alt="News" />
+          <h2 className="section__subtitle">
+            帶來有關VTUBER相關的新資訊與熱門話題討論
+          </h2>
+        </div>
+      </section>
+      <section className="section">
+        <div className="section__title">
+          <img src={shopTitle} alt="Shop" />
+          <h2 className="section__subtitle">
+            ｜周邊&寄賣｜我們提供豐富的周邊商品，讓您輕鬆選購心儀商品。
+          </h2>
+        </div>
+      </section>
     </>
   );
 }
