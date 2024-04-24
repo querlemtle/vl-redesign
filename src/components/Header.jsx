@@ -4,8 +4,10 @@ import "./Header.css";
 function Header() {
   return (
     <header className="header">
-      <div className="header__logo">
-        <img src={logo} alt="Vlive Lab logo" className="header__img" />
+      <div className="header__brand">
+        <a href="#">
+          <img src={logo} alt="Vlive Lab logo" />
+        </a>
         <p className="header__title">未來實驗室</p>
       </div>
       <nav className="header__nav">
