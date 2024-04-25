@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
 
 :root {
-  --font-xl: 1.75rem; /* 28px */
-  --font-l: 1.375rem; /* 22px */
-  --font-m: 1.25rem; /* 20px */
-  --font-base: 1.125rem; /* 18px */
-  --font-s: 0.875rem; /* 14px */
-  --primary-color-1: #e06897;
-  --primary-color-2: #fa8fba;
-  --secondary-color-1: #112144;
-  --secondary-color-2: #2d5993;
-  --secondary-color-3: #7c97bb;
+  --font-xl: 1.75rem;  /* 28px */
+  --font-l: 1.375rem;  /* 22px */
+  --font-m: 1.25rem;  /* 20px */
+  --font-base: 1.125rem;  /* 18px */
+  --font-s: 0.875rem;  /* 14px */
+  --primary-color-dark: #e06897;
+  --primary-color-light: #fa8fba;
+  --secondary-color-dark: #112e44;
+  --secondary-color-medium: #2d5993;
+  --secondary-color-light: #7c97bb;
   --accent-color-1: #31a4db;
   --accent-color-2: #f75192;
   --accent-color-3: #f5932e;
@@ -23,7 +23,7 @@ body {
   width: 100%;
   height: 100%;
   font-family: "Noto Sans TC", Arial, sans-serif;
-  color: color-mix(in srgb, var(--secondary-color-2), transparent 15%);
+  color: color-mix(in srgb, var(--secondary-color-dark), transparent 15%);
 }
 
 button {

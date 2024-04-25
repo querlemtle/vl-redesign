@@ -1,4 +1,3 @@
-import "./App.css";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage";
 import Header from "./components/Header";
@@ -17,11 +16,13 @@ const router = createHashRouter([
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Header />
-      <RouterProvider router={router} />
+      <div className="App">
+        <RouterProvider router={router} />
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }
 

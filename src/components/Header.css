@@ -26,7 +26,7 @@
 }
 
 .header__link {
-  color: var(--secondary-color-1);
+  color: var(--secondary-color-dark);
   font-weight: 700;
 }
 
@@ -35,7 +35,7 @@
 }
 
 .header__btn--fill {
-  background-color: var(--secondary-color-1);
+  background-color: var(--secondary-color-dark);
   color: var(--light-color);
   padding: 1rem 2rem;
   border-radius: 99rem;
