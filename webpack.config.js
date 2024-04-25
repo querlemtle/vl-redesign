@@ -84,7 +84,30 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+        oneOf: [
+          {
+            test: /\.module\.css$/,
+            use: [
+              MiniCssExtractPlugin.loader,
+              {
+                loader: "css-loader",
+                options: {
+                  // https://adamrackis.dev/blog/css-modules
+                  modules: true,
+                  // https://github.com/webpack-contrib/css-loader/issues/228#issuecomment-312885975
+                  importLoaders: 1,
+                  // https://stackoverflow.com/questions/57899750/error-while-configuring-css-modules-with-webpack
+                  modules: {
+                    localIdentName: "[local]_[hash:base64:5]",
+                  },
+                },
+              },
+            ],
+          },
+          {
+            use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+          },
+        ],
       },
     ],
   },

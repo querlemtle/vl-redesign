@@ -1,0 +1,14 @@
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card__title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__timestamp {
+  color: color-mix(in srgb, var(--secondary-color-dark), transparent 60%);
+}

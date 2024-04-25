@@ -4,7 +4,7 @@ import newsTitle from "./../assets/news-title.png";
 import shopTitle from "./../assets/shop-title.svg";
 import cellphone from "./../assets/cellphone-outline-clip.png";
 import Hanakawa from "./../assets/Hanakawa-notail-1.png";
-import Placeholder from "./../assets/placeholder-img.jpg";
+import NewsCard from "./../components/NewsCard";
 import "./Home.css";
 
 function Home() {
@@ -72,17 +72,8 @@ function Home() {
           </h2>
         </div>
         <div className="section__card">
-          <img src={Placeholder} alt="" className="section__img" />
-          <div className="card__title-container">
-            <span className="card__tag">分類標籤</span>
-            <h3 className="card__title">
-              文章標題預留十八個字文章標題預留十八
-            </h3>
-          </div>
-          <div className="card__context">
-            文章內文預覽預留一排文章內文預覽預留一排文章內文預覽預文章
-          </div>
-          <span>文章發布於 2024 / 04 / 22 </span>
+          <NewsCard />
+          <NewsCard />
         </div>
       </section>
       <section className="section section--full-x">
