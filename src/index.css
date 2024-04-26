@@ -25,7 +25,3 @@ body {
   font-family: "Noto Sans TC", Arial, sans-serif;
   color: color-mix(in srgb, var(--secondary-color-dark), transparent 15%);
 }
-
-button {
-  cursor: pointer;
-}

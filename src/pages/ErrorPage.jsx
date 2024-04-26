@@ -6,7 +6,7 @@ function ErrorPage() {
   return (
     <div className="section">
       <h1 className="section__title">頁面出錯了😣</h1>
-      <p className="section__context">錯誤代碼：{error.status}</p>
+      <p className="section__content">錯誤代碼：{error.status}</p>
     </div>
   );
 }

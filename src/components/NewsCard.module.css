@@ -1,14 +1,44 @@
 .card {
   display: flex;
   flex-direction: column;
+  border-radius: 1rem;
+  row-gap: 0.625rem;
+  text-align: left;
+  min-width: 0;
+}
+
+.card__img {
+  border-radius: 1rem;
 }
 
 .card__title-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  place-items: center stretch;
+  column-gap: 0.5rem;
 }
 
-.card__timestamp {
+.card__tag {
+  border-radius: 99rem;
+  background: var(--accent-color-1);
+  color: var(--light-color);
+  padding: 0 1rem;
+  font-weight: 700;
+}
+
+.card__content-container {
+  min-width: 0;
+}
+
+.card__title,
+.card__content {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card__meta {
+  font-weight: 500;
   color: color-mix(in srgb, var(--secondary-color-dark), transparent 60%);
 }

@@ -27,6 +27,8 @@ module.exports = {
     static: {
       directory: path.join(__dirname, "build"),
     },
+    // https://webpack.js.org/configuration/dev-server/#devserveropen
+    open: ["/#/"],
     port: 6060,
     // https://stackoverflow.com/questions/71734070/webpack-5-react-router-v6-blank-page-on-build
     historyApiFallback: true,
@@ -98,7 +100,7 @@ module.exports = {
                   importLoaders: 1,
                   // https://stackoverflow.com/questions/57899750/error-while-configuring-css-modules-with-webpack
                   modules: {
-                    localIdentName: "[local]_[hash:base64:5]",
+                    localIdentName: "[local]_[hash:base64:6]",
                   },
                 },
               },

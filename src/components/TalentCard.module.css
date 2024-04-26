@@ -1,0 +1,44 @@
+.card__link {
+  display: grid;
+  grid-template-columns: 250px;
+  grid-template-rows: 400px;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+/* Place image and texts into the same grid to stack them */
+.card__frame,
+.card__img,
+.card__content-container {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.card__frame {
+  z-index: 1;
+}
+
+.card__img {
+  object-fit: cover;
+}
+
+.card__content-container {
+  z-index: 2;
+  background-color: color-mix(in srgb, var(--primary-color-light), transparent 20%);
+  color: color-mix(in srgb, var(--light-color), transparent 30%);
+  border-radius: 1rem 1rem 0 0;
+  margin: 0.5rem 0.5rem 0;
+  padding: 6rem 1rem;
+  text-align: left;
+}
+
+.card__title {
+  border-bottom: 1px solid color-mix(in srgb, var(--light-color), transparent 30%);
+}
+
+.card__content {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-top: 1rem;
+}
