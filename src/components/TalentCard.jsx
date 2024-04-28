@@ -28,6 +28,7 @@ export default function TalentCard({ charImg, name, description }) {
 }
 
 TalentCard.propTypes = {
+  // Webpack's asset module will resolve the image into a data URI
   charImg: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,

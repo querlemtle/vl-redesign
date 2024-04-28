@@ -1,0 +1,43 @@
+.card {
+  display: grid;
+  grid-template-columns: 20rem;
+  grid-template-rows: auto 1fr;
+  text-align: left;
+  border: 2px solid var(--primary-color-light);
+}
+
+.card__link {
+  border: none;
+  position: relative;
+}
+
+.card__img-wrapper {
+  overflow: hidden;
+}
+
+.card__img {
+  transition: transform 300ms ease-in-out;
+}
+
+.card__title {
+  padding: 1rem;
+  border-top: 2px solid var(--primary-color-light);
+  color: var(--primary-color-dark);
+}
+
+.card__title::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transition: border 300ms ease-in-out;
+}
+
+.card:hover .card__img {
+  transform: scale(1.1);
+}
+
+/* If we apply the border on the <img> or its parent elements, the border will be pushed out of the box when the image is enlarged with transform, making the border impossible to see. (Try setting the border on <img> and turning off overflow: hidden on its wrapper to see where the border goes.)
+Therefore, set the border on <img>'s sibling element to avoid this problem. */
+.card:hover .card__title::before {
+  border: 1rem solid color-mix(in srgb, var(--primary-color-light), transparent 35%);
+}

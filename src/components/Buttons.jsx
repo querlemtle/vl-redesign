@@ -3,11 +3,9 @@ import "./Buttons.css";
 
 function RectBtn({ text }) {
   return (
-    <button className="btn btn--rect btn--light-bg-dark-text">
-      <a href="#" className="btn__link">
-        {text}
-      </a>
-    </button>
+    <a href="#" className="btn btn--rect btn--light-bg-dark-text">
+      {text}
+    </a>
   );
 }
 
@@ -16,7 +14,7 @@ RectBtn.propTypes = {
 };
 
 function RoundBtn({ children }) {
-  return <button className="btn btn--round btn--border">{children}</button>;
+  return <button type="button" className="btn btn--round btn--border">{children}</button>;
 }
 
 RoundBtn.propTypes = {

@@ -39,11 +39,12 @@ function Header() {
           </li>
         </ul>
       </nav>
-      <button className="header__btn header__btn--fill">
-        <a href="#" className="header__link header__link--contrast">
-          JOIN US
-        </a>
-      </button>
+      <a
+        href="#"
+        className="header__btn header__btn--fill header__link header__link--contrast"
+      >
+        JOIN US
+      </a>
     </header>
   );
 }

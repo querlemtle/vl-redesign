@@ -7,8 +7,13 @@
   min-width: 0;
 }
 
-.card__img {
+.card__img-wrapper {
+  overflow: hidden;
   border-radius: 1rem;
+}
+
+.card__img {
+  transition: transform 300ms ease-in-out;
 }
 
 .card__title-container {
@@ -41,4 +46,8 @@
 .card__meta {
   font-weight: 500;
   color: color-mix(in srgb, var(--secondary-color-dark), transparent 60%);
+}
+
+.card:hover .card__img {
+  transform: scale(1.1);
 }

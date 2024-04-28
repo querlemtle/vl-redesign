@@ -23,12 +23,15 @@
 
 .card__content-container {
   z-index: 2;
-  background-color: color-mix(in srgb, var(--primary-color-light), transparent 20%);
-  color: color-mix(in srgb, var(--light-color), transparent 30%);
+  background-color: color-mix(in srgb, var(--primary-color-dark), transparent 20%);
+  color: color-mix(in srgb, var(--light-color), transparent 10%);
+  backdrop-filter: blur(1px);
   border-radius: 1rem 1rem 0 0;
   margin: 0.5rem 0.5rem 0;
   padding: 6rem 1rem;
   text-align: left;
+  transform: translateY(100%);
+  transition: transform 300ms ease;
 }
 
 .card__title {
@@ -41,4 +44,8 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin-top: 1rem;
+}
+
+.card__link:hover .card__content-container {
+  transform: translateY(0);
 }

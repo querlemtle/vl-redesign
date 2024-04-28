@@ -1,8 +1,9 @@
-import Placeholder from "./../assets/placeholder-img.jpg";
+import Placeholder from "./../assets/news-placeholder.jpg";
 import styles from "./NewsCard.module.css";
 
 const {
   card,
+  "card__img-wrapper": cardImgWrapper,
   card__img: cardImg,
   "card__title-container": cardTitleContainer,
   card__tag: cardTag,
@@ -15,7 +16,7 @@ const {
 export default function NewsCard() {
   return (
     <div className={card}>
-      <div className="card__img-container">
+      <div className={cardImgWrapper}>
         <a href="#" className="card__link">
           <img src={Placeholder} alt="文章縮圖" className={cardImg} />
         </a>

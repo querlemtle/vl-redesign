@@ -5,9 +5,11 @@ import shopTitle from "./../assets/shop-title.svg";
 import leftArrow from "./../assets/left-arrow.svg";
 import rightArrow from "./../assets/right-arrow.svg";
 import HanaKawa from "./../assets/HanaKawa-notail-1.png";
+import candle from "./../assets/candle.png";
 import TalentCard from "../components/TalentCard";
 import { RectBtn, RoundBtn } from "../components/Buttons";
 import NewsCard from "./../components/NewsCard";
+import ProductCard from "../components/ProductCard";
 import "./Home.css";
 
 function Home() {
@@ -39,6 +41,7 @@ function Home() {
           </h2>
         </div>
         <div className="section__cols-3">
+          <div className="section__rect-bg"></div>
           <TalentCard
             charImg={HanaKawa}
             name="花川夢姬"
@@ -61,11 +64,11 @@ function Home() {
             }
           />
         </div>
-        {/* <ul className="controller">
+        <ul className="controller">
           <li className="controller__indicator"></li>
           <li className="controller__indicator"></li>
           <li className="controller__indicator"></li>
-        </ul> */}
+        </ul>
       </section>
       <section className="section">
         <div className="section__title-container">
@@ -90,12 +93,29 @@ function Home() {
             <span className="section__subtitle-accent">| 周邊&寄賣 |</span>
             我們提供豐富的周邊商品，讓您輕鬆選購心儀商品。
           </h2>
-          <RoundBtn>
-            <img src={leftArrow} alt="向左滑動按鈕" />
-          </RoundBtn>
-          <RoundBtn>
-            <img src={rightArrow} alt="向右滑動按鈕" />
-          </RoundBtn>
+          <div className="section__horizonal-scrolling">
+            <div className="hint-box">
+              <h3 className="hint-box__title">點擊前往商店頁面</h3>
+              <a href="#" className="hint-box__link">
+                VIEW MORE
+                <div className="hint-box__icon">
+                  <RoundBtn>
+                    <img src={rightArrow} alt="向右滑動按鈕" />
+                  </RoundBtn>
+                </div>
+              </a>
+            </div>
+            <ProductCard productImg={candle} productName="香氛蠟燭70ml" />
+            <ProductCard productImg={candle} productName="香氛蠟燭70ml" />
+          </div>
+          <div className="section__scrollers-container">
+            <RoundBtn>
+              <img src={leftArrow} alt="向左滑動按鈕" />
+            </RoundBtn>
+            <RoundBtn>
+              <img src={rightArrow} alt="向右滑動按鈕" />
+            </RoundBtn>
+          </div>
         </div>
       </section>
     </>
