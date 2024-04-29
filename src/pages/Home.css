@@ -85,9 +85,10 @@
 }
 
 .section__cols-2 {
-  display: flex;
-  column-gap: 1.25rem;
-  margin: 0 3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.875rem 2.5rem;
+  padding: 0 4.5rem;
 }
 
 .section__horizonal-scrolling {

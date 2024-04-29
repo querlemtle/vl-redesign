@@ -11,10 +11,10 @@
   --secondary-color-dark: #112e44;
   --secondary-color-medium: #2d5993;
   --secondary-color-light: #7c97bb;
-  --accent-color-1: #31a4db;
-  --accent-color-2: #f75192;
-  --accent-color-3: #f5932e;
-  --accent-color-4: #19c575;
+  --accent-color-blue: #31a4db;
+  --accent-color-pink: #f75192;
+  --accent-color-orange: #f5932e;
+  --accent-color-green: #19c575;
   --light-color: #fff;
 }
 

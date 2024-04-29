@@ -17,9 +17,9 @@ function Home() {
     <>
       <section className="section section--full-y"></section>
       <section className="section section--full-x section--bg">
-        <div className="section__title">
+        <h1 className="section__title">
           <img src={aboutTitle} alt="About" />
-        </div>
+        </h1>
         <h3 className="section__content section__content--light">
           Vlive
           Lab是為了研究VTuber領域的未來，而誕生的合作型Vtuber實驗型事務所。在這裡，我們更重視合作夥伴、營銷分析及創新科技產品，為未來的Vtuber與粉絲創造更多的可能性。我們擁有MMORPG、XR與Gamefi技術，Vtuber是我們的第一小步，也是最重要的一大步。

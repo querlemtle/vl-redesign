@@ -10,10 +10,13 @@
 .card__img-wrapper {
   overflow: hidden;
   border-radius: 1rem;
+  max-height: 300px;
 }
 
 .card__img {
   transition: transform 300ms ease-in-out;
+  object-fit: cover;
+  object-position: center;
 }
 
 .card__title-container {
@@ -25,7 +28,7 @@
 
 .card__tag {
   border-radius: 99rem;
-  background: var(--accent-color-1);
+  background: var(--accent-color-orange);
   color: var(--light-color);
   padding: 0 1rem;
   font-weight: 700;
