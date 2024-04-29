@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import cellphone from "./../assets/cellphone-frame.png";
 import styles from "./TalentCard.module.css";
 
 const {
@@ -15,7 +14,7 @@ export default function TalentCard({ charImg, name, description }) {
   return (
     <div className="card">
       <a href="#" className={cardLink}>
-        <img src={cellphone} alt="手機框" className={cardFrame} />
+        <div className={cardFrame} />
         <img src={charImg} alt={name} className={cardImg} />
         <div className={cardContentContainer}>
           <div className="card__logo">Logo</div>

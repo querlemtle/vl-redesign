@@ -1,6 +1,6 @@
 import aboutTitle from "./../assets/about-title.svg";
 import talentsTitle from "./../assets/talents-title.png";
-import newsTitle from "./../assets/news-title.png";
+import newsTitle from "./../assets/news-page-title.svg";
 import shopTitle from "./../assets/shop-title.svg";
 import leftArrow from "./../assets/left-arrow.svg";
 import rightArrow from "./../assets/right-arrow.svg";

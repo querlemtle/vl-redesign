@@ -1,4 +1,4 @@
-import Placeholder from "./../assets/news-placeholder.jpg";
+import Placeholder from "./../assets/news-placeholder.png";
 import styles from "./NewsCard.module.css";
 
 const {

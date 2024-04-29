@@ -71,9 +71,9 @@
 .section__cols-3 {
   /* To stretch background color gradient */
   justify-self: stretch;
-  display: flex;
-  justify-content: center;
-  column-gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1.5rem;
   position: relative;
 }
 

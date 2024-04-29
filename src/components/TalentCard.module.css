@@ -1,7 +1,5 @@
 .card__link {
   display: grid;
-  grid-template-columns: 250px;
-  grid-template-rows: 400px;
   align-items: stretch;
   overflow: hidden;
 }
@@ -14,7 +12,8 @@
 }
 
 .card__frame {
-  z-index: 1;
+  background: url("./../assets/cellphone-frame.png");
+  background-size: cover;
 }
 
 .card__img {
@@ -22,7 +21,7 @@
 }
 
 .card__content-container {
-  z-index: 2;
+  z-index: 1;
   background-color: color-mix(in srgb, var(--primary-color-dark), transparent 20%);
   color: color-mix(in srgb, var(--light-color), transparent 10%);
   backdrop-filter: blur(1px);
