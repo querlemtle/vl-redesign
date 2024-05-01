@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "./../assets/Vlive-Lab-logo.svg";
 import "./Header.css";
 
@@ -5,9 +6,9 @@ function Header() {
   return (
     <header className="header">
       <div className="header__brand">
-        <a href="#">
+        <Link to={"/"}>
           <img src={logo} alt="Vlive Lab logo" />
-        </a>
+        </Link>
         <p className="header__title">未來實驗所</p>
       </div>
       <nav className="header__nav">
@@ -28,9 +29,7 @@ function Header() {
             </a>
           </li>
           <li className="header__item">
-            <a href="#" className="header__link">
-              News
-            </a>
+            <Link to={"/news"} className="header__link">News</Link>
           </li>
           <li className="header__item">
             <a href="#" className="header__link">
