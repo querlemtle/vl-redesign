@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
 
 :root {
-  --font-xl: 1.75rem;  /* 28px */
-  --font-l: 1.375rem;  /* 22px */
-  --font-m: 1.25rem;  /* 20px */
-  --font-base: 1.125rem;  /* 18px */
-  --font-s: 0.875rem;  /* 14px */
+  --font-xl: 1.75rem; /* 28px */
+  --font-l: 1.375rem; /* 22px */
+  --font-m: 1.25rem; /* 20px */
+  --font-base: 1.125rem; /* 18px */
+  --font-s: 0.875rem; /* 14px */
   --primary-color-dark: #e06897;
   --primary-color-light: #fa90ba;
   --secondary-color-dark: #112e44;
@@ -15,7 +15,8 @@
   --accent-color-pink: #f75192;
   --accent-color-orange: #f5932e;
   --accent-color-green: #19c575;
-  --light-color: #fff;
+  --black: #000;
+  --white: #fff;
 }
 
 html,

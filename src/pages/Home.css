@@ -65,7 +65,7 @@
 }
 
 .section__content--light {
-  color: var(--light-color);
+  color: var(--white);
 }
 
 .section__cols-3 {
@@ -81,7 +81,7 @@
   position: absolute;
   inset: 0;
   z-index: -99;
-  background: linear-gradient(180deg, var(--light-color) 0%, var(--light-color) 50%, color-mix(in srgb, var(--primary-color-light), transparent 50%) 50%, color-mix(in srgb, var(--primary-color-light), transparent 50%) 100%);
+  background: linear-gradient(180deg, var(--white) 0%, var(--white) 50%, color-mix(in srgb, var(--primary-color-light), transparent 50%) 50%, color-mix(in srgb, var(--primary-color-light), transparent 50%) 100%);
 }
 
 .section__cols-2 {
@@ -139,7 +139,7 @@
 
 .hint-box__link {
   background-color: color-mix(in srgb, var(--primary-color-light), transparent 30%);
-  color: var(--light-color);
+  color: var(--white);
   padding: 0.5rem 0.675rem;
   display: flex;
   justify-content: space-between;

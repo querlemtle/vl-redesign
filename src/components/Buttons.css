@@ -17,7 +17,7 @@
 }
 
 .btn--light-bg-dark-text {
-  background-color: color-mix(in srgb, var(--light-color), transparent 10%);
+  background-color: color-mix(in srgb, var(--white), transparent 10%);
   color: var(--primary-color-dark);
 }
 

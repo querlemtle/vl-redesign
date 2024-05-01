@@ -29,7 +29,7 @@
 .card__tag {
   border-radius: 99rem;
   background: var(--accent-color-orange);
-  color: var(--light-color);
+  color: var(--white);
   padding: 0 1rem;
   font-weight: 700;
 }

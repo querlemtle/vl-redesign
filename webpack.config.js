@@ -81,7 +81,7 @@ module.exports = {
       },
       {
         // `asset` automatically chooses between exporting a data URI and emitting a separate file.
-        test: /\.(jpe?g|png|svg|gif|ogg|mp3|wav)$/i,
+        test: /\.(jpe?g|png|svg|gif|ogg|mp3|mp4|wav)$/i,
         type: "asset",
       },
       {

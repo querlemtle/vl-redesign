@@ -1,0 +1,24 @@
+.banner {
+  height: 80vh;
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  place-items: end stretch;
+  background-image: url("./../assets/scp-agency-banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner__title,
+.banner__subtitle {
+  color: var(--white);
+  margin: 3rem 1.25rem;
+}
+
+.banner__title {
+  grid-area: 1 / 1 / 2 / 3;
+}
+
+.banner__subtitle {
+  grid-area: 1 / 9 / 2 / 12;
+  text-align: right;
+}

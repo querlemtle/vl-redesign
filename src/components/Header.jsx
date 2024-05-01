@@ -19,9 +19,7 @@ function Header() {
             </a>
           </li>
           <li className="header__item">
-            <a href="#" className="header__link">
-              Talent
-            </a>
+            <Link to={"/talent"} className="header__link">Talent</Link>
           </li>
           <li className="header__item">
             <a href="#" className="header__link">

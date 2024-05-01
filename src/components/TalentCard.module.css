@@ -23,7 +23,7 @@
 .card__content-container {
   z-index: 1;
   background-color: color-mix(in srgb, var(--primary-color-dark), transparent 20%);
-  color: color-mix(in srgb, var(--light-color), transparent 10%);
+  color: color-mix(in srgb, var(--white), transparent 10%);
   backdrop-filter: blur(1px);
   border-radius: 1rem 1rem 0 0;
   margin: 0.5rem 0.5rem 0;
@@ -34,7 +34,7 @@
 }
 
 .card__title {
-  border-bottom: 1px solid color-mix(in srgb, var(--light-color), transparent 30%);
+  border-bottom: 1px solid color-mix(in srgb, var(--white), transparent 30%);
 }
 
 .card__content {
