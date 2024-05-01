@@ -6,6 +6,7 @@ import leftArrow from "./../assets/left-arrow.svg";
 import rightArrow from "./../assets/right-arrow.svg";
 import HanaKawa from "./../assets/HanaKawa-notail-1.png";
 import candle from "./../assets/candle.png";
+import tempBanner from "./../assets/home-temp-banner.png";
 import TalentCard from "../components/TalentCard";
 import { RectBtn, RoundBtn } from "../components/Buttons";
 import NewsCard from "./../components/NewsCard";
@@ -15,7 +16,11 @@ import "./Home.css";
 function Home() {
   return (
     <>
-      <section className="section section--full-y"></section>
+      {/* Banner */}
+      <section className="section section--full-y">
+        <img src={tempBanner} alt="banner" />
+      </section>
+      {/* About */}
       <section className="section section--full-x section--bg">
         <h1 className="section__title">
           <img src={aboutTitle} alt="About" />
@@ -28,6 +33,7 @@ function Home() {
         </h3>
         <RectBtn text="查看更多" />
       </section>
+      {/* Talents */}
       <section className="section">
         <div className="section__title-container">
           <h1 className="section__title">
@@ -70,6 +76,7 @@ function Home() {
           <li className="controller__indicator"></li>
         </ul>
       </section>
+      {/* News */}
       <section className="section">
         <div className="section__title-container">
           <h1 className="section__title">
@@ -84,6 +91,7 @@ function Home() {
           <NewsCard />
         </div>
       </section>
+      {/* Shop */}
       <section className="section section--stretch">
         <div className="section__title-container section__title-container--stretch">
           <h1 className="section__title section__title--left section__title--border-bottom">
