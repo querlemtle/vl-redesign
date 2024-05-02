@@ -81,8 +81,14 @@ module.exports = {
       },
       {
         // `asset` automatically chooses between exporting a data URI and emitting a separate file.
-        test: /\.(jpe?g|png|svg|gif|ogg|mp3|mp4|wav)$/i,
+        test: /\.(jpe?g|png|gif|ogg|mp3|mp4|wav)$/i,
         type: "asset",
+      },
+      {
+        // https://react-svgr.com/docs/webpack/
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: ["@svgr/webpack"],
       },
       {
         test: /\.css$/i,

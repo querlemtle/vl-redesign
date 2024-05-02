@@ -1,7 +1,7 @@
-import logo from "./../assets/Vlive-Lab-logo-white.svg";
-import ytIcon from "./../assets/yt-icon.svg";
-import fbIcon from "./../assets/fb-icon.svg";
-import xIcon from "./../assets/x-icon.svg";
+import Logo from "./../assets/Vlive-Lab-logo-white.svg";
+import YtIcon from "./../assets/yt-icon.svg";
+import FbIcon from "./../assets/fb-icon.svg";
+import XIcon from "./../assets/x-icon.svg";
 import "./Footer.css";
 
 function Footer() {
@@ -9,20 +9,20 @@ function Footer() {
     <footer className="footer">
       <div className="footer__container">
         <div className="footer__brand">
-          <img src={logo} alt="Vlive Lab logo" className="footer__logo" />
+          <Logo className="footer__logo" />
           <p className="footer__intro">
             We are new VTuber Studio with <br /> MMORPG & VR tech <br /> welcome
             to join!
           </p>
           <div className="footer__icons">
             <a href="https://www.youtube.com/@VliveLab/about">
-              <img src={ytIcon} alt="youtube-icon" />
+              <YtIcon />
             </a>
             <a href="https://www.facebook.com/people/Vlive-Lab/100093708878400/">
-              <img src={fbIcon} alt="facebook-icon" />
+              <FbIcon />
             </a>
             <a href="https://twitter.com/VliveLab">
-              <img src={xIcon} alt="x-icon" />
+              <XIcon />
             </a>
           </div>
         </div>
@@ -82,17 +82,23 @@ function Footer() {
               RESOURCES
               <ul>
                 <li className="footer__subitem">
-                  <a href="#" className="footer__link">
+                  <a href="https://vchama.xyz/" className="footer__link">
                     Vtuber 統計地圖
                   </a>
                 </li>
                 <li className="footer__subitem">
-                  <a href="#" className="footer__link">
+                  <a
+                    href="https://neptunia.github.io/vtubers-data-science/"
+                    className="footer__link"
+                  >
                     超級聊天數據分析
                   </a>
                 </li>
                 <li className="footer__subitem">
-                  <a href="#" className="footer__link">
+                  <a
+                    href="https://streamscharts.com/channels?vtuber=all"
+                    className="footer__link"
+                  >
                     StreamChart
                   </a>
                 </li>

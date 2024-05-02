@@ -1,16 +1,16 @@
-import aboutTitle from "./../assets/about-title.svg";
+import AboutTitle from "./../assets/about-title.svg";
 import talentsTitle from "./../assets/talents-title.png";
-import newsTitle from "./../assets/news-page-title.svg";
-import shopTitle from "./../assets/shop-title.svg";
-import leftArrow from "./../assets/left-arrow.svg";
-import rightArrow from "./../assets/right-arrow.svg";
+import NewsTitle from "./../assets/news-page-title.svg";
+import ShopTitle from "./../assets/shop-title.svg";
+import LeftArrow from "./../assets/left-arrow.svg";
+import RightArrow from "./../assets/right-arrow.svg";
 import HanaKawa from "./../assets/HanaKawa-notail-1.png";
 import candle from "./../assets/candle.png";
 import tempBanner from "./../assets/home-temp-banner.png";
 import TalentCard from "../components/TalentCard";
-import { RectBtn, RoundBtn } from "../components/Buttons";
 import NewsCard from "./../components/NewsCard";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "./../components/ProductCard";
+import { RectBtn } from "./../components/Buttons";
 import "./Home.css";
 
 function Home() {
@@ -23,7 +23,7 @@ function Home() {
       {/* About */}
       <section className="section section--full-x section--bg">
         <h1 className="section__title">
-          <img src={aboutTitle} alt="About" />
+          <AboutTitle />
         </h1>
         <h3 className="section__content section__content--light">
           Vlive
@@ -80,22 +80,22 @@ function Home() {
       <section className="section">
         <div className="section__title-container">
           <h1 className="section__title">
-            <img src={newsTitle} alt="News" />
+            <NewsTitle />
           </h1>
           <h2 className="section__subtitle">
             帶來有關VTUBER相關的新資訊與熱門話題討論
           </h2>
         </div>
         <div className="section__cols-2">
-          <NewsCard />
-          <NewsCard />
+          <NewsCard id="1" />
+          <NewsCard id="2" />
         </div>
       </section>
       {/* Shop */}
       <section className="section section--stretch">
         <div className="section__title-container section__title-container--stretch">
           <h1 className="section__title section__title--left section__title--border-bottom">
-            <img src={shopTitle} alt="Shop" />
+            <ShopTitle />
           </h1>
           <h2 className="section__subtitle section__subtitle--start">
             <span className="section__subtitle-accent">| 周邊&寄賣 |</span>
@@ -105,24 +105,16 @@ function Home() {
             <div className="hint-box">
               <h3 className="hint-box__title">點擊前往商店頁面</h3>
               <a href="#" className="hint-box__link">
-                VIEW MORE
-                <div className="hint-box__icon">
-                  <RoundBtn>
-                    <img src={rightArrow} alt="向右滑動按鈕" />
-                  </RoundBtn>
-                </div>
+                VIEW MORE <RightArrow className="icon icon--white" />
+                <div className="hint-box__icon"></div>
               </a>
             </div>
             <ProductCard productImg={candle} productName="香氛蠟燭70ml" />
             <ProductCard productImg={candle} productName="香氛蠟燭70ml" />
           </div>
           <div className="section__scrollers-container">
-            <RoundBtn>
-              <img src={leftArrow} alt="向左滑動按鈕" />
-            </RoundBtn>
-            <RoundBtn>
-              <img src={rightArrow} alt="向右滑動按鈕" />
-            </RoundBtn>
+            <LeftArrow />
+            <RightArrow />
           </div>
         </div>
       </section>

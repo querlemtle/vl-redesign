@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "./../assets/Vlive-Lab-logo.svg";
+import Logo from "./../assets/Vlive-Lab-logo.svg";
 import "./Header.css";
 
 function Header() {
@@ -7,7 +7,7 @@ function Header() {
     <header className="header">
       <div className="header__brand">
         <Link to={"/"}>
-          <img src={logo} alt="Vlive Lab logo" />
+          <Logo />
         </Link>
         <p className="header__title">未來實驗所</p>
       </div>
