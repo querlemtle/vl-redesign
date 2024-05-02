@@ -1,3 +1,5 @@
+import { Link, useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 import Placeholder from "./../assets/news-placeholder.png";
 import styles from "./NewsCard.module.css";
 
@@ -13,16 +15,25 @@ const {
   card__meta: cardMeta,
 } = styles;
 
-export default function NewsCard() {
+export default function NewsCard({ id }) {
+  // Get the current URL: https://reactrouter.com/en/main/hooks/use-location
+  const { pathname } = useLocation();
+
   return (
     <div className={card}>
       <div className={cardImgWrapper}>
-        <a href="#" className="card__link">
+        <Link
+          to={pathname.includes("news") ? `${id}` : `news/${id}`}
+          className="card__link"
+        >
           <img src={Placeholder} alt="文章縮圖" className={cardImg} />
-        </a>
+        </Link>
       </div>
       <div className={cardConentContainer}>
-        <a href="#" className="card__link">
+        <Link
+          to={pathname.includes("news") ? `${id}` : `news/${id}`}
+          className="card__link"
+        >
           <div className={cardTitleContainer}>
             <span className={cardTag}>分類標籤</span>
             <h3 className={cardTitle}>
@@ -35,8 +46,12 @@ export default function NewsCard() {
           <span className={cardMeta}>
             文章發布於 <span className="card__date">2024/04/22</span>
           </span>
-        </a>
+        </Link>
       </div>
     </div>
   );
 }
+
+NewsCard.propTypes = {
+  id: PropTypes.string.isRequired,
+};

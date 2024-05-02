@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
 
 :root {
+  --font-4xl: 2.5rem; /* 36px */
   --font-xl: 1.75rem; /* 28px */
   --font-l: 1.375rem; /* 22px */
   --font-m: 1.25rem; /* 20px */
@@ -14,6 +15,7 @@
   --accent-color-blue: #31a4db;
   --accent-color-pink: #f75192;
   --accent-color-orange: #f5932e;
+  --accent-color-orangered: #d5544c;
   --accent-color-green: #19c575;
   --black: #000;
   --white: #fff;

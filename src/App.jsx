@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import News from "./pages/News";
 import Talent from "./pages/Talent";
+import NewsArticle from "./pages/NewsArticle";
 
 // https://stackoverflow.com/questions/71984401/react-router-not-working-with-github-pages
 const router = createHashRouter([
@@ -14,16 +15,20 @@ const router = createHashRouter([
     children: [
       {
         path: "/",
-        element: <Home />
+        element: <Home />,
       },
       {
         path: "/news",
-        element: <News />
+        element: <News />,
+      },
+      {
+        path: "/news/:newsId",
+        element: <NewsArticle />,
       },
       {
         path: "/talent",
-        element: <Talent />
-      }
+        element: <Talent />,
+      },
     ],
   },
 ]);
