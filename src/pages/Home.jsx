@@ -1,53 +1,82 @@
-import AboutTitle from "./../assets/about-title.svg";
+import { Link } from "react-router-dom";
+import aboutTitle from "./../assets/about-title.svg";
 import talentsTitle from "./../assets/talents-title.png";
-import NewsTitle from "./../assets/news-page-title.svg";
-import ShopTitle from "./../assets/shop-title.svg";
-import LeftArrow from "./../assets/left-arrow.svg";
-import RightArrow from "./../assets/right-arrow.svg";
+import newsTitle from "./../assets/news-page-title.svg";
+import shopTitle from "./../assets/shop-title.svg";
+import leftArrow from "./../assets/left-arrow.svg";
+import rightArrow from "./../assets/right-arrow.svg";
 import HanaKawa from "./../assets/HanaKawa-notail-1.png";
 import candle from "./../assets/candle.png";
 import tempBanner from "./../assets/home-temp-banner.png";
 import TalentCard from "../components/TalentCard";
 import NewsCard from "./../components/NewsCard";
 import ProductCard from "./../components/ProductCard";
-import { RectBtn } from "./../components/Buttons";
-import "./Home.css";
+import logo from "./../assets/Vlive-Lab-logo-white.svg";
+import pentaFlowerDeco from "./../assets/penta-flower-deco.svg";
+import halfArrow from "./../assets/half-arrow.svg";
+import styles from "./Home.module.css";
+
+const {
+  section,
+  banner,
+  "section--x-full": sectionXFull,
+  "section--bg": sectionBg,
+  "section--stretch": sectionStretch,
+  "section__title-container": sectionTitleContainer,
+  "section__title-container--stretch": sectionTitleContainerStretch,
+  "section__title--border-bottom": sectionTitleBorderBottom,
+  "section__subtitle-accent": sectionSubtitleAccent,
+  "section__subtitle--start": sectionSubtitleStart,
+  section__content: sectionContent,
+  "section__horizonal-scrolling": sectionHorizontalScrolling,
+  "section__content--light": sectionContentLight,
+  "section__rect-bg": sectionRectBg,
+  "hint-box": hintBox,
+  "hint-box__title": hintBoxTitle,
+  "hint-box__text": hintBoxText,
+  "scrollers-container": scrollersContainer,
+  "logo__text": logoText,
+  btn,
+  "btn--end": btnEnd,
+  "btn--rect": btnRect,
+  "btn--light-bg-dark-text": btnLightBgDarkText,
+} = styles;
 
 function Home() {
   return (
     <>
       {/* Banner */}
-      <section className="section section--full-y">
+      <section className={`${section} ${banner}`}>
         <img src={tempBanner} alt="banner" />
       </section>
       {/* About */}
-      <section className="section section--full-x section--bg">
-        <h1 className="section__title">
-          <AboutTitle />
+      <section className={`${section} ${sectionXFull} ${sectionBg}`}>
+        <h1>
+          <img src={aboutTitle} alt="About" />
         </h1>
-        <h3 className="section__content section__content--light">
+        <h3 className={`${sectionContent} ${sectionContentLight}`}>
           Vlive
           Lab是為了研究VTuber領域的未來，而誕生的合作型Vtuber實驗型事務所。在這裡，我們更重視合作夥伴、營銷分析及創新科技產品，為未來的Vtuber與粉絲創造更多的可能性。我們擁有MMORPG、XR與Gamefi技術，Vtuber是我們的第一小步，也是最重要的一大步。
           <br />
           你努力的未來有沒有你，我們覺得很重要。
         </h3>
-        <RectBtn text="查看更多" />
+        <a href="#" className={`${btn} ${btnRect} ${btnLightBgDarkText}`}>
+          查看更多
+        </a>
       </section>
       {/* Talents */}
-      <section className="section">
-        <div className="section__title-container">
-          <h1 className="section__title">
+      <section className={`${section} ${sectionXFull}`}>
+        <div className={sectionRectBg}></div>
+        <div className={sectionTitleContainer}>
+          <h1>
             <img src={talentsTitle} alt="Talents" />
           </h1>
-          <h2 className="section__subtitle">
-            <span className="section__subtitle-accent">
-              | Vlive Lab一期生 |
-            </span>
+          <h2>
+            <span className={sectionSubtitleAccent}>| Vlive Lab一期生 |</span>
             冥界SCP事務所
           </h2>
         </div>
-        <div className="section__cols-3">
-          <div className="section__rect-bg"></div>
+        <div className="cols-3">
           <TalentCard
             charImg={HanaKawa}
             name="花川夢姬"
@@ -70,51 +99,56 @@ function Home() {
             }
           />
         </div>
-        <ul className="controller">
-          <li className="controller__indicator"></li>
-          <li className="controller__indicator"></li>
-          <li className="controller__indicator"></li>
-        </ul>
       </section>
       {/* News */}
-      <section className="section">
-        <div className="section__title-container">
-          <h1 className="section__title">
-            <NewsTitle />
+      <section className={section}>
+        <div className={sectionTitleContainer}>
+          <h1>
+            <img src={newsTitle} alt="News" />
           </h1>
-          <h2 className="section__subtitle">
-            帶來有關VTUBER相關的新資訊與熱門話題討論
-          </h2>
+          <h2>帶來有關VTUBER相關的新資訊與熱門話題討論</h2>
         </div>
-        <div className="section__cols-2">
+        <div className="cols-2">
           <NewsCard id="1" />
           <NewsCard id="2" />
         </div>
+        <Link to="/news" className={`${btn} ${btnEnd}`}>
+          VIEW MORE <img src={rightArrow} alt="右箭頭" />
+        </Link>
       </section>
       {/* Shop */}
-      <section className="section section--stretch">
-        <div className="section__title-container section__title-container--stretch">
-          <h1 className="section__title section__title--left section__title--border-bottom">
-            <ShopTitle />
+      <section className={`${section} ${sectionStretch}`}>
+        <div className={sectionTitleContainerStretch}>
+          <h1 className={sectionTitleBorderBottom}>
+            <img src={shopTitle} alt="Shop" />
           </h1>
-          <h2 className="section__subtitle section__subtitle--start">
-            <span className="section__subtitle-accent">| 周邊&寄賣 |</span>
+          <h2 className={sectionSubtitleStart}>
+            <span className={sectionSubtitleAccent}>| 周邊&寄賣 |</span>
             我們提供豐富的周邊商品，讓您輕鬆選購心儀商品。
           </h2>
-          <div className="section__horizonal-scrolling">
-            <div className="hint-box">
-              <h3 className="hint-box__title">點擊前往商店頁面</h3>
-              <a href="#" className="hint-box__link">
-                VIEW MORE <RightArrow className="icon icon--white" />
-                <div className="hint-box__icon"></div>
-              </a>
-            </div>
+          <div className={sectionHorizontalScrolling}>
+            <a href="#" className={hintBox}>
+              <div>
+                <img src={logo} alt="Vlive Lab" />
+                <p className={logoText}>未來實驗所</p>
+              </div>
+              <div className={hintBoxTitle}>
+                <img src={pentaFlowerDeco} alt="花瓣裝飾" />
+                <h3>Online Shop</h3>
+                <img src={pentaFlowerDeco} alt="花瓣裝飾" />
+              </div>
+              <div className={hintBoxText}>
+                前往商店 <img src={halfArrow} alt="箭頭" />
+              </div>
+            </a>
+            <ProductCard productImg={candle} productName="香氛蠟燭70ml" />
+            <ProductCard productImg={candle} productName="香氛蠟燭70ml" />
             <ProductCard productImg={candle} productName="香氛蠟燭70ml" />
             <ProductCard productImg={candle} productName="香氛蠟燭70ml" />
           </div>
-          <div className="section__scrollers-container">
-            <LeftArrow />
-            <RightArrow />
+          <div className={scrollersContainer}>
+            <img src={leftArrow} alt="左箭頭" />
+            <img src={rightArrow} alt="右箭頭" />
           </div>
         </div>
       </section>

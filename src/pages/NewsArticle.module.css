@@ -1,7 +1,7 @@
 .article {
   width: 75%;
   max-width: 1440px;
-  margin: 0 auto;
+  margin: 4rem auto 0;
 }
 
 .article__meta {
@@ -58,5 +58,5 @@
 }
 
 .controller__icon:hover {
-  fill: color-mix(in srgb, var(--secondary-color-medium), transparent 70%);
+  fill: color-mix(in srgb, var(--secondary-color-medium), var(--alpha-30));
 }

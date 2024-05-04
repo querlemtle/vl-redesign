@@ -19,6 +19,25 @@
   --accent-color-green: #19c575;
   --black: #000;
   --white: #fff;
+  --alpha-95: transparent 5%;
+  --alpha-90: transparent 10%;
+  --alpha-85: transparent 15%;
+  --alpha-80: transparent 20%;
+  --alpha-75: transparent 25%;
+  --alpha-70: transparent 30%;
+  --alpha-65: transparent 35%;
+  --alpha-60: transparent 40%;
+  --alpha-55: transparent 45%;
+  --alpha-50: transparent 50%;
+  --alpha-45: transparent 55%;
+  --alpha-40: transparent 60%;
+  --alpha-35: transparent 65%;
+  --alpha-30: transparent 70%;
+  --alpha-25: transparent 75%;
+  --alpha-20: transparent 80%;
+  --alpha-15: transparent 85%;
+  --alpha-10: transparent 90%;
+  --alpha-5: transparent 95%;
 }
 
 html,
@@ -26,5 +45,18 @@ body {
   width: 100%;
   height: 100%;
   font-family: "Noto Sans TC", Arial, sans-serif;
-  color: color-mix(in srgb, var(--secondary-color-dark), transparent 15%);
+  color: color-mix(in srgb, var(--secondary-color-dark), var(--alpha-85));
+}
+
+.cols-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1.5rem;
+  width: 80%;
+}
+
+.cols-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.875rem 2.5rem;
 }

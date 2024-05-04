@@ -1,7 +1,8 @@
-import NewsTitle from "./../assets/news-page-title.svg";
+import newsTitle from "./../assets/news-page-title.svg";
 import tempNewsBanner from "./../assets/temp-news-banner.png";
 import tempDiscordBanner from "./../assets/temp-discord-banner.png";
 import NewsCard from "../components/NewsCard";
+import { Pagination } from "../components/Controllers";
 import styles from "./News.module.css";
 
 const {
@@ -10,9 +11,7 @@ const {
   "section__title--subtitle-right": sectionTitleSubtitleRight,
   "section__title--stretch": sectionTitleStretch,
   "section__bg--primary-color-light-10": sectionBgPrimaryColorLight10,
-  pagination,
-  "pagination__control": paginationControl,
-  aside
+  aside,
 } = styles;
 
 export default function News() {
@@ -21,42 +20,17 @@ export default function News() {
       <section className={banner}>
         <img src={tempNewsBanner} alt="News page banner" />
       </section>
-      <section className={`section__cols-2 ${sectionBgPrimaryColorLight10}`}>
+      <section className={`cols-2 ${sectionBgPrimaryColorLight10}`}>
         <h1
           className={`${sectionTitle} ${sectionTitleSubtitleRight} ${sectionTitleStretch}`}
         >
-          <NewsTitle />
+          <img src={newsTitle} alt="News" />
         </h1>
         <NewsCard id="1" />
         <NewsCard id="2" />
         <NewsCard id="3" />
         <NewsCard id="4" />
-        <ul className={pagination}>
-          <a href="#" className={paginationControl}>
-            &#8592;
-          </a>
-          <li>
-            <a href="#">1</a>
-          </li>
-          <li>
-            <a href="#">2</a>
-          </li>
-          <li>
-            <a href="#">3</a>
-          </li>
-          <li>
-            <a href="#">...</a>
-          </li>
-          <li>
-            <a href="#">9</a>
-          </li>
-          <li>
-            <a href="#">10</a>
-          </li>
-          <a href="#" className={paginationControl}>
-            &#8594;
-          </a>
-        </ul>
+        <Pagination />
       </section>
       <aside className={aside}>
         <a href="https://discord.gg/ECAdMaTNjT" className="aside__link">

@@ -48,7 +48,7 @@
 
 .card__meta {
   font-weight: 500;
-  color: color-mix(in srgb, var(--secondary-color-dark), transparent 60%);
+  color: color-mix(in srgb, var(--secondary-color-dark), var(--alpha-40));
 }
 
 .card:hover .card__img {

@@ -1,7 +1,7 @@
-import Logo from "./../assets/Vlive-Lab-logo-white.svg";
-import YtIcon from "./../assets/yt-icon.svg";
-import FbIcon from "./../assets/fb-icon.svg";
-import XIcon from "./../assets/x-icon.svg";
+import logo from "./../assets/Vlive-Lab-logo-white.svg";
+import YtIcon from "./YtIcon";
+import FbIcon from "./FbIcon";
+import XIcon from "./XIcon";
 import "./Footer.css";
 
 function Footer() {
@@ -9,20 +9,20 @@ function Footer() {
     <footer className="footer">
       <div className="footer__container">
         <div className="footer__brand">
-          <Logo className="footer__logo" />
+          <img src={logo} className="footer__logo" />
           <p className="footer__intro">
             We are new VTuber Studio with <br /> MMORPG & VR tech <br /> welcome
             to join!
           </p>
           <div className="footer__icons">
             <a href="https://www.youtube.com/@VliveLab/about">
-              <YtIcon />
+              <YtIcon lineFill="#fff" />
             </a>
             <a href="https://www.facebook.com/people/Vlive-Lab/100093708878400/">
-              <FbIcon />
+              <FbIcon lineFill="#fff" />
             </a>
             <a href="https://twitter.com/VliveLab">
-              <XIcon />
+              <XIcon lineFill="#fff" />
             </a>
           </div>
         </div>

@@ -5,18 +5,15 @@
 }
 
 .header {
-  margin: 4rem;
+  margin: 4rem 4rem 0;
   justify-content: space-between;
   align-items: center;
 }
 
-.header__brand {
-  flex-direction: column;
-  align-items: center;
-  row-gap: 0.5rem;
-}
-
 .header__title {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: 500;
   font-size: var(--font-s);
   letter-spacing: calc(var(--font-s) * 0.8);
 }
