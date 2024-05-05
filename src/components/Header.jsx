@@ -24,9 +24,9 @@ function Header() {
             </Link>
           </li>
           <li className="header__item">
-            <a href="#" className="header__link">
+            <Link to="/shop" className="header__link">
               Shop
-            </a>
+            </Link>
           </li>
           <li className="header__item">
             <Link to="/news" className="header__link">

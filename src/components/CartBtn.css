@@ -1,0 +1,10 @@
+.btn--fixed {
+  position: fixed;
+  right: 30px;
+  bottom: 0;
+  transition: transform 300ms ease-in-out;
+}
+
+.btn--fixed:hover {
+  transform: scale(0.85);
+}

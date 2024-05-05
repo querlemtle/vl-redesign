@@ -15,16 +15,28 @@
 
 .card__img-wrapper {
   overflow: hidden;
+  position: relative;
+}
+
+.card__tag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.card__tag-text {
+  position: absolute;
+  top: 0.75rem;
+  left: 0;
+  color: var(--white);
+  font-weight: 700;
+  font-size: var(--font-xl);
+  transform: rotateZ(-45deg);
 }
 
 .card__img {
   transition: transform 300ms ease-in-out;
-}
-
-.card__title {
-  padding: 1rem;
-  border-top: 2px solid var(--secondary-color-medium);
-  color: var(--secondary-color-medium);
 }
 
 .card__title::before {
@@ -42,4 +54,18 @@
 Therefore, set the border on <img>'s sibling element to avoid this problem. */
 .card:hover .card__title::before {
   border: 1rem solid color-mix(in srgb, var(--secondary-color-medium), var(--alpha-65));
+}
+
+.card__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid var(--secondary-color-medium);
+  padding: 1rem;
+  color: var(--secondary-color-medium);
+}
+
+.card__meta {
+  font-weight: 700;
+  font-size: var(--font-l);
 }

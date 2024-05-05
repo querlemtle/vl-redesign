@@ -127,7 +127,7 @@ function Home() {
             我們提供豐富的周邊商品，讓您輕鬆選購心儀商品。
           </h2>
           <div className={sectionHorizontalScrolling}>
-            <a href="#" className={hintBox}>
+            <Link to="/shop" className={hintBox}>
               <div>
                 <img src={logo} alt="Vlive Lab" />
                 <p className={logoText}>未來實驗所</p>
@@ -140,11 +140,23 @@ function Home() {
               <div className={hintBoxText}>
                 前往商店 <img src={halfArrow} alt="箭頭" />
               </div>
-            </a>
-            <ProductCard productImg={candle} productName="香氛蠟燭70ml" />
-            <ProductCard productImg={candle} productName="香氛蠟燭70ml" />
-            <ProductCard productImg={candle} productName="香氛蠟燭70ml" />
-            <ProductCard productImg={candle} productName="香氛蠟燭70ml" />
+            </Link>
+            <ProductCard
+              productImg={candle}
+              productName="香氛蠟燭70ml"
+            />
+            <ProductCard
+              productImg={candle}
+              productName="香氛蠟燭70ml"
+            />
+            <ProductCard
+              productImg={candle}
+              productName="香氛蠟燭70ml"
+            />
+            <ProductCard
+              productImg={candle}
+              productName="香氛蠟燭70ml"
+            />
           </div>
           <div className={scrollersContainer}>
             <img src={leftArrow} alt="左箭頭" />
