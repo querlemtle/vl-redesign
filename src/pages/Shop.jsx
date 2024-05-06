@@ -1,6 +1,6 @@
 import ProductCard from "../components/ProductCard";
 import candle from "./../assets/candle.png";
-import tempBanner from "./../assets/home-temp-banner.png";
+import tempBanner from "./../assets/temp-banner.png";
 import shipment from "./../assets/shipment.png";
 import CartBtn from "../components/CartBtn";
 import styles from "./Shop.module.css";
@@ -34,46 +34,7 @@ export default function Shop() {
         </div>
         <div className={`cols-3 ${itemsList}`}>
           <ProductCard
-            productImg={candle}
-            productName="香氛蠟燭70ml"
-            productPrice={200}
-          />
-          <ProductCard
-            productImg={candle}
-            productName="香氛蠟燭70ml"
-            productPrice={200}
-          />
-          <ProductCard
-            productImg={candle}
-            productName="香氛蠟燭70ml"
-            productPrice={200}
-          />
-          <ProductCard
-            productImg={candle}
-            productName="香氛蠟燭70ml"
-            productPrice={200}
-          />
-          <ProductCard
-            productImg={candle}
-            productName="香氛蠟燭70ml"
-            productPrice={200}
-          />
-          <ProductCard
-            productImg={candle}
-            productName="香氛蠟燭70ml"
-            productPrice={200}
-          />
-          <ProductCard
-            productImg={candle}
-            productName="香氛蠟燭70ml"
-            productPrice={200}
-          />
-          <ProductCard
-            productImg={candle}
-            productName="香氛蠟燭70ml"
-            productPrice={200}
-          />
-          <ProductCard
+            id="1"
             productImg={candle}
             productName="香氛蠟燭70ml"
             productPrice={200}
