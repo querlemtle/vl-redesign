@@ -1,7 +1,7 @@
 import placeholder from "./../assets/news-placeholder.png";
 import styles from "./NewsArticle.module.css";
-import leftArrow from "./../assets/left-arrow.svg";
-import rightArrow from "./../assets/right-arrow.svg";
+import leftArrow from "./../assets/icons/left-arrow.svg";
+import rightArrow from "./../assets/icons/right-arrow.svg";
 
 const {
   article,

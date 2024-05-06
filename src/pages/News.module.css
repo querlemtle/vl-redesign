@@ -11,7 +11,7 @@
 }
 
 .section__title--subtitle-right::before {
-  content: url("./../assets/hexa-flower-deco.svg");
+  content: url("./../assets/icons/hexa-flower-deco.svg");
   transform: translate(-0.5rem, -2.5rem);
 }
 
