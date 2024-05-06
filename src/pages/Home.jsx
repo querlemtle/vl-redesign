@@ -1,24 +1,23 @@
 import { Link } from "react-router-dom";
+import Banner from "../components/Banner";
 import aboutTitle from "./../assets/about-title.svg";
 import talentsTitle from "./../assets/talents-title.png";
 import newsTitle from "./../assets/news-page-title.svg";
 import shopTitle from "./../assets/shop-title.svg";
-import leftArrow from "./../assets/left-arrow.svg";
-import rightArrow from "./../assets/right-arrow.svg";
+import leftArrow from "./../assets/icons/left-arrow.svg";
+import rightArrow from "./../assets/icons/right-arrow.svg";
 import HanaKawa from "./../assets/HanaKawa-notail-1.png";
 import candle from "./../assets/candle.png";
-import tempBanner from "./../assets/home-temp-banner.png";
 import TalentCard from "../components/TalentCard";
 import NewsCard from "./../components/NewsCard";
 import ProductCard from "./../components/ProductCard";
 import logo from "./../assets/Vlive-Lab-logo-white.svg";
-import pentaFlowerDeco from "./../assets/penta-flower-deco.svg";
-import halfArrow from "./../assets/half-arrow.svg";
+import pentaFlowerDeco from "./../assets/icons/penta-flower-deco.svg";
+import halfArrow from "./../assets/icons/half-arrow.svg";
 import styles from "./Home.module.css";
 
 const {
   section,
-  banner,
   "section--x-full": sectionXFull,
   "section--bg": sectionBg,
   "section--stretch": sectionStretch,
@@ -35,7 +34,7 @@ const {
   "hint-box__title": hintBoxTitle,
   "hint-box__text": hintBoxText,
   "scrollers-container": scrollersContainer,
-  "logo__text": logoText,
+  logo__text: logoText,
   btn,
   "btn--end": btnEnd,
   "btn--rect": btnRect,
@@ -46,9 +45,7 @@ function Home() {
   return (
     <>
       {/* Banner */}
-      <section className={`${section} ${banner}`}>
-        <img src={tempBanner} alt="banner" />
-      </section>
+      <Banner />
       {/* About */}
       <section className={`${section} ${sectionXFull} ${sectionBg}`}>
         <h1>
@@ -142,18 +139,22 @@ function Home() {
               </div>
             </Link>
             <ProductCard
+              id="1"
               productImg={candle}
               productName="香氛蠟燭70ml"
             />
             <ProductCard
+              id="1"
               productImg={candle}
               productName="香氛蠟燭70ml"
             />
             <ProductCard
+              id="1"
               productImg={candle}
               productName="香氛蠟燭70ml"
             />
             <ProductCard
+              id="1"
               productImg={candle}
               productName="香氛蠟燭70ml"
             />

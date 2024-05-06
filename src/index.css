@@ -47,16 +47,3 @@ body {
   font-family: "Noto Sans TC", Arial, sans-serif;
   color: color-mix(in srgb, var(--secondary-color-dark), var(--alpha-85));
 }
-
-.cols-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 1.5rem;
-  width: 80%;
-}
-
-.cols-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.875rem 2.5rem;
-}

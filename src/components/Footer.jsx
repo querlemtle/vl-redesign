@@ -1,7 +1,5 @@
 import logo from "./../assets/Vlive-Lab-logo-white.svg";
-import YtIcon from "./YtIcon";
-import FbIcon from "./FbIcon";
-import XIcon from "./XIcon";
+import { YtIcon, FbIcon, XIcon } from "./../components/IconSvgs";
 import "./Footer.css";
 
 function Footer() {
