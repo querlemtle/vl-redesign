@@ -18,27 +18,24 @@ import styles from "./Home.module.css";
 
 const {
   section,
-  "section--x-full": sectionXFull,
-  "section--bg": sectionBg,
-  "section--stretch": sectionStretch,
-  "section__title-container": sectionTitleContainer,
-  "section__title-container--stretch": sectionTitleContainerStretch,
-  "section__title--border-bottom": sectionTitleBorderBottom,
-  "section__subtitle-accent": sectionSubtitleAccent,
-  "section__subtitle--start": sectionSubtitleStart,
-  section__content: sectionContent,
-  "section__horizonal-scrolling": sectionHorizontalScrolling,
-  "section__content--light": sectionContentLight,
-  "section__rect-bg": sectionRectBg,
-  "hint-box": hintBox,
-  "hint-box__title": hintBoxTitle,
-  "hint-box__text": hintBoxText,
-  "scrollers-container": scrollersContainer,
+  "section-center": sectionCenter,
+  "section-x-full": sectionXFull,
+  "section-bg-img": sectionBgImg,
+  "section-auto-cols": sectionAutoCols,
+  "section--horizonal-scrolling": sectionHorizontalScrolling,
+  "two-tones-bg": twoTonesBg,
+  "title-container": titleContainer,
+  "title-container--start": titleContainerStart,
+  "title--border-bottom": titleBorderBottom,
+  "subtitle-accent": subtileAccent,
+  "link-white-bg-primary-text": linkWhiteBgPrimaryText,
+  "text-white": textWhite,
   logo__text: logoText,
+  "hori-scrolling__hintbox": horiScrollingHintbox,
+  "hintbox__title": hintboxTitle,
+  "hintbox__guide": hintboxGuide,
   btn,
   "btn--end": btnEnd,
-  "btn--rect": btnRect,
-  "btn--light-bg-dark-text": btnLightBgDarkText,
 } = styles;
 
 function Home() {
@@ -47,33 +44,33 @@ function Home() {
       {/* Banner */}
       <Banner />
       {/* About */}
-      <section className={`${section} ${sectionXFull} ${sectionBg}`}>
+      <section className={`${section} ${sectionXFull} ${sectionBgImg}`}>
         <h1>
           <img src={aboutTitle} alt="About" />
         </h1>
-        <h3 className={`${sectionContent} ${sectionContentLight}`}>
+        <h3 className={textWhite}>
           Vlive
           Lab是為了研究VTuber領域的未來，而誕生的合作型Vtuber實驗型事務所。在這裡，我們更重視合作夥伴、營銷分析及創新科技產品，為未來的Vtuber與粉絲創造更多的可能性。我們擁有MMORPG、XR與Gamefi技術，Vtuber是我們的第一小步，也是最重要的一大步。
           <br />
           你努力的未來有沒有你，我們覺得很重要。
         </h3>
-        <a href="#" className={`${btn} ${btnRect} ${btnLightBgDarkText}`}>
+        <a href="#" className={linkWhiteBgPrimaryText}>
           查看更多
         </a>
       </section>
       {/* Talents */}
-      <section className={`${section} ${sectionXFull}`}>
-        <div className={sectionRectBg}></div>
-        <div className={sectionTitleContainer}>
+      <section className={`${section} ${sectionCenter}`}>
+        <div className={twoTonesBg}></div>
+        <div className={titleContainer}>
           <h1>
             <img src={talentsTitle} alt="Talents" />
           </h1>
           <h2>
-            <span className={sectionSubtitleAccent}>| Vlive Lab一期生 |</span>
+            <span className={subtileAccent}>| Vlive Lab一期生 |</span>
             冥界SCP事務所
           </h2>
         </div>
-        <div className="cols-3">
+        <div className={sectionAutoCols}>
           <TalentCard
             charImg={HanaKawa}
             name="花川夢姬"
@@ -98,14 +95,14 @@ function Home() {
         </div>
       </section>
       {/* News */}
-      <section className={section}>
-        <div className={sectionTitleContainer}>
+      <section>
+        <div className={titleContainer}>
           <h1>
             <img src={newsTitle} alt="News" />
           </h1>
           <h2>帶來有關VTUBER相關的新資訊與熱門話題討論</h2>
         </div>
-        <div className="cols-2">
+        <div className={sectionAutoCols}>
           <NewsCard id="1" />
           <NewsCard id="2" />
         </div>
@@ -114,27 +111,27 @@ function Home() {
         </Link>
       </section>
       {/* Shop */}
-      <section className={`${section} ${sectionStretch}`}>
-        <div className={sectionTitleContainerStretch}>
-          <h1 className={sectionTitleBorderBottom}>
+      <section>
+        <div className={`${titleContainer} ${titleContainerStart}`}>
+          <h1 className={titleBorderBottom}>
             <img src={shopTitle} alt="Shop" />
           </h1>
-          <h2 className={sectionSubtitleStart}>
-            <span className={sectionSubtitleAccent}>| 周邊&寄賣 |</span>
+          <h2>
+            <span className={subtileAccent}>| 周邊&寄賣 |</span>
             我們提供豐富的周邊商品，讓您輕鬆選購心儀商品。
           </h2>
           <div className={sectionHorizontalScrolling}>
-            <Link to="/shop" className={hintBox}>
+            <Link to="/shop" className={horiScrollingHintbox}>
               <div>
                 <img src={logo} alt="Vlive Lab" />
                 <p className={logoText}>未來實驗所</p>
               </div>
-              <div className={hintBoxTitle}>
+              <div className={hintboxTitle}>
                 <img src={pentaFlowerDeco} alt="花瓣裝飾" />
                 <h3>Online Shop</h3>
                 <img src={pentaFlowerDeco} alt="花瓣裝飾" />
               </div>
-              <div className={hintBoxText}>
+              <div className={hintboxGuide}>
                 前往商店 <img src={halfArrow} alt="箭頭" />
               </div>
             </Link>
@@ -159,7 +156,7 @@ function Home() {
               productName="香氛蠟燭70ml"
             />
           </div>
-          <div className={scrollersContainer}>
+          <div className={`${btn} ${btnEnd}`}>
             <img src={leftArrow} alt="左箭頭" />
             <img src={rightArrow} alt="右箭頭" />
           </div>
