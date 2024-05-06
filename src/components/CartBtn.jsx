@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
-import cartImg from "./../assets/cart.png";
-import "./CartBtn.css";
+import cartImg from "./../assets/icons/cart.png";
+import styles from "./CartBtn.module.css";
+
+const {
+  "btn--fixed": btnFixed
+} = styles;
 
 export default function CartBtn() {
   return (
-    <Link to="/" className="btn--fixed">
+    <Link to="/cart" className={btnFixed}>
       <img src={cartImg} alt="購物車按鈕" />
     </Link>
   );

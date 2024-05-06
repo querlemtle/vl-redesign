@@ -1,0 +1,10 @@
+.section {
+  display: grid;
+  place-items: center;
+}
+
+.section__link {
+  color: var(--secondary-color-medium);
+  margin-top: 1rem;
+  text-decoration: underline;
+}

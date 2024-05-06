@@ -1,4 +1,3 @@
-
 import PropTypes from "prop-types";
 
 function FbIcon({ lineFill }) {
@@ -15,7 +14,6 @@ function FbIcon({ lineFill }) {
 FbIcon.propTypes = {
   lineFill: PropTypes.string.isRequired,
 };
-
 
 function XIcon({ lineFill }) {
   return (

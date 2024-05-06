@@ -1,18 +1,25 @@
-import "./Controllers.css";
+import styles from "./Controllers.module.css";
+
+const {
+  controllers,
+  controller__indicator: controllerIndicator,
+  pagination,
+  pagination__control: paginationControl
+} = styles;
 
 function Slider() {
   return (
-    <ul className="controller">
-      <li className="controller__indicator"></li>
-      <li className="controller__indicator"></li>
-      <li className="controller__indicator"></li>
+    <ul className={controllers}>
+      <li className={controllerIndicator}></li>
+      <li className={controllerIndicator}></li>
+      <li className={controllerIndicator}></li>
     </ul>
   );
 }
 
 function Pagination() {
   return (
-    <ul className="pagination">
+    <ul className={pagination}>
       <a href="#" className="pagination__control">
         &#8592;
       </a>
@@ -34,7 +41,7 @@ function Pagination() {
       <li>
         <a href="#">10</a>
       </li>
-      <a href="#" className="pagination__control">
+      <a href="#" className={paginationControl}>
         &#8594;
       </a>
     </ul>

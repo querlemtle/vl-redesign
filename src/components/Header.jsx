@@ -1,40 +1,49 @@
 import { Link } from "react-router-dom";
 import logo from "./../assets/Vlive-Lab-logo.svg";
-import "./Header.css";
+import styles from "./Header.module.css";
+
+const {
+  header,
+  header__brand: headerBrand,
+  header__title: headerTitle,
+  header__list: headerList,
+  header__link: headerLink,
+  "header__link--contrast": headerLinkContrast,
+} = styles;
 
 function Header() {
   return (
-    <header className="header">
-      <div className="header__brand">
+    <header className={header}>
+      <div className={headerBrand}>
         <Link to="/">
           <img src={logo} alt="Vlive Lab" />
-          <p className="header__title">未來實驗所</p>
+          <p className={headerTitle}>未來實驗所</p>
         </Link>
       </div>
-      <nav className="header__nav">
-        <ul className="header__list">
-          <li className="header__item">
-            <a href="#" className="header__link">
+      <nav>
+        <ul className={headerList}>
+          <li>
+            <a href="#" className={headerLink}>
               About
             </a>
           </li>
-          <li className="header__item">
-            <Link to="/talent" className="header__link">
+          <li>
+            <Link to="/talent" className={headerLink}>
               Talent
             </Link>
           </li>
-          <li className="header__item">
-            <Link to="/shop" className="header__link">
+          <li>
+            <Link to="/shop" className={headerLink}>
               Shop
             </Link>
           </li>
-          <li className="header__item">
-            <Link to="/news" className="header__link">
+          <li>
+            <Link to="/news" className={headerLink}>
               News
             </Link>
           </li>
-          <li className="header__item">
-            <a href="#" className="header__link">
+          <li>
+            <a href="#" className={headerLink}>
               Contact
             </a>
           </li>
@@ -42,7 +51,7 @@ function Header() {
       </nav>
       <a
         href="#"
-        className="header__btn header__btn--fill header__link header__link--contrast"
+        className={`${headerLink} ${headerLinkContrast}`}
       >
         JOIN US
       </a>

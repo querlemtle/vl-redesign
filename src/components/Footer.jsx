@@ -1,18 +1,31 @@
 import logo from "./../assets/Vlive-Lab-logo-white.svg";
 import { YtIcon, FbIcon, XIcon } from "./../components/IconSvgs";
-import "./Footer.css";
+import styles from "./Footer.module.css";
+
+const {
+  footer,
+  footer__container: footerContainer,
+  footer__logo: footerLogo,
+  footer__icons: footerIcons,
+  footer__list: footerList,
+  footer__link: footerLink,
+  "footer__link--small": footerLinkSmall,
+  footer__item: footerItem,
+  footer__subitem: footerSubitem,
+  footer__copyright: footerCopyright,
+} = styles;
 
 function Footer() {
   return (
-    <footer className="footer">
-      <div className="footer__container">
-        <div className="footer__brand">
-          <img src={logo} className="footer__logo" />
-          <p className="footer__intro">
+    <footer className={footer}>
+      <div className={footerContainer}>
+        <div>
+          <img src={logo} className={footerLogo} />
+          <p>
             We are new VTuber Studio with <br /> MMORPG & VR tech <br /> welcome
             to join!
           </p>
-          <div className="footer__icons">
+          <div className={footerIcons}>
             <a href="https://www.youtube.com/@VliveLab/about">
               <YtIcon lineFill="#fff" />
             </a>
@@ -25,77 +38,77 @@ function Footer() {
           </div>
         </div>
         <div>
-          <ul className="footer__list">
-            <li className="footer__item">
+          <ul className={footerList}>
+            <li className={footerItem}>
               ABOUT
               <ul>
-                <li className="footer__subitem">
-                  <a href="#" className="footer__link">
+                <li className={footerSubitem}>
+                  <a href="#" className={footerLink}>
                     事務所介紹
                   </a>
                 </li>
-                <li className="footer__subitem">
-                  <a href="#" className="footer__link">
+                <li className={footerSubitem}>
+                  <a href="#" className={footerLink}>
                     成立宗旨
                   </a>
                 </li>
-                <li className="footer__subitem">
-                  <a href="#" className="footer__link">
+                <li className={footerSubitem}>
+                  <a href="#" className={footerLink}>
                     服務項目
                   </a>
                 </li>
               </ul>
             </li>
-            <li className="footer__item">
+            <li className={footerItem}>
               REQUIREMENTS
               <ul>
-                <li className="footer__subitem">
-                  <a href="#" className="footer__link">
+                <li className={footerSubitem}>
+                  <a href="#" className={footerLink}>
                     團隊職缺
                   </a>
                 </li>
               </ul>
             </li>
-            <li className="footer__item">
+            <li className={footerItem}>
               TALENTS
               <ul>
-                <li className="footer__subitem">
-                  <a href="#" className="footer__link">
+                <li className={footerSubitem}>
+                  <a href="#" className={footerLink}>
                     桑德斯.闇
                   </a>
                 </li>
-                <li className="footer__subitem">
-                  <a href="#" className="footer__link">
+                <li className={footerSubitem}>
+                  <a href="#" className={footerLink}>
                     花川夢姬
                   </a>
                 </li>
-                <li className="footer__subitem">
-                  <a href="#" className="footer__link">
+                <li className={footerSubitem}>
+                  <a href="#" className={footerLink}>
                     夜神遂心
                   </a>
                 </li>
               </ul>
             </li>
-            <li className="footer__item">
+            <li className={footerItem}>
               RESOURCES
               <ul>
-                <li className="footer__subitem">
-                  <a href="https://vchama.xyz/" className="footer__link">
+                <li className={footerSubitem}>
+                  <a href="https://vchama.xyz/" className={footerLink}>
                     Vtuber 統計地圖
                   </a>
                 </li>
-                <li className="footer__subitem">
+                <li className={footerSubitem}>
                   <a
                     href="https://neptunia.github.io/vtubers-data-science/"
-                    className="footer__link"
+                    className={footerLink}
                   >
                     超級聊天數據分析
                   </a>
                 </li>
-                <li className="footer__subitem">
+                <li className={footerSubitem}>
                   <a
                     href="https://streamscharts.com/channels?vtuber=all"
-                    className="footer__link"
+                    className={footerLink}
                   >
                     StreamChart
                   </a>
@@ -105,14 +118,14 @@ function Footer() {
           </ul>
         </div>
       </div>
-      <div className="footer__copyright">
+      <div className={footerCopyright}>
         <small>
           © {new Date().getFullYear()} Vlive Lab. All Rights Reserved.
         </small>
-        <a href="#" className="footer__link footer__link--small">
+        <a href="#" className={`${footerLink} ${footerLinkSmall}`}>
           Terms & Agreements
         </a>
-        <a href="#" className="footer__link footer__link--small">
+        <a href="#" className={`${footerLink} ${footerLinkSmall}`}>
           Privacy Policy
         </a>
       </div>
