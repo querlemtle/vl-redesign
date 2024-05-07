@@ -77,4 +77,36 @@ YtIcon.propTypes = {
   lineFill: PropTypes.string.isRequired,
 };
 
-export { FbIcon, XIcon, YtIcon };
+function LeftArrow({ lineFill }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={36} height={36} fill="none">
+      <circle cx={18} cy={18} r={17} stroke={lineFill} strokeWidth={2} />
+      <path
+        fill={lineFill}
+        d="M23.67 9.77 21.9 8 12 17.9l9.9 9.9 1.77-1.77-8.13-8.13 8.13-8.13Z"
+      />
+    </svg>
+  );
+}
+
+LeftArrow.propTypes = {
+  lineFill: PropTypes.string.isRequired,
+};
+
+function RightArrow({ lineFill }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={36} height={36} fill="none">
+      <circle cx={18} cy={18} r={17} stroke={lineFill} strokeWidth={2} />
+      <path
+        fill={lineFill}
+        d="M14 26.23 15.77 28l10-10-10-10L14 9.77 22.23 18 14 26.23Z"
+      />
+    </svg>
+  );
+}
+
+RightArrow.propTypes = {
+  lineFill: PropTypes.string.isRequired,
+};
+
+export { FbIcon, XIcon, YtIcon, LeftArrow, RightArrow };
