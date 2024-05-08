@@ -1,5 +1,4 @@
 .card {
-  flex: 0 0 auto;
   display: grid;
   width: 372px;
   grid-template-columns: 1fr;

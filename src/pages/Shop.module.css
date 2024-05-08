@@ -11,11 +11,35 @@
   border-right: 1px solid color-mix(in srgb, var(--secondary-color-dark), var(--alpha-50));
 }
 
-.items__list {
-  gap: 4rem 1rem;
-  padding: 4rem 0;
+.section-full {
+  display: grid;
   place-items: center;
+}
+
+.section-center {
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.section-cols-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  margin: 4rem auto;
+}
+
+.section-cols-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  gap: 4rem 1rem;
+  margin-bottom: 10rem;
+  padding: 4rem 0;
   border-top: 1px solid var(--secondary-color-medium);
   border-bottom: 1px solid var(--secondary-color-medium);
-  margin-bottom: 10rem;
+}
+
+.link {
+  width: fit-content;
 }

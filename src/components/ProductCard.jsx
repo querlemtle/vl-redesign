@@ -22,7 +22,7 @@ export default function ProductCard({ productImg, productName, productPrice }) {
           <p className={cardTitle}>{productName}</p>
           {productPrice && (
             <p>
-              <span className={cardMeta}>NT$ {productPrice}</span> 元
+              <span className={cardMeta}>NT${productPrice}</span>
             </p>
           )}
         </div>
