@@ -20,7 +20,7 @@ function Slider() {
 function Pagination() {
   return (
     <ul className={pagination}>
-      <a href="#" className="pagination__control">
+      <a href="#" className={paginationControl}>
         &#8592;
       </a>
       <li>

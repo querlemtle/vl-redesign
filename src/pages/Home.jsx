@@ -7,7 +7,7 @@ import shopTitle from "./../assets/shop-title.svg";
 import leftArrow from "./../assets/icons/left-arrow.svg";
 import rightArrow from "./../assets/icons/right-arrow.svg";
 import HanaKawa from "./../assets/HanaKawa-notail-1.png";
-import candle from "./../assets/candle.png";
+import productImg from "./../assets/products/item_05.png";
 import TalentCard from "../components/TalentCard";
 import NewsCard from "./../components/NewsCard";
 import ProductCard from "./../components/ProductCard";
@@ -137,22 +137,22 @@ function Home() {
             </Link>
             <ProductCard
               id="1"
-              productImg={candle}
+              productImg={productImg}
               productName="香氛蠟燭70ml"
             />
             <ProductCard
               id="1"
-              productImg={candle}
+              productImg={productImg}
               productName="香氛蠟燭70ml"
             />
             <ProductCard
               id="1"
-              productImg={candle}
+              productImg={productImg}
               productName="香氛蠟燭70ml"
             />
             <ProductCard
               id="1"
-              productImg={candle}
+              productImg={productImg}
               productName="香氛蠟燭70ml"
             />
           </div>
