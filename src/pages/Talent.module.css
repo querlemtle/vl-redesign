@@ -1,10 +1,10 @@
 .banner {
   height: 80vh;
+  margin-top: 5rem;
   display: grid;
   grid-template-columns: repeat(11, 1fr);
   place-items: end stretch;
-  background-image: url("./../assets/scp-agency-banner.png");
-  background-repeat: no-repeat;
+  background: url("./../assets/scp-agency-banner.png") no-repeat;
   background-size: cover;
 }
 
@@ -39,4 +39,43 @@
   width: 50%;
   right: 3rem;
   bottom: 45%;
+}
+
+/* DoF: Depth of field */
+.bg-DoF {
+  height: 100vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cols-2 {
+  display: flex;
+  align-items: center;
+}
+
+.card__img {
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.card__img--right {
+  order: 1;
+}
+
+.card__body {
+  flex: 1 0 50%;
+  padding: 0 5rem;
+  display: grid;
+  row-gap: 3rem;
+}
+
+.card__context {
+  max-width: 90%;
+}
+
+.links {
+  display: flex;
+  column-gap: 0.5rem;
 }

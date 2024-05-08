@@ -1,43 +1,55 @@
 import PropTypes from "prop-types";
 
-function FbIcon({ lineFill }) {
+function FbIcon({ size, lineFill }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width={30} height={30} fill="none">
-      <path
-        fill={lineFill}
-        d="M30 15.03C30 6.74 23.267 0 15 0S0 6.739 0 15.03c0 7.665 5.754 13.993 13.153 14.908V18.93H9.6v-3.302h3.553V9.28c.01-.103.313-2.459 3.22-2.737h3.977v2.49h-2.2c-.061.02-1.404.226-1.706 1.564l-.01.061.04 4.97h3.089v3.302h-3.291V29.99C23.944 29.352 30 22.89 30 15.03ZM17.271 28.828V19.96h3.29v-5.36h-3.098l-.03-3.817c.171-.597.807-.71.777-.71h3.14V5.514h-5.028c-3.755.35-4.169 3.612-4.179 3.704v5.38H8.59v5.36h3.553v8.777C5.794 27.418 1.01 21.77 1.01 15.03 1.01 7.305 7.288 1.029 15 1.029S28.99 7.305 28.99 15.03c0 6.944-5.087 12.706-11.719 13.796Z"
-      />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      fill="none"
+      viewBox="0 0 74 74"
+    >
+      <g clipPath="url(#a)">
+        <path
+          fill={lineFill}
+          d="M73.315 36.919C73.315 16.654 56.861.186 36.658.186 16.453.186 0 16.654 0 36.919c0 18.73 14.061 34.193 32.143 36.43V46.448H23.46v-8.07h8.683V22.864c.025-.252.765-6.01 7.87-6.688h9.719v6.085h-5.378c-.148.05-3.429.553-4.169 3.821l-.025.151.1 12.144h7.548v8.07h-8.042v27.028c18.748-1.558 33.549-17.348 33.549-36.556ZM42.208 70.633V48.962h8.042v-13.1h-7.573l-.074-9.327c.419-1.459 1.973-1.735 1.9-1.735h7.671V13.662H39.89c-9.177.855-10.188 8.825-10.213 9.051v13.15h-8.683v13.099h8.683v21.446C14.16 67.19 2.466 53.387 2.466 36.918 2.467 18.038 17.812 2.7 36.659 2.7c18.846 0 34.19 15.337 34.19 34.218 0 16.972-12.433 31.051-28.64 33.716Z"
+        />
+      </g>
+      <defs>
+        <clipPath id="a">
+          <path fill="#fff" d="M0 .186h73.315V73.5H0z" />
+        </clipPath>
+      </defs>
     </svg>
   );
 }
 
 FbIcon.propTypes = {
+  size: PropTypes.number.isRequired,
   lineFill: PropTypes.string.isRequired,
 };
 
-function XIcon({ lineFill }) {
+function XIcon({ size, lineFill }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width={32} height={32} fill="none">
-      <path
-        d="m13.393 8 3.903 5.887L22.179 8h1.392l-5.657 6.82L24 24h-4.607l-3.994-6.148-5.006 6.036H9l5.788-6.978L9 8h4.393Zm-.45.895h-2.326l9.23 14.21h2.517l-9.42-14.21Z"
-        clipRule="evenodd"
-      />
-      <path
-        fill={lineFill}
-        fillRule="evenodd"
-        d="M31 16c0 8.284-6.716 15-15 15-8.284 0-15-6.716-15-15C1 7.716 7.716 1 16 1c8.284 0 15 6.716 15 15Zm-1 0c0 7.732-6.268 14-14 14S2 23.732 2 16 8.268 2 16 2s14 6.268 14 14Z"
-        clipRule="evenodd"
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      fill="none"
+    >
+      <circle
+        cx={36.657}
+        cy={36.657}
+        r={35.436}
+        stroke={lineFill}
+        strokeWidth={2.444}
       />
       <path
         fill={lineFill}
         fillRule="evenodd"
         stroke={lineFill}
-        strokeWidth={0.3}
-        d="m13.393 8 3.903 5.887L22.179 8h1.392l-5.657 6.82L24 24h-4.607l-3.994-6.148-5.006 6.036H9l5.788-6.978L9 8h4.393Zm-.45.895h-2.326l9.23 14.21h2.517l-9.42-14.21Z"
-        clipRule="evenodd"
-      />
-      <path
-        d="M31 16c0 8.284-6.716 15-15 15-8.284 0-15-6.716-15-15C1 7.716 7.716 1 16 1c8.284 0 15 6.716 15 15Zm-1 0c0 7.732-6.268 14-14 14S2 23.732 2 16 8.268 2 16 2s14 6.268 14 14Z"
+        strokeWidth={0.733}
+        d="m39.824 31.493-9.538-14.387H19.551l14.144 21.775-14.144 17.053h3.404L35.19 41.183l9.76 15.024h11.258L41.336 33.773 55.16 17.106h-3.404L39.824 31.493Zm-16.321-12.2h5.686L52.21 54.02h-6.15L23.503 19.293Z"
         clipRule="evenodd"
       />
     </svg>
@@ -45,35 +57,38 @@ function XIcon({ lineFill }) {
 }
 
 XIcon.propTypes = {
+  size: PropTypes.number.isRequired,
   lineFill: PropTypes.string.isRequired,
 };
 
-function YtIcon({ lineFill }) {
+function YtIcon({ size, lineFill }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width={30} height={30} fill="none">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      fill="none"
+      viewBox="0 0 56 56"
+    >
       <path
         fill={lineFill}
         fillRule="evenodd"
-        d="M12.778 12.589c0-.519.628-.838 1.122-.572l4.465 2.411c.48.26.48.885 0 1.144l-4.465 2.41c-.494.268-1.122-.052-1.122-.57v-4.823ZM17.984 15l-4.466-2.411v4.822L17.985 15Z"
+        d="M25.946 22.432c-.922-.498-2.094.1-2.094 1.067V32.5c0 .967 1.172 1.565 2.094 1.067l8.335-4.501c.895-.483.895-1.651 0-2.134l-8.335-4.501Zm-.712 1.067 8.336 4.5-8.335 4.502v-9.002Z"
         clipRule="evenodd"
       />
       <path
         fill={lineFill}
         fillRule="evenodd"
-        d="M6.481 9C5.663 9 5 9.597 5 10.333v9.334C5 20.403 5.663 21 6.481 21h17.037c.819 0 1.482-.597 1.482-1.333v-9.334C25 9.597 24.337 9 23.518 9H6.482Zm17.778 1.333c0-.368-.331-.666-.74-.666H6.48c-.409 0-.74.298-.74.666v9.334c0 .368.331.666.74.666h17.037c.41 0 .741-.298.741-.666v-9.334Z"
+        d="M9.333 19.289c0-1.375 1.238-2.49 2.766-2.49H43.9c1.527 0 2.766 1.115 2.766 2.49V36.71c0 1.375-1.239 2.489-2.766 2.489H12.1c-1.528 0-2.766-1.114-2.766-2.49V19.29Zm2.766-1.245H43.9c.764 0 1.383.557 1.383 1.245V36.71c0 .687-.62 1.244-1.383 1.244H12.1c-.764 0-1.383-.557-1.383-1.244V19.289c0-.688.619-1.245 1.383-1.245Z"
         clipRule="evenodd"
       />
-      <path
-        fill={lineFill}
-        fillRule="evenodd"
-        d="M30 15c0 8.284-6.716 15-15 15-8.284 0-15-6.716-15-15C0 6.716 6.716 0 15 0c8.284 0 15 6.716 15 15Zm-1 0c0 7.732-6.268 14-14 14S1 22.732 1 15 7.268 1 15 1s14 6.268 14 14Z"
-        clipRule="evenodd"
-      />
+      <circle cx={28} cy={28} r={27.067} stroke={lineFill} strokeWidth={1.867} />
     </svg>
   );
 }
 
 YtIcon.propTypes = {
+  size: PropTypes.number.isRequired,
   lineFill: PropTypes.string.isRequired,
 };
 

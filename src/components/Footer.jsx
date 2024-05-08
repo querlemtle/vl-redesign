@@ -27,13 +27,13 @@ function Footer() {
           </p>
           <div className={footerIcons}>
             <a href="https://www.youtube.com/@VliveLab/about">
-              <YtIcon lineFill="#fff" />
+              <YtIcon size={30} lineFill="#fff" />
             </a>
             <a href="https://www.facebook.com/people/Vlive-Lab/100093708878400/">
-              <FbIcon lineFill="#fff" />
+              <FbIcon size={30} lineFill="#fff" />
             </a>
             <a href="https://twitter.com/VliveLab">
-              <XIcon lineFill="#fff" />
+              <XIcon size={30} lineFill="#fff" />
             </a>
           </div>
         </div>
