@@ -46,10 +46,11 @@
   z-index: 1;
 }
 
+/* Here use background image to import svg icons instead because the hover version has different algorithms */
 .fb-icon {
   width: 56px;
   height: 56px;
-  background: url("./../assets/icons/fb-icon-default.png") no-repeat;
+  background: url("./../assets/icons/fb-icon-default.svg") no-repeat;
   transition: all 300ms ease;
 }
 

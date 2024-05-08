@@ -36,6 +36,7 @@ function XIcon({ size, lineFill }) {
       width={size}
       height={size}
       fill="none"
+      viewBox="0 0 74 74"
     >
       <circle
         cx={36.657}
@@ -82,7 +83,13 @@ function YtIcon({ size, lineFill }) {
         d="M9.333 19.289c0-1.375 1.238-2.49 2.766-2.49H43.9c1.527 0 2.766 1.115 2.766 2.49V36.71c0 1.375-1.239 2.489-2.766 2.489H12.1c-1.528 0-2.766-1.114-2.766-2.49V19.29Zm2.766-1.245H43.9c.764 0 1.383.557 1.383 1.245V36.71c0 .687-.62 1.244-1.383 1.244H12.1c-.764 0-1.383-.557-1.383-1.244V19.289c0-.688.619-1.245 1.383-1.245Z"
         clipRule="evenodd"
       />
-      <circle cx={28} cy={28} r={27.067} stroke={lineFill} strokeWidth={1.867} />
+      <circle
+        cx={28}
+        cy={28}
+        r={27.067}
+        stroke={lineFill}
+        strokeWidth={1.867}
+      />
     </svg>
   );
 }
@@ -94,7 +101,13 @@ YtIcon.propTypes = {
 
 function LeftArrow({ lineFill }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width={36} height={36} fill="none">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={36}
+      height={36}
+      fill="none"
+      viewBox="0 0 36 36"
+    >
       <circle cx={18} cy={18} r={17} stroke={lineFill} strokeWidth={2} />
       <path
         fill={lineFill}
@@ -110,7 +123,13 @@ LeftArrow.propTypes = {
 
 function RightArrow({ lineFill }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width={36} height={36} fill="none">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={36}
+      height={36}
+      fill="none"
+      viewBox="0 0 36 36"
+    >
       <circle cx={18} cy={18} r={17} stroke={lineFill} strokeWidth={2} />
       <path
         fill={lineFill}
