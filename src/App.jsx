@@ -4,11 +4,12 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import News from "./pages/News";
+import NewsArticle from "./pages/NewsArticle";
 import Talent from "./pages/Talent";
 import Shop from "./pages/Shop";
-import Cart from "./pages/Cart";
-import NewsArticle from "./pages/NewsArticle";
 import ProductDetail from "./pages/ProductDetail";
+import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 
 // https://stackoverflow.com/questions/71984401/react-router-not-working-with-github-pages
 const router = createHashRouter([
@@ -44,6 +45,10 @@ const router = createHashRouter([
         path: "/cart",
         element: <Cart />,
       },
+      {
+        path: "/checkout",
+        element: <Checkout />,
+      }
     ],
   },
 ]);
