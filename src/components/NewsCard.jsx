@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Placeholder from "./../assets/news-placeholder.png";
 import styles from "./NewsCard.module.css";
@@ -16,14 +16,11 @@ const {
 } = styles;
 
 export default function NewsCard({ id }) {
-  // Get the current URL: https://reactrouter.com/en/main/hooks/use-location
-  const { pathname } = useLocation();
-
   return (
     <div className={card}>
       <div className={cardImgWrapper}>
         <Link
-          to={pathname.includes("news") ? `${id}` : `news/${id}`}
+          to={`/news/${id}`}
           className="card__link"
         >
           <img src={Placeholder} alt="文章縮圖" className={cardImg} />
@@ -31,7 +28,7 @@ export default function NewsCard({ id }) {
       </div>
       <div className={cardConentContainer}>
         <Link
-          to={pathname.includes("news") ? `${id}` : `news/${id}`}
+          to={`/news/${id}`}
           className="card__link"
         >
           <div className={cardTitleContainer}>

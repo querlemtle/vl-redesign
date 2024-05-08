@@ -4,8 +4,7 @@ import aboutTitle from "./../assets/about-title.svg";
 import talentsTitle from "./../assets/talents-title.png";
 import newsTitle from "./../assets/news-page-title.svg";
 import shopTitle from "./../assets/shop-title.svg";
-import leftArrow from "./../assets/icons/left-arrow.svg";
-import rightArrow from "./../assets/icons/right-arrow.svg";
+import { LeftArrow, RightArrow } from "../components/IconSvgs";
 import HanaKawa from "./../assets/HanaKawa-notail-1.png";
 import productImg from "./../assets/products/item_05.png";
 import TalentCard from "../components/TalentCard";
@@ -107,7 +106,7 @@ function Home() {
           <NewsCard id="2" />
         </div>
         <Link to="/news" className={`${btn} ${btnEnd}`}>
-          VIEW MORE <img src={rightArrow} alt="右箭頭" />
+          VIEW MORE <RightArrow lineFill="#2d5993" />
         </Link>
       </section>
       {/* Shop */}
@@ -157,8 +156,8 @@ function Home() {
             />
           </div>
           <div className={`${btn} ${btnEnd}`}>
-            <img src={leftArrow} alt="左箭頭" />
-            <img src={rightArrow} alt="右箭頭" />
+            <LeftArrow lineFill="#2d5993" />
+            <RightArrow lineFill="#2d5993" />
           </div>
         </div>
       </section>

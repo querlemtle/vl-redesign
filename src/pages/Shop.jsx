@@ -38,46 +38,7 @@ export default function Shop() {
         </div>
         <div className={sectionCols3}>
           <ProductCard
-            productImg={candle}
-            productName="香氛蠟燭70ml"
-            productPrice={200}
-          />
-          <ProductCard
-            productImg={candle}
-            productName="香氛蠟燭70ml"
-            productPrice={200}
-          />
-          <ProductCard
-            productImg={candle}
-            productName="香氛蠟燭70ml"
-            productPrice={200}
-          />
-          <ProductCard
-            productImg={candle}
-            productName="香氛蠟燭70ml"
-            productPrice={200}
-          />
-          <ProductCard
-            productImg={candle}
-            productName="香氛蠟燭70ml"
-            productPrice={200}
-          />
-          <ProductCard
-            productImg={candle}
-            productName="香氛蠟燭70ml"
-            productPrice={200}
-          />
-          <ProductCard
-            productImg={candle}
-            productName="香氛蠟燭70ml"
-            productPrice={200}
-          />
-          <ProductCard
-            productImg={candle}
-            productName="香氛蠟燭70ml"
-            productPrice={200}
-          />
-          <ProductCard
+            id="1"
             productImg={candle}
             productName="香氛蠟燭70ml"
             productPrice={200}

@@ -1,7 +1,6 @@
 import placeholder from "./../assets/news-placeholder.png";
 import styles from "./NewsArticle.module.css";
-import leftArrow from "./../assets/left-arrow.svg";
-import rightArrow from "./../assets/right-arrow.svg";
+import { LeftArrow, RightArrow } from "../components/IconSvgs";
 
 const {
   article,
@@ -58,12 +57,12 @@ export default function NewsArticle() {
       <hr />
       <div className={controller}>
         <a href="#" className={controllerRow}>
-          <img src={leftArrow} alt="左箭頭" className={controllerIcon} />
+          <LeftArrow lineFill="#2d5993" className={controllerIcon} />
           上一篇
         </a>
         <a href="#" className={controllerRow}>
           下一篇
-          <img src={rightArrow} alt="右箭頭" className={controllerIcon} />
+          <RightArrow lineFill="#2d5993" className={controllerIcon} />
         </a>
       </div>
     </article>
