@@ -15,7 +15,7 @@ const {
 export default function ProductCard({ id, productImg, productName, productPrice }) {
   return (
     <div className={card}>
-      <Link to={`/shop/${id}`} className={cardLink}>
+      <Link to={`/product/${id}`} className={cardLink}>
         <div className={cardImgWrapper}>
           <img src={productImg} alt={productName} className={cardImg} />
         </div>

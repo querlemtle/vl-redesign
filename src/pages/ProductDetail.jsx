@@ -1,6 +1,7 @@
 import preview0 from "./../assets/products/item_02.png";
 import preview1 from "./../assets/products/item_02_a.png";
 import preview2 from "./../assets/products/item_02_b.png";
+import CartBtn from "../components/CartBtn";
 import styles from "./ProductDetails.module.css";
 
 const {
@@ -94,6 +95,7 @@ export default function ProductDetail() {
           <li>材質: 壓克力</li>
         </ul>
       </div>
+      <CartBtn />
     </section>
   );
 }
