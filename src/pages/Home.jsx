@@ -106,7 +106,7 @@ function Home() {
           <NewsCard id="2" />
         </div>
         <Link to="/news" className={`${btn} ${btnEnd}`}>
-          VIEW MORE <RightArrow lineFill="#2d5993" />
+          VIEW MORE <RightArrow size={36} lineFill="#2d5993" />
         </Link>
       </section>
       {/* Shop */}
@@ -156,8 +156,8 @@ function Home() {
             />
           </div>
           <div className={`${btn} ${btnEnd}`}>
-            <LeftArrow lineFill="#2d5993" />
-            <RightArrow lineFill="#2d5993" />
+            <LeftArrow size={36} lineFill="#2d5993" />
+            <RightArrow size={36} lineFill="#2d5993" />
           </div>
         </div>
       </section>

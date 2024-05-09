@@ -39,6 +39,7 @@
 
 .title-container--start {
   justify-items: start;
+  margin-left: 5rem;
 }
 
 .title--border-bottom {
@@ -106,6 +107,7 @@
 
 .hintbox__title {
   display: flex;
+  justify-content: center;
   align-items: center;
   column-gap: 4px;
   color: var(--white);
@@ -118,6 +120,7 @@
   font-size: var(--font-s);
   letter-spacing: calc(var(--font-s) * 0.8);
   color: var(--white);
+  text-align: center;
 }
 
 .hintbox__guide {

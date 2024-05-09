@@ -57,12 +57,12 @@ export default function NewsArticle() {
       <hr />
       <div className={controller}>
         <a href="#" className={controllerRow}>
-          <LeftArrow lineFill="#2d5993" className={controllerIcon} />
+          <LeftArrow size={36} lineFill="#2d5993" className={controllerIcon} />
           上一篇
         </a>
         <a href="#" className={controllerRow}>
           下一篇
-          <RightArrow lineFill="#2d5993" className={controllerIcon} />
+          <RightArrow size={36} lineFill="#2d5993" className={controllerIcon} />
         </a>
       </div>
     </article>

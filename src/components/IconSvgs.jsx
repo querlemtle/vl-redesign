@@ -24,11 +24,6 @@ function FbIcon({ size, lineFill }) {
   );
 }
 
-FbIcon.propTypes = {
-  size: PropTypes.number.isRequired,
-  lineFill: PropTypes.string.isRequired,
-};
-
 function XIcon({ size, lineFill }) {
   return (
     <svg
@@ -56,11 +51,6 @@ function XIcon({ size, lineFill }) {
     </svg>
   );
 }
-
-XIcon.propTypes = {
-  size: PropTypes.number.isRequired,
-  lineFill: PropTypes.string.isRequired,
-};
 
 function YtIcon({ size, lineFill }) {
   return (
@@ -94,17 +84,30 @@ function YtIcon({ size, lineFill }) {
   );
 }
 
-YtIcon.propTypes = {
-  size: PropTypes.number.isRequired,
-  lineFill: PropTypes.string.isRequired,
-};
-
-function LeftArrow({ lineFill }) {
+function EmailIcon({ size, lineFill }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={36}
-      height={36}
+      width={size}
+      height={size}
+      viewBox="0 0 30 30"
+      fill="none"
+    >
+      <circle cx={15} cy={15} r={14.5} stroke={lineFill} />
+      <path
+        fill={lineFill}
+        d="M23.98 9H7.02A1.02 1.02 0 0 0 6 10.02v11.193c0 .564.457 1.02 1.02 1.02h16.96a1.02 1.02 0 0 0 1.02-1.02V10.02A1.02 1.02 0 0 0 23.98 9Zm-8.478.972H23.3c-1.22 1.18-2.444 2.36-3.663 3.536l-3.017 2.915c-.175.17-.87.744-1.118 1.069-.247-.33-.942-.904-1.117-1.069l-3.017-2.915c-1.224-1.175-2.443-2.356-3.668-3.536h7.802Zm-8.53 10.687V10.278c1.778 1.715 3.556 3.434 5.334 5.15l-5.334 5.231Zm8.53.603H7.4l5.432-5.33c.806.778 1.607 1.555 2.414 2.332a.376.376 0 0 0 .515 0c.806-.777 1.608-1.554 2.414-2.332l5.432 5.33h-8.104Zm8.526-.603L18.7 15.427c1.778-1.715 3.556-3.434 5.334-5.15V20.66h-.005Z"
+      />
+    </svg>
+  );
+}
+
+function LeftArrow({ size, lineFill }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
       fill="none"
       viewBox="0 0 36 36"
     >
@@ -117,16 +120,12 @@ function LeftArrow({ lineFill }) {
   );
 }
 
-LeftArrow.propTypes = {
-  lineFill: PropTypes.string.isRequired,
-};
-
-function RightArrow({ lineFill }) {
+function RightArrow({ size, lineFill }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={36}
-      height={36}
+      width={size}
+      height={size}
       fill="none"
       viewBox="0 0 36 36"
     >
@@ -139,8 +138,16 @@ function RightArrow({ lineFill }) {
   );
 }
 
-RightArrow.propTypes = {
+const propTypes = {
+  size: PropTypes.number.isRequired,
   lineFill: PropTypes.string.isRequired,
 };
 
-export { FbIcon, XIcon, YtIcon, LeftArrow, RightArrow };
+FbIcon.propTypes = propTypes;
+XIcon.propTypes = propTypes;
+YtIcon.propTypes = propTypes;
+EmailIcon.propTypes = propTypes;
+LeftArrow.propTypes = propTypes;
+RightArrow.propTypes = propTypes;
+
+export { FbIcon, XIcon, YtIcon, EmailIcon, LeftArrow, RightArrow };
