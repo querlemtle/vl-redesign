@@ -1,5 +1,5 @@
 import logo from "./../assets/Vlive-Lab-logo-white.svg";
-import { YtIcon, FbIcon, XIcon } from "./../components/IconSvgs";
+import { YtIcon, FbIcon, XIcon, EmailIcon } from "./../components/IconSvgs";
 import styles from "./Footer.module.css";
 
 const {
@@ -17,7 +17,7 @@ const {
 
 function Footer() {
   return (
-    <footer className={footer}>
+    <footer className={footer} id="footer">
       <div className={footerContainer}>
         <div>
           <img src={logo} className={footerLogo} />
@@ -34,6 +34,9 @@ function Footer() {
             </a>
             <a href="https://twitter.com/VliveLab">
               <XIcon size={30} lineFill="#fff" />
+            </a>
+            <a href="mailto:vlivelab@gmail.com">
+              <EmailIcon size={30} lineFill="#fff" />
             </a>
           </div>
         </div>
@@ -73,17 +76,26 @@ function Footer() {
               TALENTS
               <ul>
                 <li className={footerSubitem}>
-                  <a href="#" className={footerLink}>
+                  <a
+                    href="https://twitter.com/@GameSeasoning66"
+                    className={footerLink}
+                  >
                     桑德斯.闇
                   </a>
                 </li>
                 <li className={footerSubitem}>
-                  <a href="#" className={footerLink}>
+                  <a
+                    href="https://twitter.com/hanakawa0516"
+                    className={footerLink}
+                  >
                     花川夢姬
                   </a>
                 </li>
                 <li className={footerSubitem}>
-                  <a href="#" className={footerLink}>
+                  <a
+                    href="https://twitter.com/nochedioslobo/"
+                    className={footerLink}
+                  >
                     夜神遂心
                   </a>
                 </li>

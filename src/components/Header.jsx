@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "./../assets/Vlive-Lab-logo.svg";
+import ScrollToAnchor from "./../utils/ScrollToAnchor";
 import styles from "./Header.module.css";
 
 const {
@@ -43,17 +44,18 @@ function Header() {
             </Link>
           </li>
           <li>
-            <a href="#" className={headerLink}>
+            <ScrollToAnchor />
+            <Link to="#footer" className={headerLink}>
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
       <a
-        href="#"
+        href="https://vtuberonline.com/"
         className={`${headerLink} ${headerLinkContrast}`}
       >
-        JOIN US
+        VTuber Online
       </a>
     </header>
   );
