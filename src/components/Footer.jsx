@@ -7,6 +7,7 @@ const {
   footer__container: footerContainer,
   footer__logo: footerLogo,
   footer__icons: footerIcons,
+  icon,
   footer__list: footerList,
   footer__link: footerLink,
   "footer__link--small": footerLinkSmall,
@@ -26,16 +27,19 @@ function Footer() {
             to join!
           </p>
           <div className={footerIcons}>
-            <a href="https://www.youtube.com/@VliveLab/about">
+            <a href="https://www.youtube.com/@VliveLab/about" className={icon}>
               <YtIcon size={30} lineFill="#fff" />
             </a>
-            <a href="https://www.facebook.com/people/Vlive-Lab/100093708878400/">
+            <a
+              href="https://www.facebook.com/people/Vlive-Lab/100093708878400/"
+              className={icon}
+            >
               <FbIcon size={30} lineFill="#fff" />
             </a>
-            <a href="https://twitter.com/VliveLab">
+            <a href="https://twitter.com/VliveLab" className={icon}>
               <XIcon size={30} lineFill="#fff" />
             </a>
-            <a href="mailto:vlivelab@gmail.com">
+            <a href="mailto:vlivelab@gmail.com" className={icon}>
               <EmailIcon size={30} lineFill="#fff" />
             </a>
           </div>
