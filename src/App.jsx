@@ -3,6 +3,7 @@ import ErrorPage from "./pages/ErrorPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import About from "./pages/About";
 import News from "./pages/News";
 import NewsArticle from "./pages/NewsArticle";
 import Talent from "./pages/Talent";
@@ -22,12 +23,8 @@ const router = createHashRouter([
         element: <Home />,
       },
       {
-        path: "/news",
-        element: <News />,
-      },
-      {
-        path: "/news/:newsId",
-        element: <NewsArticle />,
+        path: "/about",
+        element: <About />
       },
       {
         path: "/talent",
@@ -36,6 +33,14 @@ const router = createHashRouter([
       {
         path: "/shop",
         element: <Shop />
+      },
+      {
+        path: "/news",
+        element: <News />,
+      },
+      {
+        path: "/news/:newsId",
+        element: <NewsArticle />,
       },
       {
         path: "/product/:productId",
