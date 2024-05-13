@@ -3,23 +3,18 @@ import styles from "./TalentCard.module.css";
 
 const {
   card__link: cardLink,
-  card__frame: cardFrame,
   card__img: cardImg,
-  "card__content-container": cardContentContainer,
-  card__title: cardTitle,
-  card__content: cardContent
+  card__cover: cardCover,
+  card__logo: cardLogo,
 } = styles;
 
-export default function TalentCard({ charImg, name, description }) {
+export default function TalentCard({ charImg, logo, name }) {
   return (
     <div className="card">
       <a href="#" className={cardLink}>
-        <div className={cardFrame} />
         <img src={charImg} alt={name} className={cardImg} />
-        <div className={cardContentContainer}>
-          <div className="card__logo">Logo</div>
-          <h3 className={cardTitle}>{name}</h3>
-          <p className={cardContent}>{description}</p>
+        <div className={cardCover}>
+          <img src={logo} alt={name} className={cardLogo} />
         </div>
       </a>
     </div>
@@ -29,6 +24,6 @@ export default function TalentCard({ charImg, name, description }) {
 TalentCard.propTypes = {
   // Webpack's asset module will resolve the image into a data URI
   charImg: PropTypes.string.isRequired,
+  logo: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
 };

@@ -4,11 +4,7 @@
   height: 90vh;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-}
-
-.banner__bg {
-  grid-column: 1 / -1;
-  grid-row: 1 / 1;
+  background: center / contain url("./../assets/index-banner01.png") no-repeat;
 }
 
 /* Left sidebar  */

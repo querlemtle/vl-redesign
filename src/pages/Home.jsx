@@ -5,7 +5,12 @@ import talentsTitle from "./../assets/talents-title.png";
 import newsTitle from "./../assets/news-page-title.svg";
 import shopTitle from "./../assets/shop-title.svg";
 import { LeftArrow, RightArrow } from "../components/IconSvgs";
-import HanaKawa from "./../assets/HanaKawa-notail-1.png";
+import phoneHanakawa from "./../assets/phone-hanakawa.png";
+import phoneSanders from "./../assets/phone-sanders.png";
+import phoneYagami from "./../assets/phone-yagami.png";
+import hanakawaLogo from "./../assets/talents/hanakawa-logo-light.png";
+import sandersLogo from "./../assets/talents/sanders-logo-light.png";
+import yagamiLogo from "./../assets/talents/Yagami-logo-light.png";
 import productImg from "./../assets/products/item_05.png";
 import TalentCard from "../components/TalentCard";
 import NewsCard from "./../components/NewsCard";
@@ -17,18 +22,18 @@ import styles from "./Home.module.css";
 
 const {
   section,
-  "section-center": sectionCenter,
   "section-x-full": sectionXFull,
   "section-bg-img": sectionBgImg,
   "section-auto-cols": sectionAutoCols,
+  "section-cols-3": sectionCols3,
   "section--horizonal-scrolling": sectionHorizontalScrolling,
   "two-tones-bg": twoTonesBg,
   "title-container": titleContainer,
-  "title-container--start": titleContainerStart,
+  "title-container--right": titleContainerRight,
   "title--border-bottom": titleBorderBottom,
   "subtitle-accent": subtileAccent,
   "link-white-bg-primary-text": linkWhiteBgPrimaryText,
-  "text-white": textWhite,
+  statement,
   logo__text: logoText,
   "hori-scrolling__hintbox": horiScrollingHintbox,
   "hintbox__title": hintboxTitle,
@@ -47,7 +52,7 @@ function Home() {
         <h1>
           <img src={aboutTitle} alt="About" />
         </h1>
-        <h3 className={textWhite}>
+        <h3 className={statement}>
           Vlive
           Lab是為了研究VTuber領域的未來，而誕生的合作型Vtuber實驗型事務所。在這裡，我們更重視合作夥伴、營銷分析及創新科技產品，為未來的Vtuber與粉絲創造更多的可能性。我們擁有MMORPG、XR與Gamefi技術，Vtuber是我們的第一小步，也是最重要的一大步。
           <br />
@@ -58,7 +63,7 @@ function Home() {
         </Link>
       </section>
       {/* Talents */}
-      <section className={`${section} ${sectionCenter}`}>
+      <section className={section}>
         <div className={twoTonesBg}></div>
         <div className={titleContainer}>
           <h1>
@@ -69,32 +74,14 @@ function Home() {
             冥界SCP事務所
           </h2>
         </div>
-        <div className={sectionAutoCols}>
-          <TalentCard
-            charImg={HanaKawa}
-            name="花川夢姬"
-            description={
-              "從忘川-彼岸花剛解除封印的冥界魔龍，因為剛解除封印所以沒什麼力量，除了外表長得像魔龍，其他能力都和普通少女差不多。有使用冥界夢境的能力(產生夢境迷霧直播連線)，每天都在夢境直播中跟在世的人託夢，也常常被託夢說刮刮樂會中獎或抽抽會中，常被認識的說抽卡歐皇。"
-            }
-          />
-          <TalentCard
-            charImg={HanaKawa}
-            name="花川夢姬"
-            description={
-              "從忘川-彼岸花剛解除封印的冥界魔龍，因為剛解除封印所以沒什麼力量，除了外表長得像魔龍，其他能力都和普通少女差不多。有使用冥界夢境的能力(產生夢境迷霧直播連線)，每天都在夢境直播中跟在世的人託夢，也常常被託夢說刮刮樂會中獎或抽抽會中，常被認識的說抽卡歐皇。"
-            }
-          />
-          <TalentCard
-            charImg={HanaKawa}
-            name="花川夢姬"
-            description={
-              "從忘川-彼岸花剛解除封印的冥界魔龍，因為剛解除封印所以沒什麼力量，除了外表長得像魔龍，其他能力都和普通少女差不多。有使用冥界夢境的能力(產生夢境迷霧直播連線)，每天都在夢境直播中跟在世的人託夢，也常常被託夢說刮刮樂會中獎或抽抽會中，常被認識的說抽卡歐皇。"
-            }
-          />
+        <div className={sectionCols3}>
+          <TalentCard charImg={phoneSanders} logo={sandersLogo} name="桑德斯.闇" />
+          <TalentCard charImg={phoneHanakawa} logo={hanakawaLogo} name="花川夢姬" />
+          <TalentCard charImg={phoneYagami} logo={yagamiLogo} name="夜神遂心" />
         </div>
       </section>
       {/* News */}
-      <section>
+      <section className={section}>
         <div className={titleContainer}>
           <h1>
             <img src={newsTitle} alt="News" />
@@ -111,14 +98,16 @@ function Home() {
       </section>
       {/* Shop */}
       <section>
-        <div className={`${titleContainer} ${titleContainerStart}`}>
-          <h1 className={titleBorderBottom}>
-            <img src={shopTitle} alt="Shop" />
-          </h1>
-          <h2>
-            <span className={subtileAccent}>| 周邊&寄賣 |</span>
-            我們提供豐富的周邊商品，讓您輕鬆選購心儀商品。
-          </h2>
+        <div>
+          <div className={`${titleContainer} ${titleContainerRight}`}>
+            <h1 className={titleBorderBottom}>
+              <img src={shopTitle} alt="Shop" />
+            </h1>
+            <h2>
+              <span className={subtileAccent}>| 周邊&寄賣 |</span>
+              我們提供豐富的周邊商品，讓您輕鬆選購心儀商品。
+            </h2>
+          </div>
           <div className={sectionHorizontalScrolling}>
             <Link to="/shop" className={horiScrollingHintbox}>
               <div>

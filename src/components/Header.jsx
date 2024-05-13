@@ -1,6 +1,5 @@
 import { useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
-import { useMediaQuery } from "react-responsive";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import logoImg from "./../assets/Vlive-Lab-logo.svg";
@@ -25,24 +24,21 @@ function Header() {
   const [showMenu, setShowMenu] = useState(false);
   const container = useRef();
   const tl = useRef();
-  const isMobile = useMediaQuery({ maxWidth: "1024px" });
-
-  // https://blog.logrocket.com/create-responsive-navbar-react-css/
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
-    // tl.current.reversed(!tl.current.reversed());
+    tl.current.reversed(!tl.current.reversed());
   };
 
-  // useGSAP(
-  //   () => {
-  //     tl.current = gsap
-  //       .timeline()
-  //       .fromTo("[data-ani='scroll']", { height: 0 }, { height: "auto" })
-  //       .reverse();
-  //   },
-  //   { scope: container }
-  // );
+  useGSAP(
+    () => {
+      tl.current = gsap
+        .timeline()
+        .fromTo("[data-ani='scroll']", { height: 0 }, { height: "auto" })
+        .reverse();
+    },
+    { scope: container }
+  );
 
   return (
     <header className={header} ref={container}>
@@ -86,17 +82,18 @@ function Header() {
           VTuber Online
         </a>
       </nav>
-      <div
+      <button
+        type="button"
         className={hamburger}
-        tabIndex={0}
         aria-label="menu"
         aria-controls="navigation"
+        tabIndex={0}
         onPointerDown={toggleMenu}
       >
         <div className={hamburgerBar}></div>
         <div className={hamburgerBar}></div>
         <div className={hamburgerBar}></div>
-      </div>
+      </button>
     </header>
   );
 }

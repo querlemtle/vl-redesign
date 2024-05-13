@@ -1,4 +1,3 @@
-import bannerImg from "./../assets/index-banner01.png";
 import heartIcon from "./../assets/icons/heart-icon.svg";
 import bellIcon from "./../assets/icons/bell.svg";
 import yagamiIcon from "./../assets/icons/Yagami-chibi-icon.png";
@@ -15,7 +14,6 @@ gsap.registerPlugin(useGSAP);
 
 const {
   banner,
-  banner__bg: bannerBg,
   "sidebar-left": sidebarLeft,
   "sidebar-left__title": sidebarLeftTitle,
   "sidebar-left__options": sidebarLeftOptions,
@@ -37,25 +35,25 @@ function LeftSidebar() {
   const container = useRef();
   const tl = useRef();
 
-  useGSAP(() => {
-    tl.current = gsap
-      .timeline()
-      .fromTo(
-        "[data-ani='bounce']",
-        { translateY: -100 },
-        { translateY: 100, duration: 0.5, ease: "back.in" }
-      )
-      .fromTo(
-        "[data-ani='bounce']",
-        { translateY: 100 },
-        { translateY: 0, duration: 0.5, ease: "circ.out" }
-      )
-      .fromTo(
-        "[data-ani='scroll']",
-        { height: 0, opacity: 0, transformOrigin: "top center" },
-        { height: "auto", opacity: 1, duration: 0.5 }
-      );
-  });
+  //useGSAP(() => {
+  //  tl.current = gsap
+  //    .timeline()
+  //    .fromTo(
+  //      "[data-ani='bounce']",
+  //      { translateY: -100 },
+  //      { translateY: 100, duration: 0.5, ease: "back.in" }
+  //    )
+  //    .fromTo(
+  //      "[data-ani='bounce']",
+  //      { translateY: 100 },
+  //      { translateY: 0, duration: 0.5, ease: "circ.out" }
+  //    )
+  //    .fromTo(
+  //      "[data-ani='scroll']",
+  //      { height: 0, opacity: 0, transformOrigin: "top center" },
+  //      { height: "auto", opacity: 1, duration: 0.5 }
+  //    );
+  //});
 
   return (
     <aside className={sidebarLeft} ref={container}>
@@ -87,23 +85,23 @@ function RightSidebar() {
   const container = useRef();
   const tl = useRef();
 
-  useGSAP(
-    () => {
-      tl.current = gsap
-        .timeline()
-        .fromTo(
-          "[data-ani='move-upper']",
-          { opacity: 0, translateY: 200 },
-          { opacity: 1, translateY: 0, duration: 0.8 }
-        )
-        .fromTo(
-          "[data-ani='move-lower']",
-          { opacity: 0, translateY: 200 },
-          { opacity: 1, translateY: 0, duration: 0.8 }
-        );
-    },
-    { scope: container }
-  );
+  //useGSAP(
+  //  () => {
+  //    tl.current = gsap
+  //      .timeline()
+  //      .fromTo(
+  //        "[data-ani='move-upper']",
+  //        { opacity: 0, translateY: 200 },
+  //        { opacity: 1, translateY: 0, duration: 0.8 }
+  //      )
+  //      .fromTo(
+  //        "[data-ani='move-lower']",
+  //        { opacity: 0, translateY: 200 },
+  //        { opacity: 1, translateY: 0, duration: 0.8 }
+  //      );
+  //  },
+  //  { scope: container }
+  //);
 
   return (
     <aside className={sidebarRight} ref={container}>
@@ -171,7 +169,6 @@ function RightSidebar() {
 function Banner() {
   return (
     <section className={banner}>
-      <img src={bannerImg} alt="banner" className={bannerBg} />
       <LeftSidebar />
       <RightSidebar />
     </section>
