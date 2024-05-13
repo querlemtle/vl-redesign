@@ -5,7 +5,6 @@ const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const StylelintPlugin = require("stylelint-webpack-plugin");
-const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -57,18 +56,6 @@ module.exports = {
         },
       }),
       new MiniCssExtractPlugin(),
-      new ImageMinimizerPlugin({
-        minimizer: {
-          implementation: ImageMinimizerPlugin.sharpMinify,
-          options: {
-            encodeOptions: {
-              jpeg: {
-                quality: 70,
-              },
-            },
-          },
-        },
-      }),
     ],
   },
   module: {
