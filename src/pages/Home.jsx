@@ -53,9 +53,9 @@ function Home() {
           <br />
           你努力的未來有沒有你，我們覺得很重要。
         </h3>
-        <a href="#" className={linkWhiteBgPrimaryText}>
+        <Link to="/about" className={linkWhiteBgPrimaryText}>
           查看更多
-        </a>
+        </Link>
       </section>
       {/* Talents */}
       <section className={`${section} ${sectionCenter}`}>

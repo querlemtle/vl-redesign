@@ -6,7 +6,12 @@ import hanakawaIcon from "./../assets/icons/Hanakawa-chibi-icon.png";
 import sandersIcon from "./../assets/icons/Sanders-chibi-icon.png";
 import streamPreviewImg from "./../assets/stream-preview.png";
 import YtIconNoBorder from "./../assets/icons/yt-noborder.svg";
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import styles from "./Banner.module.css";
+
+gsap.registerPlugin(useGSAP);
 
 const {
   banner,
@@ -29,12 +34,35 @@ const {
 } = styles;
 
 function LeftSidebar() {
+  const container = useRef();
+  const tl = useRef();
+
+  useGSAP(() => {
+    tl.current = gsap
+      .timeline()
+      .fromTo(
+        "[data-ani='bounce']",
+        { translateY: -100 },
+        { translateY: 100, duration: 0.5, ease: "back.in" }
+      )
+      .fromTo(
+        "[data-ani='bounce']",
+        { translateY: 100 },
+        { translateY: 0, duration: 0.5, ease: "circ.out" }
+      )
+      .fromTo(
+        "[data-ani='scroll']",
+        { height: 0, opacity: 0, transformOrigin: "top center" },
+        { height: "auto", opacity: 1, duration: 0.5 }
+      );
+  });
+
   return (
-    <aside className={sidebarLeft}>
-      <div className={sidebarLeftTitle}>
+    <aside className={sidebarLeft} ref={container}>
+      <div className={sidebarLeftTitle} data-ani="bounce">
         <img src={heartIcon} alt="愛心圖標" />
       </div>
-      <ul className={sidebarLeftOptions}>
+      <ul className={sidebarLeftOptions} data-ani="scroll">
         <li>
           <a href="https://www.facebook.com/people/Vlive-Lab/100093708878400/">
             <div className={FbIcon} />
@@ -56,10 +84,37 @@ function LeftSidebar() {
 }
 
 function RightSidebar() {
+  const container = useRef();
+  const tl = useRef();
+
+  useGSAP(
+    () => {
+      tl.current = gsap
+        .timeline()
+        .fromTo(
+          "[data-ani='move-upper']",
+          { opacity: 0, translateY: 200 },
+          { opacity: 1, translateY: 0, duration: 0.8 }
+        )
+        .fromTo(
+          "[data-ani='move-lower']",
+          { opacity: 0, translateY: 200 },
+          { opacity: 1, translateY: 0, duration: 0.8 }
+        );
+    },
+    { scope: container }
+  );
+
   return (
-    <aside className={sidebarRight}>
-      <div className={cardC4R2}>
-        <img src={bellIcon} alt="小鈴鐺" className={floatIcon} />
+    <aside className={sidebarRight} ref={container}>
+      {/* Upper card */}
+      <div className={cardC4R2} data-ani="move-upper">
+        <img
+          src={bellIcon}
+          alt="小鈴鐺"
+          className={floatIcon}
+          data-ani="drip"
+        />
         <h3>事務所夥伴</h3>
         <ul className={cardList}>
           <li>
@@ -91,7 +146,8 @@ function RightSidebar() {
           </li>
         </ul>
       </div>
-      <div className={cardC2R4}>
+      {/* Lower card */}
+      <div className={cardC2R4} data-ani="move-lower">
         <div>
           <img src={streamPreviewImg} alt="直播預覽封面" className={cardImg} />
         </div>

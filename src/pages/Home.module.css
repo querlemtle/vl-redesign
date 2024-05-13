@@ -20,6 +20,7 @@
   background: url("./../assets/pink-bg.png") no-repeat;
   background-size: cover;
   padding: 1rem;
+  margin-top: 10%;
 }
 
 .section-auto-cols {

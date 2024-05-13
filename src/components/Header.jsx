@@ -1,62 +1,102 @@
-import { Link } from "react-router-dom";
-import logo from "./../assets/Vlive-Lab-logo.svg";
+import { useState, useRef } from "react";
+import { NavLink } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import logoImg from "./../assets/Vlive-Lab-logo.svg";
 import ScrollToAnchor from "./../utils/ScrollToAnchor";
 import styles from "./Header.module.css";
+
+gsap.registerPlugin(useGSAP);
 
 const {
   header,
   header__brand: headerBrand,
   header__title: headerTitle,
-  header__list: headerList,
-  header__link: headerLink,
-  "header__link--contrast": headerLinkContrast,
+  hamburger,
+  hamburger__bar: hamburgerBar,
+  nav,
+  nav__list: navList,
+  nav__link: navLink,
+  cta,
 } = styles;
 
 function Header() {
+  const [showMenu, setShowMenu] = useState(false);
+  const container = useRef();
+  const tl = useRef();
+  const isMobile = useMediaQuery({ maxWidth: "1024px" });
+
+  // https://blog.logrocket.com/create-responsive-navbar-react-css/
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+    // tl.current.reversed(!tl.current.reversed());
+  };
+
+  // useGSAP(
+  //   () => {
+  //     tl.current = gsap
+  //       .timeline()
+  //       .fromTo("[data-ani='scroll']", { height: 0 }, { height: "auto" })
+  //       .reverse();
+  //   },
+  //   { scope: container }
+  // );
+
   return (
-    <header className={header}>
+    <header className={header} ref={container}>
+      {/* Logo */}
       <div className={headerBrand}>
-        <Link to="/">
-          <img src={logo} alt="Vlive Lab" />
+        <NavLink to="/">
+          <img src={logoImg} alt="Vlive Lab" />
           <p className={headerTitle}>未來實驗所</p>
-        </Link>
+        </NavLink>
       </div>
-      <nav>
-        <ul className={headerList}>
+      <nav className={nav} data-ani="scroll">
+        <ul className={navList}>
           <li>
-            <a href="#" className={headerLink}>
+            <NavLink to="/about" className={navLink}>
               About
-            </a>
+            </NavLink>
           </li>
           <li>
-            <Link to="/talent" className={headerLink}>
+            <NavLink to="/talent" className={navLink}>
               Talent
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/shop" className={headerLink}>
+            <NavLink to="/shop" className={navLink}>
               Shop
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/news" className={headerLink}>
+            <NavLink to="/news" className={navLink}>
               News
-            </Link>
+            </NavLink>
           </li>
           <li>
             <ScrollToAnchor />
-            <Link to="#footer" className={headerLink}>
+            <NavLink to="#footer" className={navLink}>
               Contact
-            </Link>
+            </NavLink>
           </li>
         </ul>
+        <a href="https://vtuberonline.com/" className={cta}>
+          VTuber Online
+        </a>
       </nav>
-      <a
-        href="https://vtuberonline.com/"
-        className={`${headerLink} ${headerLinkContrast}`}
+      <div
+        className={hamburger}
+        tabIndex={0}
+        aria-label="menu"
+        aria-controls="navigation"
+        onPointerDown={toggleMenu}
       >
-        VTuber Online
-      </a>
+        <div className={hamburgerBar}></div>
+        <div className={hamburgerBar}></div>
+        <div className={hamburgerBar}></div>
+      </div>
     </header>
   );
 }
