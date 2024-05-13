@@ -1,0 +1,13 @@
+.toast {
+  display: flex;
+  align-items: center;
+  column-gap: 1.25rem;
+  position: fixed;
+  bottom: 25%;
+  right: 0;
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 5px;
+  border: 1px solid color-mix(in srgb, var(--secondary-color-dark), var(--alpha-20));
+  box-shadow: 0 0 14px 0 color-mix(in srgb, var(--secondary-color-medium), var(--alpha-30));
+}
