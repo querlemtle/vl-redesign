@@ -35,14 +35,6 @@ const router = createHashRouter([
         element: <Shop />
       },
       {
-        path: "/news",
-        element: <News />,
-      },
-      {
-        path: "/news/:newsId",
-        element: <NewsArticle />,
-      },
-      {
         path: "/product/:productId",
         element: <ProductDetail />
       },
@@ -53,7 +45,15 @@ const router = createHashRouter([
       {
         path: "/checkout",
         element: <Checkout />,
-      }
+      },
+      {
+        path: "/news",
+        element: <News />,
+      },
+      {
+        path: "/news/:newsId",
+        element: <NewsArticle />,
+      },
     ],
   },
 ]);
