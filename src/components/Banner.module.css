@@ -147,3 +147,52 @@
   right: 0.5rem;
   top: 90%;
 }
+
+@media (width < 1024px) {
+  .banner {
+    height: 50vh;
+  }
+
+  .sidebar-right {
+    grid-column: 8 / 13;
+  }
+}
+
+@media (width <=576px) {
+  .banner {
+    background: 25% / cover url("./../assets/index-banner01.png") no-repeat;
+  }
+
+  .fb-icon,
+  .yt-icon,
+  .x-icon {
+    background-size: 100%;
+    width: 42px;
+    height: 42px;
+  }
+
+  .fb-icon:hover,
+  .yt-icon:hover,
+  .x-icon:hover {
+    background-size: contain;
+  }
+
+  .sidebar-right {
+    grid-column: 5 / 13;
+  }
+
+  .float-icon {
+    width: 2rem;
+    top: 0;
+    right: 0;
+  }
+
+  .char-icon {
+    width: 42px;
+  }
+
+  .card__btn {
+    top: 95%;
+    padding: 0.5rem;
+  }
+}

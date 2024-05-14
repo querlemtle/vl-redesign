@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Banner from "../components/Banner";
 import aboutTitle from "./../assets/about-title.svg";
-import talentsTitle from "./../assets/talents-title.png";
+import talentsTitle from "./../assets/talents-title.svg";
 import newsTitle from "./../assets/news-page-title.svg";
 import shopTitle from "./../assets/shop-title.svg";
 import { LeftArrow, RightArrow } from "../components/IconSvgs";
@@ -36,13 +36,15 @@ const {
   statement,
   logo__text: logoText,
   "hori-scrolling__hintbox": horiScrollingHintbox,
-  "hintbox__title": hintboxTitle,
-  "hintbox__guide": hintboxGuide,
+  hintbox__title: hintboxTitle,
+  hintbox__guide: hintboxGuide,
   btn,
   "btn--end": btnEnd,
 } = styles;
 
 function Home() {
+  const scrollContainer = () => {};
+
   return (
     <>
       {/* Banner */}
@@ -75,8 +77,16 @@ function Home() {
           </h2>
         </div>
         <div className={sectionCols3}>
-          <TalentCard charImg={phoneSanders} logo={sandersLogo} name="桑德斯.闇" />
-          <TalentCard charImg={phoneHanakawa} logo={hanakawaLogo} name="花川夢姬" />
+          <TalentCard
+            charImg={phoneSanders}
+            logo={sandersLogo}
+            name="桑德斯.闇"
+          />
+          <TalentCard
+            charImg={phoneHanakawa}
+            logo={hanakawaLogo}
+            name="花川夢姬"
+          />
           <TalentCard charImg={phoneYagami} logo={yagamiLogo} name="夜神遂心" />
         </div>
       </section>
@@ -145,8 +155,16 @@ function Home() {
             />
           </div>
           <div className={`${btn} ${btnEnd}`}>
-            <LeftArrow size={36} lineFill="#2d5993" />
-            <RightArrow size={36} lineFill="#2d5993" />
+            <LeftArrow
+              size={36}
+              lineFill="#2d5993"
+              onPointerDown={scrollContainer}
+            />
+            <RightArrow
+              size={36}
+              lineFill="#2d5993"
+              onPointerDown={scrollContainer}
+            />
           </div>
         </div>
       </section>

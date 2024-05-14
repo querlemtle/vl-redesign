@@ -34,6 +34,12 @@
   margin: 0 auto;
 }
 
+@media (width <= 390px) {
+  .section-cols-3 {
+    gap: 0.5rem;
+  }
+}
+
 /* 含有副標題的標題區塊 */
 .title-container {
   display: grid;
@@ -69,6 +75,50 @@
   color: var(--primary-color-dark);
   padding: 0.75rem 2rem;
   border-radius: 0.25rem;
+  position: relative;
+  transition: all 350ms ease;
+  overflow: hidden;
+}
+
+.link-white-bg-primary-text::before,
+.link-white-bg-primary-text::after {
+  content: "";
+  width: 0;
+  background-color: var(--white);
+  transition: all 700ms ease;
+}
+
+.link-white-bg-primary-text::after {
+  width: 100%;
+  transform: translateX(100%);
+}
+
+.link-white-bg-primary-text:hover {
+  background-color: transparent;
+  color: color-mix(in srgb, var(--white), var(--alpha-90));
+}
+
+/* 左至右：width 從 0 到 100% */
+.link-white-bg-primary-text:hover::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: var(--white);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* 右至左：從右側平移進入按鈕範圍 */
+.link-white-bg-primary-text:hover::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: var(--white);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateX(0);
 }
 
 .statement {
