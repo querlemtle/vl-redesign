@@ -1,5 +1,5 @@
 import newsTitle from "./../assets/news-page-title.svg";
-import tempNewsBanner from "./../assets/temp-news-banner.png";
+import NewsBanner from "./../assets/animated-news.webp";
 import tempDiscordBanner from "./../assets/temp-discord-banner.png";
 import NewsCard from "../components/NewsCard";
 import { Pagination } from "../components/Controllers";
@@ -7,6 +7,7 @@ import styles from "./News.module.css";
 
 const {
   banner,
+  banner__img: bannerImg,
   "section-cols-2": sectionCols2,
   section__title: sectionTitle,
   "section__bg--primary-color-light-10": sectionBgPrimaryColorLight10,
@@ -17,7 +18,7 @@ export default function News() {
   return (
     <>
       <section className={banner}>
-        <img src={tempNewsBanner} alt="News page banner" />
+        <img src={NewsBanner} alt="News page banner" className={bannerImg} />
       </section>
       <section className={sectionBgPrimaryColorLight10}>
         <h1

@@ -3,6 +3,16 @@
   justify-content: flex-end;
 }
 
+.banner__img {
+  max-width: 800px;
+}
+
+@media (width < 1024px) {
+  .banner__img {
+    max-width: 100%;
+  }
+}
+
 .section-cols-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
