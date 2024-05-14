@@ -8,6 +8,12 @@ import hanakawaPortrait from "./../assets/talents/hanakawa-portrait.png";
 import sandersLogo from "./../assets/talents/sanders-logo.png";
 import hanakawaLogo from "./../assets/talents/hanakawa-logo.png";
 import { FbIcon, XIcon, YtIcon } from "../components/IconSvgs";
+import { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const {
   banner,
@@ -105,9 +111,25 @@ CharBio.propTypes = {
 };
 
 export default function Talent() {
+  const container = useRef();
+
+  useGSAP(
+    () => {
+      gsap.to("[data-ani='clip']", {
+        scrollTrigger: {
+          trigger: "[data-ani='clip']",
+          start: "bottom 50%",
+          markers: true,
+          scrub: 1,
+        },
+        clipPath: "inset(10px 14px 10px 14px round 10%)",
+      });
+    }
+  );
+
   return (
     <>
-      <section className={banner}>
+      <section className={banner} ref={container} data-ani="clip">
         <h1 className={bannerTitle}>冥界 SCP 事務所</h1>
         <h2 className={bannerSubtitle}>
           魔王、魔龍、狼執事
