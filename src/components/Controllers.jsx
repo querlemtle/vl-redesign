@@ -1,21 +1,9 @@
 import styles from "./Controllers.module.css";
 
 const {
-  controllers,
-  controller__indicator: controllerIndicator,
   pagination,
-  pagination__control: paginationControl
+  pagination__control: paginationControl,
 } = styles;
-
-function Slider() {
-  return (
-    <ul className={controllers}>
-      <li className={controllerIndicator}></li>
-      <li className={controllerIndicator}></li>
-      <li className={controllerIndicator}></li>
-    </ul>
-  );
-}
 
 function Pagination() {
   return (
@@ -48,4 +36,4 @@ function Pagination() {
   );
 }
 
-export { Slider, Pagination };
+export { Pagination };

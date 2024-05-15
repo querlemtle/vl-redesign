@@ -1,3 +1,4 @@
+import posterGirl from "./../assets/poster-girl.png";
 import heartIcon from "./../assets/icons/heart-icon.svg";
 import bellIcon from "./../assets/icons/bell.svg";
 import yagamiIcon from "./../assets/icons/Yagami-chibi-icon.png";
@@ -14,6 +15,7 @@ gsap.registerPlugin(useGSAP);
 
 const {
   banner,
+  banner__center: bannerCenter,
   "sidebar-left": sidebarLeft,
   "sidebar-left__title": sidebarLeftTitle,
   "sidebar-left__options": sidebarLeftOptions,
@@ -35,25 +37,28 @@ function LeftSidebar() {
   const container = useRef();
   const tl = useRef();
 
-  useGSAP(() => {
-    tl.current = gsap
-      .timeline()
-      .fromTo(
-        "[data-ani='bounce']",
-        { translateY: -100 },
-        { translateY: 100, duration: 0.5, ease: "back.in" }
-      )
-      .fromTo(
-        "[data-ani='bounce']",
-        { translateY: 100 },
-        { translateY: 0, duration: 0.5, ease: "circ.out" }
-      )
-      .fromTo(
-        "[data-ani='expand']",
-        { height: 0, opacity: 0, transformOrigin: "top center" },
-        { height: "auto", opacity: 1, duration: 0.5 }
-      );
-  });
+  useGSAP(
+    () => {
+      tl.current = gsap
+        .timeline()
+        .fromTo(
+          "[data-ani='bounce']",
+          { translateY: -100 },
+          { translateY: 100, duration: 0.5, ease: "back.in" }
+        )
+        .fromTo(
+          "[data-ani='bounce']",
+          { translateY: 100 },
+          { translateY: 0, duration: 0.5, ease: "circ.out" }
+        )
+        .fromTo(
+          "[data-ani='expand']",
+          { height: 0, opacity: 0, transformOrigin: "top center" },
+          { height: "auto", opacity: 1, duration: 0.5 }
+        );
+    },
+    { scope: container }
+  );
 
   return (
     <aside className={sidebarLeft} ref={container}>

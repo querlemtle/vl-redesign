@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { NavLink } from "react-router-dom";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -21,12 +21,10 @@ const {
 } = styles;
 
 function Header() {
-  const [showMenu, setShowMenu] = useState(false);
   const container = useRef();
   const tl = useRef();
 
   const toggleMenu = () => {
-    setShowMenu(!showMenu);
     tl.current.reversed(!tl.current.reversed());
   };
 

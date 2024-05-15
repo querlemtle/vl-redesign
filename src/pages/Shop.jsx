@@ -1,5 +1,5 @@
 import ProductCard from "../components/ProductCard";
-import candle from "./../assets/candle.png";
+import candle from "./../assets/products/item_05.png";
 import shopBanner from "./../assets/shop-banner.png";
 import shipment from "./../assets/shipment.png";
 import CartBtn from "../components/CartBtn";

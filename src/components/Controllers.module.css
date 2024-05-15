@@ -1,18 +1,8 @@
-.controller {
+.scroller {
   display: flex;
-  column-gap: 0.75rem;
-}
-
-.controller__indicator {
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50%;
-  border: 2px solid var(--primary-color-light);
-  cursor: pointer;
-}
-
-.controller__indicator:hover {
-  background-color: var(--primary-color-light);
+  justify-content: flex-end;
+  column-gap: 0.5rem;
+  align-items: center;
 }
 
 .pagination {

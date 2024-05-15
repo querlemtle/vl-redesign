@@ -5,6 +5,7 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   background: center / contain url("./../assets/index-banner01.png") no-repeat;
+  position: relative;
 }
 
 /* Left sidebar  */

@@ -32,9 +32,10 @@
   gap: 1.25rem;
   max-width: 90%;
   margin: 0 auto;
+  position: relative;
 }
 
-@media (width <= 390px) {
+@media (width <=390px) {
   .section-cols-3 {
     gap: 0.5rem;
   }
@@ -136,6 +137,51 @@
   background-size: 100% 100%;
 }
 
+/* Confetti decorations */
+.deco {
+  position: absolute;
+}
+
+.deco--1 {
+  top: 30%;
+  left: 16px;
+}
+
+.deco--2 {
+  top: 25%;
+  left: 5%;
+}
+
+.deco--3 {
+  top: 10%;
+  left: 15%;
+}
+
+.deco--4 {
+  top: 15%;
+  left: 20%;
+}
+
+.deco--5 {
+  top: 15%;
+  right: 25%;
+}
+
+.deco--6 {
+  top: 15%;
+  right: 10%;
+}
+
+.deco--7 {
+  top: 25%;
+  right: 10%;
+}
+
+.deco--8 {
+  top: 30%;
+  right: 24px;
+}
+
 .section--horizonal-scrolling {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -191,24 +237,18 @@
   align-items: center;
 }
 
-.scrollers-container {
+/* buttons */
+.btns-container--end {
   display: flex;
-  justify-content: flex-end;
   column-gap: 0.5rem;
-  margin-top: 1.5rem;
+  align-items: center;
+  justify-content: flex-end;
+  justify-self: end;
 }
 
-/* buttons */
 .btn {
   font-weight: 700;
   cursor: pointer;
   display: flex;
   margin: 1rem;
-}
-
-.btn--end {
-  column-gap: 0.5rem;
-  align-items: center;
-  justify-content: flex-end;
-  justify-self: end;
 }

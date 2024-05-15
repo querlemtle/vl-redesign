@@ -4,7 +4,6 @@ import aboutTitle from "./../assets/about-title.svg";
 import talentsTitle from "./../assets/talents-title.svg";
 import newsTitle from "./../assets/news-page-title.svg";
 import shopTitle from "./../assets/shop-title.svg";
-import { LeftArrow, RightArrow } from "../components/IconSvgs";
 import phoneHanakawa from "./../assets/phone-hanakawa.png";
 import phoneSanders from "./../assets/phone-sanders.png";
 import phoneYagami from "./../assets/phone-yagami.png";
@@ -15,10 +14,26 @@ import productImg from "./../assets/products/item_05.png";
 import TalentCard from "../components/TalentCard";
 import NewsCard from "./../components/NewsCard";
 import ProductCard from "./../components/ProductCard";
+import LeftArrow from "./../assets/icons/left-arrow.svg";
+import RightArrow from "./../assets/icons/right-arrow.svg";
 import logo from "./../assets/Vlive-Lab-logo-white.svg";
 import pentaFlowerDeco from "./../assets/icons/penta-flower-deco.svg";
 import halfArrow from "./../assets/icons/half-arrow.svg";
 import styles from "./Home.module.css";
+import confetti1 from "./../assets/icons/confetti-1.svg";
+import confetti2 from "./../assets/icons/confetti-2.svg";
+import confetti3 from "./../assets/icons/confetti-3.svg";
+import confetti4 from "./../assets/icons/confetti-4.svg";
+import confetti5 from "./../assets/icons/confetti-5.svg";
+import confetti6 from "./../assets/icons/confetti-6.svg";
+import confetti7 from "./../assets/icons/confetti-7.svg";
+import confetti8 from "./../assets/icons/confetti-8.svg";
+import { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const {
   section,
@@ -26,6 +41,15 @@ const {
   "section-bg-img": sectionBgImg,
   "section-auto-cols": sectionAutoCols,
   "section-cols-3": sectionCols3,
+  deco,
+  "deco--1": deco1,
+  "deco--2": deco2,
+  "deco--3": deco3,
+  "deco--4": deco4,
+  "deco--5": deco5,
+  "deco--6": deco6,
+  "deco--7": deco7,
+  "deco--8": deco8,
   "section--horizonal-scrolling": sectionHorizontalScrolling,
   "two-tones-bg": twoTonesBg,
   "title-container": titleContainer,
@@ -39,11 +63,56 @@ const {
   hintbox__title: hintboxTitle,
   hintbox__guide: hintboxGuide,
   btn,
-  "btn--end": btnEnd,
+  "btns-container--end": btnsContainerEnd,
 } = styles;
 
 function Home() {
-  const scrollContainer = () => {};
+  const scrollXContainer = useRef();
+
+  const scrollLeft = (ref) => {
+    ref.current.scrollLeft -= 100;
+  };
+
+  const scrollRight = (ref) => {
+    ref.current.scrollLeft += 100;
+  };
+
+  const gsapContainer = useRef();
+
+  const talentsData = [
+    {
+      charImg: phoneSanders,
+      logo: sandersLogo,
+      name: "桑德斯.闇",
+    },
+    {
+      charImg: phoneHanakawa,
+      logo: hanakawaLogo,
+      name: "花川夢姬",
+    },
+    {
+      charImg: phoneYagami,
+      logo: yagamiLogo,
+      name: "夜神遂心",
+    },
+  ];
+
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        "[data-ani='spread-out']",
+        {
+          scrollTrigger: {
+            start: "center bottom",
+            toggleActions: "play pause reverse reverse",
+          },
+          opacity: 0,
+        },
+        { opacity: 1 }
+      );
+    },
+    { scope: gsapContainer }
+  );
 
   return (
     <>
@@ -65,8 +134,57 @@ function Home() {
         </Link>
       </section>
       {/* Talents */}
-      <section className={section}>
-        <div className={twoTonesBg}></div>
+      <section className={section} ref={gsapContainer}>
+        <div className={twoTonesBg} data-ani="start">
+          <img
+            src={confetti1}
+            alt="紅心"
+            className={`${deco} ${deco1}`}
+            data-ani="spread-out"
+          />
+          <img
+            src={confetti2}
+            alt="紫圓"
+            className={`${deco} ${deco2}`}
+            data-ani="spread-out"
+          />
+          <img
+            src={confetti3}
+            alt="綠方塊"
+            className={`${deco} ${deco3}`}
+            data-ani="spread-out"
+          />
+          <img
+            src={confetti4}
+            alt="藍圈"
+            className={`${deco} ${deco4}`}
+            data-ani="spread-out"
+          />
+          <img
+            src={confetti5}
+            alt="黃方塊"
+            className={`${deco} ${deco5}`}
+            data-ani="spread-out"
+          />
+          <img
+            src={confetti6}
+            alt="紫波浪"
+            className={`${deco} ${deco6}`}
+            data-ani="spread-out"
+          />
+          <img
+            src={confetti7}
+            alt="粉圓"
+            className={`${deco} ${deco7}`}
+            data-ani="spread-out"
+          />
+          <img
+            src={confetti8}
+            alt="粉紅心"
+            className={`${deco} ${deco8}`}
+            data-ani="spread-out"
+          />
+        </div>
         <div className={titleContainer}>
           <h1>
             <img src={talentsTitle} alt="Talents" />
@@ -77,17 +195,16 @@ function Home() {
           </h2>
         </div>
         <div className={sectionCols3}>
-          <TalentCard
-            charImg={phoneSanders}
-            logo={sandersLogo}
-            name="桑德斯.闇"
-          />
-          <TalentCard
-            charImg={phoneHanakawa}
-            logo={hanakawaLogo}
-            name="花川夢姬"
-          />
-          <TalentCard charImg={phoneYagami} logo={yagamiLogo} name="夜神遂心" />
+          {talentsData.map((talent) => {
+            return (
+              <TalentCard
+                charImg={talent.charImg}
+                logo={talent.logo}
+                name={talent.name}
+                key={talent.name}
+              />
+            );
+          })}
         </div>
       </section>
       {/* News */}
@@ -102,8 +219,8 @@ function Home() {
           <NewsCard id="1" />
           <NewsCard id="2" />
         </div>
-        <Link to="/news" className={`${btn} ${btnEnd}`}>
-          VIEW MORE <RightArrow size={36} lineFill="#2d5993" />
+        <Link to="/news" className={`${btn} ${btnsContainerEnd}`}>
+          VIEW MORE <img src={RightArrow} alt="向右箭頭" />
         </Link>
       </section>
       {/* Shop */}
@@ -118,7 +235,7 @@ function Home() {
               我們提供豐富的周邊商品，讓您輕鬆選購心儀商品。
             </h2>
           </div>
-          <div className={sectionHorizontalScrolling}>
+          <div className={sectionHorizontalScrolling} ref={scrollXContainer}>
             <Link to="/shop" className={horiScrollingHintbox}>
               <div>
                 <img src={logo} alt="Vlive Lab" />
@@ -154,16 +271,18 @@ function Home() {
               productName="香氛蠟燭70ml"
             />
           </div>
-          <div className={`${btn} ${btnEnd}`}>
-            <LeftArrow
-              size={36}
-              lineFill="#2d5993"
-              onPointerDown={scrollContainer}
+          <div className={btnsContainerEnd}>
+            <img
+              src={LeftArrow}
+              alt="向左箭頭"
+              onPointerDown={() => scrollLeft(scrollXContainer)}
+              className={btn}
             />
-            <RightArrow
-              size={36}
-              lineFill="#2d5993"
-              onPointerDown={scrollContainer}
+            <img
+              src={RightArrow}
+              alt="向右箭頭"
+              onPointerDown={() => scrollRight(scrollXContainer)}
+              className={btn}
             />
           </div>
         </div>
