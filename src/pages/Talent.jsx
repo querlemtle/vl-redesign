@@ -21,26 +21,27 @@ const {
   banner__subtitle: bannerSubtitle,
   "bg-black": bgBlack,
   mask,
-  "text-white": textWhite,
+  "text-stacking": textStacking,
   "bg-DoF": bgDoF,
-  "cols-2": cols2,
+  card,
   card__img: cardImg,
   "card__img--right": cardImgRight,
   card__body: cardBody,
   card__context: cardContext,
   links,
+  link__icon: linkIcon,
 } = styles;
 
 function IconLinks({ ytLink, fbLink, xLink, size, color }) {
   return (
     <div className={links}>
-      <a href={ytLink}>
+      <a href={ytLink} className={linkIcon}>
         <YtIcon size={size} lineFill={color} />
       </a>
-      <a href={fbLink}>
+      <a href={fbLink} className={linkIcon}>
         <FbIcon size={size} lineFill={color} />
       </a>
-      <a href={xLink}>
+      <a href={xLink} className={linkIcon}>
         <XIcon size={size} lineFill={color} />
       </a>
     </div>
@@ -70,13 +71,13 @@ function CharBio({
   return (
     <section
       style={{ backgroundImage: `url(${bgUrl})` }}
-      className={`${bgDoF} ${cols2}`}
+      className={`${bgDoF} ${card}`}
     >
-      {/* Character portrait */}
+      {/* 角色圖 */}
       <div className={`${cardImg} ${isPortraitAtRight && cardImgRight}`}>
         <img src={portraitUrl} alt="portrait" />
       </div>
-      {/* Character description */}
+      {/* 角色介紹 */}
       <div style={{ color: textColor }} className={cardBody}>
         <img src={logoUrl} alt="logo" />
         <p className={cardContext}>{charIntro}</p>
@@ -113,19 +114,16 @@ CharBio.propTypes = {
 export default function Talent() {
   const container = useRef();
 
-  useGSAP(
-    () => {
-      gsap.to("[data-ani='clip']", {
-        scrollTrigger: {
-          trigger: "[data-ani='clip']",
-          start: "bottom 50%",
-          markers: true,
-          scrub: 1,
-        },
-        clipPath: "inset(10px 14px 10px 14px round 10%)",
-      });
-    }
-  );
+  useGSAP(() => {
+    gsap.to("[data-ani='clip']", {
+      scrollTrigger: {
+        trigger: "[data-ani='clip']",
+        start: "start 10%",
+        toggleActions: "play pause reverse reverse",
+      },
+      clipPath: "inset(1.5% round 5%)",
+    });
+  });
 
   return (
     <>
@@ -140,7 +138,7 @@ export default function Talent() {
       {/* Video bg */}
       <section className={bgBlack}>
         <video muted autoPlay loop src={talentVid} className={mask} />
-        <h3 className={textWhite}>
+        <h3 className={textStacking}>
           以SCP基金會的世界觀為基礎，在該虛構宇宙中，SCP基金會是
           一個跨國秘密組織，負責搜尋並收容各種具有異常屬性的個體、
           地點或物體。VTuber們將會探索和解析不尋常的事件和對象。
