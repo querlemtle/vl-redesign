@@ -10,7 +10,10 @@ import phoneYagami from "./../assets/phone-yagami.png";
 import hanakawaLogo from "./../assets/talents/hanakawa-logo-light.png";
 import sandersLogo from "./../assets/talents/sanders-logo-light.png";
 import yagamiLogo from "./../assets/talents/Yagami-logo-light.png";
-import productImg from "./../assets/products/item_05.png";
+import candle from "./../assets/products/item_05.png";
+import sticker from "./../assets/products/item_03.png";
+import shirt from "./../assets/products/item_06.png";
+import pin from "./../assets/products/item_04.png";
 import TalentCard from "../components/TalentCard";
 import NewsCard from "./../components/NewsCard";
 import ProductCard from "./../components/ProductCard";
@@ -97,19 +100,44 @@ function Home() {
     },
   ];
 
+  const products = [
+    {
+      id: "u9GwHz",
+      name: "香氛蠟燭70ml",
+      price: 200,
+      img: candle,
+    },
+    {
+      id: "ROh1oK",
+      name: "胸章",
+      price: 50,
+      img: pin,
+    },
+    {
+      id: "kwxsxr",
+      name: "魔王Q貼",
+      price: 100,
+      img: sticker,
+    },
+    {
+      id: "4CWkdu",
+      name: "一期生T恤",
+      price: 680,
+      img: shirt,
+    },
+  ];
+
   useGSAP(
     () => {
-      gsap.fromTo(
-        "[data-ani='spread-out']",
-        {
-          scrollTrigger: {
-            start: "center bottom",
-            toggleActions: "play pause reverse reverse",
-          },
-          opacity: 0,
+      gsap.from("[data-ani='spread-out']", {
+        top: "80%",
+        left: "50%",
+        scrollTrigger: {
+          trigger: gsapContainer.current,
+          start: "start bottom",
+          toggleActions: "play pause pause reset",
         },
-        { opacity: 1 }
-      );
+      });
     },
     { scope: gsapContainer }
   );
@@ -135,7 +163,7 @@ function Home() {
       </section>
       {/* Talents */}
       <section className={section} ref={gsapContainer}>
-        <div className={twoTonesBg} data-ani="start">
+        <div className={twoTonesBg}>
           <img
             src={confetti1}
             alt="紅心"
@@ -250,26 +278,17 @@ function Home() {
                 前往商店 <img src={halfArrow} alt="箭頭" />
               </div>
             </Link>
-            <ProductCard
-              id="1"
-              productImg={productImg}
-              productName="香氛蠟燭70ml"
-            />
-            <ProductCard
-              id="1"
-              productImg={productImg}
-              productName="香氛蠟燭70ml"
-            />
-            <ProductCard
-              id="1"
-              productImg={productImg}
-              productName="香氛蠟燭70ml"
-            />
-            <ProductCard
-              id="1"
-              productImg={productImg}
-              productName="香氛蠟燭70ml"
-            />
+            {products.map((item) => {
+              return (
+                <ProductCard
+                  id={item.id}
+                  productImg={item.img}
+                  productName={item.name}
+                  productPrice={item.price}
+                  key={item.id}
+                />
+              );
+            })}
           </div>
           <div className={btnsContainerEnd}>
             <img

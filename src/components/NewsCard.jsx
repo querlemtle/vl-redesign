@@ -10,7 +10,7 @@ const {
   "card__title-container": cardTitleContainer,
   card__tag: cardTag,
   card__title: cardTitle,
-  "card__content-container": cardConentContainer,
+  card__body: cardBody,
   card__content: cardContent,
   card__meta: cardMeta,
 } = styles;
@@ -19,18 +19,12 @@ export default function NewsCard({ id }) {
   return (
     <div className={card}>
       <div className={cardImgWrapper}>
-        <Link
-          to={`/news/${id}`}
-          className="card__link"
-        >
+        <Link to={`/news/${id}`} className="card__link">
           <img src={Placeholder} alt="文章縮圖" className={cardImg} />
         </Link>
       </div>
-      <div className={cardConentContainer}>
-        <Link
-          to={`/news/${id}`}
-          className="card__link"
-        >
+      <div className={cardBody}>
+        <Link to={`/news/${id}`} className="card__link">
           <div className={cardTitleContainer}>
             <span className={cardTag}>分類標籤</span>
             <h3 className={cardTitle}>
@@ -38,7 +32,8 @@ export default function NewsCard({ id }) {
             </h3>
           </div>
           <p className={cardContent}>
-            文章內文預覽預留一排文章內文預覽預留一排文章內文預覽預文章文章內文預覽預留一排文章內文預覽預留一排文章內文預覽預文章
+            眾多知名 Vtuber
+            都會粉墨登場，快來與你最喜愛的偶像一同度過盛夏，留下難忘的回憶！
           </p>
           <span className={cardMeta}>
             文章發布於 <span className="card__date">2024/04/22</span>
