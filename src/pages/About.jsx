@@ -13,6 +13,12 @@ import cardBg3 from "./../assets/about/card-3.png";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import styles from "./About.module.css";
+import { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const {
   section,
@@ -98,6 +104,18 @@ Card.propTypes = {
 };
 
 export default function About() {
+  const gsapContainer = useRef();
+
+  useGSAP(() => {
+    gsap.from("[data-ani='rotate']", {
+      rotate: 0,
+      scrollTrigger: {
+        trigger: "[data-ani='rotate']",
+        scrub: 1,
+      },
+    });
+  }, { scope: gsapContainer });
+
   return (
     <>
       <section className={kv}>
@@ -116,11 +134,24 @@ export default function About() {
         <img src={heartDoodle2} alt="愛心塗鴉2" className={kvImgRm} />
         <img src={wire} alt="線" className={kvImgRb} />
       </section>
-      <section className={`${section} ${bgImg} ${bgImgLight}`}>
+      <section
+        className={`${section} ${bgImg} ${bgImgLight}`}
+        ref={gsapContainer}
+      >
         <div className={colsStacking}>
-          <img src={leftPoster} alt="桑德斯海報" className={stackLeft} />
+          <img
+            src={leftPoster}
+            alt="桑德斯海報"
+            className={stackLeft}
+            data-ani="rotate"
+          />
           <img src={midPoster} alt="手機合照" className={stackMid} />
-          <img src={rightPoster} alt="夢姬海報" className={stackRight} />
+          <img
+            src={rightPoster}
+            alt="夢姬海報"
+            className={stackRight}
+            data-ani="rotate"
+          />
         </div>
         <p className={slogan}>
           在這裡，我們更加重視合作夥伴、營銷分析及創新科技產品，
