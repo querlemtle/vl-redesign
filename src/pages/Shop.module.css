@@ -6,7 +6,7 @@
 }
 
 .title {
-  font-size: var(--font-l);
+  font-size: var(--font-xl);
   padding-right: 1rem;
   border-right: 1px solid color-mix(in srgb, var(--secondary-color-dark), var(--alpha-50));
 }

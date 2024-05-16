@@ -30,7 +30,7 @@
   left: 0;
   color: var(--white);
   font-weight: 700;
-  font-size: var(--font-xl);
+  font-size: var(--font-3xl);
   transform: rotateZ(-45deg);
 }
 
@@ -66,5 +66,5 @@ Therefore, set the border on <img>'s sibling element to avoid this problem. */
 
 .card__meta {
   font-weight: 700;
-  font-size: var(--font-l);
+  font-size: var(--font-xl);
 }

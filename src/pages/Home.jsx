@@ -58,6 +58,7 @@ const {
   "title-container": titleContainer,
   "title-container--right": titleContainerRight,
   "title--border-bottom": titleBorderBottom,
+  subtitle,
   "subtitle-accent": subtileAccent,
   "link-white-bg-primary-text": linkWhiteBgPrimaryText,
   statement,
@@ -217,7 +218,7 @@ function Home() {
           <h1>
             <img src={talentsTitle} alt="Talents" />
           </h1>
-          <h2>
+          <h2 className={subtitle}>
             <span className={subtileAccent}>| Vlive Lab一期生 |</span>
             冥界SCP事務所
           </h2>
@@ -241,7 +242,7 @@ function Home() {
           <h1>
             <img src={newsTitle} alt="News" />
           </h1>
-          <h2>帶來有關VTUBER相關的新資訊與熱門話題討論</h2>
+          <h2 className={subtitle}>帶來有關VTUBER相關的新資訊與熱門話題討論</h2>
         </div>
         <div className={sectionAutoCols}>
           <NewsCard id="1" />

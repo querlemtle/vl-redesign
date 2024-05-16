@@ -3,12 +3,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400..700&display=swap');
 
 :root {
-  --font-5xl: 3rem;  /* 48px */
-  --font-4xl: 2.5rem;  /* 36px */
-  --font-xl: 1.75rem;  /* 28px */
-  --font-l: 1.375rem;  /* 22px */
-  --font-m: 1.25rem;  /* 20px */
-  --font-base: 1.125rem;  /* 18px */
+  /* 使用 rem 以配合使用者的瀏覽器縮放設定，參考：https://css-tricks.com/is-it-better-to-use-ems-rems-than-px-for-font-size/ */
+  --font-4xl: 3rem;  /* 48px */
+  --font-3xl: 2.5rem;  /* 36px */
+  --font-2xl: 1.75rem;  /* 28px */
+  --font-xl: 1.375rem;  /* 22px */
+  --font-l: 1.25rem;  /* 20px */
+  --font-m: 1.125rem;  /* 18px */
+  --font-base: 16px;
   --font-s: 0.875rem;  /* 14px */
   --primary-color-dark: #e06897;
   --primary-color-light: #fa90ba;
@@ -49,7 +51,7 @@ body {
   width: 100%;
   height: 100%;
   font-family: "Noto Sans TC", Arial, sans-serif;
-  font-size: 16px;
+  font-size: var(--font-base);
   color: color-mix(in srgb, var(--secondary-color-dark), var(--alpha-85));
   overflow-x: hidden;
 }
