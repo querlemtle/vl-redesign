@@ -42,25 +42,44 @@
   border-bottom: 2px solid transparent;
 }
 
-.active {
-  color: var(--accent-color-pink);
-}
-
-.cta {
-  color: var(--white);
-  font-weight: 700;
-  background: var(--secondary-color-dark);
-  padding: 1rem 2rem;
-  border-radius: 99rem;
-}
-
 .nav__link:hover {
   color: color-mix(in srgb, var(--secondary-color-dark), var(--alpha-70));
   border-bottom: 2px solid color-mix(in srgb, var(--secondary-color-dark), var(--alpha-70));
 }
 
-.cta:hover {
+.cta {
+  font-weight: 700;
+  background: var(--secondary-color-dark);
+  width: 186px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 99px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 確保字疊在背景顏色上 */
+.cta__text {
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translateX(-100%);
   background: var(--cta-gradient);
+  transition: all 500ms ease;
+}
+
+.cta:hover::before {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 @media (width < 1024px) {
@@ -74,6 +93,11 @@
     width: 3rem;
     height: 3rem;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 4px;
   }
 
   .hamburger__bar {
@@ -81,8 +105,20 @@
     height: 4px;
     background-color: var(--secondary-color-dark);
     border-radius: 4px;
-    margin-bottom: 0.5rem;
+    position: relative;
   }
+
+  /* .hamburger__bar:first-child {
+    transform: translateY(0.5rem) rotate(45deg);
+  }
+
+  .hamburger__bar:nth-child(2) {
+    transform: rotate(-45deg);
+  }
+
+  .hamburger__bar:last-child {
+    opacity: 0;
+  } */
 
   .nav {
     position: absolute;

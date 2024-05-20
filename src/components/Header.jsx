@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import logoImg from "./../assets/Vlive-Lab-logo.svg";
-import ScrollToAnchor from "./../utils/ScrollToAnchor";
 import styles from "./Header.module.css";
 
 gsap.registerPlugin(useGSAP);
@@ -18,10 +17,11 @@ const {
   nav__list: navList,
   nav__link: navLink,
   cta,
+  cta__text: ctaText,
 } = styles;
 
 function Header() {
-  const container = useRef();
+  const gsapContainer = useRef();
   const tl = useRef();
 
   const toggleMenu = () => {
@@ -32,14 +32,21 @@ function Header() {
     () => {
       tl.current = gsap
         .timeline()
+        .to("[data-ani='rotate-down']", {
+          translateY: "0.5rem",
+          rotate: 45,
+          duration: 0.1,
+        })
+        .to("[data-ani='rotate-reverse']", { rotate: -45, duration: 0.1 })
+        .to("[data-ani='hide']", { opacity: 0, duration: 0.1 })
         .fromTo("[data-ani='scroll']", { height: 0 }, { height: "auto" })
         .reverse();
     },
-    { scope: container }
+    { scope: gsapContainer }
   );
 
   return (
-    <header className={header} ref={container}>
+    <header className={header} ref={gsapContainer}>
       {/* Logo */}
       <div className={headerBrand}>
         <NavLink to="/">
@@ -69,15 +76,9 @@ function Header() {
               News
             </NavLink>
           </li>
-          <li>
-            <ScrollToAnchor />
-            <NavLink to="#footer" className={navLink}>
-              Contact
-            </NavLink>
-          </li>
         </ul>
         <a href="https://vtuberonline.com/" className={cta}>
-          VTuber Online
+          <span className={ctaText}>VTuber Online</span>
         </a>
       </nav>
       <button
@@ -88,9 +89,9 @@ function Header() {
         tabIndex={0}
         onPointerDown={toggleMenu}
       >
-        <div className={hamburgerBar}></div>
-        <div className={hamburgerBar}></div>
-        <div className={hamburgerBar}></div>
+        <div className={hamburgerBar} data-ani="rotate-down"></div>
+        <div className={hamburgerBar} data-ani="rotate-reverse"></div>
+        <div className={hamburgerBar} data-ani="hide"></div>
       </button>
     </header>
   );
