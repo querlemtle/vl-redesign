@@ -4,7 +4,7 @@
   border-radius: 1rem;
   row-gap: 0.625rem;
   text-align: left;
-  min-width: 0;
+  width: 500px;
 }
 
 .card__img-wrapper {
@@ -32,10 +32,6 @@
   color: var(--white);
   padding: 0 1rem;
   font-weight: 700;
-}
-
-.card__body {
-  min-width: 0;
 }
 
 .card__title,

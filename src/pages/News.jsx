@@ -1,5 +1,5 @@
 import newsTitle from "./../assets/news-page-title.svg";
-import NewsBanner from "./../assets/animated-news.webp";
+import NewsBanner from "./../assets/news-banner.png";
 import tempDiscordBanner from "./../assets/temp-discord-banner.png";
 import NewsCard from "../components/NewsCard";
 import { Pagination } from "../components/Controllers";

@@ -10,7 +10,6 @@ const {
   "card__title-container": cardTitleContainer,
   card__tag: cardTag,
   card__title: cardTitle,
-  card__body: cardBody,
   card__content: cardContent,
   card__meta: cardMeta,
 } = styles;
@@ -23,7 +22,7 @@ export default function NewsCard({ id }) {
           <img src={Placeholder} alt="文章縮圖" className={cardImg} />
         </Link>
       </div>
-      <div className={cardBody}>
+      <div>
         <Link to={`/news/${id}`} className="card__link">
           <div className={cardTitleContainer}>
             <span className={cardTag}>分類標籤</span>
