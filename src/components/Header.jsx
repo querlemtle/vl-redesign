@@ -32,13 +32,22 @@ function Header() {
     () => {
       tl.current = gsap
         .timeline()
-        .to("[data-ani='rotate-down']", {
-          translateY: "0.5rem",
-          rotate: 45,
-          duration: 0.1,
-        })
-        .to("[data-ani='rotate-reverse']", { rotate: -45, duration: 0.1 })
-        .to("[data-ani='hide']", { opacity: 0, duration: 0.1 })
+        .add("start")
+        .to(
+          "[data-ani='rotate-down']",
+          {
+            translateY: "0.5rem",
+            rotate: 45,
+            duration: 0.1,
+          },
+          "start"
+        )
+        .to(
+          "[data-ani='rotate-reverse']",
+          { rotate: -45, duration: 0.1 },
+          "start"
+        )
+        .to("[data-ani='hide']", { opacity: 0, duration: 0.1 }, "start")
         .fromTo("[data-ani='scroll']", { height: 0 }, { height: "auto" })
         .reverse();
     },
