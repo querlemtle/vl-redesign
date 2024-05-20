@@ -10,13 +10,12 @@ import CartBtn from "../components/CartBtn";
 import styles from "./Shop.module.css";
 
 const {
-  "section-full": sectionFull,
-  "section-center": sectionCenter,
-  "section-cols-2": sectionCols2,
-  "section-cols-3": sectionCols3,
+  banner: banner,
+  grid,
+  "grid--instruction": gridInstruction,
+  "grid--products": gridProducts,
   "title-container-row": titleContainerRow,
   title,
-  link,
 } = styles;
 
 const products = [
@@ -50,25 +49,25 @@ const products = [
 export default function Shop() {
   return (
     <>
-      <section className={sectionFull}>
+      <section className={banner}>
         <img src={shopBanner} alt="banner" />
       </section>
-      <section className={`${sectionCenter} ${sectionCols2}`}>
-        <a href="#" className={link}>
+      <section className={`${grid} ${gridInstruction}`}>
+        <a href="#">
           <img src={shipment} alt="運送說明" />
         </a>
-        <a href="#" className={link}>
+        <a href="#">
           <img src={shipment} alt="運送說明" />
         </a>
       </section>
-      <section className={sectionCenter}>
+      <section className={grid}>
         <div className={titleContainerRow}>
           <h2 className={title}>商品一覽</h2>
           <p>
             共 <span>9</span> 件商品
           </p>
         </div>
-        <div className={sectionCols3}>
+        <div className={gridProducts}>
           {products.map((item) => {
             return (
               <ProductCard

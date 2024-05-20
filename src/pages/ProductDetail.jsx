@@ -97,7 +97,7 @@ export default function ProductDetail() {
         </ul>
       </div>
       <CartBtn />
-      <Toast />
+      {/* <Toast /> */}
     </section>
   );
 }
