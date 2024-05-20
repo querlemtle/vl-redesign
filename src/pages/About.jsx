@@ -111,7 +111,7 @@ export default function About() {
     () => {
       gsap.from("[data-ani='rotate']", {
         rotate: 15,
-        duration: 0.8,
+        duration: 1,
       });
     },
     { scope: gsapUpperContainer }
@@ -121,7 +121,7 @@ export default function About() {
     () => {
       gsap.from("[data-ani='rotate-reverse']", {
         rotate: -15,
-        duration: 0.8,
+        duration: 1,
       });
     },
     { scope: gsapUpperContainer }
@@ -132,6 +132,7 @@ export default function About() {
       gsap.from("[data-ani='fade-in']", {
         opacity: 0,
         translateY: 100,
+        duration: 1,
       });
     },
     { scope: gsapUpperContainer }

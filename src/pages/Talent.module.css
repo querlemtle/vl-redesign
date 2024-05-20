@@ -38,6 +38,8 @@
 .text-stacking {
   color: var(--white);
   position: absolute;
+  font-weight: 500;
+  letter-spacing: 2px;
   width: 50%;
   right: 3rem;
   top: 50%;
