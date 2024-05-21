@@ -4,7 +4,7 @@
   height: 90vh;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  background: center / cover url("./../assets/banner-bg.png") no-repeat;
+  background: center / cover url("./../assets/home-banner-bg.png") no-repeat;
   position: relative;
 }
 

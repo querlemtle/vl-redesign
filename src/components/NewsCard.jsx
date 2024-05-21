@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import Placeholder from "./../assets/news-placeholder.png";
+import { newsPlaceholder } from "./../assets/images";
 import styles from "./NewsCard.module.css";
 
 const {
@@ -19,7 +19,7 @@ export default function NewsCard({ id }) {
     <div className={card}>
       <div className={cardImgWrapper}>
         <Link to={`/news/${id}`} className="card__link">
-          <img src={Placeholder} alt="文章縮圖" className={cardImg} />
+          <img src={newsPlaceholder} alt="文章縮圖" className={cardImg} />
         </Link>
       </div>
       <div>

@@ -1,11 +1,13 @@
-import heartIcon from "./../assets/icons/heart-icon.svg";
-import yagamiIcon from "./../assets/icons/Yagami-chibi-icon.png";
-import hanakawaIcon from "./../assets/icons/Hanakawa-chibi-icon.png";
-import sandersIcon from "./../assets/icons/Sanders-chibi-icon.png";
-import streamPreviewImg from "./../assets/stream-preview.png";
-import ytIconNoBorder from "./../assets/icons/yt-noborder.svg";
-import posterGirl from "./../assets/poster-girl.png";
-import pet from "./../assets/pet.png";
+import {
+  heartIcon,
+  yagamiIcon,
+  hanakawaIcon,
+  sandersIcon,
+  posterGirl,
+  pet,
+  streamPreviewImg,
+  ytIconNoBorder,
+} from "./../assets/images";
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";

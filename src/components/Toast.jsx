@@ -1,4 +1,4 @@
-import circleCheck from "./../assets/icons/circle-check.svg";
+import { circleCheck } from "./../assets/images";
 import styles from "./Toast.module.css";
 
 const { toast } = styles;

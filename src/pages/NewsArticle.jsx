@@ -1,4 +1,4 @@
-import placeholder from "./../assets/news-placeholder.png";
+import { newsPlaceholder } from "./../assets/images";
 import styles from "./NewsArticle.module.css";
 import { LeftArrow, RightArrow } from "../components/IconSvgs";
 
@@ -29,7 +29,7 @@ export default function NewsArticle() {
         日（四）小年夜舉行！邀您一同共享新春喜悅
       </h1>
       <div>
-        <img src={placeholder} alt="活動宣傳圖" className={articleImg} />
+        <img src={newsPlaceholder} alt="活動宣傳圖" className={articleImg} />
       </div>
       <h3 className={articleSubtitle}>12 位龍 Vtuber 齊來賀龍年</h3>
       <p className={articlePara}>

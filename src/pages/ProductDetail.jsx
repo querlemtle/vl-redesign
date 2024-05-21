@@ -1,6 +1,4 @@
-import preview0 from "./../assets/products/item_02.png";
-import preview1 from "./../assets/products/item_02_a.png";
-import preview2 from "./../assets/products/item_02_b.png";
+import { hanakawaPoster as preview0 , hanakawaPosterSize1 as preview1, hanakawaPosterSize2 as preview2 } from "./../assets/images";
 import CartBtn from "../components/CartBtn";
 import Toast from "../components/Toast";
 import styles from "./ProductDetails.module.css";

@@ -1,4 +1,4 @@
-import logo from "./../assets/Vlive-Lab-logo-white.svg";
+import { whiteLogo } from "./../assets/images";
 import { YtIcon, FbIcon, XIcon, EmailIcon } from "./../components/IconSvgs";
 import styles from "./Footer.module.css";
 
@@ -21,7 +21,7 @@ function Footer() {
     <footer className={footer} id="footer">
       <div className={footerContainer}>
         <div>
-          <img src={logo} className={footerLogo} />
+          <img src={whiteLogo} className={footerLogo} />
           <p>
             We are new VTuber Studio with <br /> MMORPG & VR tech <br /> welcome
             to join!

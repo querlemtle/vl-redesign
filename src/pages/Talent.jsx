@@ -1,12 +1,14 @@
 import PropTypes from "prop-types";
 import styles from "./Talent.module.css";
-import talentVid from "./../assets/talents/talent-video-banner.mp4";
-import sandersBg from "./../assets/talents/sanders-bg.png";
-import hanakawaBg from "./../assets/talents/hanakawa-bg.png";
-import sandersPortrait from "./../assets/talents/sanders-portrait.png";
-import hanakawaPortrait from "./../assets/talents/hanakawa-portrait.png";
-import sandersLogo from "./../assets/talents/sanders-logo.png";
-import hanakawaLogo from "./../assets/talents/hanakawa-logo.png";
+import {
+  talentVid,
+  sandersBg,
+  hanakawaBg,
+  sandersPortrait,
+  hanakawaPortrait,
+  sandersLogo,
+  hanakawaLogo,
+} from "../assets/images";
 import { FbIcon, XIcon, YtIcon } from "../components/IconSvgs";
 import { useRef } from "react";
 import gsap from "gsap";

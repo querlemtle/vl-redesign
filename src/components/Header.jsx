@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { NavLink } from "react-router-dom";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import logoImg from "./../assets/Vlive-Lab-logo.svg";
+import { colorLogo } from "./../assets/images";
 import styles from "./Header.module.css";
 
 gsap.registerPlugin(useGSAP);
@@ -59,7 +59,7 @@ function Header() {
       {/* Logo */}
       <div className={headerBrand}>
         <NavLink to="/">
-          <img src={logoImg} alt="Vlive Lab" />
+          <img src={colorLogo} alt="Vlive Lab" />
           <p className={headerTitle}>未來實驗所</p>
         </NavLink>
       </div>

@@ -1,15 +1,17 @@
-import redPen from "./../assets/about/red-pen.png";
-import heartDoodle1 from "./../assets/about/heart-doodle-1.png";
-import phone from "./../assets/about/phone.png";
-import blackPen from "./../assets/about/black-pen.png";
-import heartDoodle2 from "./../assets/about/heart-doodle-2.png";
-import wire from "./../assets/about/wire.png";
-import midPoster from "./../assets/about/group-cellphone.png";
-import leftPoster from "./../assets/about/poster-sanders.png";
-import rightPoster from "./../assets/about/poster-hanakawa.png";
-import cardBg1 from "./../assets/about/card-1.png";
-import cardBg2 from "./../assets/about/card-2.png";
-import cardBg3 from "./../assets/about/card-3.png";
+import {
+  redPen,
+  heartDoodle1,
+  heartDoodle2,
+  phone,
+  blackPen,
+  wire,
+  midPoster,
+  leftPoster,
+  rightPoster,
+  cardBg1,
+  cardBg2,
+  cardBg3,
+} from "../assets/images";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import styles from "./About.module.css";

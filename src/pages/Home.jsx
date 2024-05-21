@@ -1,40 +1,43 @@
 import { Link } from "react-router-dom";
-import HomeBanner from "../components/HomeBanner";
-import aboutTitle from "./../assets/about-title.svg";
-import talentsTitle from "./../assets/talents-title.svg";
-import newsTitle from "./../assets/news-page-title.svg";
-import shopTitle from "./../assets/shop-title.svg";
-import phoneHanakawa from "./../assets/phone-hanakawa.png";
-import phoneSanders from "./../assets/phone-sanders.png";
-import phoneYagami from "./../assets/phone-yagami.png";
-import hanakawaLogo from "./../assets/talents/hanakawa-logo-light.png";
-import sandersLogo from "./../assets/talents/sanders-logo-light.png";
-import yagamiLogo from "./../assets/talents/Yagami-logo-light.png";
-import candle from "./../assets/products/item_05.png";
-import sticker from "./../assets/products/item_03.png";
-import shirt from "./../assets/products/item_06.png";
-import pin from "./../assets/products/item_04.png";
-import TalentCard from "../components/TalentCard";
-import NewsCard from "./../components/NewsCard";
-import ProductCard from "./../components/ProductCard";
-import LeftArrow from "./../assets/icons/left-arrow.svg";
-import RightArrow from "./../assets/icons/right-arrow.svg";
-import logo from "./../assets/Vlive-Lab-logo-white.svg";
-import pentaFlowerDeco from "./../assets/icons/penta-flower-deco.svg";
-import halfArrow from "./../assets/icons/half-arrow.svg";
+import {
+  aboutTitle,
+  talentsTitle,
+  newsTitle,
+  shopTitle,
+  confetti1,
+  confetti2,
+  confetti3,
+  confetti4,
+  confetti5,
+  confetti6,
+  confetti7,
+  confetti8,
+  phoneHanakawa,
+  phoneSanders,
+  phoneYagami,
+  hanakawaLogoLight,
+  sandersLogoLight,
+  yagamiLogoLight,
+  pentaFlowerDeco,
+  LeftArrow,
+  RightArrow,
+  halfArrow,
+  whiteLogo,
+  candle,
+  sandersSticker,
+  pin,
+  shirt,
+} from "../assets/images";
+import HomeBanner from "./../components/HomeBanner";
+import TalentCard from "./../components/TalentCard";
+import NewsCard from "../components/NewsCard";
+import ProductCard from "../components/ProductCard";
 import styles from "./Home.module.css";
-import confetti1 from "./../assets/icons/confetti-1.svg";
-import confetti2 from "./../assets/icons/confetti-2.svg";
-import confetti3 from "./../assets/icons/confetti-3.svg";
-import confetti4 from "./../assets/icons/confetti-4.svg";
-import confetti5 from "./../assets/icons/confetti-5.svg";
-import confetti6 from "./../assets/icons/confetti-6.svg";
-import confetti7 from "./../assets/icons/confetti-7.svg";
-import confetti8 from "./../assets/icons/confetti-8.svg";
 import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { ScrollToTop } from "./../utils/ScrollToPosition";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -86,17 +89,17 @@ function Home() {
   const talentsData = [
     {
       charImg: phoneSanders,
-      logo: sandersLogo,
+      logo: sandersLogoLight,
       name: "桑德斯.闇",
     },
     {
       charImg: phoneHanakawa,
-      logo: hanakawaLogo,
+      logo: hanakawaLogoLight,
       name: "花川夢姬",
     },
     {
       charImg: phoneYagami,
-      logo: yagamiLogo,
+      logo: yagamiLogoLight,
       name: "夜神遂心",
     },
   ];
@@ -118,7 +121,7 @@ function Home() {
       id: "kwxsxr",
       name: "魔王Q貼",
       price: 100,
-      img: sticker,
+      img: sandersSticker,
     },
     {
       id: "4CWkdu",
@@ -158,6 +161,7 @@ function Home() {
           <br />
           你努力的未來有沒有你，我們覺得很重要。
         </p>
+        <ScrollToTop />
         <Link to="/about" className={linkWhiteBgPrimaryText}>
           查看更多
         </Link>
@@ -267,7 +271,7 @@ function Home() {
           <div className={sectionHorizontalScrolling} ref={scrollXContainer}>
             <Link to="/shop" className={horiScrollingHintbox}>
               <div>
-                <img src={logo} alt="Vlive Lab" />
+                <img src={whiteLogo} alt="Vlive Lab" />
                 <p className={logoText}>未來實驗所</p>
               </div>
               <div className={hintboxTitle}>

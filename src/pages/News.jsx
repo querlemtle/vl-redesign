@@ -1,6 +1,4 @@
-import newsTitle from "./../assets/news-page-title.svg";
-import NewsBanner from "./../assets/news-banner.png";
-import tempDiscordBanner from "./../assets/temp-discord-banner.png";
+import { newsTitle, newsBanner, discordBanner } from "../assets/images";
 import NewsCard from "../components/NewsCard";
 import { Pagination } from "../components/Controllers";
 import styles from "./News.module.css";
@@ -18,7 +16,7 @@ export default function News() {
   return (
     <>
       <section className={banner}>
-        <img src={NewsBanner} alt="News page banner" className={bannerImg} />
+        <img src={newsBanner} alt="News page banner" className={bannerImg} />
       </section>
       <section className={sectionBgPrimaryColorLight10}>
         <h1
@@ -36,7 +34,7 @@ export default function News() {
       </section>
       <aside className={aside}>
         <a href="https://discord.gg/ECAdMaTNjT" className="aside__link">
-          <img src={tempDiscordBanner} alt="加入 Vlive Lab 官方 Discord" />
+          <img src={discordBanner} alt="加入 Vlive Lab 官方 Discord" />
         </a>
       </aside>
     </>

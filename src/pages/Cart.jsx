@@ -1,4 +1,4 @@
-import PlaceholderImg from "./../assets/products/item_03.png";
+import { sandersSticker } from "./../assets/images";
 import cross from "./../assets/icons/cross.svg";
 import { Link } from "react-router-dom";
 import styles from "./Cart.module.css";
@@ -24,7 +24,7 @@ const {
 function ItemCard() {
   return (
     <div className={card}>
-      <img src={PlaceholderImg} alt="" />
+      <img src={sandersSticker} alt="" />
       <div className={col}>
         <h3>魔王貼紙</h3>
         <div className={cols2}>
