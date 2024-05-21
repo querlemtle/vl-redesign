@@ -37,7 +37,6 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { ScrollToTop } from "./../utils/ScrollToPosition";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -161,7 +160,6 @@ function Home() {
           <br />
           你努力的未來有沒有你，我們覺得很重要。
         </p>
-        <ScrollToTop />
         <Link to="/about" className={linkWhiteBgPrimaryText}>
           查看更多
         </Link>
