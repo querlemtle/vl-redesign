@@ -2,6 +2,12 @@
   "rules": {
       "color-function-notation": ["legacy", { "ignore": ["with-var-inside"] }],
       "alpha-value-notation": "number",
-      "selector-class-pattern": "[a-zA-Z]"
+      "selector-class-pattern": "[a-zA-Z]",
+      "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ]
     }
 }
