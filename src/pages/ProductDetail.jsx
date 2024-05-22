@@ -1,15 +1,20 @@
-import { hanakawaPoster as preview0 , hanakawaPosterSize1 as preview1, hanakawaPosterSize2 as preview2 } from "./../assets/images";
+import {
+  hanakawaPoster as preview0,
+  hanakawaPosterSize1 as preview1,
+  hanakawaPosterSize2 as preview2,
+} from "./../assets/images";
 import CartBtn from "../components/CartBtn";
 import Toast from "../components/Toast";
 import styles from "./ProductDetails.module.css";
 
 const {
-  "cols-2": cols2,
+  grid,
   row,
   tag,
   title,
-  "img-s": imgS,
-  "bg-secondary-light": bgSecondaryLight,
+  img,
+  "img--s": imgS,
+  list,
   "list-square": listSquare,
   list__title: listTitle,
   sublist,
@@ -18,35 +23,34 @@ const {
   "btn--fillbg": btnFillbg,
   "btn--border": btnBorder,
   "btn--stretch": btnStretch,
-  "border-dark": borderDark,
-  "divider-dark": dividerDark,
+  divider,
   select,
   clickable,
 } = styles;
 
 export default function ProductDetail() {
   return (
-    <section className={cols2}>
+    <section className={grid}>
       {/* Left Col */}
       <aside>
-        <div className={borderDark}>
-          <img src={preview0} alt="" />
+        <div className={img}>
+          <img src={preview0} alt="預覽圖1" />
         </div>
         <div className={row}>
           <img
             src={preview0}
-            alt=""
-            className={`${imgS} ${borderDark} ${clickable}`}
+            alt="預覽圖1"
+            className={`${imgS} ${img} ${clickable}`}
           />
           <img
             src={preview1}
-            alt=""
-            className={`${imgS} ${borderDark} ${clickable}`}
+            alt="預覽圖2"
+            className={`${imgS} ${img} ${clickable}`}
           />
           <img
             src={preview2}
-            alt=""
-            className={`${imgS} ${borderDark} ${clickable}`}
+            alt="預覽圖3"
+            className={`${imgS} ${img} ${clickable}`}
           />
         </div>
       </aside>
@@ -57,7 +61,7 @@ export default function ProductDetail() {
         <h3>
           NT$<span>800</span>
         </h3>
-        <ul className={bgSecondaryLight}>
+        <ul className={list}>
           <li>
             <p className={listTitle}>規格</p>
             <ul className={sublist}>
@@ -81,14 +85,14 @@ export default function ProductDetail() {
             </div>
           </li>
         </ul>
-        <h4 className={`${dividerDark} ${listTitle}`}>購買須知</h4>
+        <h4 className={`${divider} ${listTitle}`}>購買須知</h4>
         <ul className={listSquare}>
           <li>該商品為客製化商品，下單後不可取消。敬請於下單前確認。</li>
           <li>
             待付費確認完成後，系統才會開始處理您的訂單，約7個工作天內出貨。
           </li>
         </ul>
-        <h4 className={`${dividerDark} ${listTitle}`}>商品詳情</h4>
+        <h4 className={`${divider} ${listTitle}`}>商品詳情</h4>
         <ul className={listSquare}>
           <li>尺寸: 9X9公分</li>
           <li>材質: 壓克力</li>

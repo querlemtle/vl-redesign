@@ -6,9 +6,8 @@ import styles from "./News.module.css";
 const {
   banner,
   banner__img: bannerImg,
-  "section-cols-2": sectionCols2,
   section__title: sectionTitle,
-  "section__bg--primary-color-light-10": sectionBgPrimaryColorLight10,
+  "section__bg": sectionBg,
   aside,
 } = styles;
 
@@ -18,13 +17,13 @@ export default function News() {
       <section className={banner}>
         <img src={newsBanner} alt="News page banner" className={bannerImg} />
       </section>
-      <section className={sectionBgPrimaryColorLight10}>
+      <section className={sectionBg}>
         <h1
           className={sectionTitle}
         >
           <img src={newsTitle} alt="News" />
         </h1>
-        <div className={sectionCols2}>
+        <div className="grid-news">
           <NewsCard id="1" />
           <NewsCard id="2" />
           <NewsCard id="3" />

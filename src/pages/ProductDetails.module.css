@@ -1,4 +1,4 @@
-.cols-2 {
+.grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   grid-template-rows: 1fr;
@@ -14,12 +14,18 @@
   margin-top: 1.5rem;
 }
 
-.img-s {
-  width: 100px;
-  margin-bottom: 2rem;
+.img {
+  border: 2px solid var(--secondary-color-dark);
+  border-radius: var(--radius-s);
 }
 
-.img-s:hover {
+.img--s {
+  width: 100px;
+  margin-bottom: 2rem;
+  border-radius: var(--radius-s);
+}
+
+.img--s:hover {
   border: 4px solid color-mix(in srgb, var(--secondary-color-medium), var(--alpha-70));
 }
 
@@ -33,10 +39,11 @@
   margin: 1rem 0 4rem;
 }
 
-.bg-secondary-light {
+.list {
   padding: 1rem 1.5rem;
   margin: 1.5rem 0 1rem;
   background-color: color-mix(in srgb, var(--secondary-color-light), var(--alpha-10));
+  border-radius: var(--radius-s);
 }
 
 .list-square {
@@ -61,12 +68,14 @@
 .select {
   padding: 0.25rem 1rem;
   flex: 1;
+  border-radius: var(--radius-s);
 }
 
 .btn {
   padding: 6px 30px;
   display: grid;
   place-items: center;
+  border-radius: var(--radius-s);
 }
 
 .btn--stretch {
@@ -82,14 +91,9 @@
   border: 1px solid var(--secondary-color-dark);
 }
 
-.border-dark {
-  border: 2px solid var(--secondary-color-dark);
-}
-
-.divider-dark {
+.divider {
   border-top: 1px solid var(--secondary-color-dark);
 }
-
 
 .clickable {
   cursor: pointer;

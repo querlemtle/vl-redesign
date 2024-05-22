@@ -42,10 +42,8 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const {
   section,
-  "section-x-full": sectionXFull,
-  "section-bg-img": sectionBgImg,
-  "section-auto-cols": sectionAutoCols,
-  "section-cols-3": sectionCols3,
+  "section--bg-img": sectionBgImg,
+  "grid-talents": gridTalents,
   deco,
   "deco--1": deco1,
   "deco--2": deco2,
@@ -62,7 +60,7 @@ const {
   "title--border-bottom": titleBorderBottom,
   subtitle,
   "subtitle-accent": subtileAccent,
-  "link-white-bg-primary-text": linkWhiteBgPrimaryText,
+  cta,
   statement,
   logo__text: logoText,
   "hori-scrolling__hintbox": horiScrollingHintbox,
@@ -75,12 +73,10 @@ const {
 function Home() {
   const scrollXContainer = useRef();
 
-  const scrollLeft = (ref) => {
-    ref.current.scrollLeft -= 100;
-  };
-
-  const scrollRight = (ref) => {
-    ref.current.scrollLeft += 100;
+  const startScrolling = (ref, isScrollingToRight) => {
+    isScrollingToRight
+      ? (ref.current.scrollLeft += 100)
+      : (ref.current.scrollLeft -= 100);
   };
 
   const gsapContainer = useRef();
@@ -150,7 +146,7 @@ function Home() {
       {/* HomeBanner */}
       <HomeBanner />
       {/* About */}
-      <section className={`${section} ${sectionXFull} ${sectionBgImg}`}>
+      <section className={`${section} ${sectionBgImg}`}>
         <h1>
           <img src={aboutTitle} alt="About" />
         </h1>
@@ -160,7 +156,7 @@ function Home() {
           <br />
           你努力的未來有沒有你，我們覺得很重要。
         </p>
-        <Link to="/about" className={linkWhiteBgPrimaryText}>
+        <Link to="/about" className={cta}>
           查看更多
         </Link>
       </section>
@@ -225,7 +221,7 @@ function Home() {
             冥界SCP事務所
           </h2>
         </div>
-        <div className={sectionCols3}>
+        <div className={gridTalents}>
           {talentsData.map((talent) => {
             return (
               <TalentCard
@@ -246,7 +242,7 @@ function Home() {
           </h1>
           <h2 className={subtitle}>帶來有關VTUBER相關的新資訊與熱門話題討論</h2>
         </div>
-        <div className={sectionAutoCols}>
+        <div className="grid-news">
           <NewsCard id="1" />
           <NewsCard id="2" />
         </div>
@@ -297,13 +293,13 @@ function Home() {
             <img
               src={LeftArrow}
               alt="向左箭頭"
-              onPointerDown={() => scrollLeft(scrollXContainer)}
+              onPointerDown={() => startScrolling(scrollXContainer, false)}
               className={btn}
             />
             <img
               src={RightArrow}
               alt="向右箭頭"
-              onPointerDown={() => scrollRight(scrollXContainer)}
+              onPointerDown={() => startScrolling(scrollXContainer, true)}
               className={btn}
             />
           </div>

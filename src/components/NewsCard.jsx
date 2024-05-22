@@ -10,7 +10,6 @@ const {
   "card__title-container": cardTitleContainer,
   card__tag: cardTag,
   card__title: cardTitle,
-  card__content: cardContent,
   card__meta: cardMeta,
 } = styles;
 
@@ -30,10 +29,6 @@ export default function NewsCard({ id }) {
               年度 Vtubers 夏季嘉年華即將在 7 月 20 日登場
             </h3>
           </div>
-          <p className={cardContent}>
-            眾多知名 Vtuber
-            都會粉墨登場，快來與你最喜愛的偶像一同度過盛夏，留下難忘的回憶！
-          </p>
           <span className={cardMeta}>
             文章發布於 <span className="card__date">2024/04/22</span>
           </span>
