@@ -4,8 +4,12 @@
   height: 90vh;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  background: center / cover url("./../assets/home-banner-bg.png") no-repeat;
   position: relative;
+}
+
+.banner__bg {
+  position: absolute;
+  inset: 0;
 }
 
 .banner__character {
@@ -15,7 +19,7 @@
   left: 20%;
   bottom: 0;
   z-index: 2;
-  transform: translateY(50px);
+  transform: translateY(100px);
 }
 
 .banner__accessory {
@@ -149,6 +153,11 @@
   display: flex;
   justify-content: space-between;
   column-gap: 1.5rem;
+  transition: box-shadow 350ms ease;
+}
+
+.card-c2r4:hover {
+  box-shadow: 0 0 8px 8px color-mix(in srgb, var(--primary-color-dark), var(--alpha-50));
 }
 
 .card__img {

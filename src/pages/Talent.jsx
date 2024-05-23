@@ -8,6 +8,7 @@ import {
   hanakawaPortrait,
   sandersLogo,
   hanakawaLogo,
+  flowersDeco,
 } from "../assets/images";
 import { FbIcon, XIcon, YtIcon } from "../components/IconSvgs";
 import { useRef } from "react";
@@ -27,6 +28,8 @@ const {
   "bg-DoF": bgDoF,
   card,
   card__img: cardImg,
+  "card__img-bg": cardImgBg,
+  "card__img-portrait": cardImgPortrait,
   "card__img--right": cardImgRight,
   card__body: cardBody,
   card__context: cardContext,
@@ -70,14 +73,41 @@ function CharBio({
   fbLink,
   xLink,
 }) {
+  const gsapContainer = useRef();
+  const { contextSafe } = useGSAP({ scope: gsapContainer });
+
+  // 滑鼠移動視差
+  const mouseParallax = contextSafe((e) => {
+    gsap.to("[data-ani='mouse-parallax']", {
+      x: (e.pageX / window.innerWidth - 0.5) * 50,
+      y: (e.pageY / window.innerHeight - 0.5) * 50,
+      delay: 0.1,
+      ease: "power2.out",
+      overwrite: "auto",
+    });
+  });
+
+
   return (
     <section
       style={{ backgroundImage: `url(${bgUrl})` }}
       className={`${bgDoF} ${card}`}
+      ref={gsapContainer}
     >
       {/* 角色圖 */}
       <div className={`${cardImg} ${isPortraitAtRight && cardImgRight}`}>
-        <img src={portraitUrl} alt="portrait" />
+        <img
+          src={flowersDeco}
+          alt="flowers"
+          className={cardImgBg}
+        />
+        <img
+          src={portraitUrl}
+          alt="portrait"
+          className={cardImgPortrait}
+          onMouseMove={mouseParallax}
+          data-ani="mouse-parallax"
+        />
       </div>
       {/* 角色介紹 */}
       <div style={{ color: textColor }} className={cardBody}>

@@ -3,6 +3,7 @@ import {
   yagamiIcon,
   hanakawaIcon,
   sandersIcon,
+  homeBannerBg,
   posterGirl,
   pet,
   streamPreviewImg,
@@ -17,6 +18,7 @@ gsap.registerPlugin(useGSAP);
 
 const {
   banner,
+  banner__bg: bannerBg,
   banner__character: bannerCharacter,
   banner__accessory: bannerAccessory,
   "sidebar-left": sidebarLeft,
@@ -97,13 +99,13 @@ function RightSidebar() {
         .timeline()
         .fromTo(
           "[data-ani='move-upper']",
-          { opacity: 0, translateY: 200 },
-          { opacity: 1, translateY: 0, duration: 0.8 }
+          { translateY: 200, scale: 0 },
+          { translateY: 0, scale: 1, duration: 0.8 }
         )
         .fromTo(
           "[data-ani='move-lower']",
-          { opacity: 0, translateY: 200 },
-          { opacity: 1, translateY: 0, duration: 0.8 }
+          { translateY: 200, scale: 0 },
+          { translateY: 0, scale: 1, duration: 0.8 }
         );
     },
     { scope: gsapContainer }
@@ -168,41 +170,40 @@ function RightSidebar() {
 
 function HomeBanner() {
   const gsapContainer = useRef();
-  const { contextSafe } = useGSAP({ scope: gsapContainer });
 
   useGSAP(() => {
-    gsap.to("[data-ani='mouse-parallax']", {
+    gsap.to("[data-ani~='move-in']", {
       opacity: 1,
       x: 0,
       y: 0,
     });
   });
 
-  const mouseParallax = contextSafe((e) => {
-    gsap.to("[data-ani='mouse-parallax']", {
-      x: (e.pageX / window.innerWidth - 0.5) * 20,
-      y: (e.pageY / window.innerHeight - 0.5) * 20,
-      delay: 0.1,
-      ease: "power2.out",
-      overwrite: "auto",
+  useGSAP(() => {
+    gsap.to("[data-ani~='up-and-down']", {
+      x: 100,
+      y: 0,
+      ease: "expo.inOut",
+      duration: 3,
+      repeat: -1,
+      yoyo: true,
     });
   });
 
   return (
     <section className={banner} ref={gsapContainer}>
+      <img src={homeBannerBg} alt="背景" className={bannerBg} />
       <img
         src={posterGirl}
         alt="海報人物"
         className={bannerCharacter}
-        onMouseMove={mouseParallax}
-        data-ani="mouse-parallax"
+        data-ani="move-in"
       />
       <img
         src={pet}
         alt="寵物"
         className={bannerAccessory}
-        onMouseMove={mouseParallax}
-        data-ani="mouse-parallax"
+        data-ani="move-in up-and-down"
       />
       <LeftSidebar />
       <RightSidebar />
