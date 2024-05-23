@@ -3,6 +3,7 @@ import colorLogo from "./Vlive-Lab-logo.svg";
 import whiteLogo from "./Vlive-Lab-logo-white.svg";
 
 // Home page - banner
+import homeBannerBg from "./home-banner-bg.png";
 import posterGirl from "./poster-girl.png";
 import pet from "./pet.png";
 import heartIcon from "./icons/heart-icon.svg";
@@ -57,12 +58,13 @@ import sandersPortrait from "./talents/sanders-portrait.png";
 import hanakawaPortrait from "./talents/hanakawa-portrait.png";
 import sandersLogo from "./talents/sanders-logo.png";
 import hanakawaLogo from "./talents/hanakawa-logo.png";
+import flowersDeco from "./talents/flowers.png";
 
 // Shop page
 import hanakawaSticker from "./products/item_01.png";
 import hanakawaPoster from "./products/item_02.png";
-import hanakawaPosterSize1 from "./products/item_02_a.png";
-import hanakawaPosterSize2 from "./products/item_02_b.png";
+import hanakawaPosterStyle1 from "./products/item_02_a.png";
+import hanakawaPosterStyle2 from "./products/item_02_b.png";
 import sandersSticker from "./products/item_03.png";
 import pin from "./products/item_04.png";
 import candle from "./products/item_05.png";
@@ -73,10 +75,12 @@ import sandersAcrylicStand from "./products/item_09.png";
 import circleCheck from "./icons/circle-check.svg";
 import shipment from "./shipment.png";
 import shopBanner from "./shop-banner.png";
+import cartImg from "./icons/cart.svg";
 
 // News page
 import newsBanner from "./news-banner.png";
-import newsPlaceholder from "./news-placeholder.png";
+import newsImg1 from "./news-img1.png";
+import newsImg2 from "./news-img2.png";
 import newsTitle from "./news-page-title.svg";
 import discordBanner from "./temp-discord-banner.png";
 
@@ -86,6 +90,7 @@ export {
   aboutTitle,
   talentsTitle,
   shopTitle,
+  homeBannerBg,
   posterGirl,
   pet,
   heartIcon,
@@ -131,10 +136,11 @@ export {
   hanakawaPortrait,
   sandersLogo,
   hanakawaLogo,
+  flowersDeco,
   hanakawaSticker,
   hanakawaPoster,
-  hanakawaPosterSize1,
-  hanakawaPosterSize2,
+  hanakawaPosterStyle1,
+  hanakawaPosterStyle2,
   sandersSticker,
   pin,
   candle,
@@ -146,7 +152,9 @@ export {
   shipment,
   shopBanner,
   newsBanner,
-  newsPlaceholder,
+  newsImg1,
+  newsImg2,
   newsTitle,
   discordBanner,
+  cartImg,
 };

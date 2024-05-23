@@ -8,7 +8,7 @@ import News from "./pages/News";
 import NewsArticle from "./pages/NewsArticle";
 import Talent from "./pages/Talent";
 import Shop from "./pages/Shop";
-import ProductDetail from "./pages/ProductDetail";
+import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import { ScrollToTop } from "./utils/ScrollToPosition";
@@ -25,7 +25,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/talent" element={<Talent />} />
           <Route path="/shop" element={<Shop />} />
-          <Route path="/product/:productId" element={<ProductDetail />} />
+          <Route path="/product/:productId" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/news" element={<News />} />

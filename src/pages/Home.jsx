@@ -12,22 +12,14 @@ import {
   confetti6,
   confetti7,
   confetti8,
-  phoneHanakawa,
-  phoneSanders,
-  phoneYagami,
-  hanakawaLogoLight,
-  sandersLogoLight,
-  yagamiLogoLight,
   pentaFlowerDeco,
   LeftArrow,
   RightArrow,
   halfArrow,
   whiteLogo,
-  candle,
-  sandersSticker,
-  pin,
-  shirt,
 } from "../assets/images";
+import productsData from "./../data/productsData";
+import talentsData from "./../data/talentsData";
 import HomeBanner from "./../components/HomeBanner";
 import TalentCard from "./../components/TalentCard";
 import NewsCard from "../components/NewsCard";
@@ -80,51 +72,6 @@ function Home() {
   };
 
   const gsapContainer = useRef();
-
-  const talentsData = [
-    {
-      charImg: phoneSanders,
-      logo: sandersLogoLight,
-      name: "桑德斯.闇",
-    },
-    {
-      charImg: phoneHanakawa,
-      logo: hanakawaLogoLight,
-      name: "花川夢姬",
-    },
-    {
-      charImg: phoneYagami,
-      logo: yagamiLogoLight,
-      name: "夜神遂心",
-    },
-  ];
-
-  const products = [
-    {
-      id: "u9GwHz",
-      name: "香氛蠟燭70ml",
-      price: 200,
-      img: candle,
-    },
-    {
-      id: "ROh1oK",
-      name: "胸章",
-      price: 50,
-      img: pin,
-    },
-    {
-      id: "kwxsxr",
-      name: "魔王Q貼",
-      price: 100,
-      img: sandersSticker,
-    },
-    {
-      id: "4CWkdu",
-      name: "一期生T恤",
-      price: 680,
-      img: shirt,
-    },
-  ];
 
   useGSAP(
     () => {
@@ -225,10 +172,10 @@ function Home() {
           {talentsData.map((talent) => {
             return (
               <TalentCard
-                charImg={talent.charImg}
-                logo={talent.logo}
-                name={talent.name}
-                key={talent.name}
+                charImg={talent.phonePic}
+                logo={talent.logoLight}
+                name={talent.zhName}
+                key={talent.enName}
               />
             );
           })}
@@ -277,11 +224,11 @@ function Home() {
                 前往商店 <img src={halfArrow} alt="箭頭" />
               </div>
             </Link>
-            {products.map((item) => {
+            {productsData.map((item) => {
               return (
                 <ProductCard
                   id={item.id}
-                  productImg={item.img}
+                  productImg={item.images[0]}
                   productName={item.name}
                   productPrice={item.price}
                   key={item.id}

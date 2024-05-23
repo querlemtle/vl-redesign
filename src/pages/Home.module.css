@@ -237,7 +237,10 @@
 
 .section--horizonal-scrolling {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, 372px);
+  grid-template-rows: 1fr;
+  grid-auto-columns: 372px;
+  grid-auto-flow: column;
   column-gap: 0.5rem;
   overflow-x: auto;
   white-space: nowrap;
@@ -309,6 +312,7 @@
   align-items: center;
   justify-content: flex-end;
   justify-self: end;
+  color: var(--primary-color-dark);
 }
 
 .btn {

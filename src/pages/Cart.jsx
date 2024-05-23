@@ -6,7 +6,7 @@ import styles from "./Cart.module.css";
 const {
   "section-center": sectionCenter,
   col,
-  "cols-2": cols2,
+  grid,
   section__title: sectionTitle,
   card,
   card__item: cardItem,
@@ -27,7 +27,7 @@ function ItemCard() {
       <img src={sandersSticker} alt="" />
       <div className={col}>
         <h3>魔王貼紙</h3>
-        <div className={cols2}>
+        <div className={grid}>
           {/* Column */}
           <div className={`${col} ${cardItem}`}>
             <span>規格</span>
@@ -61,16 +61,23 @@ export default function Cart() {
   return (
     <section className={sectionCenter}>
       <h2 className={sectionTitle}>購物車內容</h2>
-      <div className={cols2}>
+      <div className={grid}>
         {/* Left column: Selected products card list */}
         <div>
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
           <ItemCard />
         </div>
         {/* Right column: Confirm order */}
         <aside className={aside}>
           <div className={asideContainer}>
             <p className={asideTitle}>訂單金額確認</p>
-            <div className={`${cols2} ${asideBody}`}>
+            <div className={`${grid} ${asideBody}`}>
               <p>購物車總計</p>
               <p className={asideAccent}>
                 NT$<span>200</span>

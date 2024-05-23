@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import cartImg from "./../assets/icons/cart.png";
+import { cartImg } from "./../assets/images";
 import styles from "./CartBtn.module.css";
 
 const {

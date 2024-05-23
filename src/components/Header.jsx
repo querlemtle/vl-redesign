@@ -86,7 +86,12 @@ function Header() {
             </NavLink>
           </li>
         </ul>
-        <a href="https://vtuberonline.com/" className={cta}>
+        <a
+          href="https://vtuberonline.com/"
+          className={cta}
+          target="_blank"
+          rel="noreferrer"
+        >
           <span className={ctaText}>VTuber Online</span>
         </a>
       </nav>
