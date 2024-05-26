@@ -11,6 +11,8 @@ import {
   cardBg1,
   cardBg2,
   cardBg3,
+  heart,
+  ytLogo,
 } from "../assets/images";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -41,13 +43,15 @@ const {
   "cols-stacking": colsStacking,
   "stack-left": stackLeft,
   "stack-mid": stackMid,
+  "floating-heart": floatingHeart,
   "stack-right": stackRight,
-  "cols-3": cols3,
+  grid,
   card,
   card__link: cardLink,
   card__body: cardBody,
   card__title: cardTitle,
   card__content: cardContent,
+  card__logo: cardLogo,
 } = styles;
 
 const cardData = [
@@ -59,6 +63,7 @@ const cardData = [
       url: "https://www.youtube.com/watch?v=8mJ3K5pXyas",
       isExternal: true,
     },
+    hasLogo: true,
   },
   {
     title: "專業營銷分析",
@@ -68,6 +73,7 @@ const cardData = [
       url: "/news",
       isExternal: false,
     },
+    hasLogo: false,
   },
   {
     title: "與VTuber零距離",
@@ -77,18 +83,21 @@ const cardData = [
       url: "https://discord.com/invite/ECAdMaTNjT",
       isExternal: true,
     },
+    hasLogo: false,
   },
 ];
 
-function Card({ title, content, bg, link, isLinkExternal }) {
+// Features
+function Card({ title, content, bg, link, isLinkExternal, hasLogo }) {
   return (
-    <div className={card} style={{ background: `url(${bg})` }}>
+    <div className={card} style={{ background: `center / cover url(${bg})` }}>
       {/* 需要以是否為外部連結條件式渲染 <Link> 或 <a>，故讓其為獨立元素，透過 CSS 擴大可點擊區域至與父層同大小 */}
       {isLinkExternal ? (
         <a href={link} className={cardLink}></a>
       ) : (
         <Link to={link} className={cardLink}></Link>
       )}
+      {hasLogo && <img src={ytLogo} alt="youtube" className={cardLogo} />}
       <div className={cardBody}>
         <p className={cardContent}>{content}</p>
         <p className={cardTitle}>-{title}</p>
@@ -103,11 +112,32 @@ Card.propTypes = {
   bg: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
   isLinkExternal: PropTypes.bool.isRequired,
+  hasLogo: PropTypes.bool.isRequired,
 };
 
 export default function About() {
   const gsapUpperContainer = useRef();
   const gsapMidContainer = useRef();
+  const { contextSafe } = useGSAP({ scope: gsapMidContainer });
+
+  const showHeart = contextSafe((event) => {
+    gsap.fromTo(
+      "[data-ani='float-up']",
+      {
+        // 22px 為愛心圖案寬/高度的一半，讓圖案從滑鼠中間出現
+        x: event.clientX - 22,
+        y: event.clientY - 22,
+        opacity: 1,
+      },
+      {
+        x: event.clientX - 22,
+        y: event.clientY - 22 - 50,
+        opacity: 0,
+        delay: 0.2,
+        overwrite: "auto",
+      }
+    );
+  });
 
   useGSAP(
     () => {
@@ -198,7 +228,15 @@ export default function About() {
             className={stackLeft}
             data-ani="rotate"
           />
-          <img src={midPoster} alt="手機合照" className={stackMid} />
+          <div className={stackMid}>
+            <img
+              src={heart}
+              alt="愛心"
+              className={floatingHeart}
+              data-ani="float-up"
+            />
+            <img src={midPoster} alt="手機合照" onPointerDown={showHeart} />
+          </div>
           <img
             src={rightPoster}
             alt="夢姬海報"
@@ -216,7 +254,7 @@ export default function About() {
       {/* 服務項目 */}
       <section className={`${section} ${bgImg} ${bgImgDark}`}>
         <h3 className={sectionTitle}>Features</h3>
-        <div className={cols3}>
+        <div className={grid}>
           {cardData.map((item, i) => {
             return (
               <Card
@@ -225,6 +263,7 @@ export default function About() {
                 bg={item.bg}
                 link={item.link.url}
                 isLinkExternal={item.link.isExternal}
+                hasLogo={item.hasLogo}
                 key={i}
               />
             );
