@@ -7,9 +7,15 @@
   position: relative;
 }
 
+@media (width <= 390px) {
+  .banner {
+    display: block;
+    height: 100vh;
+  }
+}
+
 .banner__bg {
-  position: absolute;
-  inset: 0;
+  grid-area: 1 / 1 / 2 / -1;
 }
 
 .banner__character {
@@ -56,8 +62,6 @@
 }
 
 .sidebar-left__options {
-  width: fit-content;
-  height: fit-content;
   border-radius: 99rem;
   padding: 3rem 1rem;
   background-color: color-mix(in srgb, var(--white), var(--alpha-90));
@@ -67,6 +71,24 @@
   z-index: 1;
   box-shadow: 0 8px 8px 0 color-mix(in srgb, var(--primary-color-dark), var(--alpha-25));
 }
+
+@media (width <= 390px) {
+  .sidebar-left {
+    flex-direction: row;
+  }
+
+  .sidebar-left__title {
+    transform: translateX(20px);
+  }
+
+  .sidebar-left__options {
+    display: flex;
+    column-gap: 20px;
+    padding: 1rem 1rem 1rem 2rem;
+    transform: translateY(0);
+  }
+}
+
 
 /* Here use background image to import svg icons instead because the hover version has different algorithms */
 .fb-icon {
