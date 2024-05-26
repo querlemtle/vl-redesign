@@ -1,20 +1,23 @@
+// 統一載入圖檔
 // Header & Footer
 import colorLogo from "./Vlive-Lab-logo.svg";
 import whiteLogo from "./Vlive-Lab-logo-white.svg";
 
 // Home page - banner
-import homeBannerBg from "./home-banner-bg.png";
-import posterGirl from "./poster-girl.png";
-import pet from "./pet.png";
+import homeBannerBg from "./home/home-banner-bg.png";
+import homeBannerBgMedium from "./home/home-banner-bg-m.png";
+import homeBannerBgSmall from "./home/home-banner-bg-s.png";
+import posterGirl from "./home/poster-girl.png";
+import pet from "./home/pet.png";
 import heartIcon from "./icons/heart-icon.svg";
 import yagamiIcon from "./icons/Yagami-chibi-icon.png";
 import hanakawaIcon from "./icons/Hanakawa-chibi-icon.png";
 import sandersIcon from "./icons/Sanders-chibi-icon.png";
-import streamPreviewImg from "./stream-preview.png";
+import streamPreviewImg from "./home/stream-preview.png";
 import ytIconNoBorder from "./icons/yt-noborder.svg";
 
 // Home page
-import aboutTitle from "./about-title.svg";
+import aboutHeart from "./icons/about-heart.svg";
 import talentsTitle from "./talents-title.svg";
 import shopTitle from "./shop-title.svg";
 import confetti1 from "./icons/confetti-1.svg";
@@ -25,9 +28,9 @@ import confetti5 from "./icons/confetti-5.svg";
 import confetti6 from "./icons/confetti-6.svg";
 import confetti7 from "./icons/confetti-7.svg";
 import confetti8 from "./icons/confetti-8.svg";
-import phoneHanakawa from "./phone-hanakawa.png";
-import phoneSanders from "./phone-sanders.png";
-import phoneYagami from "./phone-yagami.png";
+import phoneHanakawa from "./home/phone-hanakawa.png";
+import phoneSanders from "./home/phone-sanders.png";
+import phoneYagami from "./home/phone-yagami.png";
 import hanakawaLogoLight from "./talents/hanakawa-logo-light.png";
 import sandersLogoLight from "./talents/sanders-logo-light.png";
 import yagamiLogoLight from "./talents/Yagami-logo-light.png";
@@ -49,6 +52,8 @@ import rightPoster from "./about/poster-hanakawa.png";
 import cardBg1 from "./about/card-1.png";
 import cardBg2 from "./about/card-2.png";
 import cardBg3 from "./about/card-3.png";
+import heart from "./icons/heart.svg";
+import ytLogo from "./about/youtube.svg";
 
 // Talent page
 import talentVid from "./talents/talent-video-banner.mp4";
@@ -61,36 +66,39 @@ import hanakawaLogo from "./talents/hanakawa-logo.png";
 import flowersDeco from "./talents/flowers.png";
 
 // Shop page
-import hanakawaSticker from "./products/item_01.png";
-import hanakawaPoster from "./products/item_02.png";
-import hanakawaPosterStyle1 from "./products/item_02_a.png";
-import hanakawaPosterStyle2 from "./products/item_02_b.png";
-import sandersSticker from "./products/item_03.png";
-import pin from "./products/item_04.png";
-import candle from "./products/item_05.png";
-import shirt from "./products/item_06.png";
-import hanakawaAcrylicStand from "./products/item_07.png";
-import yagamiAcrylicStand from "./products/item_08.png";
-import sandersAcrylicStand from "./products/item_09.png";
+import hanakawaSticker from "./shop/item_01.png";
+import hanakawaPoster from "./shop/item_02.png";
+import hanakawaPosterStyle1 from "./shop/item_02_a.png";
+import hanakawaPosterStyle2 from "./shop/item_02_b.png";
+import sandersSticker from "./shop/item_03.png";
+import pin from "./shop/item_04.png";
+import candle from "./shop/item_05.png";
+import shirt from "./shop/item_06.png";
+import hanakawaAcrylicStand from "./shop/item_07.png";
+import yagamiAcrylicStand from "./shop/item_08.png";
+import sandersAcrylicStand from "./shop/item_09.png";
 import circleCheck from "./icons/circle-check.svg";
-import shipment from "./shipment.png";
-import shopBanner from "./shop-banner.png";
+import shipment from "./shop/shipment.png";
+import event from "./shop/event.png";
+import shopBanner from "./shop/shop-banner.png";
 import cartImg from "./icons/cart.svg";
 
 // News page
-import newsBanner from "./news-banner.png";
-import newsImg1 from "./news-img1.png";
-import newsImg2 from "./news-img2.png";
-import newsTitle from "./news-page-title.svg";
-import discordBanner from "./temp-discord-banner.png";
+import newsBanner from "./news/news-banner.png";
+import newsImg1 from "./news/news-img1.png";
+import newsImg2 from "./news/news-img2.png";
+import newsTitle from "./news-title.svg";
+import discordBanner from "./news/temp-discord-banner.png";
 
 export {
   colorLogo,
   whiteLogo,
-  aboutTitle,
+  aboutHeart,
   talentsTitle,
   shopTitle,
   homeBannerBg,
+  homeBannerBgMedium,
+  homeBannerBgSmall,
   posterGirl,
   pet,
   heartIcon,
@@ -129,6 +137,8 @@ export {
   cardBg1,
   cardBg2,
   cardBg3,
+  heart,
+  ytLogo,
   talentVid,
   sandersBg,
   hanakawaBg,
@@ -150,6 +160,7 @@ export {
   sandersAcrylicStand,
   circleCheck,
   shipment,
+  event,
   shopBanner,
   newsBanner,
   newsImg1,

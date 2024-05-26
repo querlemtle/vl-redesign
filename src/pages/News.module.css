@@ -1,6 +1,7 @@
 .banner {
   display: flex;
   justify-content: flex-end;
+  margin-top: 60px;
 }
 
 .banner__img {
@@ -27,9 +28,20 @@
   margin: 0 auto 40px;
 }
 
-.section__title::before {
-  content: url("./../assets/icons/hexa-flower-deco.svg");
-  transform: translate(-0.5rem, -2.5rem);
+@media (width <= 455px) {
+  .section__title {
+    justify-content: center;
+  }
+}
+
+:global(.grid-news) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem 1.5rem;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .aside {

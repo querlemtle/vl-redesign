@@ -12,10 +12,15 @@ const {
   card__meta: cardMeta,
 } = styles;
 
-export default function ProductCard({ id, productImg, productName, productPrice }) {
+export default function ProductCard({
+  productId,
+  productImg,
+  productName,
+  productPrice,
+}) {
   return (
     <div className={card}>
-      <Link to={`/product/${id}`} className={cardLink}>
+      <Link to={`/product/${productId}`} className={cardLink}>
         <div className={cardImgWrapper}>
           <img src={productImg} alt={productName} className={cardImg} />
         </div>
@@ -33,7 +38,7 @@ export default function ProductCard({ id, productImg, productName, productPrice 
 }
 
 ProductCard.propTypes = {
-  id: PropTypes.string.isRequired,
+  productId: PropTypes.string.isRequired,
   // Webpack's asset module will resolve the image into a data URI
   productImg: PropTypes.string.isRequired,
   productName: PropTypes.string.isRequired,

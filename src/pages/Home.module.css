@@ -7,22 +7,8 @@
   position: relative;
 }
 
-.section--bg-img {
-  max-width: 100vw;
-  background: center / cover url("./../assets/pink-bg.png") no-repeat;
-  padding: 1rem;
-  margin-top: 10%;
-}
-
-:global(.grid-news) {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem 1.5rem;
-  width: 80vw;
-  max-width: 1440px;
-  margin: 0 auto;
+.section--about {
+  margin-top: 100px;
 }
 
 .grid-talents {
@@ -35,7 +21,7 @@
   position: relative;
 }
 
-@media (width <= 390px) {
+@media (width <=390px) {
   .grid-talents {
     gap: 0.5rem;
   }
@@ -49,12 +35,21 @@
   margin-bottom: 4rem;
 }
 
-.title-container--right {
+.title-container--start {
   justify-items: start;
   margin-left: 5rem;
 }
 
-.title--border-bottom {
+/* About title */
+.title {
+  color: var(--accent-color-pink);
+  font-size: var(--font-4xl);
+  display: flex;
+  column-gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.title--shop {
   padding-bottom: 1.5rem;
   width: 100%;
   border-bottom: 3px solid var(--primary-color-light);
@@ -74,56 +69,21 @@
   }
 }
 
-.cta {
-  letter-spacing: 2px;
-  background-color: color-mix(in srgb, var(--white), var(--alpha-90));
-  color: var(--primary-color-dark);
-  padding: 0.75rem 2rem;
-  border-radius: 0.25rem;
-  position: relative;
-  transition: all 350ms ease;
-  overflow: hidden;
-}
-
-.cta::before,
-.cta::after {
-  content: "";
-  width: 0;
-  background-color: var(--white);
-  transition: all 700ms ease;
-}
-
-.cta::after {
+/* 這邊不能設定 padding-top，會影響絕對定位 */
+.color-bg {
+  background-color: var(--accent-color-pink);
   width: 100%;
-  transform: translateX(100%);
+  padding-bottom: 2rem;
 }
 
-.cta:hover {
-  background-color: transparent;
-  color: color-mix(in srgb, var(--white), var(--alpha-90));
-}
-
-/* 左至右：width 從 0 到 100% */
-.cta:hover::before {
+.color-bg::before {
   content: "";
-  width: 100%;
-  height: 2px;
-  background-color: var(--white);
+  border-color: var(--white) transparent transparent transparent;
+  border-width: 32px; /* 決定三角形大小 */
+  border-style: solid;
   position: absolute;
-  top: 0;
-  left: 0;
-}
-
-/* 右至左：從右側平移進入按鈕範圍 */
-.cta:hover::after {
-  content: "";
-  width: 100%;
-  height: 2px;
-  background-color: var(--white);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transform: translateX(0);
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .statement {
@@ -132,7 +92,7 @@
   letter-spacing: 2px;
   color: var(--white);
   width: 70%;
-  margin: 1.5rem auto;
+  margin: 3rem auto;
 }
 
 .two-tones-bg {
@@ -192,10 +152,10 @@
 
 .deco--8 {
   top: 30%;
-  right: 24px;
+  right: 5%;
 }
 
-@media (width <= 390px) {
+@media (width <=390px) {
   /* Resize svgs on mobile */
   .deco--1 {
     top: 40%;
@@ -237,6 +197,22 @@
 
 .section--horizonal-scrolling {
   display: grid;
+  grid-template-columns: 372px 1fr;
+  grid-template-rows: 1fr;
+  column-gap: 0.5rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin-left: 5rem;
+}
+
+@media (width <=768px) {
+  .section--horizonal-scrolling {
+    grid-template-columns: auto;
+  }
+}
+
+.grid-products {
+  display: grid;
   grid-template-columns: repeat(auto-fit, 372px);
   grid-template-rows: 1fr;
   grid-auto-columns: 372px;
@@ -244,17 +220,24 @@
   column-gap: 0.5rem;
   overflow-x: auto;
   white-space: nowrap;
-  margin-left: 5rem;
 }
 
-@media (width <= 390px) {
-  .title-container--right,
+@media (width <=768px) {
+  .grid-products {
+    grid-template-columns: repeat(auto-fit, 100%);
+  }
+}
+
+@media (width <=390px) {
+  .title-container--start,
   .section--horizonal-scrolling {
     margin-left: 1rem;
   }
 }
 
-.section--horizonal-scrolling::-webkit-scrollbar {
+/* 隱藏卷軸顯示 */
+.section--horizonal-scrolling::-webkit-scrollbar,
+.grid-products::-webkit-scrollbar {
   display: none;
 }
 
@@ -275,6 +258,13 @@
 
 .hori-scrolling__hintbox:hover {
   background-color: var(--primary-color-dark);
+}
+
+@media (width <=768px) {
+  .hori-scrolling__hintbox {
+    display: none;
+    width: 100%;
+  }
 }
 
 .hintbox__title {
@@ -306,6 +296,39 @@
 }
 
 /* buttons */
+.cta {
+  letter-spacing: 2px;
+  background-color: color-mix(in srgb, var(--white), var(--alpha-90));
+  color: var(--primary-color-dark);
+  padding: 0.75rem 2rem;
+  border-radius: 0.25rem;
+  position: relative;
+}
+
+.cta::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0.25rem;
+  background-color: color-mix(in srgb, var(--white), var(--alpha-80));
+  transform: scaleX(0);
+  transition: all 700ms ease;
+}
+
+/* 左至右：width 從 0 到 100% */
+.cta:hover::before {
+  content: "";
+  transform: scaleX(1);
+}
+
+.cta__text {
+  position: relative;
+  z-index: 2;
+}
+
 .btns-container--end {
   display: flex;
   column-gap: 0.5rem;

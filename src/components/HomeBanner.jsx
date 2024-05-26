@@ -4,7 +4,8 @@ import {
   hanakawaIcon,
   sandersIcon,
   homeBannerBg,
-  posterGirl,
+  homeBannerBgMedium,
+  homeBannerBgSmall,
   pet,
   streamPreviewImg,
   ytIconNoBorder,
@@ -19,7 +20,6 @@ gsap.registerPlugin(useGSAP);
 const {
   banner,
   banner__bg: bannerBg,
-  banner__character: bannerCharacter,
   banner__accessory: bannerAccessory,
   "sidebar-left": sidebarLeft,
   "sidebar-left__title": sidebarLeftTitle,
@@ -170,6 +170,7 @@ function RightSidebar() {
 
 function HomeBanner() {
   const gsapContainer = useRef();
+  const { contextSafe } = useGSAP({ scope: gsapContainer });
 
   useGSAP(() => {
     gsap.to("[data-ani~='move-in']", {
@@ -179,31 +180,30 @@ function HomeBanner() {
     });
   });
 
-  useGSAP(() => {
-    gsap.to("[data-ani~='up-and-down']", {
-      x: 100,
-      y: 0,
-      ease: "expo.inOut",
-      duration: 3,
-      repeat: -1,
-      yoyo: true,
+  const mouseParallax = contextSafe((e) => {
+    gsap.to("[data-ani~='mouse-parallax']", {
+      x: (e.pageX / window.innerWidth - 0.5) * 100,
+      y: (e.pageY / window.innerHeight - 0.5) * 100,
+      delay: 0.1,
+      ease: "power2.out",
+      overwrite: "auto",
     });
   });
 
   return (
     <section className={banner} ref={gsapContainer}>
-      <img src={homeBannerBg} alt="背景" className={bannerBg} />
       <img
-        src={posterGirl}
-        alt="海報人物"
-        className={bannerCharacter}
-        data-ani="move-in"
+        src={homeBannerBg}
+        srcSet={`${homeBannerBgSmall} 390w, ${homeBannerBgMedium} 768w, ${homeBannerBg} 1920w`}
+        alt="背景"
+        className={bannerBg}
       />
       <img
         src={pet}
         alt="寵物"
         className={bannerAccessory}
-        data-ani="move-in up-and-down"
+        data-ani="move-in mouse-parallax"
+        onMouseMove={mouseParallax}
       />
       <LeftSidebar />
       <RightSidebar />
