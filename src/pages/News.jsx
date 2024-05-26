@@ -1,13 +1,15 @@
 import { newsTitle, newsBanner, discordBanner } from "../assets/images";
 import NewsCard from "../components/NewsCard";
 import { Pagination } from "../components/Controllers";
+import newsData from "../data/newsData";
+import { formatDate } from "../utils/formatDate";
 import styles from "./News.module.css";
 
 const {
   banner,
   banner__img: bannerImg,
   section__title: sectionTitle,
-  "section__bg": sectionBg,
+  section__bg: sectionBg,
   aside,
 } = styles;
 
@@ -18,16 +20,22 @@ export default function News() {
         <img src={newsBanner} alt="News page banner" className={bannerImg} />
       </section>
       <section className={sectionBg}>
-        <h1
-          className={sectionTitle}
-        >
+        <h1 className={sectionTitle}>
           <img src={newsTitle} alt="News" />
         </h1>
         <div className="grid-news">
-          <NewsCard id="1" />
-          <NewsCard id="2" />
-          <NewsCard id="3" />
-          <NewsCard id="4" />
+          {newsData.map((news) => {
+            return (
+              <NewsCard
+                key={news.newsId}
+                id={news.newsId}
+                tagText={news.tag}
+                title={news.title}
+                image={news.coverImg}
+                timestamp={formatDate(news.publishedAt)}
+              />
+            );
+          })}
         </div>
         <Pagination />
       </section>
