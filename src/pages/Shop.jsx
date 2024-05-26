@@ -1,4 +1,4 @@
-import { shopBanner, shipment } from "./../assets/images";
+import { shopBanner, shipment, event } from "./../assets/images";
 import productsData from "../data/productsData";
 import ProductCard from "../components/ProductCard";
 import CartBtn from "../components/CartBtn";
@@ -21,11 +21,11 @@ export default function Shop() {
         <img src={shopBanner} alt="banner" />
       </section>
       <section className={`${grid} ${gridInstruction}`}>
-        <a href="#">
+        <a href="https://vtuberonline.com/events/">
           <img src={shipment} alt="運送說明" />
         </a>
-        <a href="#">
-          <img src={shipment} alt="運送說明" />
+        <a href="https://vtuberonline.com/events/">
+          <img src={event} alt="滿額送贈品" />
         </a>
       </section>
       <section className={bg}>
@@ -40,11 +40,11 @@ export default function Shop() {
             {productsData.map((item) => {
               return (
                 <ProductCard
-                  id={item.id}
+                  productId={item.productId}
                   productImg={item.images[0]}
-                  productName={item.name}
+                  productName={item.productName}
                   productPrice={item.price}
-                  key={item.id}
+                  key={item.productId}
                 />
               );
             })}
