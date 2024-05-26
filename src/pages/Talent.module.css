@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   place-items: end stretch;
-  background: url("./../assets/scp-agency-banner.png") no-repeat;
+  background: url("./../assets/talents/scp-agency-banner.png") no-repeat;
   background-size: cover;
 }
 
@@ -35,6 +35,18 @@
   opacity: 0.7;
 }
 
+@media (width <= 580px) {
+  .bg-black {
+    height: 500px;
+  }
+
+  .mask {
+    height: 100%;
+    object-fit: cover;
+    object-position: 5% top;
+  }
+}
+
 .text-stacking {
   color: var(--white);
   position: absolute;
@@ -42,12 +54,20 @@
   letter-spacing: 2px;
   width: 50%;
   right: 3rem;
-  top: 50%;
+  top: 30%;
+  overflow: auto;
 }
 
-@media (width <=768px) {
+@media (width <= 768px) {
   .text-stacking {
-    top: 15%;
+    top: 20%;
+  }
+}
+
+@media (width <= 580px) {
+  .text-stacking {
+    max-height: 100%;
+    font-size: var(--font-base);
   }
 }
 
@@ -136,12 +156,13 @@
 }
 
 .link__icon {
-  border: 8px solid transparent;
+  border: 3px solid transparent;
   border-radius: 50%;
+  opacity: 0.7;
   transition: all 350ms ease;
 }
 
 .link__icon:hover {
-  border: 8px solid var(--primary-color-dark);
-  border-radius: 50%;
+  border: 3px solid var(--primary-color-dark);
+  opacity: 1;
 }
