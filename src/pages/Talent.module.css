@@ -1,0 +1,168 @@
+.banner {
+  height: 80vh;
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  place-items: end stretch;
+  background: url("./../assets/talents/scp-agency-banner.png") no-repeat;
+  background-size: cover;
+}
+
+.banner__title,
+.banner__subtitle {
+  color: var(--white);
+  margin: 3rem 1.25rem;
+}
+
+.banner__title {
+  grid-area: 1 / 1 / 2 / -1;
+  margin-left: 2rem;
+}
+
+.banner__subtitle {
+  grid-area: 1 / 7 / 2 / -1;
+  margin-right: 2rem;
+  text-align: right;
+}
+
+.bg-black {
+  background-color: var(--black);
+  position: relative;
+}
+
+.mask {
+  clip-path: inset(10% 0 25% 0);
+  opacity: 0.7;
+}
+
+@media (width <= 580px) {
+  .bg-black {
+    height: 500px;
+  }
+
+  .mask {
+    height: 100%;
+    object-fit: cover;
+    object-position: 5% top;
+  }
+}
+
+.text-stacking {
+  color: var(--white);
+  position: absolute;
+  font-weight: 500;
+  letter-spacing: 2px;
+  width: 50%;
+  right: 3rem;
+  top: 30%;
+  overflow: auto;
+}
+
+@media (width <= 768px) {
+  .text-stacking {
+    top: 20%;
+  }
+}
+
+@media (width <= 580px) {
+  .text-stacking {
+    max-height: 100%;
+    font-size: var(--font-base);
+  }
+}
+
+@media (width <=390px) {
+  .banner {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80% 20%;
+  }
+
+  .banner__title,
+  .banner__subtitle {
+    grid-column: 1 / -1;
+  }
+
+  .banner__subtitle {
+    grid-row: 2 / 3;
+  }
+
+  .text-stacking {
+    height: 60%;
+    overflow-y: scroll;
+    font-size: var(--font-s);
+  }
+}
+
+/* DoF: Depth of field */
+.bg-DoF {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+@media (width <=768px) {
+  .card {
+    padding: 2rem 0;
+    height: max-content;
+    overflow-y: scroll;
+    flex-direction: column;
+  }
+}
+
+.card__img {
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.card__img-bg {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+}
+
+.card__img-portrait {
+  position: relative;
+  z-index: 2;
+}
+
+.card__img--right {
+  order: 1;
+}
+
+.card__body {
+  flex: 1 0 50%;
+  padding: 0 5rem;
+  display: grid;
+  row-gap: 3rem;
+}
+
+.card__context {
+  max-width: 90%;
+}
+
+.links {
+  display: flex;
+  column-gap: 0.5rem;
+}
+
+.link__icon {
+  border: 3px solid transparent;
+  border-radius: 50%;
+  opacity: 0.7;
+  transition: all 350ms ease;
+}
+
+.link__icon:hover {
+  border: 3px solid var(--primary-color-dark);
+  opacity: 1;
+}

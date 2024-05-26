@@ -37,5 +37,6 @@ module.exports = {
     "no-console": "error",
     "react/no-unknown-property": ["error", { ignore: ["css"] }],
     "@stylistic/object-curly-spacing": ["error", "always"],
+    "@stylistic/comma-dangle": ["error", "only-multiline"],
   },
 };

@@ -1,0 +1,39 @@
+.banner {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.banner__img {
+  max-width: 800px;
+}
+
+@media (width < 1024px) {
+  .banner__img {
+    max-width: 100%;
+  }
+}
+
+.section__bg {
+  background-color: color-mix(in srgb,
+      var(--primary-color-light),
+      var(--alpha-10));
+  padding: 2rem 0;
+}
+
+.section__title {
+  display: flex;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto 40px;
+}
+
+.section__title::before {
+  content: url("./../assets/icons/hexa-flower-deco.svg");
+  transform: translate(-0.5rem, -2.5rem);
+}
+
+.aside {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+}

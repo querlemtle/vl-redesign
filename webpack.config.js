@@ -5,7 +5,6 @@ const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const StylelintPlugin = require("stylelint-webpack-plugin");
-const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -27,6 +26,8 @@ module.exports = {
     static: {
       directory: path.join(__dirname, "build"),
     },
+    // https://webpack.js.org/configuration/dev-server/#devserveropen
+    open: ["/#/"],
     port: 6060,
     // https://stackoverflow.com/questions/71734070/webpack-5-react-router-v6-blank-page-on-build
     historyApiFallback: true,
@@ -55,18 +56,6 @@ module.exports = {
         },
       }),
       new MiniCssExtractPlugin(),
-      new ImageMinimizerPlugin({
-        minimizer: {
-          implementation: ImageMinimizerPlugin.sharpMinify,
-          options: {
-            encodeOptions: {
-              jpeg: {
-                quality: 70,
-              },
-            },
-          },
-        },
-      }),
     ],
   },
   module: {
@@ -78,12 +67,36 @@ module.exports = {
         use: ["babel-loader"],
       },
       {
-        test: /\.(jpe?g|png|gif|ogg|mp3|wav)$/i,
-        type: "asset/resource",
+        // `asset` automatically chooses between exporting a data URI and emitting a separate file.
+        test: /\.(jpe?g|png|svg|gif|ogg|mp3|mp4|webp|wav)$/i,
+        type: "asset",
       },
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+        oneOf: [
+          {
+            test: /\.module\.css$/,
+            use: [
+              MiniCssExtractPlugin.loader,
+              {
+                loader: "css-loader",
+                options: {
+                  // https://adamrackis.dev/blog/css-modules
+                  modules: true,
+                  // https://github.com/webpack-contrib/css-loader/issues/228#issuecomment-312885975
+                  importLoaders: 1,
+                  // https://stackoverflow.com/questions/57899750/error-while-configuring-css-modules-with-webpack
+                  modules: {
+                    localIdentName: "[local]_[hash:base64:6]",
+                  },
+                },
+              },
+            ],
+          },
+          {
+            use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+          },
+        ],
       },
     ],
   },

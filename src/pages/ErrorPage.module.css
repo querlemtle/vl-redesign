@@ -1,0 +1,13 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+  height: 100vh;
+}
+
+.section__link {
+  color: var(--secondary-color-medium);
+  margin-top: 1rem;
+  text-decoration: underline;
+}
