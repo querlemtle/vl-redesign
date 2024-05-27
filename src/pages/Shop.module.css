@@ -18,7 +18,7 @@
 
 .bg {
   width: 100%;
-  background: center / cover url("./../assets/shop-bg.png") no-repeat;
+  background: left top / cover url("./../assets/shop/shop-bg.png") no-repeat;
 }
 
 .grid {
@@ -44,7 +44,6 @@
   padding: 4rem 0;
   border-top: 3px solid var(--primary-color-light);
   border-bottom: 3px solid var(--primary-color-light);
-  background: center / cover url("./../assets/shop-bg.png");
 }
 
 @media (width <= 768px) {

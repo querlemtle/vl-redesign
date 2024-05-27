@@ -1,6 +1,6 @@
 .main {
   min-height: 100vh;
-  background: top / cover url("./../assets/shop/shop-bg.png");
+  background: left top / cover url("./../assets/shop/shop-bg.png");
 }
 
 .grid {
