@@ -39,11 +39,14 @@ function EmptyCartMsg() {
 /** ItemCard - 目前選購的商品卡片元件 */
 function ItemCard({ productId, productImage, productName, price, variants, deleteItem }) {
   /**
-   * sumTotalPrice - 計算單項商品總價
+   * sumProductPrice - 計算單項商品總價
    * @param {number} price - 商品單價
    * @param {Array} orderList - 該商品所有款式的陣列資料
    * */
-  function sumTotalPrice(price, orderList) {
+  function sumProductPrice(price, orderList) {
+    if (!orderList || orderList.length === 0) {
+      return;
+    }
     let sum = 0;
     for (const item of orderList) {
       sum += price * item.qty;
@@ -79,9 +82,13 @@ function ItemCard({ productId, productImage, productName, price, variants, delet
         </span>
       </div>
       <h4>
-        NT$<span>{sumTotalPrice(price, variants)}</span>
+        NT$<span>{sumProductPrice(price, variants)}</span>
       </h4>
-      <button type="button" className={btn} onPointerDown={() => deleteItem(productId)}>
+      <button
+        type="button"
+        className={btn}
+        onPointerDown={() => deleteItem(productId)}
+      >
         <img src={cross} alt="刪除商品按鈕" />
       </button>
     </div>
@@ -100,9 +107,12 @@ ItemCard.propTypes = {
 export default function Cart() {
   /** @type {?Array} cart - 從 localStorage 取出購物車資料 */
   const cart = JSON.parse(window.localStorage.getItem("cart"));
-  let isCartEmpty = (!cart || cart.length === 0) ? true : false;
-  /** getTotalPrice - 計算購物車內商品總價 */
-  function getTotalPrice(cart) {
+  let isCartEmpty = !cart || cart.length === 0 ? true : false;
+  /** sumTotalPrice - 計算購物車內商品總價 */
+  function sumTotalPrice(cart) {
+    if (!cart || cart.length === 0) {
+      return;
+    }
     let sum = 0;
     for (const product of cart) {
       product.variants.forEach(
@@ -117,11 +127,11 @@ export default function Cart() {
     const newCart = cart.filter((item) => item.productId !== targetId);
     window.localStorage.setItem("cart", JSON.stringify(newCart));
     setCartData(newCart);
-    setTotalPrice(getTotalPrice(newCart));
+    setTotalPrice(sumTotalPrice(newCart));
   }
 
   const [cartData, setCartData] = useState(cart);
-  const [totalPrice, setTotalPrice] = useState(() => getTotalPrice(cartData));
+  const [totalPrice, setTotalPrice] = useState(() => sumTotalPrice(cartData));
 
   return (
     <section className={sectionCenter}>
