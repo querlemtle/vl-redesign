@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import styles from "./Talent.module.css";
-import { talentVid, flowersDeco } from "../assets/images";
+import { flowersDeco } from "../assets/images";
 import talentsData from "./../data/talentsData";
 import { formatDateLong } from "./../utils/formatDate";
 import { FbIcon, XIcon, YtIcon } from "../components/IconSvgs";
@@ -30,6 +30,7 @@ const {
   link__icon: linkIcon,
 } = styles;
 
+/** IconLinks - 社群媒體連結 */
 function IconLinks({ ytLink, fbLink, xLink, size, color }) {
   return (
     <div className={links}>
@@ -54,6 +55,7 @@ IconLinks.propTypes = {
   color: PropTypes.string.isRequired,
 };
 
+/** CharBio - 角色介紹卡片 */
 function CharBio({
   bgUrl,
   portraitUrl,
@@ -69,7 +71,7 @@ function CharBio({
   const gsapContainer = useRef();
   const { contextSafe } = useGSAP({ scope: gsapContainer });
 
-  // 滑鼠移動視差
+  /** mouseParallax - 滑鼠移動視差 */
   const mouseParallax = contextSafe((e) => {
     gsap.to("[data-ani='mouse-parallax']", {
       x: (e.pageX / window.innerWidth - 0.5) * 50,
@@ -163,7 +165,13 @@ export default function Talent() {
       </section>
       {/* Video bg */}
       <section className={bgBlack}>
-        <video muted autoPlay loop src={talentVid} className={mask} />
+        <video
+          muted
+          autoPlay
+          loop
+          src="https://res.cloudinary.com/dsme7klzf/video/upload/v1716799221/ms7izc59qiucjra2xrto.mp4"
+          className={mask}
+        />
         <h3 className={textStacking}>
           以SCP基金會的世界觀為基礎，在該虛構宇宙中，SCP基金會是一個跨國秘密組織，負責搜尋並收容各種具有異常屬性的個體、地點或物體。VTuber們將會探索和解析不尋常的事件和對象。
           在直播中進行各種研究、調查活動，並分享新的發現和冒險。
@@ -172,7 +180,7 @@ export default function Talent() {
       {talents.map((talent, i) => {
         return (
           <CharBio
-            key={talent.id}
+            key={talent.talentId}
             bgUrl={talent.images.bg}
             portraitUrl={talent.images.portrait}
             logoUrl={talent.images.logo}

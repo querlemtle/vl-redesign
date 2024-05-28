@@ -4,8 +4,6 @@ import {
   hanakawaIcon,
   sandersIcon,
   homeBannerBg,
-  homeBannerBgMedium,
-  homeBannerBgSmall,
   pet,
   streamPreviewImg,
   ytIconNoBorder,
@@ -177,6 +175,7 @@ function HomeBanner() {
       opacity: 1,
       x: 0,
       y: 0,
+      duration: 0.9,
     });
   });
 
@@ -192,9 +191,11 @@ function HomeBanner() {
 
   return (
     <section className={banner} ref={gsapContainer}>
-      <img
-        src={homeBannerBg}
-        srcSet={`${homeBannerBgSmall} 390w, ${homeBannerBgMedium} 768w, ${homeBannerBg} 1920w`}
+      <video
+        muted
+        autoPlay
+        loop
+        src="https://res.cloudinary.com/dsme7klzf/video/upload/v1716911786/s6dsepyl8zikmdcfwjak.mp4"
         alt="背景"
         className={bannerBg}
       />
