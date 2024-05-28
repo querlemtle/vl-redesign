@@ -100,6 +100,8 @@ export default function ProductDetails() {
             {
               productId: targetProduct[0].productId,
               productName: targetProduct[0].productName,
+              productImage: targetProduct[0].images[0],
+              price: targetProduct[0].price,
               variants: [
                 {
                   variantId: selectedVariantId,
@@ -121,6 +123,8 @@ export default function ProductDetails() {
             {
               productId: targetProduct[0].productId,
               productName: targetProduct[0].productName,
+              productImage: targetProduct[0].images[0],
+              price: targetProduct[0].price,
               variants: [
                 {
                   variantId: selectedVariantId,

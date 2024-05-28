@@ -44,6 +44,8 @@
   --alpha-10: transparent 90%;
   --alpha-5: transparent 95%;
   --radius-s: 5px;
+  --radius-m: 15px;
+  --radius-l: 25px;
 }
 
 html,
