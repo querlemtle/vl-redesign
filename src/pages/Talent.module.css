@@ -10,7 +10,7 @@
 
 .banner__title,
 .banner__subtitle {
-  color: var(--white);
+  color: rgb(var(--white));
   margin: 3rem 1.25rem;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .bg-black {
-  background-color: var(--black);
+  background-color: rgb(var(--black));
   position: relative;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .text-stacking {
-  color: var(--white);
+  color: rgb(var(--white));
   position: absolute;
   font-weight: 500;
   letter-spacing: 2px;
@@ -163,6 +163,6 @@
 }
 
 .link__icon:hover {
-  border: 3px solid var(--primary-color-dark);
+  border: 3px solid rgb(var(--primary-color-dark));
   opacity: 1;
 }

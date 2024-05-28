@@ -7,7 +7,7 @@
 }
 
 .section__link {
-  color: var(--secondary-color-medium);
+  color: rgb(var(--secondary-color-medium));
   margin-top: 1rem;
   text-decoration: underline;
 }

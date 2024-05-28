@@ -54,22 +54,22 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: var(--white);
+  background-color: rgb(var(--white));
   display: grid;
   place-items: center;
-  box-shadow: 0 5px 4px 0 color-mix(in srgb, var(--primary-color-light), var(--alpha-25));
+  box-shadow: 0 5px 4px 0 rgba(var(--primary-color-light), 0.25);
   z-index: 2;
 }
 
 .sidebar-left__options {
   border-radius: 99rem;
   padding: 3rem 1rem;
-  background-color: color-mix(in srgb, var(--white), var(--alpha-90));
+  background-color: rgba(var(--white), 0.9);
   display: grid;
   row-gap: 20px;
   transform: translateY(calc(-60px / 2));
   z-index: 1;
-  box-shadow: 0 8px 8px 0 color-mix(in srgb, var(--primary-color-dark), var(--alpha-25));
+  box-shadow: 0 8px 8px 0 rgba(var(--primary-color-dark), 0.25);
 }
 
 @media (width <= 390px) {
@@ -136,8 +136,8 @@
 
 /* 4 columns and 2 rows */
 .card-c4r2 {
-  background-color: color-mix(in srgb, var(--white), var(--alpha-90));
-  box-shadow: 0 8px 8px 0 color-mix(in srgb, var(--primary-color-dark), var(--alpha-25));
+  background-color: rgba(var(--white), 0.9);
+  box-shadow: 0 8px 8px 0 rgba(var(--primary-color-dark), 0.25);
   border-radius: 1rem;
   padding: 1rem 3rem;
   position: relative;
@@ -162,13 +162,13 @@
 }
 
 .char-icon:hover {
-  border: 3px solid var(--primary-color-dark);
+  border: 3px solid rgb(var(--primary-color-dark));
 }
 
 /* 2 columns and 4 rows */
 .card-c2r4 {
-  background-color: color-mix(in srgb, var(--white), var(--alpha-90));
-  box-shadow: 0 8px 8px 0 color-mix(in srgb, var(--primary-color-dark), var(--alpha-25));
+  background-color: rgba(var(--white), 0.9);
+  box-shadow: 0 8px 8px 0 rgba(var(--primary-color-dark), 0.25);
   padding: 1rem;
   border-radius: 1rem;
   position: relative;
@@ -179,7 +179,7 @@
 }
 
 .card-c2r4:hover {
-  box-shadow: 0 0 8px 8px color-mix(in srgb, var(--primary-color-dark), var(--alpha-50));
+  box-shadow: 0 0 8px 8px rgba(var(--primary-color-dark), 0.5);
 }
 
 .card__img {
@@ -187,7 +187,7 @@
 }
 
 .timestamp {
-  color: color-mix(in srgb, var(--black), var(--alpha-50));
+  color: rgba(var(--black), 0.5);
 }
 
 @media (width < 1024px) {

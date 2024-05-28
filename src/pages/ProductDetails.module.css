@@ -21,7 +21,7 @@
 }
 
 .img {
-  border: 2px solid var(--primary-color-dark);
+  border: 2px solid rgb(var(--primary-color-dark));
   border-radius: var(--radius-s);
   display: grid;
   place-items: center;
@@ -35,18 +35,18 @@
 }
 
 .img--s:hover {
-  border: 4px solid color-mix(in srgb, var(--primary-color-light), var(--alpha-70));
+  border: 4px solid rgba(var(--primary-color-light), 0.7);
 }
 
 .title {
   margin-bottom: 4rem;
-  color: var(--secondary-color-dark);
+  color: rgb(var(--secondary-color-dark));
 }
 
 .list {
   padding: 1rem 1.5rem;
   margin: 1.5rem 0 1rem;
-  background-color: color-mix(in srgb, var(--primary-color-light), var(--alpha-10));
+  background-color: rgba(var(--primary-color-light), 0.1);
   border-radius: var(--radius-s);
   max-width: 544px;
 }
@@ -58,7 +58,7 @@
 
 .list__title {
   margin-bottom: 0.5rem;
-  color: var(--primary-color-dark);
+  color: rgb(var(--primary-color-dark));
 }
 
 .sublist {
@@ -76,8 +76,8 @@
   padding: 0.25rem 1rem;
   flex: 1;
   border-radius: var(--radius-s);
-  border-color: var(--accent-color-pink);
-  color: var(--primary-color-dark);
+  border-color: rgb(var(--accent-color-pink));
+  color: rgb(var(--primary-color-dark));
 }
 
 .btn {
@@ -86,7 +86,7 @@
   display: grid;
   place-items: center;
   border-radius: var(--radius-s);
-  color: var(--primary-color-dark);
+  color: rgb(var(--primary-color-dark));
 }
 
 .btn--stretch {
@@ -94,13 +94,13 @@
 }
 
 .btn--fill {
-  background-color: var(--accent-color-pink);
+  background-color: rgb(var(--accent-color-pink));
   border: 1px solid transparent; /* 避免轉換到 btn--border 時，元素大小改變而跳動 */
-  color: var(--white);
+  color: rgb(var(--white));
 }
 
 .btn--border {
-  border: 1px solid var(--primary-color-dark);
+  border: 1px solid rgb(var(--primary-color-dark));
 }
 
 :global(.btn:disabled) {
@@ -108,7 +108,7 @@
 }
 
 .divider {
-  border-top: 1px solid var(--primary-color-dark);
+  border-top: 1px solid rgb(var(--primary-color-dark));
 }
 
 .clickable {

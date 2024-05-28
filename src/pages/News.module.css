@@ -15,9 +15,7 @@
 }
 
 .section__bg {
-  background-color: color-mix(in srgb,
-      var(--primary-color-light),
-      var(--alpha-10));
+  background-color: rgba(var(--primary-color-light), 0.1);
   padding: 2rem 0;
 }
 

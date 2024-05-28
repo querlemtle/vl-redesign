@@ -7,7 +7,7 @@
 .section__title {
   padding-bottom: 1rem;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid var(--secondary-color-dark);
+  border-bottom: 1px solid rgb(var(--secondary-color-dark));
 }
 
 .grid {
@@ -27,7 +27,7 @@
   grid-template-columns: 0.5fr 1fr auto auto;
   column-gap: 2rem;
   align-items: start;
-  border-bottom: 1px solid var(--secondary-color-dark);
+  border-bottom: 1px solid rgb(var(--secondary-color-dark));
   padding: 1rem 0 1.5rem;
   margin-bottom: 60px;
 }
@@ -48,7 +48,7 @@
 }
 
 .text--accent {
-  color: var(--accent-color-orangered);
+  color: rgb(var(--accent-color-orangered));
 }
 
 /* Right column: Confirm order */
@@ -64,19 +64,19 @@
 }
 
 .aside__container {
-  border: 1px solid var(--secondary-color-medium);
+  border: 1px solid rgb(var(--secondary-color-medium));
   display: grid;
   border-radius: var(--radius-s);
 }
 
 .aside__title {
   padding: 1.25rem;
-  color: var(--black);
+  color: rgb(var(--black));
 }
 
 .aside__body {
   padding: 2rem 1.25rem;
-  background-color: color-mix(in srgb, var(--secondary-color-medium), var(--alpha-10));
+  background-color: rgba(var(--secondary-color-medium), 0.1);
 }
 
 .aside__accent {
@@ -95,8 +95,8 @@
 }
 
 .btn--fill {
-  background-color: var(--secondary-color-dark);
-  color: var(--white);
+  background-color: rgb(var(--secondary-color-dark));
+  color: rgb(var(--white));
   padding: 0.625rem 4rem;
   margin: 1.25rem auto;
   border-radius: var(--radius-s);
