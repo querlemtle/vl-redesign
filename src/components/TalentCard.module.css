@@ -12,8 +12,8 @@
 
 .card__cover {
   z-index: 1;
-  background-color: color-mix(in srgb, var(--primary-color-dark), var(--alpha-80));
-  color: color-mix(in srgb, var(--white), var(--alpha-80));
+  background-color: rgba(var(--primary-color-dark), 0.8);
+  color: rgba(var(--white), 0.8);
   backdrop-filter: blur(1px);
   border-radius: 1rem 1rem 0 0;
   margin: 0.5rem 0.5rem 0;

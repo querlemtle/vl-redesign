@@ -12,38 +12,21 @@
   --font-m: 1.125rem;  /* 18px */
   --font-base: 16px;
   --font-s: 0.875rem;  /* 14px */
-  --primary-color-dark: #e06897;
-  --primary-color-light: #fa90ba;
-  --secondary-color-dark: #112e44;
-  --secondary-color-medium: #2d5993;
-  --secondary-color-light: #7c97bb;
-  --accent-color-blue: #03aaea;
-  --accent-color-pink: #f75192;
-  --accent-color-orangered: #d5544c;
-  --accent-color-green: #19c575;
+  --primary-color-dark: 224, 104, 151;
+  --primary-color-light: 250, 144, 186;
+  --secondary-color-dark: 46, 46, 46;
+  --secondary-color-medium: 45, 89, 147;
+  --secondary-color-light: 124, 151, 187;
+  --accent-color-blue: 3, 170, 234;
+  --accent-color-pink: 247, 81, 146;
+  --accent-color-orangered: 213, 84, 76;
+  --accent-color-green: 25, 197, 117;
   --cta-gradient: linear-gradient(90deg, rgba(64, 238, 255, 1) 2%, rgba(168, 107, 255, 1) 57%, rgba(255, 61, 203, 1) 100%);
-  --black: #000;
-  --white: #fff;
-  --alpha-95: transparent 5%;
-  --alpha-90: transparent 10%;
-  --alpha-85: transparent 15%;
-  --alpha-80: transparent 20%;
-  --alpha-75: transparent 25%;
-  --alpha-70: transparent 30%;
-  --alpha-65: transparent 35%;
-  --alpha-60: transparent 40%;
-  --alpha-55: transparent 45%;
-  --alpha-50: transparent 50%;
-  --alpha-45: transparent 55%;
-  --alpha-40: transparent 60%;
-  --alpha-35: transparent 65%;
-  --alpha-30: transparent 70%;
-  --alpha-25: transparent 75%;
-  --alpha-20: transparent 80%;
-  --alpha-15: transparent 85%;
-  --alpha-10: transparent 90%;
-  --alpha-5: transparent 95%;
+  --black: 0, 0, 0;
+  --white: 255, 255, 255;
   --radius-s: 5px;
+  --radius-m: 15px;
+  --radius-l: 25px;
 }
 
 html,
@@ -52,7 +35,7 @@ body {
   height: 100%;
   font-family: "Noto Sans TC", Arial, sans-serif;
   font-size: var(--font-base);
-  color: color-mix(in srgb, var(--secondary-color-dark), var(--alpha-85));
+  color: rgba(var(--secondary-color-dark), 0.85);
   overflow-x: hidden;
 }
 

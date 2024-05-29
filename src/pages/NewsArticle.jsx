@@ -2,7 +2,7 @@ import styles from "./NewsArticle.module.css";
 import { LeftArrow, RightArrow } from "../components/IconSvgs";
 import newsData from "../data/newsData";
 import { formatDate } from "../utils/formatDate";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
 import getNewsTagStyle from "../utils/getNewsTagStyle";
 
@@ -17,7 +17,6 @@ const {
   article__para: articlePara,
   controller,
   controller__row: controllerRow,
-  controller__icon: controllerIcon,
 } = styles;
 
 export default function NewsArticle() {
@@ -46,14 +45,10 @@ export default function NewsArticle() {
       </p>
       <hr />
       <div className={controller}>
-        <a href="#" className={controllerRow}>
-          <LeftArrow size={36} lineFill="#2d5993" className={controllerIcon} />
-          上一篇
-        </a>
-        <a href="#" className={controllerRow}>
-          下一篇
-          <RightArrow size={36} lineFill="#2d5993" className={controllerIcon} />
-        </a>
+        <Link to="/news" className={controllerRow}>
+          <LeftArrow size={36} lineFill="#2d5993" />
+          <span>返回消息總覽</span>
+        </Link>
       </div>
     </article>
   );

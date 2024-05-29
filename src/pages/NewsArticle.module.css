@@ -20,10 +20,11 @@
 .article__img {
   width: 95%;
   margin: 0 auto;
+  border-radius: var(--radius-l);
 }
 
 .article__subtitle {
-  color: var(--accent-color-orangered);
+  color: rgb(var(--accent-color-orangered));
   margin: 2rem 0 1rem;
 }
 
@@ -46,9 +47,10 @@
   display: flex;
   align-items: center;
   column-gap: 0.5rem;
-  color: var(--secondary-color-medium);
+  color: rgb(var(--secondary-color-medium));
+  transition: transform 350ms ease;
 }
 
-.controller__icon:hover {
-  fill: color-mix(in srgb, var(--secondary-color-medium), var(--alpha-30));
+.controller__row:hover {
+  transform: translateX(-4px);
 }

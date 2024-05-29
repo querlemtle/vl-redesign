@@ -8,7 +8,7 @@
 .title {
   font-size: var(--font-xl);
   padding-right: 1rem;
-  border-right: 1px solid color-mix(in srgb, var(--primary-color-dark), var(--alpha-50));
+  border-right: 1px solid rgba(var(--primary-color-dark), 0.5);
 }
 
 .banner {
@@ -18,7 +18,7 @@
 
 .bg {
   width: 100%;
-  background: center / cover url("./../assets/shop-bg.png") no-repeat;
+  background: left top / cover url("./../assets/shop/shop-bg.png") no-repeat;
 }
 
 .grid {
@@ -42,9 +42,8 @@
   gap: 48px 16px;
   margin: 0 auto 160px;
   padding: 4rem 0;
-  border-top: 3px solid var(--primary-color-light);
-  border-bottom: 3px solid var(--primary-color-light);
-  background: center / cover url("./../assets/shop-bg.png");
+  border-top: 3px solid rgb(var(--primary-color-light));
+  border-bottom: 3px solid rgb(var(--primary-color-light));
 }
 
 @media (width <= 768px) {

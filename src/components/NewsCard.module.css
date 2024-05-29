@@ -1,7 +1,7 @@
 .card {
   display: flex;
   flex-direction: column;
-  border-radius: 1rem;
+  border-radius: var(--radius-m);
   row-gap: 0.625rem;
   text-align: left;
   width: 500px;
@@ -22,10 +22,11 @@
 .card__img-wrapper {
   overflow: hidden;
   border-radius: 1rem;
-  max-height: 300px;
+  max-height: 320px;
 }
 
 .card__img {
+  height: 100%;
   transition: transform 300ms ease-in-out;
   object-fit: cover;
   object-position: center;
@@ -45,23 +46,23 @@
 }
 
 :global(.tag--feature) {
-  color: var(--accent-color-pink);
-  border-bottom: 1px solid var(--accent-color-pink);
+  color: rgb(var(--accent-color-pink));
+  border-bottom: 1px solid rgb(var(--accent-color-pink));
 }
 
 :global(.tag--info) {
-  color: var(--accent-color-blue);
-  border-bottom: 1px solid var(--accent-color-blue);
+  color: rgb(var(--accent-color-blue));
+  border-bottom: 1px solid rgb(var(--accent-color-blue));
 }
 
 :global(.tag--event) {
-  color: var(--accent-color-green);
-  border-bottom: 1px solid var(--accent-color-green);
+  color: rgb(var(--accent-color-green));
+  border-bottom: 1px solid rgb(var(--accent-color-green));
 }
 
 :global(.tag--analysis) {
-  color: var(--accent-color-orangered);
-  border-bottom: 1px solid var(--accent-color-orangered);
+  color: rgb(var(--accent-color-orangered));
+  border-bottom: 1px solid rgb(var(--accent-color-orangered));
 }
 
 .card__title {
@@ -73,7 +74,7 @@
 
 .card__meta {
   font-weight: 500;
-  color: color-mix(in srgb, var(--secondary-color-dark), var(--alpha-40));
+  color: rgba(var(--secondary-color-dark), 0.4);
 }
 
 .card:hover .card__img {

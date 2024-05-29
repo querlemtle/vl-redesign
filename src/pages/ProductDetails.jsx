@@ -40,13 +40,14 @@ export default function ProductDetails() {
   const [variantsList, setVariantsList] = useState(
     productDetails.variants.map((variant, i) => {
       return {
-        id: variant.variantId,
+        variantId: variant.variantId,
         name: variant.name,
         selected: i === 0 ? true : false,
       };
     })
   );
   const [displayToast, setDisplayToast] = useState(false);
+  const [isAddBtnDisabled, setIsAddBtnDisabled] = useState(false);
 
   function changePreviewImg(event) {
     setDisplayImage(event.target.src);
@@ -59,7 +60,7 @@ export default function ProductDetails() {
 
     const newList = variantsList.map((variant, i) => {
       return {
-        id: variant.variantId,
+        variantId: variant.variantId,
         name: variant.name,
         selected: i === targetIndex ? true : false,
       };
@@ -78,45 +79,128 @@ export default function ProductDetails() {
 
   function addToCart(event) {
     event.preventDefault();
-    /** @type {string} variantName - 選擇的規格名稱 */
+    /** @type {Object} SelectedVariant - 選擇的規格 */
+    const selectedVariant = variantsList.find((variant) => variant.selected);
+    /** @type {string} selectedVariantId - 選擇的規格 id */
+    const selectedVariantId = selectedVariant.variantId;
+    /** @type {string} selectedVariantName - 選擇的規格名稱 */
+    const selectedVariantName = selectedVariant.name;
     /** @type {number} purchaseQty - 選擇的數量 */
-    const { name: variantName } = variantsList.find(
-      (variant) => variant.selected
-    );
     const purchaseQty = Number(quantitySelect.current.value);
     /** @type {?Array} cart - 購物車內容 */
     const cart = JSON.parse(window.localStorage.getItem("cart"));
+
     try {
+      setIsAddBtnDisabled(true);
       if (!cart) {
+        // 1. cart 不存在
         window.localStorage.setItem(
           "cart",
           JSON.stringify([
             {
               productId: targetProduct[0].productId,
-              variant: variantName,
-              quantity: purchaseQty,
-            }
+              productName: targetProduct[0].productName,
+              productImage: targetProduct[0].images[0],
+              price: targetProduct[0].price,
+              variants: [
+                {
+                  variantId: selectedVariantId,
+                  name: selectedVariantName,
+                  qty: purchaseQty,
+                },
+              ],
+            },
           ])
         );
       } else {
-        const targetIndex = cart.findIndex(
+        // 2. cart 存在
+        const targetProductIndex = cart.findIndex(
           (item) => item.productId === targetProduct[0].productId
         );
-        const newCart = cart.map((item, i) => {
-          return i === targetIndex
-            ? {
+        // 2-1. 沒有選過這項商品
+        if (targetProductIndex === -1) {
+          const newCart = cart.concat([
+            {
               productId: targetProduct[0].productId,
-              variant: variantName,
-              quantity: item.quantity + purchaseQty,
-            }
-            : { ...item };
-        });
-        window.localStorage.setItem("cart", JSON.stringify(newCart));
+              productName: targetProduct[0].productName,
+              productImage: targetProduct[0].images[0],
+              price: targetProduct[0].price,
+              variants: [
+                {
+                  variantId: selectedVariantId,
+                  name: selectedVariantName,
+                  qty: purchaseQty,
+                },
+              ],
+            },
+          ]);
+          window.localStorage.setItem("cart", JSON.stringify(newCart));
+        } else {
+          // 2-2. 已選過此商品
+          /** @type {number} targetVariantIndex - 購物車內該商品的指定規格索引值 */
+          const targetVariantIndex = cart[
+            targetProductIndex
+          ].variants.findIndex(
+            (variant) => variant.variantId === selectedVariantId
+          );
+          if (targetVariantIndex === -1) {
+            // 2-2-1. 選過這項商品，但沒有選過此規格
+            const updatedVariants = cart[targetProductIndex].variants.concat([
+              {
+                variantId: selectedVariantId,
+                name: selectedVariantName,
+                qty: purchaseQty,
+              },
+            ]);
+
+            const updatedProduct = {
+              ...cart[targetProductIndex],
+              variants: updatedVariants,
+            };
+
+            const newCart = cart.map((item, i) => {
+              if (i === targetProductIndex) {
+                return { ...updatedProduct };
+              } else {
+                return item;
+              }
+            });
+
+            window.localStorage.setItem("cart", JSON.stringify(newCart));
+          } else {
+            // 2-2-2. 選過這項商品，且有選過此規格
+            const updatedVariants = cart[targetProductIndex].variants.map(
+              (variant, i) => {
+                if (i === targetVariantIndex) {
+                  return { ...variant, qty: variant.qty + purchaseQty };
+                } else {
+                  return variant;
+                }
+              }
+            );
+
+            const updatedProduct = {
+              ...cart[targetProductIndex],
+              variants: updatedVariants,
+            };
+
+            const newCart = cart.map((item, i) => {
+              if (i === targetProductIndex) {
+                return { ...updatedProduct };
+              } else {
+                return item;
+              }
+            });
+
+            window.localStorage.setItem("cart", JSON.stringify(newCart));
+          }
+        }
       }
       showToast();
     } catch (error) {
       console.error(error);
     }
+    setIsAddBtnDisabled(false);
   }
 
   return (
@@ -184,6 +268,7 @@ export default function ProductDetails() {
                   type="button"
                   className={`${btn} ${btnFill} ${btnStretch} ${clickable}`}
                   onPointerDown={addToCart}
+                  disabled={isAddBtnDisabled}
                 >
                   加入購物車
                 </button>

@@ -4,10 +4,7 @@ import colorLogo from "./Vlive-Lab-logo.svg";
 import whiteLogo from "./Vlive-Lab-logo-white.svg";
 
 // Home page - banner
-import homeBannerBg from "./home/home-banner-bg.png";
-import homeBannerBgMedium from "./home/home-banner-bg-m.png";
-import homeBannerBgSmall from "./home/home-banner-bg-s.png";
-import posterGirl from "./home/poster-girl.png";
+import homeBannerBg from "./home/home-banner-bg.mp4";
 import pet from "./home/pet.png";
 import heartIcon from "./icons/heart-icon.svg";
 import yagamiIcon from "./icons/Yagami-chibi-icon.png";
@@ -87,6 +84,10 @@ import cartImg from "./icons/cart.svg";
 import newsBanner from "./news/news-banner.png";
 import newsImg1 from "./news/news-img1.png";
 import newsImg2 from "./news/news-img2.png";
+import newsImg3 from "./news/news-img3.png";
+import newsImg4 from "./news/news-img4.png";
+import newsImg5 from "./news/news-img5.png";
+import newsImg6 from "./news/news-img6.png";
 import newsTitle from "./news-title.svg";
 import discordBanner from "./news/temp-discord-banner.png";
 
@@ -97,9 +98,6 @@ export {
   talentsTitle,
   shopTitle,
   homeBannerBg,
-  homeBannerBgMedium,
-  homeBannerBgSmall,
-  posterGirl,
   pet,
   heartIcon,
   yagamiIcon,
@@ -165,6 +163,10 @@ export {
   newsBanner,
   newsImg1,
   newsImg2,
+  newsImg3,
+  newsImg4,
+  newsImg5,
+  newsImg6,
   newsTitle,
   discordBanner,
   cartImg,

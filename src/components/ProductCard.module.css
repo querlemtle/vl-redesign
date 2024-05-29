@@ -3,7 +3,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   text-align: left;
-  border: 2px solid var(--primary-color-dark);
+  border: 2px solid rgb(var(--primary-color-dark));
   border-radius: 1rem;
 }
 
@@ -29,7 +29,7 @@
   position: absolute;
   top: 0.75rem;
   left: 0;
-  color: var(--white);
+  color: rgb(var(--white));
   font-weight: 700;
   font-size: var(--font-3xl);
   transform: rotateZ(-45deg);
@@ -54,9 +54,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 2px solid var(--primary-color-dark);
+  border-top: 2px solid rgb(var(--primary-color-dark));
   padding: 1rem;
-  color: var(--primary-color-dark);
+  color: rgb(var(--primary-color-dark));
 }
 
 .card__meta {
