@@ -42,7 +42,9 @@
   border-bottom: 2px solid transparent;
 }
 
-.nav__link:hover {
+/* 導覽列選項 active 狀態 */
+.nav__link:hover,
+:global(.active) {
   color: rgb(var(--primary-color-dark));
   border-bottom: 2px solid rgb(var(--primary-color-dark));
 }
