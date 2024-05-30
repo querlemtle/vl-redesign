@@ -86,8 +86,6 @@ import newsImg1 from "./news/news-img1.png";
 import newsImg2 from "./news/news-img2.png";
 import newsImg3 from "./news/news-img3.png";
 import newsImg4 from "./news/news-img4.png";
-import newsImg5 from "./news/news-img5.png";
-import newsImg6 from "./news/news-img6.png";
 import newsTitle from "./news-title.svg";
 import discordBanner from "./news/temp-discord-banner.png";
 
@@ -165,8 +163,6 @@ export {
   newsImg2,
   newsImg3,
   newsImg4,
-  newsImg5,
-  newsImg6,
   newsTitle,
   discordBanner,
   cartImg,

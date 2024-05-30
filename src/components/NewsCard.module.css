@@ -22,14 +22,13 @@
 .card__img-wrapper {
   overflow: hidden;
   border-radius: 1rem;
-  max-height: 320px;
+  max-height: 300px;
 }
 
 .card__img {
-  height: 100%;
+  aspect-ratio: 4 / 3;
   transition: transform 300ms ease-in-out;
   object-fit: cover;
-  object-position: center;
 }
 
 .card__title-container {

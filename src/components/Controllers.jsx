@@ -8,9 +8,9 @@ const {
 function Pagination() {
   return (
     <ul className={pagination}>
-      <a href="#" className={paginationControl}>
+      {false && <a href="#" className={paginationControl}>
         &#8592;
-      </a>
+      </a>}
       <li>
         <a href="#">1</a>
       </li>
