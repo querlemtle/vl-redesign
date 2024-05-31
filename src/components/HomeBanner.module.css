@@ -10,7 +10,7 @@
 @media (width <= 390px) {
   .banner {
     display: block;
-    height: 100vh;
+    margin-bottom: 250px;
   }
 }
 
@@ -36,6 +36,12 @@
   top: 0;
   z-index: 1;
   transform: translateY(150px) translateX(30px);
+}
+
+@media (width <= 390px) {
+  .banner__accessory {
+    height: 100px;
+  }
 }
 
 /* Left sidebar  */
@@ -75,6 +81,7 @@
 @media (width <= 390px) {
   .sidebar-left {
     flex-direction: row;
+    margin-bottom: 40px;
   }
 
   .sidebar-left__title {
@@ -135,22 +142,20 @@
 }
 
 /* 4 columns and 2 rows */
-.card-c4r2 {
+.card-upper {
+  max-width: 324px;
   background-color: rgba(var(--white), 0.9);
   box-shadow: 0 8px 8px 0 rgba(var(--primary-color-dark), 0.25);
   border-radius: 1rem;
-  padding: 1rem 3rem;
   position: relative;
 }
 
-.float-icon {
-  position: absolute;
-  top: -2rem;
-  right: -2rem;
+.card__title {
+  margin: 1rem 0 0 1rem;
 }
 
 .card__list {
-  margin-top: 0.75rem;
+  margin: 1rem;
   display: flex;
   justify-content: space-between;
 }
@@ -159,6 +164,7 @@
   transition: all 300ms ease;
   border-radius: 50%;
   border: 3px solid transparent;
+  min-width: 60px;
 }
 
 .char-icon:hover {
@@ -166,7 +172,8 @@
 }
 
 /* 2 columns and 4 rows */
-.card-c2r4 {
+.card-lower {
+  max-width: 324px;
   background-color: rgba(var(--white), 0.9);
   box-shadow: 0 8px 8px 0 rgba(var(--primary-color-dark), 0.25);
   padding: 1rem;
@@ -178,7 +185,7 @@
   transition: box-shadow 350ms ease;
 }
 
-.card-c2r4:hover {
+.card-lower:hover {
   box-shadow: 0 0 8px 8px rgba(var(--primary-color-dark), 0.5);
 }
 
@@ -200,7 +207,7 @@
   }
 }
 
-@media (width <=576px) {
+@media (width <= 576px) {
   .fb-icon,
   .yt-icon,
   .x-icon {
@@ -217,16 +224,6 @@
 
   .sidebar-right {
     grid-column: 5 / 13;
-  }
-
-  .float-icon {
-    width: 2rem;
-    top: 0;
-    right: 0;
-  }
-
-  .char-icon {
-    width: 42px;
   }
 
   .card__btn {

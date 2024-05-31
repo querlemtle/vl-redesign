@@ -13,8 +13,8 @@ import {
   confetti7,
   confetti8,
   pentaFlowerDeco,
-  LeftArrow,
-  RightArrow,
+  leftArrow,
+  rightArrow,
   halfArrow,
   whiteLogo,
 } from "../assets/images";
@@ -37,7 +37,9 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 const {
   section,
   "section--about": sectionAbout,
-  "grid-talents": gridTalents,
+  "section--news": sectionNews,
+  "section--shop": sectionShop,
+  talents__grid: talentsGrid,
   deco,
   "deco--1": deco1,
   "deco--2": deco2,
@@ -47,7 +49,6 @@ const {
   "deco--6": deco6,
   "deco--7": deco7,
   "deco--8": deco8,
-  "section--horizonal-scrolling": sectionHorizontalScrolling,
   "two-tones-bg": twoTonesBg,
   "color-bg": colorBg,
   "title-container": titleContainer,
@@ -60,12 +61,13 @@ const {
   cta__text: ctaText,
   statement,
   logo__text: logoText,
-  "hori-scrolling__hintbox": horiScrollingHintbox,
-  "grid-products": gridProducts,
+  shop__hintbox: horiScrollingHintbox,
+  shop__grid: shopGrid,
   hintbox__title: hintboxTitle,
   hintbox__guide: hintboxGuide,
   btn,
-  "btns-container--end": btnsContainerEnd,
+  "btn--left": btnLeft,
+  "btns-container": btnsContainer,
 } = styles;
 
 function Home() {
@@ -73,10 +75,11 @@ function Home() {
   const filteredNews = newsData.filter((_, i) => i <= 1);
   const [displayNews, setDisplayNews] = useState(filteredNews);
 
-  const startScrolling = (ref, isScrollingToRight) => {
+  /** ScrollContainer - 點擊按鈕時，水平捲動內容 */
+  const scrollContainer = (containerRef, isScrollingToRight) => {
     isScrollingToRight
-      ? (ref.current.scrollLeft += 372)
-      : (ref.current.scrollLeft -= 372);
+      ? (containerRef.current.scrollLeft += 372)
+      : (containerRef.current.scrollLeft -= 372);
   };
 
   const gsapContainer = useRef();
@@ -179,10 +182,11 @@ function Home() {
             冥界SCP事務所
           </h2>
         </div>
-        <div className={gridTalents}>
+        <div className={talentsGrid}>
           {talentsData.map((talent) => {
             return (
               <TalentCard
+                link={talent.bioLinks.yt}
                 charImg={talent.images.phonePic}
                 logo={talent.images.logoLight}
                 name={talent.zhName}
@@ -193,14 +197,14 @@ function Home() {
         </div>
       </section>
       {/* News */}
-      <section className={section}>
+      <section className={`${section} ${sectionNews}`}>
         <div className={titleContainer}>
           <h1>
             <img src={newsTitle} alt="News" />
           </h1>
           <h2 className={subtitle}>帶來有關VTUBER相關的新資訊與熱門話題討論</h2>
         </div>
-        <div className="grid-news">
+        <div className="news__grid">
           {/* 顯示前兩筆資料 */}
           {displayNews.map((news) => {
             return (
@@ -214,66 +218,64 @@ function Home() {
               />
             );
           })}
+          <Link to="/news" className={`${btn} ${btnsContainer}`}>
+            VIEW MORE <img src={rightArrow} alt="向右箭頭" />
+          </Link>
         </div>
-        <Link to="/news" className={`${btn} ${btnsContainerEnd}`}>
-          VIEW MORE <img src={RightArrow} alt="向右箭頭" />
-        </Link>
       </section>
       {/* Shop */}
       <section>
-        <div>
-          <div className={`${titleContainer} ${titleContainerStart}`}>
-            <h1 className={titleShop}>
-              <img src={shopTitle} alt="Shop" />
-            </h1>
-            <h2>
-              <span className={subtileAccent}>周邊&寄賣 </span>
-              我們提供豐富的周邊商品，讓您輕鬆選購心儀商品。
-            </h2>
-          </div>
-          <div className={sectionHorizontalScrolling}>
-            <Link to="/shop" className={horiScrollingHintbox}>
-              <div>
-                <img src={whiteLogo} alt="Vlive Lab" />
-                <p className={logoText}>未來實驗所</p>
-              </div>
-              <div className={hintboxTitle}>
-                <img src={pentaFlowerDeco} alt="花瓣裝飾" />
-                <h3>Online Shop</h3>
-                <img src={pentaFlowerDeco} alt="花瓣裝飾" />
-              </div>
-              <div className={hintboxGuide}>
-                前往商店 <img src={halfArrow} alt="箭頭" />
-              </div>
-            </Link>
-            <div className={gridProducts} ref={scrollXContainer}>
-              {productsData.map((item) => {
-                return (
-                  <ProductCard
-                    productId={item.productId}
-                    productImg={item.images[0]}
-                    productName={item.productName}
-                    productPrice={item.price}
-                    key={item.productId}
-                  />
-                );
-              })}
+        <div className={`${titleContainer} ${titleContainerStart}`}>
+          <h1 className={titleShop}>
+            <img src={shopTitle} alt="Shop" />
+          </h1>
+          <h2>
+            <span className={subtileAccent}>周邊&寄賣 </span>
+            我們提供豐富的周邊商品，讓您輕鬆選購心儀商品。
+          </h2>
+        </div>
+        <div className={sectionShop}>
+          <Link to="/shop" className={horiScrollingHintbox}>
+            <div>
+              <img src={whiteLogo} alt="Vlive Lab" />
+              <p className={logoText}>未來實驗所</p>
             </div>
+            <div className={hintboxTitle}>
+              <img src={pentaFlowerDeco} alt="花瓣裝飾" />
+              <h3>Online Shop</h3>
+              <img src={pentaFlowerDeco} alt="花瓣裝飾" />
+            </div>
+            <div className={hintboxGuide}>
+              前往商店 <img src={halfArrow} alt="箭頭" />
+            </div>
+          </Link>
+          <div className={shopGrid} ref={scrollXContainer}>
+            {productsData.map((item) => {
+              return (
+                <ProductCard
+                  productId={item.productId}
+                  productImg={item.images[0]}
+                  productName={item.productName}
+                  productPrice={item.price}
+                  key={item.productId}
+                />
+              );
+            })}
           </div>
-          <div className={btnsContainerEnd}>
-            <img
-              src={LeftArrow}
-              alt="向左箭頭"
-              onPointerDown={() => startScrolling(scrollXContainer, false)}
-              className={btn}
-            />
-            <img
-              src={RightArrow}
-              alt="向右箭頭"
-              onPointerDown={() => startScrolling(scrollXContainer, true)}
-              className={btn}
-            />
-          </div>
+        </div>
+        <div className={btnsContainer}>
+          <img
+            src={leftArrow}
+            alt="向左箭頭"
+            onPointerDown={() => scrollContainer(scrollXContainer, false)}
+            className={`${btn} ${btnLeft}`}
+          />
+          <img
+            src={rightArrow}
+            alt="向右箭頭"
+            onPointerDown={() => scrollContainer(scrollXContainer, true)}
+            className={btn}
+          />
         </div>
       </section>
     </>

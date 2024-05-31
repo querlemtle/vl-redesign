@@ -8,10 +8,10 @@ const {
   card__logo: cardLogo,
 } = styles;
 
-export default function TalentCard({ charImg, logo, name }) {
+export default function TalentCard({ link, charImg, logo, name }) {
   return (
     <div className="card">
-      <a href="#" className={cardLink}>
+      <a href={link} className={cardLink}>
         <img src={charImg} alt={name} className={cardImg} />
         <div className={cardCover}>
           <img src={logo} alt={name} className={cardLogo} />
@@ -22,6 +22,7 @@ export default function TalentCard({ charImg, logo, name }) {
 }
 
 TalentCard.propTypes = {
+  link: PropTypes.string.isRequired,
   // Webpack's asset module will resolve the image into a data URI
   charImg: PropTypes.string.isRequired,
   logo: PropTypes.string.isRequired,
