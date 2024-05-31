@@ -1,17 +1,3 @@
-import {
-  hanakawaSticker,
-  hanakawaPoster,
-  hanakawaPosterStyle1,
-  hanakawaPosterStyle2,
-  sandersSticker,
-  pin,
-  candle,
-  shirt,
-  hanakawaAcrylicStand,
-  yagamiAcrylicStand,
-  sandersAcrylicStand,
-} from "./../assets/images";
-
 const productsData = [
   {
     productId: "wFARMs",
@@ -23,7 +9,9 @@ const productsData = [
         name: "湯匙",
       },
     ],
-    images: [hanakawaSticker],
+    images: [
+      "https://res.cloudinary.com/dsme7klzf/image/upload/v1717057619/vblj66pfxoa2e8yklay6.png",
+    ],
     details: ["尺寸：6cm"],
   },
   {
@@ -40,7 +28,11 @@ const productsData = [
         name: "坐姿",
       },
     ],
-    images: [hanakawaPoster, hanakawaPosterStyle1, hanakawaPosterStyle2],
+    images: [
+      "https://res.cloudinary.com/dsme7klzf/image/upload/v1717077864/cqhy1dajwbbibrjz7tz3.png",
+      "https://res.cloudinary.com/dsme7klzf/image/upload/v1717077942/nj1ieul8j94tyuduyiak.png",
+      "https://res.cloudinary.com/dsme7klzf/image/upload/v1717077891/b6ooedpjkxssgdfqjhuz.png",
+    ],
     details: ["尺寸：50cm x 80cm"],
   },
   {
@@ -53,7 +45,9 @@ const productsData = [
         name: "日常表情包",
       },
     ],
-    images: [sandersSticker],
+    images: [
+      "https://res.cloudinary.com/dsme7klzf/image/upload/v1717057452/gfmetn4m44wgcyb6jpmo.png",
+    ],
     details: ["7 張貼紙"],
   },
   {
@@ -82,7 +76,9 @@ const productsData = [
         name: "魔龍",
       },
     ],
-    images: [pin],
+    images: [
+      "https://res.cloudinary.com/dsme7klzf/image/upload/v1717057452/vibi4vp9f90jcvhnw4pi.png",
+    ],
     details: ["尺寸：5.5cm"],
   },
   {
@@ -103,7 +99,9 @@ const productsData = [
         name: "地獄沉木",
       },
     ],
-    images: [candle],
+    images: [
+      "https://res.cloudinary.com/dsme7klzf/image/upload/v1717077602/grqd2zgek7e0mz6op4zx.png",
+    ],
     details: [
       "款式：狼煙-深淵薄荷(狼執事 夜神遂心) / 龍芯-彼岸玫瑰(魔龍 花川夢姬) / 魔域-地獄沉木(魔王 桑德斯闇)",
       "內容物：70ml",
@@ -135,7 +133,9 @@ const productsData = [
         name: "3XL",
       },
     ],
-    images: [shirt],
+    images: [
+      "https://res.cloudinary.com/dsme7klzf/image/upload/v1717077737/t96fygpnb4vhhifwpihq.png",
+    ],
     details: ["尺寸：S / M / L / XL / 3XL", "材質：純棉"],
   },
   {
@@ -148,7 +148,9 @@ const productsData = [
         name: "夢姬站姿",
       },
     ],
-    images: [hanakawaAcrylicStand],
+    images: [
+      "https://res.cloudinary.com/dsme7klzf/image/upload/v1717057453/baubkg6fnw4i3n7p2dqy.png",
+    ],
     details: ["尺寸：9X9公分", "材質：壓克力"],
   },
   {
@@ -161,7 +163,9 @@ const productsData = [
         name: "狼執事站姿",
       },
     ],
-    images: [yagamiAcrylicStand],
+    images: [
+      "https://res.cloudinary.com/dsme7klzf/image/upload/v1717077840/lqnrxfutthgsvofk1znf.png",
+    ],
     details: ["尺寸：9X9公分", "材質：壓克力"],
   },
   {
@@ -174,7 +178,9 @@ const productsData = [
         name: "魔王坐姿",
       },
     ],
-    images: [sandersAcrylicStand],
+    images: [
+      "https://res.cloudinary.com/dsme7klzf/image/upload/v1717057619/xgyh7pn7d3f5p02czkpz.png",
+    ],
     details: ["尺寸：9X9公分", "材質：壓克力"],
   },
 ];

@@ -1,5 +1,5 @@
 import styles from "./NewsArticle.module.css";
-import { LeftArrow, RightArrow } from "../components/IconSvgs";
+import { leftArrow } from "../assets/images";
 import newsData from "../data/newsData";
 import { formatDate } from "../utils/formatDate";
 import { useParams, Link } from "react-router-dom";
@@ -15,8 +15,9 @@ const {
   article__subtitle: articleSubtitle,
   article__link: articleLink,
   article__para: articlePara,
-  controller,
-  controller__row: controllerRow,
+  btn,
+  btn__container: btnContainer,
+  btn__icon: btnIcon,
 } = styles;
 
 export default function NewsArticle() {
@@ -44,9 +45,9 @@ export default function NewsArticle() {
         資料來源： <a href={newsContent.url}>{newsContent.url}</a>
       </p>
       <hr />
-      <div className={controller}>
-        <Link to="/news" className={controllerRow}>
-          <LeftArrow size={36} lineFill="#2d5993" />
+      <div className={btn}>
+        <Link to="/news" className={btnContainer}>
+          <img src={leftArrow} alt="向左箭頭" className={btnIcon} />
           <span>返回消息總覽</span>
         </Link>
       </div>

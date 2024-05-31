@@ -3,12 +3,6 @@ import productsData from "../data/productsData";
 import ProductCard from "../components/ProductCard";
 import CartBtn from "../components/CartBtn";
 import styles from "./Shop.module.css";
-import { Cloudinary } from "@cloudinary/url-gen";
-import {
-  AdvancedImage,
-  lazyload,
-  placeholder,
-} from "@cloudinary/react";
 
 const {
   banner,
@@ -21,21 +15,13 @@ const {
 } = styles;
 
 export default function Shop() {
-  const cld = new Cloudinary({
-    cloud: {
-      cloudName: "dsme7klzf",
-    },
-  });
-
-  const shopBanner = cld.image("ddk4c4dhatecgvvpv3ht");
 
   return (
     <>
       <section className={banner}>
-        <AdvancedImage
+        <img
           alt="商店封面"
-          cldImg={shopBanner}
-          plugins={[placeholder()]}
+          src="https://res.cloudinary.com/dsme7klzf/image/upload/v1717077492/ddk4c4dhatecgvvpv3ht.png"
         />
       </section>
       <section className={`${grid} ${gridInstruction}`}>

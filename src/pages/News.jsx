@@ -1,6 +1,6 @@
 import { newsTitle, newsBanner, discordBanner } from "../assets/images";
 import NewsCard from "../components/NewsCard";
-import { Pagination } from "../components/Controllers";
+import Pagination from "../components/Pagination";
 import newsData from "../data/newsData";
 import { formatDate } from "../utils/formatDate";
 import styles from "./News.module.css";
@@ -23,7 +23,7 @@ export default function News() {
         <h1 className={sectionTitle}>
           <img src={newsTitle} alt="News" />
         </h1>
-        <div className="grid-news">
+        <div className="news__grid">
           {newsData.map((news) => {
             return (
               <NewsCard
