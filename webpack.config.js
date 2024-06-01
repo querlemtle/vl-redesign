@@ -9,7 +9,8 @@ const StylelintPlugin = require("stylelint-webpack-plugin");
 module.exports = {
   entry: "./src/index.js",
   output: {
-    filename: "main.js",
+    // Configure Webpack for code splitting: https://github.com/webpack/webpack/discussions/15762
+    filename: "[name].js",
     path: path.resolve(__dirname, "build"),
     assetModuleFilename: "assets/[hash][ext][query]",
   },

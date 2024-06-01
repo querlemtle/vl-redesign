@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "webpack serve --mode development",
     "build": "webpack --mode production",
+    "stats": "webpack --mode production --profile --json > stats.json",
     "lint": "npx eslint . --ext js,jsx && npx stylelint \"src/**/*.css\" \"src/**/*.module.css\"",
     "lint:fix": "npx eslint . --ext js,jsx --fix && npx stylelint \"src/**/*.css\" \"src/**/*.module.css\" --fix",
     "clean": "rm -rf ./build",
