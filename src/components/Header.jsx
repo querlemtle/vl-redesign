@@ -81,7 +81,7 @@ function Header() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/news" className={navLink}>
+            <NavLink to="/news/1" className={navLink}>
               News
             </NavLink>
           </li>

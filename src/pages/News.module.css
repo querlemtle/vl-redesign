@@ -34,15 +34,6 @@
   }
 }
 
-:global(.news__grid) {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 4rem 2rem;
-  max-width: var(--container-max-width);
-}
-
 .aside {
   display: flex;
   justify-content: center;

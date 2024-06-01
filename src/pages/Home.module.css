@@ -46,6 +46,12 @@
   margin-left: 5rem;
 }
 
+@media (width <= 390px) {
+  .title-container--start {
+    margin: 0 0 1.5rem 1rem;
+  }
+}
+
 /* About title */
 .title {
   color: rgb(var(--accent-color-pink));
@@ -208,9 +214,7 @@
 
 /* 商店產品展示 */
 .section--shop {
-  display: grid;
-  grid-template-columns: 372px 1fr;
-  grid-template-rows: 1fr;
+  display: flex;
   gap: 0.5rem;
   overflow-x: auto;
   white-space: nowrap;
@@ -219,12 +223,12 @@
 
 @media (width <=768px) {
   .section--shop {
-    grid-template-columns: none;
+    flex-direction: column;
+    margin: 0 1rem;
   }
 }
 
 .shop__grid {
-  margin-bottom: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, 372px);
   grid-template-rows: 1fr;
@@ -234,17 +238,6 @@
   overflow-x: auto;
   scroll-behavior: smooth;
   white-space: nowrap;
-}
-
-@media (width <=390px) {
-  .title-container--start,
-  .section--shop {
-    margin-inline: 0.5rem;
-  }
-
-  .shop__grid {
-    display: flex;
-  }
 }
 
 /* 隱藏卷軸顯示 */

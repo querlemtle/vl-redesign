@@ -1,3 +1,4 @@
+/** getNewsTagStyle - 取得新聞文章分類標籤的 className */
 function getNewsTagStyle(tagText) {
   switch (tagText) {
     case "焦點":

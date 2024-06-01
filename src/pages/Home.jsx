@@ -89,6 +89,7 @@ function Home() {
       gsap.from("[data-ani='spread-out']", {
         top: "80%",
         left: "50%",
+        opacity: 0,
         scrollTrigger: {
           trigger: gsapContainer.current,
           start: "start bottom",
@@ -218,7 +219,7 @@ function Home() {
               />
             );
           })}
-          <Link to="/news" className={`${btn} ${btnsContainer}`}>
+          <Link to="/news/1" className={`${btn} ${btnsContainer}`}>
             VIEW MORE <img src={rightArrow} alt="向右箭頭" />
           </Link>
         </div>
@@ -229,8 +230,8 @@ function Home() {
           <h1 className={titleShop}>
             <img src={shopTitle} alt="Shop" />
           </h1>
-          <h2>
-            <span className={subtileAccent}>周邊&寄賣 </span>
+          <h2 className={subtitle}>
+            <span className={subtileAccent}>周邊&寄賣</span>
             我們提供豐富的周邊商品，讓您輕鬆選購心儀商品。
           </h2>
         </div>

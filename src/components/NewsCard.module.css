@@ -38,32 +38,6 @@
   column-gap: 0.5rem;
 }
 
-/* 新聞標籤 */
-:global(.tag) {
-  font-weight: 500;
-  margin-bottom: 8px;
-}
-
-:global(.tag--feature) {
-  color: rgb(var(--accent-color-pink));
-  border-bottom: 1px solid rgb(var(--accent-color-pink));
-}
-
-:global(.tag--info) {
-  color: rgb(var(--accent-color-blue));
-  border-bottom: 1px solid rgb(var(--accent-color-blue));
-}
-
-:global(.tag--event) {
-  color: rgb(var(--accent-color-green));
-  border-bottom: 1px solid rgb(var(--accent-color-green));
-}
-
-:global(.tag--analysis) {
-  color: rgb(var(--accent-color-orangered));
-  border-bottom: 1px solid rgb(var(--accent-color-orangered));
-}
-
 .card__title {
   display: -webkit-box;
   -webkit-line-clamp: 1;

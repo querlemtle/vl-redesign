@@ -16,12 +16,12 @@ export default function NewsCard({ id, image, tagText, title, timestamp }) {
   return (
     <div className={card}>
       <div className={cardImgWrapper}>
-        <Link to={`/news/${id}`} className="card__link">
+        <Link to={`/article/${id}`} className="card__link">
           <img src={image} alt="文章縮圖" className={cardImg} />
         </Link>
       </div>
       <div>
-        <Link to={`/news/${id}`} className="card__link">
+        <Link to={`/article/${id}`} className="card__link">
           <div className={cardTitleContainer}>
             <span className={`tag ${getNewsTagStyle(tagText)}`}>{tagText}</span>
             <h3 className={cardTitle}>{title}</h3>

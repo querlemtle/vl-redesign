@@ -46,7 +46,7 @@ export default function NewsArticle() {
       </p>
       <hr />
       <div className={btn}>
-        <Link to="/news" className={btnContainer}>
+        <Link to="/news/1" className={btnContainer}>
           <img src={leftArrow} alt="向左箭頭" className={btnIcon} />
           <span>返回消息總覽</span>
         </Link>

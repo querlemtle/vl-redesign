@@ -40,6 +40,57 @@ body {
   overflow-x: hidden;
 }
 
+/* ---- 全域共用設定 ---- */
+
+/* CSS module :global 樣式有時候會套用失敗，所以改成一併寫在此處 */
 .App {
   min-height: 100vh;
 }
+
+.news__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem 2rem;
+  max-width: var(--container-max-width);
+}
+
+/* 導覽列選項 active 狀態 */
+.active {
+  color: rgb(var(--primary-color-dark));
+  border-bottom: 2px solid rgb(var(--primary-color-dark));
+}
+
+/* 新聞標籤 */
+.tag {
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.tag--feature {
+  color: rgb(var(--accent-color-pink));
+  border-bottom: 1px solid rgb(var(--accent-color-pink));
+}
+
+.tag--info {
+  color: rgb(var(--accent-color-blue));
+  border-bottom: 1px solid rgb(var(--accent-color-blue));
+}
+
+.tag--event {
+  color: rgb(var(--accent-color-green));
+  border-bottom: 1px solid rgb(var(--accent-color-green));
+}
+
+.tag--analysis {
+  color: rgb(var(--accent-color-orangered));
+  border-bottom: 1px solid rgb(var(--accent-color-orangered));
+}
+
+/* 按鈕禁用狀態 */
+.btn:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
