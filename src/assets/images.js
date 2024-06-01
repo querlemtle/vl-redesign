@@ -1,4 +1,7 @@
 // 統一載入圖檔
+// Loading animation
+import loadingIcon from "./icons/radio-loading.svg";
+
 // Header & Footer
 import colorLogo from "./Vlive-Lab-logo.svg";
 import whiteLogo from "./Vlive-Lab-logo-white.svg";
@@ -52,34 +55,17 @@ import heart from "./icons/heart.svg";
 import ytLogo from "./about/youtube.svg";
 
 // Talent page
-import sandersBg from "./talents/sanders-bg.png";
-import hanakawaBg from "./talents/hanakawa-bg.png";
-import sandersPortrait from "./talents/sanders-portrait.png";
-import hanakawaPortrait from "./talents/hanakawa-portrait.png";
 import sandersLogo from "./talents/sanders-logo.png";
 import hanakawaLogo from "./talents/hanakawa-logo.png";
 import flowersDeco from "./talents/flowers.png";
 
 // Shop page
-import hanakawaSticker from "./shop/item_01.png";
-import hanakawaPoster from "./shop/item_02.png";
-import hanakawaPosterStyle1 from "./shop/item_02_a.png";
-import hanakawaPosterStyle2 from "./shop/item_02_b.png";
-import sandersSticker from "./shop/item_03.png";
-import pin from "./shop/item_04.png";
-import candle from "./shop/item_05.png";
-import shirt from "./shop/item_06.png";
-import hanakawaAcrylicStand from "./shop/item_07.png";
-import yagamiAcrylicStand from "./shop/item_08.png";
-import sandersAcrylicStand from "./shop/item_09.png";
 import circleCheck from "./icons/circle-check.svg";
 import shipment from "./shop/shipment.png";
 import event from "./shop/event.png";
-import shopBanner from "./shop/shop-banner.png";
 import cartImg from "./icons/cart.svg";
 
 // News page
-import newsBanner from "./news/news-banner.png";
 import newsImg1 from "./news/news-img-1.png";
 import newsImg2 from "./news/news-img-2.png";
 import newsImg3 from "./news/news-img-3.png";
@@ -92,6 +78,7 @@ import newsTitle from "./news-title.svg";
 import discordBanner from "./news/temp-discord-banner.png";
 
 export {
+  loadingIcon,
   colorLogo,
   whiteLogo,
   aboutHeart,
@@ -136,29 +123,12 @@ export {
   cardBg3,
   heart,
   ytLogo,
-  sandersBg,
-  hanakawaBg,
-  sandersPortrait,
-  hanakawaPortrait,
   sandersLogo,
   hanakawaLogo,
   flowersDeco,
-  hanakawaSticker,
-  hanakawaPoster,
-  hanakawaPosterStyle1,
-  hanakawaPosterStyle2,
-  sandersSticker,
-  pin,
-  candle,
-  shirt,
-  hanakawaAcrylicStand,
-  yagamiAcrylicStand,
-  sandersAcrylicStand,
   circleCheck,
   shipment,
   event,
-  shopBanner,
-  newsBanner,
   newsImg1,
   newsImg2,
   newsImg3,
