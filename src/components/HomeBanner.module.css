@@ -5,6 +5,7 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   position: relative;
+  margin-bottom: 20vh;
 }
 
 @media (width <= 390px) {

@@ -36,7 +36,6 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const {
   section,
-  "section--about": sectionAbout,
   "section--news": sectionNews,
   "section--shop": sectionShop,
   talents__grid: talentsGrid,
@@ -105,7 +104,7 @@ function Home() {
       {/* HomeBanner */}
       <HomeBanner />
       {/* About */}
-      <section className={`${section} ${sectionAbout}`}>
+      <section className={section}>
         <h1 className={title}>
           <img src={aboutHeart} alt="愛心" />
           ABOUT
@@ -219,7 +218,7 @@ function Home() {
               />
             );
           })}
-          <Link to="/news/1" className={`${btn} ${btnsContainer}`}>
+          <Link to="/news" className={`${btn} ${btnsContainer}`}>
             VIEW MORE <img src={rightArrow} alt="向右箭頭" />
           </Link>
         </div>

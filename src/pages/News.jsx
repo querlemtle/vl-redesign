@@ -3,6 +3,7 @@ import NewsCard from "../components/NewsCard";
 import newsData from "../data/newsData";
 import { formatDate } from "../utils/formatDate";
 import { useState, useMemo } from "react";
+import Pagination from "../components/Pagination";
 import styles from "./News.module.css";
 
 const {
@@ -24,12 +25,20 @@ export default function News() {
     return newsData.slice(firstPageIndex, lastPageIndex);
   }, [currentPage]);
 
+  function handlePagination(page) {
+    setCurrentPage(page);
+    document.querySelector("body").scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
   return (
     <>
       <section className={banner}>
         <img
           src="https://res.cloudinary.com/dsme7klzf/image/upload/v1717078041/x0dueo3tlmhagltntq5h.png"
-          alt="News page banner"
+          alt="最新消息封面圖"
           className={bannerImg}
         />
       </section>
@@ -51,6 +60,12 @@ export default function News() {
             );
           })}
         </div>
+        <Pagination
+          handlePagination={handlePagination}
+          totalCount={newsData.length}
+          currentPage={currentPage}
+          itemsPerPage={itemsPerPage}
+        />
       </section>
       <aside className={aside}>
         <a href="https://discord.gg/ECAdMaTNjT" className="aside__link">

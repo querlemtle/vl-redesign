@@ -7,10 +7,6 @@
   position: relative;
 }
 
-.section--about {
-  margin-top: 5%;
-}
-
 .section--news {
   display: flex;
   flex-direction: column;

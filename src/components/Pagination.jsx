@@ -11,21 +11,23 @@ const {
 } = styles;
 
 function Pagination({
-  onPageChange,
+  handlePagination,
   totalCount,
-  siblingCount = 1,
   currentPage,
   itemsPerPage,
 }) {
   /** paginationRange - 取得分頁範圍陣列 */
-  const paginationRange = [1, 2];
+  const paginationRange = Array.from(
+    { length: Math.ceil(totalCount / itemsPerPage) },
+    (_, i) => i + 1
+  );
 
   const onNext = () => {
-    onPageChange(currentPage + 1);
+    handlePagination(currentPage + 1);
   };
 
   const onPrevious = () => {
-    onPageChange(currentPage - 1);
+    handlePagination(currentPage - 1);
   };
 
   let lastPage = paginationRange[paginationRange.length - 1];
@@ -45,18 +47,17 @@ function Pagination({
         &#8592;
       </li>
       {/* 顯示的分頁按鈕 */}
-      {paginationRange.map((pageNumber, i) => {
+      {paginationRange.map((pageNum, i) => {
         return (
-          <Link
+          <li
             className={`${paginationItem} ${
-              currentPage === pageNumber && active
+              currentPage === pageNum && active
             }`}
             key={i}
-            onPointerDown={() => onPageChange(pageNumber)}
-            to={`/news/${pageNumber}`}
+            onPointerDown={() => handlePagination(pageNum)}
           >
-            {pageNumber}
-          </Link>
+            {pageNum}
+          </li>
         );
       })}
       {/* 下一頁按鈕 */}
@@ -73,7 +74,7 @@ function Pagination({
 }
 
 Pagination.propTypes = {
-  onPageChange: PropTypes.func.isRequired,
+  handlePagination: PropTypes.func.isRequired,
   totalCount: PropTypes.number.isRequired,
   siblingCount: PropTypes.number,
   currentPage: PropTypes.number.isRequired,
