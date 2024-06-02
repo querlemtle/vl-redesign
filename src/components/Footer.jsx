@@ -21,7 +21,7 @@ function Footer() {
     <footer className={footer} id="footer">
       <div className={footerContainer}>
         <div>
-          <img src={whiteLogo} className={footerLogo} />
+          <img alt="Vlive Lab" src={whiteLogo} className={footerLogo} />
           <p>
             We are new VTuber Studio with <br /> MMORPG & VR tech <br /> welcome
             to join!

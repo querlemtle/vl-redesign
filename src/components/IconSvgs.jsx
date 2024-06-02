@@ -102,42 +102,6 @@ function EmailIcon({ size, lineFill }) {
   );
 }
 
-function LeftArrow({ size, lineFill }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={size}
-      height={size}
-      fill="none"
-      viewBox="0 0 36 36"
-    >
-      <circle cx={18} cy={18} r={17} stroke={lineFill} strokeWidth={2} />
-      <path
-        fill={lineFill}
-        d="M23.67 9.77 21.9 8 12 17.9l9.9 9.9 1.77-1.77-8.13-8.13 8.13-8.13Z"
-      />
-    </svg>
-  );
-}
-
-function RightArrow({ size, lineFill }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={size}
-      height={size}
-      fill="none"
-      viewBox="0 0 36 36"
-    >
-      <circle cx={18} cy={18} r={17} stroke={lineFill} strokeWidth={2} />
-      <path
-        fill={lineFill}
-        d="M14 26.23 15.77 28l10-10-10-10L14 9.77 22.23 18 14 26.23Z"
-      />
-    </svg>
-  );
-}
-
 const propTypes = {
   size: PropTypes.number.isRequired,
   lineFill: PropTypes.string.isRequired,
@@ -147,7 +111,5 @@ FbIcon.propTypes = propTypes;
 XIcon.propTypes = propTypes;
 YtIcon.propTypes = propTypes;
 EmailIcon.propTypes = propTypes;
-LeftArrow.propTypes = propTypes;
-RightArrow.propTypes = propTypes;
 
-export { FbIcon, XIcon, YtIcon, EmailIcon, LeftArrow, RightArrow };
+export { FbIcon, XIcon, YtIcon, EmailIcon };

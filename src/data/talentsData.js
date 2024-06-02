@@ -4,13 +4,9 @@ import {
   sandersLogoLight,
   hanakawaLogoLight,
   yagamiLogoLight,
-  sandersBg,
-  hanakawaBg,
   sandersIcon,
   hanakawaIcon,
   yagamiIcon,
-  sandersPortrait,
-  hanakawaPortrait,
   phoneHanakawa,
   phoneSanders,
   phoneYagami,
@@ -27,8 +23,9 @@ const talentsData = [
       logo: sandersLogo,
       logoLight: sandersLogoLight,
       icon: sandersIcon,
-      bg: sandersBg,
-      portrait: sandersPortrait,
+      bg: "https://res.cloudinary.com/dsme7klzf/image/upload/v1717057135/yxasvoaunkxgwzcrtwge.png",
+      portrait:
+        "https://res.cloudinary.com/dsme7klzf/image/upload/v1717078238/a6iebacjdhopfjuwrh41.png",
       phonePic: phoneSanders,
     },
     bioLinks: {
@@ -49,8 +46,9 @@ const talentsData = [
       logo: hanakawaLogo,
       logoLight: hanakawaLogoLight,
       icon: hanakawaIcon,
-      bg: hanakawaBg,
-      portrait: hanakawaPortrait,
+      bg: "https://res.cloudinary.com/dsme7klzf/image/upload/v1717057210/c36kttwk4uuawhqenbk8.png",
+      portrait:
+        "https://res.cloudinary.com/dsme7klzf/image/upload/v1717078223/lgl6dglasstj3fsove5a.png",
       phonePic: phoneHanakawa,
     },
     bioLinks: {

@@ -34,23 +34,29 @@
 
 .article__para {
   margin-bottom: 2rem;
+  white-space: pre-line; /* 保留 JSON 資料中的換行 */
+  line-height: 2;
 }
 
-.controller {
+.btn {
   margin: 1rem 0;
   display: flex;
   justify-content: space-between;
   font-weight: 600;
 }
 
-.controller__row {
+.btn__container {
   display: flex;
   align-items: center;
   column-gap: 0.5rem;
-  color: rgb(var(--secondary-color-medium));
+  color: rgb(var(--secondary-color-dark));
+  transition: all 350ms ease;
+}
+
+.btn__icon {
   transition: transform 350ms ease;
 }
 
-.controller__row:hover {
+.btn:hover .btn__icon {
   transform: translateX(-4px);
 }

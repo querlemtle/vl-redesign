@@ -1,8 +1,9 @@
-import { newsTitle, newsBanner, discordBanner } from "../assets/images";
+import { newsTitle, discordBanner } from "../assets/images";
 import NewsCard from "../components/NewsCard";
-import { Pagination } from "../components/Controllers";
 import newsData from "../data/newsData";
 import { formatDate } from "../utils/formatDate";
+import { useState, useMemo } from "react";
+import Pagination from "../components/Pagination";
 import styles from "./News.module.css";
 
 const {
@@ -13,18 +14,40 @@ const {
   aside,
 } = styles;
 
+/** @type {number} itemsPerPage - 每頁顯示資料數 */
+const itemsPerPage = 6;
+
 export default function News() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const currentNewsData = useMemo(() => {
+    const firstPageIndex = (currentPage - 1) * itemsPerPage;
+    const lastPageIndex = firstPageIndex + itemsPerPage;
+    return newsData.slice(firstPageIndex, lastPageIndex);
+  }, [currentPage]);
+
+  function handlePagination(page) {
+    setCurrentPage(page);
+    document.querySelector("body").scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
   return (
     <>
       <section className={banner}>
-        <img src={newsBanner} alt="News page banner" className={bannerImg} />
+        <img
+          src="https://res.cloudinary.com/dsme7klzf/image/upload/v1717078041/x0dueo3tlmhagltntq5h.png"
+          alt="最新消息封面圖"
+          className={bannerImg}
+        />
       </section>
       <section className={sectionBg}>
         <h1 className={sectionTitle}>
           <img src={newsTitle} alt="News" />
         </h1>
-        <div className="grid-news">
-          {newsData.map((news) => {
+        <div className="news__grid">
+          {currentNewsData.map((news) => {
             return (
               <NewsCard
                 key={news.newsId}
@@ -37,7 +60,12 @@ export default function News() {
             );
           })}
         </div>
-        <Pagination />
+        <Pagination
+          handlePagination={handlePagination}
+          totalCount={newsData.length}
+          currentPage={currentPage}
+          itemsPerPage={itemsPerPage}
+        />
       </section>
       <aside className={aside}>
         <a href="https://discord.gg/ECAdMaTNjT" className="aside__link">

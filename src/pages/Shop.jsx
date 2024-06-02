@@ -1,4 +1,4 @@
-import { shopBanner, shipment, event } from "./../assets/images";
+import { shipment, event } from "./../assets/images";
 import productsData from "../data/productsData";
 import ProductCard from "../components/ProductCard";
 import CartBtn from "../components/CartBtn";
@@ -15,10 +15,14 @@ const {
 } = styles;
 
 export default function Shop() {
+
   return (
     <>
       <section className={banner}>
-        <img src={shopBanner} alt="banner" />
+        <img
+          alt="商店封面"
+          src="https://res.cloudinary.com/dsme7klzf/image/upload/v1717077492/ddk4c4dhatecgvvpv3ht.png"
+        />
       </section>
       <section className={`${grid} ${gridInstruction}`}>
         <a href="https://vtuberonline.com/events/">

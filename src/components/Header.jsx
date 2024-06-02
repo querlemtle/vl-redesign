@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { colorLogo } from "./../assets/images";
@@ -58,10 +58,10 @@ function Header() {
     <header className={header} ref={gsapContainer}>
       {/* Logo */}
       <div className={headerBrand}>
-        <NavLink to="/">
+        <Link to="/">
           <img src={colorLogo} alt="Vlive Lab" />
           <p className={headerTitle}>未來實驗所</p>
-        </NavLink>
+        </Link>
       </div>
       <nav className={nav} data-ani="scroll">
         <ul className={navList}>

@@ -7,7 +7,7 @@
 .section__title {
   padding-bottom: 1rem;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid rgb(var(--secondary-color-dark));
+  border-bottom: 1px solid rgb(var(--primary-color-light));
 }
 
 .grid {
@@ -27,7 +27,7 @@
   grid-template-columns: 0.5fr 1fr auto auto;
   column-gap: 2rem;
   align-items: start;
-  border-bottom: 1px solid rgb(var(--secondary-color-dark));
+  border-bottom: 1px solid rgba(var(--primary-color-light), 0.7);
   padding: 1rem 0 1.5rem;
   margin-bottom: 60px;
 }
@@ -64,7 +64,7 @@
 }
 
 .aside__container {
-  border: 1px solid rgb(var(--secondary-color-medium));
+  border: 1px solid rgba(var(--primary-color-light), 0.7);
   display: grid;
   border-radius: var(--radius-s);
 }
@@ -76,7 +76,8 @@
 
 .aside__body {
   padding: 2rem 1.25rem;
-  background-color: rgba(var(--secondary-color-medium), 0.1);
+  background-color: rgba(var(--primary-color-light), 0.1);
+  color: rgb(var(--primary-color-dark));
 }
 
 .aside__accent {
@@ -95,7 +96,7 @@
 }
 
 .btn--fill {
-  background-color: rgb(var(--secondary-color-dark));
+  background-color: rgb(var(--accent-color-pink));
   color: rgb(var(--white));
   padding: 0.625rem 4rem;
   margin: 1.25rem auto;

@@ -1,10 +1,12 @@
 // 統一載入圖檔
+// Loading animation
+import loadingIcon from "./icons/radio-loading.svg";
+
 // Header & Footer
 import colorLogo from "./Vlive-Lab-logo.svg";
 import whiteLogo from "./Vlive-Lab-logo-white.svg";
 
 // Home page - banner
-import homeBannerBg from "./home/home-banner-bg.mp4";
 import pet from "./home/pet.png";
 import heartIcon from "./icons/heart-icon.svg";
 import yagamiIcon from "./icons/Yagami-chibi-icon.png";
@@ -32,8 +34,8 @@ import hanakawaLogoLight from "./talents/hanakawa-logo-light.png";
 import sandersLogoLight from "./talents/sanders-logo-light.png";
 import yagamiLogoLight from "./talents/Yagami-logo-light.png";
 import pentaFlowerDeco from "./icons/penta-flower-deco.svg";
-import LeftArrow from "./icons/left-arrow.svg";
-import RightArrow from "./icons/right-arrow.svg";
+import leftArrow from "./icons/left-arrow.svg";
+import rightArrow from "./icons/right-arrow.svg";
 import halfArrow from "./icons/half-arrow.svg";
 
 // About page
@@ -53,51 +55,35 @@ import heart from "./icons/heart.svg";
 import ytLogo from "./about/youtube.svg";
 
 // Talent page
-import talentVid from "./talents/talent-video-banner.mp4";
-import sandersBg from "./talents/sanders-bg.png";
-import hanakawaBg from "./talents/hanakawa-bg.png";
-import sandersPortrait from "./talents/sanders-portrait.png";
-import hanakawaPortrait from "./talents/hanakawa-portrait.png";
 import sandersLogo from "./talents/sanders-logo.png";
 import hanakawaLogo from "./talents/hanakawa-logo.png";
 import flowersDeco from "./talents/flowers.png";
 
 // Shop page
-import hanakawaSticker from "./shop/item_01.png";
-import hanakawaPoster from "./shop/item_02.png";
-import hanakawaPosterStyle1 from "./shop/item_02_a.png";
-import hanakawaPosterStyle2 from "./shop/item_02_b.png";
-import sandersSticker from "./shop/item_03.png";
-import pin from "./shop/item_04.png";
-import candle from "./shop/item_05.png";
-import shirt from "./shop/item_06.png";
-import hanakawaAcrylicStand from "./shop/item_07.png";
-import yagamiAcrylicStand from "./shop/item_08.png";
-import sandersAcrylicStand from "./shop/item_09.png";
 import circleCheck from "./icons/circle-check.svg";
 import shipment from "./shop/shipment.png";
 import event from "./shop/event.png";
-import shopBanner from "./shop/shop-banner.png";
 import cartImg from "./icons/cart.svg";
 
 // News page
-import newsBanner from "./news/news-banner.png";
-import newsImg1 from "./news/news-img1.png";
-import newsImg2 from "./news/news-img2.png";
-import newsImg3 from "./news/news-img3.png";
-import newsImg4 from "./news/news-img4.png";
-import newsImg5 from "./news/news-img5.png";
-import newsImg6 from "./news/news-img6.png";
+import newsImg1 from "./news/news-img-1.png";
+import newsImg2 from "./news/news-img-2.png";
+import newsImg3 from "./news/news-img-3.png";
+import newsImg4 from "./news/news-img-4.png";
+import newsImg5 from "./news/news-img-5.png";
+import newsImg6 from "./news/news-img-6.png";
+import newsImg7 from "./news/news-img-7.png";
+import newsImg8 from "./news/news-img-8.png";
 import newsTitle from "./news-title.svg";
 import discordBanner from "./news/temp-discord-banner.png";
 
 export {
+  loadingIcon,
   colorLogo,
   whiteLogo,
   aboutHeart,
   talentsTitle,
   shopTitle,
-  homeBannerBg,
   pet,
   heartIcon,
   yagamiIcon,
@@ -120,8 +106,8 @@ export {
   sandersLogoLight,
   yagamiLogoLight,
   pentaFlowerDeco,
-  LeftArrow,
-  RightArrow,
+  leftArrow,
+  rightArrow,
   halfArrow,
   redPen,
   heartDoodle1,
@@ -137,36 +123,20 @@ export {
   cardBg3,
   heart,
   ytLogo,
-  talentVid,
-  sandersBg,
-  hanakawaBg,
-  sandersPortrait,
-  hanakawaPortrait,
   sandersLogo,
   hanakawaLogo,
   flowersDeco,
-  hanakawaSticker,
-  hanakawaPoster,
-  hanakawaPosterStyle1,
-  hanakawaPosterStyle2,
-  sandersSticker,
-  pin,
-  candle,
-  shirt,
-  hanakawaAcrylicStand,
-  yagamiAcrylicStand,
-  sandersAcrylicStand,
   circleCheck,
   shipment,
   event,
-  shopBanner,
-  newsBanner,
   newsImg1,
   newsImg2,
   newsImg3,
   newsImg4,
   newsImg5,
   newsImg6,
+  newsImg7,
+  newsImg8,
   newsTitle,
   discordBanner,
   cartImg,
