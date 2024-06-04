@@ -1,6 +1,6 @@
 # Vlive Lab Redesign
 這是 VTuber 事務所 Vlive Lab 的概念形象網站。
-
+![demo](https://res.cloudinary.com/dsme7klzf/image/upload/v1717504416/ftxeyycybvzgb00afcwl.gif)
 - 設計 & 插圖：[tata](https://github.com/tatafriend)
 - 切版 & 程式：[Wtz](https://github.com/querlemtle)
 

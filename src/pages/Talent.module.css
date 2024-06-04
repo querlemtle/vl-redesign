@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   place-items: end stretch;
-  background: url("./../assets/talents/scp-agency-banner.png") no-repeat;
+  background: url("https://res.cloudinary.com/dsme7klzf/image/upload/v1717498039/om8zbas86cohbvtyt6nn.png") no-repeat;
   background-size: cover;
 }
 

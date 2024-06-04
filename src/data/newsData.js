@@ -1,20 +1,10 @@
-import {
-  newsImg1,
-  newsImg2,
-  newsImg3,
-  newsImg4,
-  newsImg5,
-  newsImg6,
-  newsImg7,
-  newsImg8,
-} from "../assets/images";
-
 const newsData = [
   {
     newsId: "4KVMWjC",
     tag: "活動",
     publishedAt: "2024-05-30T07:00:00.000Z",
-    coverImg: newsImg6,
+    coverImg:
+      "https://res.cloudinary.com/dsme7klzf/image/upload/v1717499573/ndnzr2uowv7z7l6l1vf6.png",
     title: "Vlive Lab 即將舉辦 VTuber 線上交流聚會",
     description: "促進合作交流的未來之旅",
     content:
@@ -25,7 +15,8 @@ const newsData = [
     newsId: "jtuJOiV",
     tag: "焦點",
     publishedAt: "2024-05-21T02:22:00.000Z",
-    coverImg: newsImg1,
+    coverImg:
+      "https://res.cloudinary.com/dsme7klzf/image/upload/v1717499574/uwlq4cxaukef1xuqhhcu.png",
     title: "虛擬歌姬 MuiME 發布最新單曲",
     description: "MuiME 最新單曲現正於各大串流平台熱播中",
     content:
@@ -36,7 +27,8 @@ const newsData = [
     newsId: "DaHUQbh",
     tag: "情報",
     publishedAt: "2024-04-10T01:27:51.000Z",
-    coverImg: newsImg2,
+    coverImg:
+      "https://res.cloudinary.com/dsme7klzf/image/upload/v1717499571/hmjxutwzajv18g8mvnpb.png",
     title: "四重精靈合唱團宣布將於夏季登台演出",
     description: "風靡全球的四重精靈合唱團即將來台",
     content:
@@ -47,7 +39,8 @@ const newsData = [
     newsId: "kjWkVLx",
     tag: "分析",
     publishedAt: "2024-03-07T14:30:06.000Z",
-    coverImg: newsImg3,
+    coverImg:
+      "https://res.cloudinary.com/dsme7klzf/image/upload/v1717499572/eijqr5aivvbdmsuz5npo.png",
     title: "VTuber 產業：從創作到消費的全面解析",
     description: "快速解析虛擬直播產業",
     content:
@@ -58,7 +51,8 @@ const newsData = [
     newsId: "OoSEBeN",
     tag: "情報",
     publishedAt: "2024-02-15T13:56:10.000Z",
-    coverImg: newsImg5,
+    coverImg:
+      "https://res.cloudinary.com/dsme7klzf/image/upload/v1717499569/wpx2wwemqs73uevnvcam.png",
     title: "新一代 VTuber 角色肢體操作軟體 VTmotion Beta 即將問世",
     description: "立即試用Beta版！",
     content:
@@ -69,7 +63,8 @@ const newsData = [
     newsId: "YEcrUgJ",
     tag: "情報",
     publishedAt: "2024-01-06T06:01:00.000Z",
-    coverImg: newsImg4,
+    coverImg:
+      "https://res.cloudinary.com/dsme7klzf/image/upload/v1717499564/wf8ayzpy6nsmikdau0gj.png",
     title: "知名 Vsinger 團體「催化劑」開放招募新人！",
     description: "下一個閃耀的新星也許就是你",
     content:
@@ -80,7 +75,8 @@ const newsData = [
     newsId: "xj44JKZ",
     tag: "焦點",
     publishedAt: "2023-12-25T07:00:00.000Z",
-    coverImg: newsImg7,
+    coverImg:
+      "https://res.cloudinary.com/dsme7klzf/image/upload/v1717499575/j0vlzkxad38ujam5slmk.png",
     title: "動漫展驚現 3 名神秘 coser！華麗造型引爆視覺盛宴",
     description: "Coser 們出眾的顏值配合華麗的服裝驚豔群眾",
     content:
@@ -91,7 +87,8 @@ const newsData = [
     newsId: "mfLr4w-",
     tag: "活動",
     publishedAt: "2023-12-13T08:48:07.000Z",
-    coverImg: newsImg8,
+    coverImg:
+      "https://res.cloudinary.com/dsme7klzf/image/upload/v1717499575/ffaimqdutqtk3xroaw1k.png",
     title:
       "InfiniteAI Inc.與 Galaxy Stars 聯手舉辦以社交舞會為主題的直播連動企劃",
     description: "精彩直播與各項好禮等你來參加",
