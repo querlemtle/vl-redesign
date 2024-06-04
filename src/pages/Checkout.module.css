@@ -83,6 +83,10 @@
   border: 1px solid rgb(var(--accent-color-orangered));
 }
 
+.notice {
+  text-align: center;
+}
+
 @media (width <= 768px) {
   .input__field {
     width: 80%;

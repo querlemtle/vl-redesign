@@ -15,6 +15,7 @@ const {
   input__hint: inputHint,
   "btn-wrapper": btnWrapper,
   btn,
+  notice,
 } = styles;
 
 /** @type {Array} formFields - 表格欄位資料 */
@@ -147,7 +148,7 @@ export default function Checkout() {
   });
 
   function onSuccessSubmit() {
-    alert("成功送出訂單！\r\n（註：表單僅供示意，不會蒐集個人資料）");
+    alert("成功送出訂單！");
   }
 
   return (
@@ -166,6 +167,7 @@ export default function Checkout() {
             送出資料
           </button>
         </div>
+        <div className={notice}>（註：表單僅供示意，不會蒐集個人資料）</div>
       </form>
     </section>
   );
