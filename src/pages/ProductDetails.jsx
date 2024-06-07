@@ -4,6 +4,10 @@ import styles from "./ProductDetails.module.css";
 import { useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import productsData from "../data/productsData";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP);
 
 const {
   main,
@@ -48,6 +52,12 @@ export default function ProductDetails() {
   );
   const [displayToast, setDisplayToast] = useState(false);
   const [isAddBtnDisabled, setIsAddBtnDisabled] = useState(false);
+  const [tl, setTl] = useState();
+
+  useGSAP(() => {
+    const tl = gsap.timeline();
+    setTl(tl);
+  });
 
   function changePreviewImg(event) {
     setDisplayImage(event.target.src);
@@ -198,7 +208,7 @@ export default function ProductDetails() {
       }
       showToast();
     } catch (error) {
-      console.error(error);
+      // console.error(error);
     }
     setIsAddBtnDisabled(false);
   }
@@ -290,7 +300,10 @@ export default function ProductDetails() {
           </ul>
         </div>
         <CartBtn />
-        {displayToast && <Toast />}
+        {/* TODO: 怎麼動態傳 text & status */}
+        {displayToast && (
+          <Toast timeline={tl} text="商品已成功加入購物車!" status="success" />
+        )}
       </section>
     </main>
   );
