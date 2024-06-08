@@ -5,6 +5,7 @@ import { formatDate } from "../utils/formatDate";
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
 import getNewsTagStyle from "../utils/getNewsTagStyle";
+import ErrorPage from "./ErrorPage";
 
 const {
   article,
@@ -22,8 +23,12 @@ const {
 
 export default function NewsArticle() {
   const { newsId } = useParams();
-  const selectedNews = newsData.filter((news) => news.newsId === newsId);
-  const [newsContent, setNewsContent] = useState({ ...selectedNews[0] });
+  const selectedNews = newsData.find((news) => news.newsId === newsId);
+  const [newsContent, setNewsContent] = useState({ ...selectedNews });
+
+  if(!selectedNews) {
+    return <ErrorPage />;
+  }
 
   return (
     <article className={article}>

@@ -3,6 +3,7 @@ import Toast from "../components/Toast";
 import styles from "./ProductDetails.module.css";
 import { useRef, useState } from "react";
 import { useParams } from "react-router-dom";
+import ErrorPage from "./ErrorPage";
 import productsData from "../data/productsData";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -33,11 +34,15 @@ const {
 export default function ProductDetails() {
   const { productId } = useParams();
   const quantitySelect = useRef();
-  // 取得目標商品資料，解構至新物件
-  const targetProduct = productsData.filter(
+  const targetProduct = productsData.find(
     (item) => item.productId === productId
   );
-  const [productDetails, setProductDetails] = useState({ ...targetProduct[0] });
+
+  if(!targetProduct) {
+    return <ErrorPage />;
+  }
+
+  const [productDetails, setProductDetails] = useState({ ...targetProduct });
   /** @type {string} displayImage - 預覽圖狀態 */
   const [displayImage, setDisplayImage] = useState(productDetails.images[0]);
   /** @type {Array} variantsList - 規格選擇列表狀態 */
@@ -108,10 +113,10 @@ export default function ProductDetails() {
           "cart",
           JSON.stringify([
             {
-              productId: targetProduct[0].productId,
-              productName: targetProduct[0].productName,
-              productImage: targetProduct[0].images[0],
-              price: targetProduct[0].price,
+              productId: targetProduct.productId,
+              productName: targetProduct.productName,
+              productImage: targetProduct.images[0],
+              price: targetProduct.price,
               variants: [
                 {
                   variantId: selectedVariantId,
@@ -125,16 +130,16 @@ export default function ProductDetails() {
       } else {
         // 2. cart 存在
         const targetProductIndex = cart.findIndex(
-          (item) => item.productId === targetProduct[0].productId
+          (item) => item.productId === targetProduct.productId
         );
         // 2-1. 沒有選過這項商品
         if (targetProductIndex === -1) {
           const newCart = cart.concat([
             {
-              productId: targetProduct[0].productId,
-              productName: targetProduct[0].productName,
-              productImage: targetProduct[0].images[0],
-              price: targetProduct[0].price,
+              productId: targetProduct.productId,
+              productName: targetProduct.productName,
+              productImage: targetProduct.images[0],
+              price: targetProduct.price,
               variants: [
                 {
                   variantId: selectedVariantId,
