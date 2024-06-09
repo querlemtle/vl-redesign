@@ -63,6 +63,7 @@ import flowersDeco from "./talents/flowers.png";
 import shipment from "./shop/shipment.png";
 import event from "./shop/event.png";
 import cartImg from "./icons/cart.svg";
+import successIcon from "./icons/success.svg";
 
 // News page
 import newsTitle from "./news-title.svg";
@@ -122,4 +123,5 @@ export {
   newsTitle,
   discordBanner,
   cartImg,
+  successIcon,
 };

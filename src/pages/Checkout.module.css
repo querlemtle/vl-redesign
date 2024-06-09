@@ -24,6 +24,35 @@
   border-bottom: 1px solid rgb(var(--primary-color-light));
 }
 
+.msg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.msg__title {
+  margin-top: 1rem;
+  font-size: var(--font-3xl);
+}
+
+.msg__body {
+  text-align: center;
+  width: 50%;
+  margin: 3rem 0 2rem;
+}
+
+.msg__reminder {
+  color: rgb(var(--secondary-color-dark));
+  font-weight: 600;
+  margin: 1.5rem 0 3.75rem;
+}
+
+.divider {
+  width: 70%;
+  height: 1px;
+  background-color: rgb(var(--accent-color-pink));
+}
+
 @media (width <= 768px) {
   .input {
     flex-direction: column;
@@ -111,10 +140,14 @@
   cursor: pointer;
   border-radius: var(--radius-s);
   min-width: 200px;
-  opacity: 0.7;
   transition: opacity 350ms ease;
 }
 
+.btn__text {
+  position: relative;
+  z-index: 2;
+}
+
 .btn:hover {
-  opacity: 1;
+  opacity: 0.8;
 }

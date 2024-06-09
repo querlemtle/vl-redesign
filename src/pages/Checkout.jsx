@@ -1,9 +1,17 @@
 import PropTypes from "prop-types";
 import styles from "./Checkout.module.css";
 import { useForm } from "react-hook-form";
+import { successIcon } from "../assets/images";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const {
   section,
+  msg,
+  msg__title: msgTitle,
+  msg__body: msgBody,
+  msg__reminder: msgReminder,
+  divider,
   title,
   form,
   input,
@@ -15,6 +23,7 @@ const {
   input__hint: inputHint,
   "btn-wrapper": btnWrapper,
   btn,
+  btn__text: btnText,
   notice,
 } = styles;
 
@@ -138,7 +147,26 @@ Input.propTypes = {
   isRequired: PropTypes.bool.isRequired,
 };
 
+/** SuccessMsg - 成功送出表單後的提示訊息 */
+function SuccessMsg() {
+  return (
+    <div className={msg}>
+      <img src={successIcon} alt="打勾符號" />
+      <h2 className={msgTitle}>謝謝您</h2>
+      <p className={msgBody}>
+        您的訂單已訂購成功，我們核對完付款資料後，將會開始進行出貨流程，並通過電子信箱告知您最新的訂單狀態。
+      </p>
+      <div className={divider}></div>
+      <p className={msgReminder}>我們將在24小時內處理您的訂單</p>
+      <Link to="/" className={btn}>
+        <span className={btnText}>回到首頁</span>
+      </Link>
+    </div>
+  );
+}
+
 export default function Checkout() {
+  const [showSuccessMsg, setShowSuccessMsg] = useState(false);
   const {
     register,
     handleSubmit,
@@ -148,27 +176,38 @@ export default function Checkout() {
   });
 
   function onSuccessSubmit() {
-    alert("成功送出訂單！");
+    setShowSuccessMsg(true);
   }
 
   return (
     <section className={section}>
-      <h2 className={title}>訂單資料填寫</h2>
-      <form className={form} onSubmit={handleSubmit(onSuccessSubmit)}>
-        <div>
-          {formFields.map((field, i) => {
-            return (
-              <Input key={i} register={register} errors={errors} {...field} />
-            );
-          })}
-        </div>
-        <div className={btnWrapper}>
-          <button type="submit" className={btn}>
-            送出資料
-          </button>
-        </div>
-        <div className={notice}>（註：表單僅供示意，不會蒐集個人資料）</div>
-      </form>
+      {showSuccessMsg ? (
+        <SuccessMsg />
+      ) : (
+        <>
+          <h2 className={title}>訂單資料填寫</h2>
+          <form className={form} onSubmit={handleSubmit(onSuccessSubmit)}>
+            <div>
+              {formFields.map((field, i) => {
+                return (
+                  <Input
+                    key={i}
+                    register={register}
+                    errors={errors}
+                    {...field}
+                  />
+                );
+              })}
+            </div>
+            <div className={btnWrapper}>
+              <button type="submit" className={btn}>
+                送出資料
+              </button>
+            </div>
+            <div className={notice}>（註：表單僅供示意，不會蒐集個人資料）</div>
+          </form>
+        </>
+      )}
     </section>
   );
 }
