@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./Cart.module.css";
 import PropTypes from "prop-types";
 import { useState, Fragment } from "react";
+import getCart from "../utils/getCart";
 
 const {
   "section-center": sectionCenter,
@@ -24,7 +25,7 @@ const {
   msg,
 } = styles;
 
-/** emptyCartMsg - 購物車為空時，顯示的訊息 */
+/** EmptyCartMsg - 購物車為空時的提示訊息 */
 function EmptyCartMsg() {
   return (
     <div className={msg}>
@@ -37,7 +38,14 @@ function EmptyCartMsg() {
 }
 
 /** ItemCard - 目前選購的商品卡片元件 */
-function ItemCard({ productId, productImage, productName, price, variants, deleteItem }) {
+function ItemCard({
+  productId,
+  productImage,
+  productName,
+  price,
+  variants,
+  deleteItem,
+}) {
   /**
    * sumProductPrice - 計算單項商品總價
    * @param {number} price - 商品單價
@@ -105,16 +113,17 @@ ItemCard.propTypes = {
 };
 
 export default function Cart() {
-  /** @type {?Array} cart - 從 localStorage 取出購物車資料 */
-  const cart = JSON.parse(window.localStorage.getItem("cart"));
-  let isCartEmpty = !cart || cart.length === 0 ? true : false;
+  const [cart, setCart] = useState(() => getCart());
+  const [totalPrice, setTotalPrice] = useState(() => sumTotalPrice(cart.data));
+
   /** sumTotalPrice - 計算購物車內商品總價 */
-  function sumTotalPrice(cart) {
-    if (!cart || cart.length === 0) {
-      return;
+  function sumTotalPrice(data) {
+    if (!data) {
+      return 0;
     }
+
     let sum = 0;
-    for (const product of cart) {
+    for (const product of data) {
       product.variants.forEach(
         (variant) => (sum += product.price * variant.qty)
       );
@@ -124,33 +133,37 @@ export default function Cart() {
 
   /** deleteItem - 刪除購物車內指定商品並更新總價 */
   function deleteItem(targetId) {
-    const newCart = cart.filter((item) => item.productId !== targetId);
-    window.localStorage.setItem("cart", JSON.stringify(newCart));
-    setCartData(newCart);
-    setTotalPrice(sumTotalPrice(newCart));
-  }
+    const newCartData = cart.data.filter((item) => item.productId !== targetId);
 
-  const [cartData, setCartData] = useState(cart);
-  const [totalPrice, setTotalPrice] = useState(() => sumTotalPrice(cartData));
+    let newTotalQty = 0;
+    for (const product of newCartData) {
+      product.variants.forEach((variant) => (newTotalQty += variant.qty));
+    }
+
+    const newCart = {
+      totalQty: newTotalQty,
+      data: newCartData,
+    };
+    
+    window.localStorage.setItem("cart", JSON.stringify(newCart));
+    setCart(newCart);
+    setTotalPrice(sumTotalPrice(newCartData));
+  }
 
   return (
     <section className={sectionCenter}>
       <h2 className={sectionTitle}>購物車內容</h2>
-      {isCartEmpty ? (
+      {cart.totalQty === 0 ? (
         <EmptyCartMsg />
       ) : (
         <div className={grid}>
           {/* Left column - 已選擇商品列表 */}
           <div>
-            {cartData.map((item) => {
+            {cart.data.map((item) => {
               return (
                 <ItemCard
                   key={item.productId}
-                  productId={item.productId}
-                  productImage={item.productImage}
-                  productName={item.productName}
-                  variants={item.variants}
-                  price={item.price}
+                  {...item}
                   deleteItem={deleteItem}
                 />
               );

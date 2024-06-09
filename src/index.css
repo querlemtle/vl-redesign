@@ -27,6 +27,7 @@
   --radius-s: 5px;
   --radius-m: 15px;
   --radius-l: 25px;
+  --radius-rounded: 50%;
   --container-max-width: 1050px;
 }
 

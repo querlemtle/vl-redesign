@@ -11,3 +11,17 @@
   border: 1px solid rgba(var(--secondary-color-dark), 0.2);
   box-shadow: 0 0 14px 0 rgba(var(--secondary-color-medium), 0.3);
 }
+
+.toast__icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-size: cover;
+}
+
+.toast__icon--success {
+  background-image: url("./../assets/icons/success.svg");
+}
+
+.toast__icon--error {
+  background-image: url("./../assets/icons/error.svg");
+}

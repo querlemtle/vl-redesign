@@ -60,7 +60,6 @@ import hanakawaLogo from "./talents/hanakawa-logo.png";
 import flowersDeco from "./talents/flowers.png";
 
 // Shop page
-import circleCheck from "./icons/circle-check.svg";
 import shipment from "./shop/shipment.png";
 import event from "./shop/event.png";
 import cartImg from "./icons/cart.svg";
@@ -118,7 +117,6 @@ export {
   sandersLogo,
   hanakawaLogo,
   flowersDeco,
-  circleCheck,
   shipment,
   event,
   newsTitle,

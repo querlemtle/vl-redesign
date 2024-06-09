@@ -1,4 +1,3 @@
-import { circleCheck } from "./../assets/images";
 import styles from "./Toast.module.css";
 import PropTypes from "prop-types";
 import { useRef } from "react";
@@ -7,10 +6,24 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(useGSAP);
 
-const { toast } = styles;
+const {
+  toast,
+  toast__icon: toastIcon,
+  "toast__icon--success": toastIconSuccess,
+  "toast__icon--error": toastIconError,
+} = styles;
 
 export default function Toast({ text, status }) {
   const toastEl = useRef();
+  /** mapStatusClass - 根據狀態映射對應的 className */
+  function mapStatusClass(status) {
+    switch(status) {
+      case "success":
+        return toastIconSuccess;
+      case "error":
+        return toastIconError;
+    }
+  }
 
   useGSAP(() => {
     gsap.fromTo(
@@ -22,7 +35,7 @@ export default function Toast({ text, status }) {
 
   return (
     <div className={toast} ref={toastEl}>
-      <img src={circleCheck} alt={status} />
+      <div className={`${toastIcon} ${mapStatusClass(status)}`}></div>
       <h3>{text}</h3>
     </div>
   );
@@ -31,5 +44,4 @@ export default function Toast({ text, status }) {
 Toast.propTypes = {
   text: PropTypes.string.isRequired,
   status: PropTypes.string.isRequired,
-  timeline: PropTypes.object.isRequired,
 };

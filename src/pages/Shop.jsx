@@ -3,6 +3,7 @@ import productsData from "../data/productsData";
 import ProductCard from "../components/ProductCard";
 import CartBtn from "../components/CartBtn";
 import styles from "./Shop.module.css";
+import getCart from "../utils/getCart";
 
 const {
   banner,
@@ -15,7 +16,7 @@ const {
 } = styles;
 
 export default function Shop() {
-
+  const cart = getCart();
   return (
     <>
       <section className={banner}>
@@ -25,10 +26,18 @@ export default function Shop() {
         />
       </section>
       <section className={`${grid} ${gridInstruction}`}>
-        <a href="https://vtuberonline.com/events/">
+        <a
+          href="https://vtuberonline.com/events/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <img src={shipment} alt="運送說明" />
         </a>
-        <a href="https://vtuberonline.com/events/">
+        <a
+          href="https://vtuberonline.com/events/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <img src={event} alt="滿額送贈品" />
         </a>
       </section>
@@ -55,7 +64,7 @@ export default function Shop() {
           </div>
         </div>
       </section>
-      <CartBtn />
+      <CartBtn totalQty={cart.totalQty} />
     </>
   );
 }

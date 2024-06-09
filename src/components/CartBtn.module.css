@@ -10,5 +10,18 @@
 }
 
 .btn__img {
-  width: 120px;
+  width: 7.5rem;
+}
+
+.btn__info {
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-rounded);
+  background-color: rgb(var(--accent-color-pink));
+  color: rgb(var(--white));
+  display: grid;
+  place-items: center;
+  position: absolute;
+  right: 5%;
+  top: 5%;
 }
