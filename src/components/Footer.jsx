@@ -27,19 +27,36 @@ function Footer() {
             to join!
           </p>
           <div className={footerIcons}>
-            <a href="https://www.youtube.com/@VliveLab/about" className={icon}>
+            <a
+              href="https://www.youtube.com/@VliveLab/about"
+              className={icon}
+              target="_blank"
+              rel="noreferrer"
+            >
               <YtIcon size={30} lineFill="#fff" />
             </a>
             <a
               href="https://www.facebook.com/people/Vlive-Lab/100093708878400/"
               className={icon}
+              target="_blank"
+              rel="noreferrer"
             >
               <FbIcon size={30} lineFill="#fff" />
             </a>
-            <a href="https://twitter.com/VliveLab" className={icon}>
+            <a
+              href="https://twitter.com/VliveLab"
+              className={icon}
+              target="_blank"
+              rel="noreferrer"
+            >
               <XIcon size={30} lineFill="#fff" />
             </a>
-            <a href="mailto:vlivelab@gmail.com" className={icon}>
+            <a
+              href="mailto:vlivelab@gmail.com"
+              className={icon}
+              target="_blank"
+              rel="noreferrer"
+            >
               <EmailIcon size={30} lineFill="#fff" />
             </a>
           </div>
@@ -83,6 +100,8 @@ function Footer() {
                   <a
                     href="https://twitter.com/@GameSeasoning66"
                     className={footerLink}
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     桑德斯.闇
                   </a>
@@ -91,6 +110,8 @@ function Footer() {
                   <a
                     href="https://twitter.com/hanakawa0516"
                     className={footerLink}
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     花川夢姬
                   </a>
@@ -99,6 +120,8 @@ function Footer() {
                   <a
                     href="https://twitter.com/nochedioslobo/"
                     className={footerLink}
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     夜神遂心
                   </a>
@@ -109,7 +132,12 @@ function Footer() {
               RESOURCES
               <ul>
                 <li className={footerSubitem}>
-                  <a href="https://vchama.xyz/" className={footerLink}>
+                  <a
+                    href="https://vchama.xyz/"
+                    className={footerLink}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Vtuber 統計地圖
                   </a>
                 </li>
@@ -117,6 +145,8 @@ function Footer() {
                   <a
                     href="https://neptunia.github.io/vtubers-data-science/"
                     className={footerLink}
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     超級聊天數據分析
                   </a>
@@ -125,6 +155,8 @@ function Footer() {
                   <a
                     href="https://streamscharts.com/channels?vtuber=all"
                     className={footerLink}
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     StreamChart
                   </a>

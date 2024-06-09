@@ -12,6 +12,7 @@ const {
   section__title: sectionTitle,
   section__bg: sectionBg,
   aside,
+  aside__link: asideLink,
 } = styles;
 
 /** @type {number} itemsPerPage - 每頁顯示資料數 */
@@ -68,7 +69,12 @@ export default function News() {
         />
       </section>
       <aside className={aside}>
-        <a href="https://discord.gg/ECAdMaTNjT" className="aside__link">
+        <a
+          href="https://discord.gg/ECAdMaTNjT"
+          target="_blank"
+          rel="noreferrer"
+          className={asideLink}
+        >
           <img src={discordBanner} alt="加入 Vlive Lab 官方 Discord" />
         </a>
       </aside>

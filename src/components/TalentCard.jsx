@@ -11,7 +11,7 @@ const {
 export default function TalentCard({ link, charImg, logo, name }) {
   return (
     <div className="card">
-      <a href={link} className={cardLink}>
+      <a href={link} target="_blank" rel="noreferrer" className={cardLink}>
         <img src={charImg} alt={name} className={cardImg} />
         <div className={cardCover}>
           <img src={logo} alt={name} className={cardLogo} />

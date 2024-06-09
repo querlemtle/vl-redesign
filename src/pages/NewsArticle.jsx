@@ -47,7 +47,10 @@ export default function NewsArticle() {
       <h3 className={articleSubtitle}>{newsContent.description}</h3>
       <p className={articlePara}>{newsContent.content}</p>
       <p className={articleLink}>
-        資料來源： <a href={newsContent.url}>{newsContent.url}</a>
+        資料來源：{" "}
+        <a href={newsContent.url} target="_blank" rel="noreferrer">
+          {newsContent.url}
+        </a>
       </p>
       <hr />
       <div className={btn}>

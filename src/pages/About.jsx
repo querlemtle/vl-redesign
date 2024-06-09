@@ -93,7 +93,12 @@ function Card({ title, content, bg, link, isLinkExternal, hasLogo }) {
     <div className={card} style={{ background: `center / cover url(${bg})` }}>
       {/* 需要以是否為外部連結條件式渲染 <Link> 或 <a>，故讓其為獨立元素，透過 CSS 擴大可點擊區域至與父層同大小 */}
       {isLinkExternal ? (
-        <a href={link} className={cardLink}></a>
+        <a
+          href={link}
+          target="_blank"
+          rel="noreferrer"
+          className={cardLink}
+        ></a>
       ) : (
         <Link to={link} className={cardLink}></Link>
       )}
