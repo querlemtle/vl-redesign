@@ -60,20 +60,12 @@ import hanakawaLogo from "./talents/hanakawa-logo.png";
 import flowersDeco from "./talents/flowers.png";
 
 // Shop page
-import circleCheck from "./icons/circle-check.svg";
 import shipment from "./shop/shipment.png";
 import event from "./shop/event.png";
 import cartImg from "./icons/cart.svg";
+import successIcon from "./icons/success.svg";
 
 // News page
-import newsImg1 from "./news/news-img-1.png";
-import newsImg2 from "./news/news-img-2.png";
-import newsImg3 from "./news/news-img-3.png";
-import newsImg4 from "./news/news-img-4.png";
-import newsImg5 from "./news/news-img-5.png";
-import newsImg6 from "./news/news-img-6.png";
-import newsImg7 from "./news/news-img-7.png";
-import newsImg8 from "./news/news-img-8.png";
 import newsTitle from "./news-title.svg";
 import discordBanner from "./news/temp-discord-banner.png";
 
@@ -126,18 +118,10 @@ export {
   sandersLogo,
   hanakawaLogo,
   flowersDeco,
-  circleCheck,
   shipment,
   event,
-  newsImg1,
-  newsImg2,
-  newsImg3,
-  newsImg4,
-  newsImg5,
-  newsImg6,
-  newsImg7,
-  newsImg8,
   newsTitle,
   discordBanner,
   cartImg,
+  successIcon,
 };

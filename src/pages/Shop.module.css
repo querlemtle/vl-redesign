@@ -18,7 +18,7 @@
 
 .bg {
   width: 100%;
-  background: left top / cover url("./../assets/shop/shop-bg.png") no-repeat;
+  background: left top / cover url("https://res.cloudinary.com/dsme7klzf/image/upload/v1717498542/kx5gxcrpbmhuereuy7yx.png") no-repeat;
 }
 
 .grid {

@@ -107,7 +107,7 @@ function LeftSidebar() {
         {brandLinks.map((link, i) => {
           return (
             <li key={i}>
-              <a href={link.url}>
+              <a href={link.url} target="_blank" rel="noreferrer">
                 <div className={link.icon} />
               </a>
             </li>
@@ -150,8 +150,12 @@ function RightSidebar() {
           {talentsLink.map((talent) => {
             return (
               <li key={talent.name}>
-                <a href={talent.url}>
-                  <img src={talent.icon} alt={`${talent.name} X 連結`} className={charIcon} />
+                <a href={talent.url} target="_blank" rel="noreferrer">
+                  <img
+                    src={talent.icon}
+                    alt={`${talent.name} X 連結`}
+                    className={charIcon}
+                  />
                 </a>
               </li>
             );
@@ -159,7 +163,11 @@ function RightSidebar() {
         </ul>
       </div>
       {/* Lower card */}
-      <a href="https://www.youtube.com/watch?v=iB12MUMJ1ps">
+      <a
+        href="https://www.youtube.com/watch?v=iB12MUMJ1ps"
+        target="_blank"
+        rel="noreferrer"
+      >
         <div className={cardLower} data-ani="move-lower">
           <div>
             <img
@@ -213,6 +221,7 @@ function HomeBanner() {
         loop
         src="https://res.cloudinary.com/dsme7klzf/video/upload/v1716911786/s6dsepyl8zikmdcfwjak.mp4"
         alt="背景"
+        preload="auto"
         className={bannerBg}
       />
       <img

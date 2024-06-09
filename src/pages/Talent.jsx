@@ -4,7 +4,7 @@ import { flowersDeco } from "../assets/images";
 import talentsData from "./../data/talentsData";
 import { formatDateLong } from "./../utils/formatDate";
 import { FbIcon, XIcon, YtIcon } from "../components/IconSvgs";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -34,13 +34,13 @@ const {
 function IconLinks({ ytLink, fbLink, xLink, size, color }) {
   return (
     <div className={links}>
-      <a href={ytLink} className={linkIcon}>
+      <a href={ytLink} target="_blank" rel="noreferrer" className={linkIcon}>
         <YtIcon size={size} lineFill={color} />
       </a>
-      <a href={fbLink} className={linkIcon}>
+      <a href={fbLink} target="_blank" rel="noreferrer" className={linkIcon}>
         <FbIcon size={size} lineFill={color} />
       </a>
-      <a href={xLink} className={linkIcon}>
+      <a href={xLink} target="_blank" rel="noreferrer" className={linkIcon}>
         <XIcon size={size} lineFill={color} />
       </a>
     </div>
@@ -135,12 +135,10 @@ CharBio.propTypes = {
 
 export default function Talent() {
   const container = useRef();
-  const [talents, setTalents] = useState(
-    // 只顯示前兩位藝人資料（因為第三位資料不全）
-    talentsData.filter((talent, i) => {
-      return i <= 1;
-    })
-  );
+  // 只顯示前兩位藝人資料（因為第三位資料不全）
+  const talents = talentsData.filter((talent, i) => {
+    return i <= 1;
+  });
 
   useGSAP(() => {
     gsap.to("[data-ani='clip']", {

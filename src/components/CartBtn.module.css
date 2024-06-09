@@ -1,14 +1,29 @@
 .btn {
   position: fixed;
-  right: 30px;
-  bottom: 0;
+  right: 2.5%;
+  bottom: 2.5%;
   transition: transform 300ms ease-in-out;
 }
 
 .btn:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .btn__img {
-  width: 120px;
+  width: 6rem;
+  border-radius: var(--radius-rounded);
+  box-shadow: var(--shadow);
+}
+
+.btn__info {
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-rounded);
+  background-color: rgb(var(--accent-color-pink));
+  color: rgb(var(--white));
+  display: grid;
+  place-items: center;
+  position: absolute;
+  right: 5%;
+  top: 5%;
 }
