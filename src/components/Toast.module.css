@@ -7,9 +7,8 @@
   right: 0;
   background-color: rgb(var(--white));
   padding: 2rem;
-  border-radius: 5px;
-  border: 1px solid rgba(var(--secondary-color-dark), 0.2);
-  box-shadow: 0 0 14px 0 rgba(var(--secondary-color-medium), 0.3);
+  border-radius: var(--radius-s);
+  box-shadow: var(--shadow);
 }
 
 .toast__icon {

@@ -6,11 +6,13 @@
 }
 
 .btn:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .btn__img {
-  width: 7.5rem;
+  width: 6rem;
+  border-radius: var(--radius-rounded);
+  box-shadow: var(--shadow);
 }
 
 .btn__info {

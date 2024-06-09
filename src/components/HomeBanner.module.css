@@ -60,7 +60,7 @@
 .sidebar-left__title {
   width: 60px;
   height: 60px;
-  border-radius: 50%;
+  border-radius: var(--radius-rounded);
   background-color: rgb(var(--white));
   display: grid;
   place-items: center;
@@ -163,7 +163,7 @@
 
 .char-icon {
   transition: all 300ms ease;
-  border-radius: 50%;
+  border-radius: var(--radius-rounded);
   border: 3px solid transparent;
   min-width: 60px;
 }

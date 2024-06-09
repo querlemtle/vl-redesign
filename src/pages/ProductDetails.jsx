@@ -223,7 +223,7 @@ export default function ProductDetails() {
       }
       updateToast("success", "商品已成功加入購物車！");
     } catch (error) {
-      updateToast("error", "商品加入失敗，請再試一次");
+      updateToast("error", "商品加入購物車失敗");
     }
     setIsAddBtnDisabled(false);
   }

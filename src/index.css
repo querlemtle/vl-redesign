@@ -26,9 +26,10 @@
   --white: 255, 255, 255;
   --radius-s: 5px;
   --radius-m: 15px;
-  --radius-l: 25px;
+  --radius-xl: 25px;
   --radius-rounded: 50%;
   --container-max-width: 1050px;
+  --shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.15);
 }
 
 html,

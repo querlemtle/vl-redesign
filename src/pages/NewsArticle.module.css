@@ -20,7 +20,7 @@
 .article__img {
   width: 95%;
   margin: 0 auto;
-  border-radius: var(--radius-l);
+  border-radius: var(--radius-xl);
 }
 
 .article__subtitle {
