@@ -31,6 +31,8 @@ import { useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -69,17 +71,52 @@ const {
   "btns-container": btnsContainer,
 } = styles;
 
-function Home() {
-  const scrollXContainer = useRef();
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 3000, min: 2000 },
+    items: 5,
+  },
+  desktop: {
+    breakpoint: { max: 2000, min: 1024 },
+    items: 3,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
+};
+
+function ScrollXBtns({ next, previous, ...rest }) {
+  const {
+    carouselState: { currentSlide },
+  } = rest;
+
+  return (
+    <div className={`${btnsContainer} "carousel-button-group"`}>
+      <img
+        src={leftArrow}
+        alt="向左箭頭"
+        className={`${btn} ${btnLeft} ${currentSlide === 0 ? "disable" : ""}`}
+        onPointerDown={() => previous()}
+      />
+      <img
+        src={rightArrow}
+        alt="向右箭頭"
+        className={btn}
+        onPointerDown={() => next()}
+      />
+    </div>
+  );
+}
+
+export default function Home() {
   const filteredNews = newsData.filter((_, i) => i <= 1);
   const [displayNews, setDisplayNews] = useState(filteredNews);
-
-  /** ScrollContainer - 點擊按鈕時，水平捲動內容 */
-  const scrollContainer = (containerRef, isScrollingToRight) => {
-    isScrollingToRight
-      ? (containerRef.current.scrollLeft += 372)
-      : (containerRef.current.scrollLeft -= 372);
-  };
 
   const gsapContainer = useRef();
 
@@ -249,37 +286,28 @@ function Home() {
               前往商店 <img src={halfArrow} alt="箭頭" />
             </div>
           </Link>
-          <div className={shopGrid} ref={scrollXContainer}>
-            {productsData.map((item) => {
-              return (
-                <ProductCard
-                  productId={item.productId}
-                  productImg={item.images[0]}
-                  productName={item.productName}
-                  productPrice={item.price}
-                  key={item.productId}
-                />
-              );
-            })}
+          <div className={shopGrid}>
+            <Carousel
+              arrows={false}
+              renderButtonGroupOutside={true}
+              customButtonGroup={<ScrollXBtns />}
+              responsive={responsive}
+            >
+              {productsData.map((item) => {
+                return (
+                  <ProductCard
+                    productId={item.productId}
+                    productImg={item.images[0]}
+                    productName={item.productName}
+                    productPrice={item.price}
+                    key={item.productId}
+                  />
+                );
+              })}
+            </Carousel>
           </div>
-        </div>
-        <div className={btnsContainer}>
-          <img
-            src={leftArrow}
-            alt="向左箭頭"
-            onPointerDown={() => scrollContainer(scrollXContainer, false)}
-            className={`${btn} ${btnLeft}`}
-          />
-          <img
-            src={rightArrow}
-            alt="向右箭頭"
-            onPointerDown={() => scrollContainer(scrollXContainer, true)}
-            className={btn}
-          />
         </div>
       </section>
     </>
   );
 }
-
-export default Home;

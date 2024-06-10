@@ -225,12 +225,8 @@
 }
 
 .shop__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 372px);
-  grid-template-rows: 1fr;
-  grid-auto-columns: 372px;
-  grid-auto-flow: column;
-  column-gap: 0.5rem;
+  width: 100%;
+  height: auto;
   overflow-x: auto;
   scroll-behavior: smooth;
   white-space: nowrap;
