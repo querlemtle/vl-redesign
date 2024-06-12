@@ -6,6 +6,8 @@ import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
 import getNewsTagStyle from "../utils/getNewsTagStyle";
 import ErrorPage from "./ErrorPage";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const {
   article,
@@ -42,7 +44,7 @@ export default function NewsArticle() {
       </div>
       <h1 className={articleTitle}>{newsContent.title}</h1>
       <div>
-        <img src={newsContent.coverImg} alt="封面圖" className={articleImg} />
+        <LazyLoadImage effect="blur" src={newsContent.coverImg} alt="封面圖" className={articleImg} />
       </div>
       <h3 className={articleSubtitle}>{newsContent.description}</h3>
       <p className={articlePara}>{newsContent.content}</p>

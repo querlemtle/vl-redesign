@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import styles from "./NewsCard.module.css";
 import getNewsTagStyle from "../utils/getNewsTagStyle";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const {
   card,
@@ -17,7 +19,12 @@ export default function NewsCard({ id, image, tagText, title, timestamp }) {
     <div className={card}>
       <div className={cardImgWrapper}>
         <Link to={`/article/${id}`} className="card__link">
-          <img src={image} alt="文章縮圖" className={cardImg} />
+          <LazyLoadImage
+            effect="blur"
+            src={image}
+            alt="文章縮圖"
+            className={cardImg}
+          />
         </Link>
       </div>
       <div>
