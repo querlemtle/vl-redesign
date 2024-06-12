@@ -1,6 +1,6 @@
 // 統一載入圖檔
 // Loading animation
-import loadingIcon from "./icons/radio-loading.svg";
+import loadingAnimation from "./loading-animation.webp";
 
 // Header & Footer
 import colorLogo from "./Vlive-Lab-logo.svg";
@@ -14,6 +14,7 @@ import hanakawaIcon from "./icons/Hanakawa-chibi-icon.png";
 import sandersIcon from "./icons/Sanders-chibi-icon.png";
 import streamPreviewImg from "./home/stream-preview.png";
 import ytIconNoBorder from "./icons/yt-noborder.svg";
+import bannerPlaceholder from "./home/banner-placeholder.png";
 
 // Home page
 import aboutHeart from "./icons/about-heart.svg";
@@ -39,6 +40,7 @@ import rightArrow from "./icons/right-arrow.svg";
 import halfArrow from "./icons/half-arrow.svg";
 
 // About page
+import markCircle from "./about/mark-circle.png";
 import redPen from "./about/red-pen.png";
 import heartDoodle1 from "./about/heart-doodle-1.png";
 import phone from "./about/phone.png";
@@ -70,7 +72,7 @@ import newsTitle from "./news-title.svg";
 import discordBanner from "./news/temp-discord-banner.png";
 
 export {
-  loadingIcon,
+  loadingAnimation,
   colorLogo,
   whiteLogo,
   aboutHeart,
@@ -83,6 +85,7 @@ export {
   sandersIcon,
   streamPreviewImg,
   ytIconNoBorder,
+  bannerPlaceholder,
   confetti1,
   confetti2,
   confetti3,
@@ -101,6 +104,7 @@ export {
   leftArrow,
   rightArrow,
   halfArrow,
+  markCircle,
   redPen,
   heartDoodle1,
   phone,

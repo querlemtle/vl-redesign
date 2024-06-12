@@ -39,12 +39,28 @@
   right: -1rem;
 }
 
+.kv__accent {
+  position: relative;
+}
+
+.kv__mark {
+  position: absolute;
+  inset: 0;
+  width: 180px;
+}
+
 .kv__context {
-  grid-column: 4 / 10;
-  grid-row: 6 / 6;
+  grid-area: 6 / 1 / 6 / -1;
+  width: 30%;
   font-size: var(--font-2xl);
   text-align: center;
   z-index: 10;
+}
+
+@media (width <=1024px) {
+  .kv__context {
+    width: 55%;
+  }
 }
 
 /* 標題周邊的裝飾圖 */
@@ -101,6 +117,17 @@
   }
 }
 
+@media (width <=590px) {
+  .kv__title {
+    font-size: var(--font-2xl);
+    text-align: center;
+  }
+
+  .kv__context {
+    font-size: var(--font-xl);
+  }
+}
+
 @media (width <=390px) {
   .kv__img--lt {
     grid-column: 1 / 5;
@@ -120,10 +147,6 @@
   .kv__img--rt {
     grid-column: 9 / 13;
     grid-row: 2 / 4;
-  }
-
-  .kv__title {
-    font-size: var(--font-2xl);
   }
 
   .kv__context {
@@ -202,7 +225,7 @@
   left: 0;
 }
 
-@media (width <= 768px) {
+@media (width <=768px) {
   .floating-heart {
     width: 20px;
     height: 20px;
@@ -224,7 +247,7 @@
   margin: 0 auto;
 }
 
-@media (width <= 390px) {
+@media (width <=390px) {
   .slogan {
     font-size: var(--font-base);
   }
