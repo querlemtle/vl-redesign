@@ -13,7 +13,6 @@ import {
   confetti7,
   confetti8,
   pentaFlowerDeco,
-  leftArrow,
   rightArrow,
   halfArrow,
   whiteLogo,
@@ -27,12 +26,10 @@ import NewsCard from "../components/NewsCard";
 import ProductCard from "../components/ProductCard";
 import { formatDate } from "../utils/formatDate";
 import styles from "./Home.module.css";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState, Fragment } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -62,63 +59,24 @@ const {
   cta__text: ctaText,
   statement,
   logo__text: logoText,
-  shop__hintbox: horiScrollingHintbox,
+  shop__hintbox: shopHintBox,
   shop__grid: shopGrid,
   hintbox__title: hintboxTitle,
   hintbox__guide: hintboxGuide,
   btn,
-  "btn--left": btnLeft,
+  btn__icon: btnIcon,
+  swipe__left: swipeLeft,
+  swipe__right: swipeRight,
   "btns-container": btnsContainer,
+  "btns-container--swipe": btnsContainerSwipe,
 } = styles;
-
-const responsive = {
-  superLargeDesktop: {
-    // the naming can be any, depends on you.
-    breakpoint: { max: 3000, min: 2000 },
-    items: 5,
-  },
-  desktop: {
-    breakpoint: { max: 2000, min: 1024 },
-    items: 3,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-  },
-};
-
-function ScrollXBtns({ next, previous, ...rest }) {
-  const {
-    carouselState: { currentSlide },
-  } = rest;
-
-  return (
-    <div className={`${btnsContainer} "carousel-button-group"`}>
-      <img
-        src={leftArrow}
-        alt="向左箭頭"
-        className={`${btn} ${btnLeft} ${currentSlide === 0 ? "disable" : ""}`}
-        onPointerDown={() => previous()}
-      />
-      <img
-        src={rightArrow}
-        alt="向右箭頭"
-        className={btn}
-        onPointerDown={() => next()}
-      />
-    </div>
-  );
-}
 
 export default function Home() {
   const filteredNews = newsData.filter((_, i) => i <= 1);
   const [displayNews, setDisplayNews] = useState(filteredNews);
 
   const gsapContainer = useRef();
+  const sliderContainer = useRef(null);
 
   useGSAP(
     () => {
@@ -135,6 +93,37 @@ export default function Home() {
     },
     { scope: gsapContainer }
   );
+
+  useEffect(() => {
+    const params = {
+      navigation: true,
+      injectStyles: [
+        `
+          .swiper-button-next,
+          .swiper-button-prev {
+            display: none;
+          }
+        `,
+      ],
+    };
+
+    Object.assign(sliderContainer.current, params);
+    sliderContainer.current.initialize();
+  }, []);
+
+  function handlePrev() {
+    if (!sliderContainer.current) {
+      return;
+    }
+    sliderContainer.current.swiper.slidePrev();
+  }
+
+  function handleNext() {
+    if (!sliderContainer.current) {
+      return;
+    }
+    sliderContainer.current.swiper.slideNext();
+  }
 
   return (
     <>
@@ -256,7 +245,8 @@ export default function Home() {
             );
           })}
           <Link to="/news" className={`${btn} ${btnsContainer}`}>
-            VIEW MORE <img src={rightArrow} alt="向右箭頭" />
+            VIEW MORE{" "}
+            <img src={rightArrow} alt="向右箭頭" className={btnIcon} />
           </Link>
         </div>
       </section>
@@ -272,7 +262,7 @@ export default function Home() {
           </h2>
         </div>
         <div className={sectionShop}>
-          <Link to="/shop" className={horiScrollingHintbox}>
+          <Link to="/shop" className={shopHintBox}>
             <div>
               <img src={whiteLogo} alt="Vlive Lab" />
               <p className={logoText}>未來實驗所</p>
@@ -287,25 +277,56 @@ export default function Home() {
             </div>
           </Link>
           <div className={shopGrid}>
-            <Carousel
-              arrows={false}
-              renderButtonGroupOutside={true}
-              customButtonGroup={<ScrollXBtns />}
-              responsive={responsive}
+            <swiper-container
+              ref={sliderContainer}
+              init="false"
+              slides-per-view="3"
+              space-between="20"
+              navigation="true"
+              navigation-prev-el={swipeLeft}
+              navigation-next-el={swipeRight}
+              breakpoints={JSON.stringify({
+                0: {
+                  slidesPerView: 1,
+                  spaceBetween: 8,
+                },
+                450: {
+                  slidesPerView: 2,
+                  spaceBetween: 8,
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 8,
+                },
+              })}
             >
               {productsData.map((item) => {
                 return (
-                  <ProductCard
-                    productId={item.productId}
-                    productImg={item.images[0]}
-                    productName={item.productName}
-                    productPrice={item.price}
-                    key={item.productId}
-                  />
+                  <Fragment key={`frag-${item.productId}`}>
+                    <swiper-slide key={`slide-${item.productId}`} lazy="true">
+                      <ProductCard
+                        productId={item.productId}
+                        productImg={item.images[0]}
+                        productName={item.productName}
+                        productPrice={item.price}
+                        key={item.productId}
+                      />
+                    </swiper-slide>
+                  </Fragment>
                 );
               })}
-            </Carousel>
+            </swiper-container>
           </div>
+        </div>
+        <div className={`${btnsContainer} ${btnsContainerSwipe}`}>
+          <div
+            className={swipeLeft}
+            onPointerDown={handlePrev}
+          ></div>
+          <div
+            className={swipeRight}
+            onPointerDown={handleNext}
+          ></div>
         </div>
       </section>
     </>

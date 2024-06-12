@@ -26,8 +26,3 @@
 .active {
   color: rgb(var(--accent-color-pink));
 }
-
-.disabled {
-  opacity: 0.5;
-  pointer-events: none;
-}

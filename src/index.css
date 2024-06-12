@@ -91,8 +91,7 @@ body {
 }
 
 /* 按鈕禁用狀態 */
-.btn:disabled {
+.disabled {
   opacity: 0.5;
   pointer-events: none;
 }
-

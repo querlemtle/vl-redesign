@@ -6,7 +6,6 @@ const {
   pagination__control: paginationControl,
   pagination__item: paginationItem,
   active,
-  disabled,
 } = styles;
 
 function Pagination({
@@ -40,7 +39,7 @@ function Pagination({
     <ul className={pagination}>
       {/* 前一頁按鈕 */}
       <li
-        className={`${paginationControl} ${currentPage === 1 && disabled}`}
+        className={`${paginationControl} ${currentPage === 1 && "disabled"}`}
         onPointerDown={onPrevious}
       >
         &#8592;
@@ -49,9 +48,7 @@ function Pagination({
       {paginationRange.map((pageNum, i) => {
         return (
           <li
-            className={`${paginationItem} ${
-              currentPage === pageNum && active
-            }`}
+            className={`${paginationItem} ${currentPage === pageNum && active}`}
             key={i}
             onPointerDown={() => handlePagination(pageNum)}
           >
@@ -62,7 +59,7 @@ function Pagination({
       {/* 下一頁按鈕 */}
       <li
         className={`${paginationControl} ${
-          currentPage === lastPage && disabled
+          currentPage === lastPage && "disabled"
         }`}
         onPointerDown={onNext}
       >

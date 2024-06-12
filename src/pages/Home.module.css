@@ -3,7 +3,7 @@
   display: grid;
   place-items: center;
   width: 100%;
-  margin-bottom: 5rem;
+  margin-bottom: 6rem;
   position: relative;
 }
 
@@ -42,7 +42,7 @@
   margin-left: 5rem;
 }
 
-@media (width <= 390px) {
+@media (width <=768px) {
   .title-container--start {
     margin: 0 0 1.5rem 1rem;
   }
@@ -168,7 +168,7 @@
   right: 8%;
 }
 
-@media (width <=390px) {
+@media (width <=600px) {
   /* Resize svgs on mobile */
   .deco--1 {
     top: 40%;
@@ -214,7 +214,8 @@
   gap: 0.5rem;
   overflow-x: auto;
   white-space: nowrap;
-  margin-left: 5rem;
+  margin: 6rem 0 0 5rem;
+  position: relative;
 }
 
 @media (width <=768px) {
@@ -226,18 +227,12 @@
 
 .shop__grid {
   width: 100%;
-  height: auto;
   overflow-x: auto;
   scroll-behavior: smooth;
   white-space: nowrap;
 }
 
-/* 隱藏卷軸顯示 */
-.section--shop::-webkit-scrollbar,
-.shop__grid::-webkit-scrollbar {
-  display: none;
-}
-
+/* 前往商店連結區塊 */
 .shop__hintbox {
   background-color: rgba(var(--primary-color-dark), 0.8);
   display: flex;
@@ -337,15 +332,51 @@
   margin: 1rem 0;
 }
 
+@media (width <= 1024px) {
+  .btns-container {
+    width: 90%;
+  }
+}
+
 .btn__icon {
   transition: all 350ms ease;
 }
 
-.btn:hover .btn__icon {
-  transform: translateX(2px);
+.btn__icon.disable {
+  opacity: 0.5;
 }
 
-/* 向左箭頭 */
-.btn__icon--left:hover {
-  transform: translateX(-2px);
+.btn:hover .btn__icon {
+  transform: translateX(4px);
+}
+
+.btns-container--swipe {
+  margin: 2rem 0;
+  width: 90%;
+}
+
+.swipe__left,
+.swipe__right {
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  background-size: 100%;
+}
+
+.swipe__left {
+  background-image: url("./../assets/icons/left-arrow.svg");
+}
+
+.swipe__right {
+  background-image: url("./../assets/icons/right-arrow.svg");
+}
+
+.swipe__left:hover,
+.swipe__left:active {
+  background-image: url("./../assets/icons/left-arrow-fill.svg");
+}
+
+.swipe__right:hover,
+.swipe__right:active {
+  background-image: url("./../assets/icons/right-arrow-fill.svg");
 }
