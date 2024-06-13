@@ -131,10 +131,10 @@ export default function Home() {
       <HomeBanner />
       {/* About */}
       <section className={section}>
-        <h1 className={title}>
+        <h2 className={title}>
           <img src={aboutHeart} alt="愛心" />
           ABOUT
-        </h1>
+        </h2>
         <div className={colorBg}>
           <p className={statement}>
             Vlive
@@ -200,13 +200,13 @@ export default function Home() {
           />
         </div>
         <div className={titleContainer}>
-          <h1>
+          <h2>
             <img src={talentsTitle} alt="Talents" />
-          </h1>
-          <h2 className={subtitle}>
+          </h2>
+          <h3 className={subtitle}>
             <span className={subtileAccent}>Vlive Lab一期生 </span>
             冥界SCP事務所
-          </h2>
+          </h3>
         </div>
         <div className={talentsGrid}>
           {talentsData.map((talent) => {
@@ -225,10 +225,10 @@ export default function Home() {
       {/* News */}
       <section className={`${section} ${sectionNews}`}>
         <div className={titleContainer}>
-          <h1>
+          <h2>
             <img src={newsTitle} alt="News" />
-          </h1>
-          <h2 className={subtitle}>帶來有關VTUBER相關的新資訊與熱門話題討論</h2>
+          </h2>
+          <h3 className={subtitle}>帶來有關VTUBER相關的新資訊與熱門話題討論</h3>
         </div>
         <div className="news__grid">
           {/* 顯示前兩筆資料 */}
@@ -253,13 +253,13 @@ export default function Home() {
       {/* Shop */}
       <section>
         <div className={`${titleContainer} ${titleContainerStart}`}>
-          <h1 className={titleShop}>
+          <h2 className={titleShop}>
             <img src={shopTitle} alt="Shop" />
-          </h1>
-          <h2 className={subtitle}>
+          </h2>
+          <h3 className={subtitle}>
             <span className={subtileAccent}>周邊&寄賣</span>
             我們提供豐富的周邊商品，讓您輕鬆選購心儀商品。
-          </h2>
+          </h3>
         </div>
         <div className={sectionShop}>
           <Link to="/shop" className={shopHintBox}>
@@ -303,7 +303,7 @@ export default function Home() {
               {productsData.map((item) => {
                 return (
                   <Fragment key={`frag-${item.productId}`}>
-                    <swiper-slide key={`slide-${item.productId}`} lazy="true">
+                    <swiper-slide key={`slide-${item.productId}`}>
                       <ProductCard
                         productId={item.productId}
                         productImg={item.images[0]}

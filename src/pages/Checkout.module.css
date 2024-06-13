@@ -137,6 +137,8 @@
   background-color: rgb(var(--accent-color-pink));
   color: rgb(var(--white));
   padding: 0.625rem 4rem;
+  display: grid;
+  place-items: center;
   cursor: pointer;
   border-radius: var(--radius-s);
   min-width: 200px;

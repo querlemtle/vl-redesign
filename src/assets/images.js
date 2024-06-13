@@ -14,7 +14,6 @@ import hanakawaIcon from "./icons/Hanakawa-chibi-icon.png";
 import sandersIcon from "./icons/Sanders-chibi-icon.png";
 import streamPreviewImg from "./home/stream-preview.png";
 import ytIconNoBorder from "./icons/yt-noborder.svg";
-import bannerPlaceholder from "./home/banner-placeholder.png";
 
 // Home page
 import aboutHeart from "./icons/about-heart.svg";
@@ -85,7 +84,6 @@ export {
   sandersIcon,
   streamPreviewImg,
   ytIconNoBorder,
-  bannerPlaceholder,
   confetti1,
   confetti2,
   confetti3,

@@ -9,7 +9,7 @@ const {
 function ErrorPage() {
   return (
     <div className={section}>
-      <h1>頁面出錯了😣</h1>
+      <h2>頁面出錯了😣</h2>
       <Link to="/" className={sectionLink}>點我回首頁</Link>
     </div>
   );

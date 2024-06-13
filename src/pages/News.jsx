@@ -47,9 +47,9 @@ export default function News() {
         />
       </section>
       <section className={sectionBg}>
-        <h1 className={sectionTitle}>
+        <h2 className={sectionTitle}>
           <img src={newsTitle} alt="News" />
-        </h1>
+        </h2>
         <div className="news__grid">
           {currentNewsData.map((news) => {
             return (

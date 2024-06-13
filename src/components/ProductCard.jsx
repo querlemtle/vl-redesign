@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import styles from "./ProductCard.module.css";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
 
 const {
   card,
@@ -23,11 +21,10 @@ export default function ProductCard({
     <div className={card}>
       <Link to={`/product/${productId}`}>
         <div className={cardImgWrapper}>
-          <LazyLoadImage
+          <img
             src={productImg}
             alt={productName}
             className={cardImg}
-            effect="blur"
           />
         </div>
         <div className={cardBody}>
