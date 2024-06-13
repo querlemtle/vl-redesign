@@ -4,7 +4,6 @@ import styles from "./ProductCard.module.css";
 
 const {
   card,
-  card__link: cardLink,
   "card__img-wrapper": cardImgWrapper,
   card__img: cardImg,
   card__body: cardBody,
@@ -20,9 +19,13 @@ export default function ProductCard({
 }) {
   return (
     <div className={card}>
-      <Link to={`/product/${productId}`} className={cardLink}>
+      <Link to={`/product/${productId}`}>
         <div className={cardImgWrapper}>
-          <img src={productImg} alt={productName} className={cardImg} />
+          <img
+            src={productImg}
+            alt={productName}
+            className={cardImg}
+          />
         </div>
         <div className={cardBody}>
           <p className={cardTitle}>{productName}</p>

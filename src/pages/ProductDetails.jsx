@@ -106,9 +106,9 @@ export default function ProductDetails() {
     const selectedVariantName = selectedVariant.name;
     /** @type {number} purchaseQty - 選擇的數量 */
     const purchaseQty = Number(quantitySelect.current.value);
-
+    
+    setIsAddBtnDisabled(true);
     try {
-      setIsAddBtnDisabled(true);
       if (!cart.data) {
         // 1. cart 不存在
         window.localStorage.setItem(
@@ -293,9 +293,8 @@ export default function ProductDetails() {
                 </select>
                 <button
                   type="button"
-                  className={`${btn} ${btnFill} ${btnStretch} ${clickable}`}
+                  className={`${btn} ${btnFill} ${btnStretch} ${clickable} ${isAddBtnDisabled && "disabled"}`}
                   onPointerDown={addToCart}
-                  disabled={isAddBtnDisabled}
                 >
                   加入購物車
                 </button>

@@ -4,6 +4,8 @@ import ProductCard from "../components/ProductCard";
 import CartBtn from "../components/CartBtn";
 import styles from "./Shop.module.css";
 import getCart from "../utils/getCart";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const {
   banner,
@@ -20,7 +22,8 @@ export default function Shop() {
   return (
     <>
       <section className={banner}>
-        <img
+        <LazyLoadImage
+          effect="blur"
           alt="商店封面"
           src="https://res.cloudinary.com/dsme7klzf/image/upload/v1717077492/ddk4c4dhatecgvvpv3ht.png"
         />
@@ -31,14 +34,29 @@ export default function Shop() {
           target="_blank"
           rel="noreferrer"
         >
-          <img src={shipment} alt="運送說明" />
+          <LazyLoadImage
+            effect="blur"
+            wrapperProps={{
+              style: { transitionDelay: "0.6s" },
+            }}
+            src={shipment}
+            alt="運送說明"
+          />
         </a>
         <a
           href="https://vtuberonline.com/events/"
           target="_blank"
           rel="noreferrer"
         >
-          <img src={event} alt="滿額送贈品" />
+          <LazyLoadImage
+            effect="blur"
+            wrapperProps={{
+              style: { transitionDelay: "0.6s" },
+            }}
+            width={600}
+            src={event}
+            alt="滿額送贈品"
+          />
         </a>
       </section>
       <section className={bg}>

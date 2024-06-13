@@ -1,6 +1,6 @@
 // 統一載入圖檔
 // Loading animation
-import loadingIcon from "./icons/radio-loading.svg";
+import loadingAnimation from "./loading-animation.webp";
 
 // Header & Footer
 import colorLogo from "./Vlive-Lab-logo.svg";
@@ -39,6 +39,7 @@ import rightArrow from "./icons/right-arrow.svg";
 import halfArrow from "./icons/half-arrow.svg";
 
 // About page
+import markCircle from "./about/mark-circle.png";
 import redPen from "./about/red-pen.png";
 import heartDoodle1 from "./about/heart-doodle-1.png";
 import phone from "./about/phone.png";
@@ -70,7 +71,7 @@ import newsTitle from "./news-title.svg";
 import discordBanner from "./news/temp-discord-banner.png";
 
 export {
-  loadingIcon,
+  loadingAnimation,
   colorLogo,
   whiteLogo,
   aboutHeart,
@@ -101,6 +102,7 @@ export {
   leftArrow,
   rightArrow,
   halfArrow,
+  markCircle,
   redPen,
   heartDoodle1,
   phone,

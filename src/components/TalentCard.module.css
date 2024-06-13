@@ -10,6 +10,18 @@
   grid-area: 1 / 1 / 2 / 2;
 }
 
+@media (width <=480px) {
+  .card__link {
+    align-items: end;
+  }
+
+  .card__img {
+    object-fit: contain;
+  }
+}
+
+
+
 .card__cover {
   z-index: 1;
   background-color: rgba(var(--primary-color-dark), 0.8);

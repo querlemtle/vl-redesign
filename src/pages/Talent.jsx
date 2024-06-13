@@ -154,12 +154,12 @@ export default function Talent() {
   return (
     <>
       <section className={banner} ref={container} data-ani="clip">
-        <h1 className={bannerTitle}>冥界 SCP 事務所</h1>
-        <h2 className={bannerSubtitle}>
+        <h2 className={bannerTitle}>冥界 SCP 事務所</h2>
+        <h3 className={bannerSubtitle}>
           魔王、魔龍、狼執事
           <br />
           的事務所初探
-        </h2>
+        </h3>
       </section>
       {/* Video bg */}
       <section className={bgBlack}>

@@ -6,6 +6,7 @@ import {
   pet,
   streamPreviewImg,
   ytIconNoBorder,
+  bannerPlaceholder,
 } from "./../assets/images";
 import { useRef } from "react";
 import gsap from "gsap";
@@ -219,6 +220,7 @@ function HomeBanner() {
         muted
         autoPlay
         loop
+        playsInline
         src="https://res.cloudinary.com/dsme7klzf/video/upload/v1716911786/s6dsepyl8zikmdcfwjak.mp4"
         alt="背景"
         preload="auto"

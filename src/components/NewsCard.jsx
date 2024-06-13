@@ -17,7 +17,11 @@ export default function NewsCard({ id, image, tagText, title, timestamp }) {
     <div className={card}>
       <div className={cardImgWrapper}>
         <Link to={`/article/${id}`} className="card__link">
-          <img src={image} alt="文章縮圖" className={cardImg} />
+          <img
+            src={image}
+            alt="文章縮圖"
+            className={cardImg}
+          />
         </Link>
       </div>
       <div>

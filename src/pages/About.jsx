@@ -1,4 +1,5 @@
 import {
+  markCircle,
   redPen,
   heartDoodle1,
   heartDoodle2,
@@ -28,6 +29,8 @@ const {
   section,
   kv,
   kv__title: kvTitle,
+  kv__accent: kvAccent,
+  kv__mark: kvMark,
   kv__context: kvContext,
   "kv__img--lt": kvImgLt,
   "kv__img--lm": kvImgLm,
@@ -166,11 +169,24 @@ export default function About() {
 
   useGSAP(
     () => {
-      gsap.from("[data-ani='fade-in']", {
+      gsap.from("[data-ani='slide-in']", {
         opacity: 0,
         translateY: 100,
         duration: 1,
       });
+    },
+    { scope: gsapUpperContainer }
+  );
+
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        "[data-ani='fade-in']",
+        {
+          opacity: 0,
+        },
+        { opacity: 1, duration: 1.5 }
+      );
     },
     { scope: gsapUpperContainer }
   );
@@ -192,19 +208,31 @@ export default function About() {
     <>
       {/* 事務所介紹 */}
       <section className={kv} ref={gsapUpperContainer}>
-        <h1 className={kvTitle}>探索虛擬世界的無限可能性</h1>
+        <h1 className={kvTitle}>
+          探索虛擬世界的
+          <span className={kvAccent}>
+            無限可能
+            <img
+              src={markCircle}
+              alt="重點標記"
+              className={kvMark}
+              data-ani="fade-in"
+            />
+          </span>
+          性
+        </h1>
         <h3 className={kvContext}>
           Vlive Lab 是為了研究 VTuber 領域的未來，
           而誕生的合作型Vtuber實驗型事務所。
         </h3>
         {/* 左邊區塊 */}
         <img src={redPen} alt="紅筆" className={kvImgLt} data-ani="rotate" />
-        <img src={phone} alt="手機" className={kvImgLm} data-ani="fade-in" />
+        <img src={phone} alt="手機" className={kvImgLm} data-ani="slide-in" />
         <img
           src={heartDoodle1}
           alt="愛心塗鴉1"
           className={kvImgLb}
-          data-ani="fade-in"
+          data-ani="slide-in"
         />
         {/* 右邊區塊 */}
         <img
@@ -217,9 +245,9 @@ export default function About() {
           src={heartDoodle2}
           alt="愛心塗鴉2"
           className={kvImgRm}
-          data-ani="fade-in"
+          data-ani="slide-in"
         />
-        <img src={wire} alt="線" className={kvImgRb} data-ani="fade-in" />
+        <img src={wire} alt="線" className={kvImgRb} data-ani="slide-in" />
       </section>
       {/* 成立宗旨 */}
       <section

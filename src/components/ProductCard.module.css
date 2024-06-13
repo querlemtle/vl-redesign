@@ -1,19 +1,13 @@
 .card {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
+  display: flex;
+  flex-direction: column;
   text-align: left;
   border: 2px solid rgb(var(--primary-color-dark));
   border-radius: 1rem;
 }
 
-.card__link {
-  border: none;
-  position: relative;
-}
-
 .card__img-wrapper {
-  padding: 32px;
+  padding: 2rem;
   overflow: hidden;
 }
 

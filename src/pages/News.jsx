@@ -5,6 +5,8 @@ import { formatDate } from "../utils/formatDate";
 import { useState, useMemo } from "react";
 import Pagination from "../components/Pagination";
 import styles from "./News.module.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const {
   banner,
@@ -37,16 +39,17 @@ export default function News() {
   return (
     <>
       <section className={banner}>
-        <img
+        <LazyLoadImage
+          effect="blur"
           src="https://res.cloudinary.com/dsme7klzf/image/upload/v1717078041/x0dueo3tlmhagltntq5h.png"
           alt="最新消息封面圖"
           className={bannerImg}
         />
       </section>
       <section className={sectionBg}>
-        <h1 className={sectionTitle}>
+        <h2 className={sectionTitle}>
           <img src={newsTitle} alt="News" />
-        </h1>
+        </h2>
         <div className="news__grid">
           {currentNewsData.map((news) => {
             return (

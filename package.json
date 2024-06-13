@@ -1,9 +1,8 @@
 {
   "name": "vl-redesign",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "homepage": "/",
+  "homepage": "https://querlemtle.github.io/vl-redesign/",
   "scripts": {
     "dev": "webpack serve --mode development",
     "build": "webpack --mode production",
@@ -13,9 +12,8 @@
     "clean": "rm -rf ./build",
     "deploy": "gh-pages -d build"
   },
-  "keywords": [],
   "author": "Wtz",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.24.0",
     "@babel/preset-env": "^7.24.0",
@@ -45,16 +43,15 @@
     "webpack-dev-server": "^5.0.2"
   },
   "dependencies": {
-    "@cloudinary/html": "^1.13.0",
-    "@cloudinary/react": "^1.13.0",
-    "@cloudinary/url-gen": "^1.19.0",
     "@gsap/react": "^2.1.1",
     "gsap": "^3.12.5",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.5",
-    "react-router-dom": "^6.22.3"
+    "react-lazy-load-image-component": "^1.6.0",
+    "react-router-dom": "^6.22.3",
+    "swiper": "^11.1.4"
   },
   "browserslist": [
     "defaults"
