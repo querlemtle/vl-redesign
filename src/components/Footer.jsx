@@ -1,6 +1,9 @@
 import { whiteLogo } from "./../assets/images";
 import { YtIcon, FbIcon, XIcon, EmailIcon } from "./../components/IconSvgs";
 import styles from "./Footer.module.css";
+import { Link, useLocation } from "react-router-dom";
+import { ScrollToAnchor } from "./../utils/ScrollToPosition";
+import { useEffect } from "react";
 
 const {
   footer,
@@ -17,8 +20,16 @@ const {
 } = styles;
 
 function Footer() {
+  const { pathname } = useLocation();
+
+  // <ScrollToTop> 無效，所以這邊另外寫 scrollIntoView
+  useEffect(() => {
+    document.querySelector("body").scrollIntoView(true);
+  }, [pathname]);
+
   return (
     <footer className={footer} id="footer">
+      <ScrollToAnchor />
       <div className={footerContainer}>
         <div>
           <img alt="Vlive Lab" src={whiteLogo} className={footerLogo} />
@@ -67,29 +78,19 @@ function Footer() {
               ABOUT
               <ul>
                 <li className={footerSubitem}>
-                  <a href="#" className={footerLink}>
+                  <Link to="/about#intro" className={footerLink}>
                     事務所介紹
-                  </a>
+                  </Link>
                 </li>
                 <li className={footerSubitem}>
-                  <a href="#" className={footerLink}>
+                  <Link to="/about#mission" className={footerLink}>
                     成立宗旨
-                  </a>
+                  </Link>
                 </li>
                 <li className={footerSubitem}>
-                  <a href="#" className={footerLink}>
+                  <Link to="/about#services" className={footerLink}>
                     服務項目
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li className={footerItem}>
-              REQUIREMENTS
-              <ul>
-                <li className={footerSubitem}>
-                  <a href="#" className={footerLink}>
-                    團隊職缺
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </li>
@@ -125,6 +126,26 @@ function Footer() {
                   >
                     夜神遂心
                   </a>
+                </li>
+              </ul>
+            </li>
+            <li className={footerItem}>
+              SHOP
+              <ul>
+                <li className={footerSubitem}>
+                  <Link to="/shop" className={footerLink}>
+                    線上商店
+                  </Link>
+                </li>
+              </ul>
+            </li>
+            <li className={footerItem}>
+              NEWS
+              <ul>
+                <li className={footerSubitem}>
+                  <Link to="/news" className={footerLink}>
+                    最新消息
+                  </Link>
                 </li>
               </ul>
             </li>
@@ -170,12 +191,9 @@ function Footer() {
         <small>
           © {new Date().getFullYear()} Vlive Lab. All Rights Reserved.
         </small>
-        <a href="#" className={`${footerLink} ${footerLinkSmall}`}>
-          Terms & Agreements
-        </a>
-        <a href="#" className={`${footerLink} ${footerLinkSmall}`}>
+        <Link to="/privacy" className={`${footerLink} ${footerLinkSmall}`}>
           Privacy Policy
-        </a>
+        </Link>
       </div>
     </footer>
   );

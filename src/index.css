@@ -10,7 +10,7 @@
   --font-xl: 1.375rem;  /* 22px */
   --font-l: 1.25rem;  /* 20px */
   --font-m: 1.125rem;  /* 18px */
-  --font-base: 16px;
+  --font-base: 1rem;
   --font-s: 0.875rem;  /* 14px */
   --primary-color-dark: 224, 104, 151;
   --primary-color-light: 250, 144, 186;
@@ -40,11 +40,6 @@ body {
   font-size: var(--font-base);
   color: rgba(var(--secondary-color-dark), 0.85);
   overflow-x: hidden;
-}
-
-/* 消除邊緣黑框 */
-video {
-  clip-path: inset(1px 1px);
 }
 
 /* ---- 全域共用設定 ---- */
@@ -100,4 +95,17 @@ video {
 .disabled {
   opacity: 0.5;
   pointer-events: none;
+}
+
+.privacy {
+  width: 60%;
+  margin: 4rem auto;
+}
+
+.privacy__title {
+  margin-bottom: 0.5rem;
+}
+
+.privacy__statement {
+  margin-bottom: 2.5rem;
 }

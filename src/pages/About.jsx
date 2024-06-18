@@ -207,7 +207,7 @@ export default function About() {
   return (
     <>
       {/* 事務所介紹 */}
-      <section className={kv} ref={gsapUpperContainer}>
+      <section className={kv} ref={gsapUpperContainer} id="intro">
         <h1 className={kvTitle}>
           探索虛擬世界的
           <span className={kvAccent}>
@@ -253,6 +253,7 @@ export default function About() {
       <section
         className={`${section} ${bgImg} ${bgImgLight}`}
         ref={gsapMidContainer}
+        id="mission"
       >
         <div className={colsStacking}>
           <img
@@ -268,7 +269,7 @@ export default function About() {
               className={floatingHeart}
               data-ani="float-up"
             />
-            <img src={midPoster} alt="手機合照" onPointerDown={showHeart} />
+            <img src={midPoster} alt="手機合照" onClick={showHeart} />
           </div>
           <img
             src={rightPoster}
@@ -285,7 +286,7 @@ export default function About() {
         </p>
       </section>
       {/* 服務項目 */}
-      <section className={`${section} ${bgImg} ${bgImgDark}`}>
+      <section className={`${section} ${bgImg} ${bgImgDark}`} id="services">
         <h3 className={sectionTitle}>Features</h3>
         <div className={grid}>
           {cardData.map((item, i) => {
