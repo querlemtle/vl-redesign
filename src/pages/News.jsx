@@ -12,6 +12,7 @@ const {
   banner,
   banner__img: bannerImg,
   section__title: sectionTitle,
+  section__img: sectionImg,
   section__bg: sectionBg,
   aside,
   aside__link: asideLink,
@@ -48,7 +49,7 @@ export default function News() {
       </section>
       <section className={sectionBg}>
         <h2 className={sectionTitle}>
-          <img src={newsTitle} alt="News" />
+          <img src={newsTitle} alt="News" className={sectionImg} />
         </h2>
         <div className="news__grid">
           {currentNewsData.map((news) => {

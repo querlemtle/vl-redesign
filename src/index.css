@@ -36,6 +36,11 @@ html,
 body {
   width: 100%;
   height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
   font-family: "Noto Sans TC", Arial, sans-serif;
   font-size: var(--font-base);
   color: rgba(var(--secondary-color-dark), 0.85);

@@ -95,7 +95,7 @@ function ItemCard({
       <button
         type="button"
         className={btn}
-        onPointerDown={() => deleteItem(productId)}
+        onClick={() => deleteItem(productId)}
       >
         <img src={cross} alt="刪除商品按鈕" />
       </button>
@@ -144,7 +144,7 @@ export default function Cart() {
       totalQty: newTotalQty,
       data: newCartData,
     };
-    
+
     window.localStorage.setItem("cart", JSON.stringify(newCart));
     setCart(newCart);
     setTotalPrice(sumTotalPrice(newCartData));

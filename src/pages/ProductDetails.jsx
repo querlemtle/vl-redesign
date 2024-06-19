@@ -106,7 +106,7 @@ export default function ProductDetails() {
     const selectedVariantName = selectedVariant.name;
     /** @type {number} purchaseQty - 選擇的數量 */
     const purchaseQty = Number(quantitySelect.current.value);
-    
+
     setIsAddBtnDisabled(true);
     try {
       if (!cart.data) {
@@ -245,7 +245,7 @@ export default function ProductDetails() {
                   src={image}
                   alt={`預覽圖${i + 1}`}
                   className={`${imgS} ${img} ${clickable}`}
-                  onPointerDown={changePreviewImg}
+                  onClick={changePreviewImg}
                 />
               );
             })}
@@ -268,7 +268,7 @@ export default function ProductDetails() {
                       className={`${btn} ${clickable} ${
                         variant.selected ? btnFill : btnBorder
                       }`}
-                      onPointerDown={setSelectedVariant}
+                      onClick={setSelectedVariant}
                     >
                       {variant.name}
                     </li>
@@ -293,8 +293,10 @@ export default function ProductDetails() {
                 </select>
                 <button
                   type="button"
-                  className={`${btn} ${btnFill} ${btnStretch} ${clickable} ${isAddBtnDisabled && "disabled"}`}
-                  onPointerDown={addToCart}
+                  className={`${btn} ${btnFill} ${btnStretch} ${clickable} ${
+                    isAddBtnDisabled && "disabled"
+                  }`}
+                  onClick={addToCart}
                 >
                   加入購物車
                 </button>

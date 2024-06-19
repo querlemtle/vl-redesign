@@ -279,9 +279,7 @@ export default function About() {
           />
         </div>
         <p className={slogan}>
-          在這裡，我們更加重視合作夥伴、營銷分析及創新科技產品，
-          為未來的Vtuber與粉絲創造更多的可能性。我們擁有MMORPG、XR與Gamefi技術，
-          Vtuber是我們的第一小步，也是最重要的一大步。
+          在這裡，我們更加重視合作夥伴、營銷分析及創新科技產品，為未來的Vtuber與粉絲創造更多的可能性。我們擁有MMORPG、XR與Gamefi技術，Vtuber是我們的第一小步，也是最重要的一大步。
           你努力的未來有沒有你，我們覺得很重要。
         </p>
       </section>

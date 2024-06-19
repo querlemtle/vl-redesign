@@ -51,6 +51,7 @@ const {
   "color-bg": colorBg,
   "title-container": titleContainer,
   "title-container--start": titleContainerStart,
+  title__img: titleImg,
   title,
   "title--shop": titleShop,
   subtitle,
@@ -133,7 +134,7 @@ export default function Home() {
       <section className={section}>
         <h2 className={title}>
           <img src={aboutHeart} alt="愛心" />
-          ABOUT
+          <span>ABOUT</span>
         </h2>
         <div className={colorBg}>
           <p className={statement}>
@@ -201,7 +202,7 @@ export default function Home() {
         </div>
         <div className={titleContainer}>
           <h2>
-            <img src={talentsTitle} alt="Talents" />
+            <img src={talentsTitle} alt="Talents" className={titleImg} />
           </h2>
           <h3 className={subtitle}>
             <span className={subtileAccent}>Vlive Lab一期生 </span>
@@ -226,7 +227,7 @@ export default function Home() {
       <section className={`${section} ${sectionNews}`}>
         <div className={titleContainer}>
           <h2>
-            <img src={newsTitle} alt="News" />
+            <img src={newsTitle} alt="News" className={titleImg} />
           </h2>
           <h3 className={subtitle}>帶來有關VTUBER相關的新資訊與熱門話題討論</h3>
         </div>
@@ -254,7 +255,7 @@ export default function Home() {
       <section>
         <div className={`${titleContainer} ${titleContainerStart}`}>
           <h2 className={titleShop}>
-            <img src={shopTitle} alt="Shop" />
+            <img src={shopTitle} alt="Shop" className={titleImg} />
           </h2>
           <h3 className={subtitle}>
             <span className={subtileAccent}>周邊&寄賣</span>
@@ -319,14 +320,8 @@ export default function Home() {
           </div>
         </div>
         <div className={`${btnsContainer} ${btnsContainerSwipe}`}>
-          <div
-            className={swipeLeft}
-            onPointerDown={handlePrev}
-          ></div>
-          <div
-            className={swipeRight}
-            onPointerDown={handleNext}
-          ></div>
+          <div className={swipeLeft} onClick={handlePrev}></div>
+          <div className={swipeRight} onClick={handleNext}></div>
         </div>
       </section>
     </>
