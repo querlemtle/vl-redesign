@@ -74,8 +74,8 @@ function CharBio({
   /** mouseParallax - 滑鼠移動視差 */
   const mouseParallax = contextSafe((e) => {
     gsap.to("[data-ani='mouse-parallax']", {
-      x: (e.pageX / window.innerWidth - 0.5) * 50,
-      y: (e.pageY / window.innerHeight - 0.5) * 50,
+      x: (e.pageX / window.innerWidth - 0.5) * 10,
+      y: (e.pageY / window.innerHeight - 0.5) * 10,
       delay: 0.1,
       ease: "power2.out",
       overwrite: "auto",

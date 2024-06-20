@@ -13,6 +13,7 @@ const Shop = lazy(() => import("./pages/Shop"));
 const ProductDetails = lazy(() => import("./pages/ProductDetails"));
 const Cart = lazy(() => import("./pages/Cart"));
 const Checkout = lazy(() => import("./pages/Checkout"));
+const Privacy = lazy(() => import("./pages/Privacy"));
 
 import { ScrollToTop } from "./utils/ScrollToPosition";
 import { Suspense, lazy } from "react";
@@ -35,6 +36,7 @@ function App() {
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/news" element={<News />} />
             <Route path="/article/:newsId" element={<NewsArticle />} />
+            <Route path="/privacy" element={<Privacy />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </Suspense>

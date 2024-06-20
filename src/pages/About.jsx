@@ -207,7 +207,7 @@ export default function About() {
   return (
     <>
       {/* 事務所介紹 */}
-      <section className={kv} ref={gsapUpperContainer}>
+      <section className={kv} ref={gsapUpperContainer} id="intro">
         <h1 className={kvTitle}>
           探索虛擬世界的
           <span className={kvAccent}>
@@ -253,6 +253,7 @@ export default function About() {
       <section
         className={`${section} ${bgImg} ${bgImgLight}`}
         ref={gsapMidContainer}
+        id="mission"
       >
         <div className={colsStacking}>
           <img
@@ -268,7 +269,7 @@ export default function About() {
               className={floatingHeart}
               data-ani="float-up"
             />
-            <img src={midPoster} alt="手機合照" onPointerDown={showHeart} />
+            <img src={midPoster} alt="手機合照" onClick={showHeart} />
           </div>
           <img
             src={rightPoster}
@@ -278,14 +279,12 @@ export default function About() {
           />
         </div>
         <p className={slogan}>
-          在這裡，我們更加重視合作夥伴、營銷分析及創新科技產品，
-          為未來的Vtuber與粉絲創造更多的可能性。我們擁有MMORPG、XR與Gamefi技術，
-          Vtuber是我們的第一小步，也是最重要的一大步。
+          在這裡，我們更加重視合作夥伴、營銷分析及創新科技產品，為未來的Vtuber與粉絲創造更多的可能性。我們擁有MMORPG、XR與Gamefi技術，Vtuber是我們的第一小步，也是最重要的一大步。
           你努力的未來有沒有你，我們覺得很重要。
         </p>
       </section>
       {/* 服務項目 */}
-      <section className={`${section} ${bgImg} ${bgImgDark}`}>
+      <section className={`${section} ${bgImg} ${bgImgDark}`} id="services">
         <h3 className={sectionTitle}>Features</h3>
         <div className={grid}>
           {cardData.map((item, i) => {

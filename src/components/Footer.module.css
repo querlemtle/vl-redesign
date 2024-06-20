@@ -78,7 +78,7 @@
 
 .footer__copyright {
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: 1fr auto;
   column-gap: 3rem;
   margin: 1.5rem auto 0;
   max-width: 1440px;

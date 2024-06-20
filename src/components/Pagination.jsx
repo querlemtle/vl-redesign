@@ -40,7 +40,7 @@ function Pagination({
       {/* 前一頁按鈕 */}
       <li
         className={`${paginationControl} ${currentPage === 1 && "disabled"}`}
-        onPointerDown={onPrevious}
+        onClick={onPrevious}
       >
         &#8592;
       </li>
@@ -50,7 +50,7 @@ function Pagination({
           <li
             className={`${paginationItem} ${currentPage === pageNum && active}`}
             key={i}
-            onPointerDown={() => handlePagination(pageNum)}
+            onClick={() => handlePagination(pageNum)}
           >
             {pageNum}
           </li>
@@ -61,7 +61,7 @@ function Pagination({
         className={`${paginationControl} ${
           currentPage === lastPage && "disabled"
         }`}
-        onPointerDown={onNext}
+        onClick={onNext}
       >
         &#8594;
       </li>

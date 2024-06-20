@@ -15,6 +15,12 @@
   box-shadow: var(--shadow);
 }
 
+@media (width <=600px) {
+  .btn__img {
+    width: 4rem;
+  }
+}
+
 .btn__info {
   width: 2rem;
   height: 2rem;
