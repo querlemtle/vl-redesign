@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import styles from "./Talent.module.css";
-import { flowersDeco } from "../assets/images";
+import { flowersDeco } from "./../../public/images";
 import talentsData from "./../data/talentsData";
 import { formatDateLong } from "./../utils/formatDate";
 import { FbIcon, XIcon, YtIcon } from "../components/IconSvgs";
@@ -90,7 +90,7 @@ function CharBio({
     >
       {/* 角色圖 */}
       <div className={`${cardImg} ${isPortraitAtRight && cardImgRight}`}>
-        <img src={flowersDeco} alt="flowers" className={cardImgBg} />
+        <img src={flowersDeco.src} alt="flowers" className={cardImgBg} />
         <img
           src={portraitUrl}
           alt="portrait"

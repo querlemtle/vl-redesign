@@ -1,4 +1,4 @@
-import { whiteLogo } from "./../assets/images";
+import { whiteLogo } from "./../../public/images";
 import { YtIcon, FbIcon, XIcon, EmailIcon } from "./../components/IconSvgs";
 import styles from "./Footer.module.css";
 import { Link, useLocation } from "react-router-dom";
@@ -32,7 +32,7 @@ function Footer() {
       <ScrollToAnchor />
       <div className={footerContainer}>
         <div>
-          <img alt="Vlive Lab" src={whiteLogo} className={footerLogo} />
+          <img alt="Vlive Lab" src={whiteLogo.src} className={footerLogo} />
           <p>
             We are new VTuber Studio with <br /> MMORPG & VR tech <br /> welcome
             to join!

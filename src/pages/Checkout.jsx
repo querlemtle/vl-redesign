@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import styles from "./Checkout.module.css";
 import { useForm } from "react-hook-form";
-import { successIcon } from "../assets/images";
+import { successIcon } from "./../../public/images";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -151,7 +151,7 @@ Input.propTypes = {
 function SuccessMsg() {
   return (
     <div className={msg}>
-      <img src={successIcon} alt="打勾符號" />
+      <img src={successIcon.src} alt="打勾符號" />
       <h2 className={msgTitle}>謝謝您</h2>
       <p className={msgBody}>
         您的訂單已訂購成功，我們核對完付款資料後，將會開始進行出貨流程，並通過電子信箱告知您最新的訂單狀態。

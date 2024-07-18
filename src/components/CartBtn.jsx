@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { cartImg } from "./../assets/images";
+import { cartImg } from "./../../public/images";
 import PropTypes from "prop-types";
 import styles from "./CartBtn.module.css";
 
@@ -23,7 +23,7 @@ export default function CartBtn({ totalQty }) {
 
   return (
     <Link to="/cart" className={btn}>
-      <img src={cartImg} alt="購物車按鈕" className={btnImg} />
+      <img src={cartImg.src} alt="購物車按鈕" className={btnImg} />
       {/* totalQty 為 0 時，不顯示 */}
       {totalQty ? (
         <div className={btnInfo}>{filterDisplayQty(totalQty)}</div>

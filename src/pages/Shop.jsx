@@ -1,11 +1,9 @@
-import { shipment, event } from "./../assets/images";
+import { shipment, event } from "./../../public/images";
 import productsData from "../data/productsData";
 import ProductCard from "../components/ProductCard";
 import CartBtn from "../components/CartBtn";
 import styles from "./Shop.module.css";
 import getCart from "../utils/getCart";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
 
 const {
   banner,
@@ -22,8 +20,7 @@ export default function Shop() {
   return (
     <>
       <section className={banner}>
-        <LazyLoadImage
-          effect="blur"
+        <img
           alt="商店封面"
           src="https://res.cloudinary.com/dsme7klzf/image/upload/v1717077492/ddk4c4dhatecgvvpv3ht.png"
         />
@@ -34,11 +31,7 @@ export default function Shop() {
           target="_blank"
           rel="noreferrer"
         >
-          <LazyLoadImage
-            effect="blur"
-            wrapperProps={{
-              style: { transitionDelay: "0.6s" },
-            }}
+          <img
             src={shipment}
             alt="運送說明"
           />
@@ -48,11 +41,7 @@ export default function Shop() {
           target="_blank"
           rel="noreferrer"
         >
-          <LazyLoadImage
-            effect="blur"
-            wrapperProps={{
-              style: { transitionDelay: "0.6s" },
-            }}
+          <img
             width={600}
             src={event}
             alt="滿額送贈品"

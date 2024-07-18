@@ -20,7 +20,7 @@
 
 .kv__title::before {
   content: "";
-  background: url("./../assets/about/opening-quotation.svg") no-repeat;
+  background: url("./../../public/about/opening-quotation.svg") no-repeat;
   background-size: cover;
   position: absolute;
   width: 1.5rem;
@@ -31,7 +31,7 @@
 
 .kv__title::after {
   content: "";
-  background: url("./../assets/about/closing-quotation.svg") no-repeat;
+  background: url("./../../public/about/closing-quotation.svg") no-repeat;
   background-size: cover;
   position: absolute;
   width: 1.5rem;
@@ -191,7 +191,7 @@
 }
 
 .bg-img--light {
-  background-image: url("./../assets/pink-bg.png");
+  background-image: url("./../../public/pink-bg.png");
   background-repeat: no-repeat;
 }
 

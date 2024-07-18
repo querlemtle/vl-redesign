@@ -10,7 +10,7 @@ import {
   phoneHanakawa,
   phoneSanders,
   phoneYagami,
-} from "./../assets/images";
+} from "./../../public/images";
 
 const talentsData = [
   {
@@ -20,13 +20,13 @@ const talentsData = [
     description:
       "桑德斯是一位遊戲開發者，然而，由於長期在遊戲業不得志。某次他熱心地替別的專案幫忙，卻反而被設局陷害，這對他造成巨大的打擊，他的陰暗人格「桑德斯 · 闇」就此誕生。這個人格是一個想要毀滅世界的魔王，他曾經因此想過要引爆地心，甚至是毀滅太陽，看人類在絕望中滅亡…",
     images: {
-      logo: sandersLogo,
-      logoLight: sandersLogoLight,
-      icon: sandersIcon,
+      logo: sandersLogo.src,
+      logoLight: sandersLogoLight.src,
+      icon: sandersIcon.src,
       bg: "https://res.cloudinary.com/dsme7klzf/image/upload/v1717057135/yxasvoaunkxgwzcrtwge.png",
       portrait:
         "https://res.cloudinary.com/dsme7klzf/image/upload/v1717078238/a6iebacjdhopfjuwrh41.png",
-      phonePic: phoneSanders,
+      phonePic: phoneSanders.src,
     },
     bioLinks: {
       yt: "https://www.youtube.com/@GameSeasoning",
@@ -43,13 +43,13 @@ const talentsData = [
     description:
       "從忘川-彼岸花剛解除封印的冥界魔龍，因為剛解除封印所以沒什麼力量，除了外表長得像魔龍，其他能力都和普通少女差不多。有使用冥界夢境的能力(產生夢境迷霧直播連線)，每天都在夢境直播中跟在世的人託夢，也常常被託夢說刮刮樂會中獎或抽抽會中，常被認識的說抽卡歐皇。",
     images: {
-      logo: hanakawaLogo,
-      logoLight: hanakawaLogoLight,
-      icon: hanakawaIcon,
+      logo: hanakawaLogo.src,
+      logoLight: hanakawaLogoLight.src,
+      icon: hanakawaIcon.src,
       bg: "https://res.cloudinary.com/dsme7klzf/image/upload/v1717057210/c36kttwk4uuawhqenbk8.png",
       portrait:
         "https://res.cloudinary.com/dsme7klzf/image/upload/v1717078223/lgl6dglasstj3fsove5a.png",
-      phonePic: phoneHanakawa,
+      phonePic: phoneHanakawa.src,
     },
     bioLinks: {
       yt: "https://www.youtube.com/@hanakawa0516",
@@ -67,11 +67,11 @@ const talentsData = [
       "異界事務所唯一執事 (=高級打雜工)。目前是從地獄來到人間的深淵複合性生物，因為各種對錢的愛好，所以將「異界事務所」和其他副業相關內容製成影片來人間各種吸金。",
     images: {
       logo: null,
-      logoLight: yagamiLogoLight,
-      icon: yagamiIcon,
+      logoLight: yagamiLogoLight.src,
+      icon: yagamiIcon.src,
       bg: null,
       portrait: null,
-      phonePic: phoneYagami,
+      phonePic: phoneYagami.src,
     },
     bioLinks: {
       yt: "https://www.youtube.com/@nochedios",

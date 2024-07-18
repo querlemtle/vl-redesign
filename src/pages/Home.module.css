@@ -398,19 +398,19 @@
 }
 
 .swipe__left {
-  background-image: url("./../assets/icons/left-arrow.svg");
+  background-image: url("./../../public/icons/left-arrow.svg");
 }
 
 .swipe__right {
-  background-image: url("./../assets/icons/right-arrow.svg");
+  background-image: url("./../../public/icons/right-arrow.svg");
 }
 
 .swipe__left:hover,
 .swipe__left:active {
-  background-image: url("./../assets/icons/left-arrow-fill.svg");
+  background-image: url("./../../public/icons/left-arrow-fill.svg");
 }
 
 .swipe__right:hover,
 .swipe__right:active {
-  background-image: url("./../assets/icons/right-arrow-fill.svg");
+  background-image: url("./../../public/icons/right-arrow-fill.svg");
 }

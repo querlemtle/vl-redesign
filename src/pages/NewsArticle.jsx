@@ -1,13 +1,11 @@
 import styles from "./NewsArticle.module.css";
-import { leftArrow } from "../assets/images";
+import { leftArrow } from "./../../public/images";
 import newsData from "../data/newsData";
 import { formatDate } from "../utils/formatDate";
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
 import getNewsTagStyle from "../utils/getNewsTagStyle";
 import ErrorPage from "./ErrorPage";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
 
 const {
   article,
@@ -28,7 +26,7 @@ export default function NewsArticle() {
   const selectedNews = newsData.find((news) => news.newsId === newsId);
   const [newsContent, setNewsContent] = useState({ ...selectedNews });
 
-  if(!selectedNews) {
+  if (!selectedNews) {
     return <ErrorPage />;
   }
 
@@ -44,7 +42,11 @@ export default function NewsArticle() {
       </div>
       <h1 className={articleTitle}>{newsContent.title}</h1>
       <div>
-        <LazyLoadImage effect="blur" src={newsContent.coverImg} alt="封面圖" className={articleImg} />
+        <img
+          src={newsContent.coverImg}
+          alt="封面圖"
+          className={articleImg}
+        />
       </div>
       <h3 className={articleSubtitle}>{newsContent.description}</h3>
       <p className={articlePara}>{newsContent.content}</p>
@@ -57,7 +59,7 @@ export default function NewsArticle() {
       <hr />
       <div className={btn}>
         <Link to="/news" className={btnContainer}>
-          <img src={leftArrow} alt="向左箭頭" className={btnIcon} />
+          <img src={leftArrow.src} alt="向左箭頭" className={btnIcon} />
           <span>返回消息總覽</span>
         </Link>
       </div>

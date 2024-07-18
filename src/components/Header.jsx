@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { colorLogo } from "./../assets/images";
+import { colorLogo } from "./../../public/images";
 import styles from "./Header.module.css";
 
 gsap.registerPlugin(useGSAP);
@@ -59,7 +59,7 @@ function Header() {
       {/* Logo */}
       <div className={headerBrand}>
         <Link to="/">
-          <img src={colorLogo} alt="Vlive Lab" />
+          <img src={colorLogo.src} alt="Vlive Lab" />
           <p className={headerTitle}>未來實驗所</p>
         </Link>
       </div>

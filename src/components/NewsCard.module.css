@@ -33,7 +33,7 @@
 
 .card__title-container {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   column-gap: 0.5rem;
 }

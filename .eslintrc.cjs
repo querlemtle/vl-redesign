@@ -7,6 +7,7 @@ module.exports = {
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
+    "plugin:@next/next/recommended",
   ],
   overrides: [
     {
@@ -38,5 +39,6 @@ module.exports = {
     "react/no-unknown-property": ["error", { ignore: ["css"] }],
     "@stylistic/object-curly-spacing": ["error", "always"],
     "@stylistic/comma-dangle": ["error", "only-multiline"],
+    "no-unused-vars": "warning",
   },
 };

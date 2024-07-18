@@ -18,9 +18,9 @@
 }
 
 .toast__icon--success {
-  background-image: url("./../assets/icons/success.svg");
+  background-image: url("./../../public/icons/success.svg");
 }
 
 .toast__icon--error {
-  background-image: url("./../assets/icons/error.svg");
+  background-image: url("./../../public/icons/error.svg");
 }

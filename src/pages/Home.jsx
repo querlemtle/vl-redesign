@@ -16,7 +16,7 @@ import {
   rightArrow,
   halfArrow,
   whiteLogo,
-} from "../assets/images";
+} from "./../../public/images";
 import productsData from "./../data/productsData";
 import talentsData from "./../data/talentsData";
 import newsData from "../data/newsData";
@@ -133,7 +133,7 @@ export default function Home() {
       {/* About */}
       <section className={section}>
         <h2 className={title}>
-          <img src={aboutHeart} alt="愛心" />
+          <img src={aboutHeart.src} alt="愛心" />
           <span>ABOUT</span>
         </h2>
         <div className={colorBg}>
@@ -152,49 +152,49 @@ export default function Home() {
       <section className={section} ref={gsapContainer}>
         <div className={twoTonesBg}>
           <img
-            src={confetti1}
+            src={confetti1.src}
             alt="愛心彩帶"
             className={`${deco} ${deco1}`}
             data-ani="spread-out"
           />
           <img
-            src={confetti2}
+            src={confetti2.src}
             alt="圓形碎紙"
             className={`${deco} ${deco2}`}
             data-ani="spread-out"
           />
           <img
-            src={confetti3}
+            src={confetti3.src}
             alt="方塊碎紙"
             className={`${deco} ${deco3}`}
             data-ani="spread-out"
           />
           <img
-            src={confetti4}
+            src={confetti4.src}
             alt="圓圈彩帶"
             className={`${deco} ${deco4}`}
             data-ani="spread-out"
           />
           <img
-            src={confetti5}
+            src={confetti5.src}
             alt="方塊碎紙"
             className={`${deco} ${deco5}`}
             data-ani="spread-out"
           />
           <img
-            src={confetti6}
+            src={confetti6.src}
             alt="波浪形彩帶"
             className={`${deco} ${deco6}`}
             data-ani="spread-out"
           />
           <img
-            src={confetti7}
+            src={confetti7.src}
             alt="圓形碎紙"
             className={`${deco} ${deco7}`}
             data-ani="spread-out"
           />
           <img
-            src={confetti8}
+            src={confetti8.src}
             alt="愛心彩帶"
             className={`${deco} ${deco8}`}
             data-ani="spread-out"
@@ -202,7 +202,7 @@ export default function Home() {
         </div>
         <div className={titleContainer}>
           <h2>
-            <img src={talentsTitle} alt="Talents" className={titleImg} />
+            <img src={talentsTitle.src} alt="Talents" className={titleImg} />
           </h2>
           <h3 className={subtitle}>
             <span className={subtileAccent}>Vlive Lab一期生 </span>
@@ -227,7 +227,7 @@ export default function Home() {
       <section className={`${section} ${sectionNews}`}>
         <div className={titleContainer}>
           <h2>
-            <img src={newsTitle} alt="News" className={titleImg} />
+            <img src={newsTitle.src} alt="News" className={titleImg} />
           </h2>
           <h3 className={subtitle}>帶來有關VTUBER相關的新資訊與熱門話題討論</h3>
         </div>
@@ -247,7 +247,7 @@ export default function Home() {
           })}
           <Link to="/news" className={`${btn} ${btnsContainer}`}>
             VIEW MORE{" "}
-            <img src={rightArrow} alt="向右箭頭" className={btnIcon} />
+            <img src={rightArrow.src} alt="向右箭頭" className={btnIcon} />
           </Link>
         </div>
       </section>
@@ -255,7 +255,7 @@ export default function Home() {
       <section>
         <div className={`${titleContainer} ${titleContainerStart}`}>
           <h2 className={titleShop}>
-            <img src={shopTitle} alt="Shop" className={titleImg} />
+            <img src={shopTitle.src} alt="Shop" className={titleImg} />
           </h2>
           <h3 className={subtitle}>
             <span className={subtileAccent}>周邊&寄賣</span>
@@ -265,16 +265,16 @@ export default function Home() {
         <div className={sectionShop}>
           <Link to="/shop" className={shopHintBox}>
             <div>
-              <img src={whiteLogo} alt="Vlive Lab" />
+              <img src={whiteLogo.src} alt="Vlive Lab" />
               <p className={logoText}>未來實驗所</p>
             </div>
             <div className={hintboxTitle}>
-              <img src={pentaFlowerDeco} alt="花瓣裝飾" />
+              <img src={pentaFlowerDeco.src} alt="花瓣裝飾" />
               <h3>Online Shop</h3>
-              <img src={pentaFlowerDeco} alt="花瓣裝飾" />
+              <img src={pentaFlowerDeco.src} alt="花瓣裝飾" />
             </div>
             <div className={hintboxGuide}>
-              前往商店 <img src={halfArrow} alt="箭頭" />
+              前往商店 <img src={halfArrow.src} alt="箭頭" />
             </div>
           </Link>
           <div className={shopGrid}>

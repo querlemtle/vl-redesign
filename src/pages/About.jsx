@@ -14,7 +14,7 @@ import {
   cardBg3,
   heart,
   ytLogo,
-} from "../assets/images";
+} from "./../../public/images";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import styles from "./About.module.css";
@@ -105,7 +105,7 @@ function Card({ title, content, bg, link, isLinkExternal, hasLogo }) {
       ) : (
         <Link to={link} className={cardLink}></Link>
       )}
-      {hasLogo && <img src={ytLogo} alt="youtube" className={cardLogo} />}
+      {hasLogo && <img src={ytLogo.src} alt="youtube" className={cardLogo} />}
       <div className={cardBody}>
         <p className={cardContent}>{content}</p>
         <p className={cardTitle}>-{title}</p>
@@ -213,7 +213,7 @@ export default function About() {
           <span className={kvAccent}>
             無限可能
             <img
-              src={markCircle}
+              src={markCircle.src}
               alt="重點標記"
               className={kvMark}
               data-ani="fade-in"
@@ -226,28 +226,38 @@ export default function About() {
           而誕生的合作型Vtuber實驗型事務所。
         </h3>
         {/* 左邊區塊 */}
-        <img src={redPen} alt="紅筆" className={kvImgLt} data-ani="rotate" />
-        <img src={phone} alt="手機" className={kvImgLm} data-ani="slide-in" />
         <img
-          src={heartDoodle1}
+          src={redPen.src}
+          alt="紅筆"
+          className={kvImgLt}
+          data-ani="rotate"
+        />
+        <img
+          src={phone.src}
+          alt="手機"
+          className={kvImgLm}
+          data-ani="slide-in"
+        />
+        <img
+          src={heartDoodle1.src}
           alt="愛心塗鴉1"
           className={kvImgLb}
           data-ani="slide-in"
         />
         {/* 右邊區塊 */}
         <img
-          src={blackPen}
+          src={blackPen.src}
           alt="黑筆"
           className={kvImgRt}
           data-ani="rotate-reverse"
         />
         <img
-          src={heartDoodle2}
+          src={heartDoodle2.src}
           alt="愛心塗鴉2"
           className={kvImgRm}
           data-ani="slide-in"
         />
-        <img src={wire} alt="線" className={kvImgRb} data-ani="slide-in" />
+        <img src={wire.src} alt="線" className={kvImgRb} data-ani="slide-in" />
       </section>
       {/* 成立宗旨 */}
       <section
@@ -257,22 +267,22 @@ export default function About() {
       >
         <div className={colsStacking}>
           <img
-            src={leftPoster}
+            src={leftPoster.src}
             alt="桑德斯海報"
             className={stackLeft}
             data-ani="rotate"
           />
           <div className={stackMid}>
             <img
-              src={heart}
+              src={heart.src}
               alt="愛心"
               className={floatingHeart}
               data-ani="float-up"
             />
-            <img src={midPoster} alt="手機合照" onClick={showHeart} />
+            <img src={midPoster.src} alt="手機合照" onClick={showHeart} />
           </div>
           <img
-            src={rightPoster}
+            src={rightPoster.src}
             alt="夢姬海報"
             className={stackRight}
             data-ani="rotate"

@@ -1,4 +1,4 @@
-import cross from "./../assets/icons/cross.svg";
+import cross from "./../../public/icons/cross.svg";
 import { Link } from "react-router-dom";
 import styles from "./Cart.module.css";
 import PropTypes from "prop-types";
@@ -97,7 +97,7 @@ function ItemCard({
         className={btn}
         onClick={() => deleteItem(productId)}
       >
-        <img src={cross} alt="刪除商品按鈕" />
+        <img src={cross.src} alt="刪除商品按鈕" />
       </button>
     </div>
   );
