@@ -8,8 +8,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "npx eslint . --ext js,jsx --fix && npx stylelint \"src/**/*.css\" \"src/**/*.module.css\" --fix",
-    "clean": "rm -rf ./build",
     "deploy": "gh-pages -d build"
   },
   "author": "Wtz",
@@ -18,11 +16,10 @@
     "@babel/core": "^7.24.0",
     "@babel/preset-env": "^7.24.0",
     "@babel/preset-react": "^7.23.3",
-    "@next/eslint-plugin-next": "^14.2.4",
     "@stylistic/eslint-plugin": "^1.7.0",
     "cssnano": "^6.1.2",
     "eslint": "^8.57.0",
-    "eslint-plugin-react": "^7.34.0",
+    "eslint-config-next": "^14.2.5",
     "gh-pages": "^6.1.1",
     "postcss": "^8.4.38",
     "postcss-cli": "^11.0.0",
@@ -40,7 +37,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.5",
-    "react-router-dom": "^6.22.3"
+    "swiper": "^11.1.9"
   },
   "browserslist": [
     "defaults"

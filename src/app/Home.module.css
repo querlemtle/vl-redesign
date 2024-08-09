@@ -1,0 +1,416 @@
+.section {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  margin-bottom: 6rem;
+  position: relative;
+}
+
+.section--news {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.talents__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  width: 80vw;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  position: relative;
+}
+
+@media (width <=390px) {
+  .talents__grid {
+    gap: 0.5rem;
+  }
+}
+
+/* 含有副標題的標題區塊 */
+.title-container {
+  display: grid;
+  row-gap: 1rem;
+  justify-items: center;
+  margin-bottom: 4rem;
+}
+
+.title-container--start {
+  justify-items: start;
+  margin-left: 5rem;
+}
+
+@media (width <=768px) {
+  .title-container--start {
+    margin: 0 0 1.5rem 1rem;
+  }
+}
+
+@media (width <=390px) {
+  .title__img {
+    width: 250px;
+  }
+}
+
+/* About title */
+.title {
+  color: rgb(var(--accent-color-pink));
+  font-size: var(--font-4xl);
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (width <=390px) {
+  .title {
+    font-size: var(--font-2xl);
+  }
+}
+
+.title--shop {
+  padding-bottom: 1.5rem;
+  width: 100%;
+  border-bottom: 3px solid rgb(var(--primary-color-light));
+}
+
+.subtitle-accent {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: rgb(var(--secondary-color-medium));
+  margin-right: 0.875rem;
+}
+
+@media (width <=390px) {
+  .subtitle,
+  .subtitle-accent {
+    font-size: var(--font-base);
+    margin: 0 1rem;
+  }
+}
+
+/* 這邊不能設定 padding-top，會影響絕對定位 */
+.color-bg {
+  background-color: rgb(var(--accent-color-pink));
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
+.color-bg::before {
+  content: "";
+  border-color: rgb(var(--white)) transparent transparent transparent;
+  border-width: 32px;  /* 決定三角形大小 */
+  border-style: solid;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.statement {
+  font-size: var(--font-xl);
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: rgb(var(--white));
+  width: 70%;
+  max-width: 1000px;
+  margin: 3rem auto;
+}
+
+@media (width <=390px) {
+  .statement {
+    width: 85%;
+    font-size: var(--font-s);
+  }
+}
+
+.two-tones-bg {
+  width: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: -99;
+  background: linear-gradient(180deg,
+      rgb(var(--white)) 0%,
+      rgb(var(--white)) 50%,
+      rgba(var(--primary-color-light), 0.5) 50%,
+      rgba(var(--primary-color-light), 0.5) 100%);
+  background-size: 100% 100%;
+}
+
+/* Confetti decorations */
+.deco {
+  position: absolute;
+}
+
+.deco--1 {
+  top: 30%;
+  left: 3%;
+}
+
+.deco--2 {
+  top: 25%;
+  left: 10%;
+}
+
+.deco--3 {
+  top: 10%;
+  left: 15%;
+}
+
+.deco--4 {
+  top: 15%;
+  left: 20%;
+}
+
+.deco--5 {
+  top: 15%;
+  right: 30%;
+}
+
+.deco--6 {
+  top: 10%;
+  right: 15%;
+}
+
+.deco--7 {
+  top: 20%;
+  right: 15%;
+}
+
+.deco--8 {
+  top: 30%;
+  right: 8%;
+}
+
+@media (width <=600px) {
+  /* Resize svgs on mobile */
+  .deco--1 {
+    top: 40%;
+    left: 0;
+    width: calc(91px * 0.5);
+  }
+
+  .deco--2,
+  .deco--7 {
+    top: 35%;
+    width: calc(16px * 0.5);
+  }
+
+  .deco--3 {
+    top: 30%;
+    width: calc(32px * 0.5);
+  }
+
+  .deco--4 {
+    top: 35%;
+    width: calc(61px * 0.5);
+  }
+
+  .deco--5 {
+    top: 30%;
+    width: calc(36px * 0.5);
+  }
+
+  .deco--6 {
+    top: 30%;
+    width: calc(84px * 0.5);
+  }
+
+  .deco--8 {
+    top: 40%;
+    width: calc(65px * 0.5);
+  }
+}
+
+/* 商店產品展示 */
+.section--shop {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin: 6rem 0 0 5rem;
+  position: relative;
+}
+
+@media (width <=768px) {
+  .section--shop {
+    flex-direction: column;
+    margin: 0 1rem;
+  }
+}
+
+.shop__grid {
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  position: relative;
+}
+
+.shop__grid::after {
+  content: "";
+  width: 60px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  background-image: linear-gradient(90deg, rgba(var(--white), 0), rgba(var(--white), 1));
+}
+
+@media (width <=768px) {
+  .shop__grid::after {
+    display: none;
+  }
+}
+
+
+/* 前往商店連結區塊 */
+.shop__hintbox {
+  background-color: rgba(var(--primary-color-dark), 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  border-radius: 16px;
+  transition: background-color 300ms ease;
+}
+
+@media (width <= 768px) {
+  .shop__hintbox {
+    padding: 1.5rem 0;
+  }
+}
+
+.shop__hintbox:hover {
+  background-color: rgb(var(--primary-color-dark));
+}
+
+.hintbox__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 4px;
+  color: rgb(var(--white));
+  margin-bottom: 4rem;
+}
+
+.logo__text {
+  margin: 0.5rem 0 1rem;
+  font-weight: 500;
+  font-size: var(--font-s);
+  letter-spacing: calc(var(--font-s) * 0.8);
+  color: rgb(var(--white));
+  text-align: center;
+}
+
+.hintbox__guide {
+  border: 2px solid rgb(var(--white));
+  color: rgb(var(--white));
+  padding: 1rem 3rem;
+  display: flex;
+  column-gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/* buttons */
+.cta {
+  letter-spacing: 2px;
+  background-color: rgba(var(--white), 0.9);
+  color: rgb(var(--primary-color-dark));
+  padding: 0.75rem 2rem;
+  border-radius: 0.25rem;
+  position: relative;
+}
+
+.cta::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0.25rem;
+  background-color: rgba(var(--white), 0.8);
+  transform: scaleX(0);
+  transition: all 700ms ease;
+}
+
+.cta:hover::before {
+  content: "";
+  transform: scaleX(1);
+}
+
+.cta__text {
+  position: relative;
+  z-index: 2;
+}
+
+.btns-container {
+  display: flex;
+  column-gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-end;
+  color: rgb(var(--secondary-color-dark));
+  width: 100%;
+  max-width: 1440px;
+}
+
+.btn {
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  margin: 1rem 0;
+}
+
+@media (width <= 1024px) {
+  .btns-container {
+    width: 90%;
+  }
+}
+
+.btn__icon {
+  transition: all 350ms ease;
+}
+
+.btn__icon.disable {
+  opacity: 0.5;
+}
+
+.btn:hover .btn__icon {
+  transform: translateX(4px);
+}
+
+.btns-container--swipe {
+  margin: 2rem 0;
+  width: 90%;
+}
+
+.swipe__left,
+.swipe__right {
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  background-size: 100%;
+}
+
+.swipe__left {
+  background-image: url("/icons/left-arrow.svg");
+}
+
+.swipe__right {
+  background-image: url("/icons/right-arrow.svg");
+}
+
+.swipe__left:hover,
+.swipe__left:active {
+  background-image: url("/icons/left-arrow-fill.svg");
+}
+
+.swipe__right:hover,
+.swipe__right:active {
+  background-image: url("/icons/right-arrow-fill.svg");
+}

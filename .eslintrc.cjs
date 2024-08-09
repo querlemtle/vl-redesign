@@ -4,10 +4,7 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
-    "plugin:@next/next/recommended",
+    "next"
   ],
   overrides: [
     {
@@ -29,7 +26,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "@stylistic"],
+  plugins: ["@stylistic"],
   ignorePatterns: ["*.config.js", "assets/*", "public/*", "build/*"],
   rules: {
     "@stylistic/indent": ["error", 2],
