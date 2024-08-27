@@ -1,11 +1,10 @@
-import { useRef } from "react";
-import { Link, NavLink } from "react-router-dom";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { colorLogo } from "./../assets/images";
+"use client";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import PropTypes from "prop-types";
+import useMediaQuery from "@/lib/useMediaQuery";
 import styles from "./Header.module.css";
-
-gsap.registerPlugin(useGSAP);
 
 const {
   header,
@@ -13,99 +12,108 @@ const {
   header__title: headerTitle,
   hamburger,
   hamburger__bar: hamburgerBar,
+  "hamburger__bar--cw": hamburgerBarCw,
+  "hamburger__bar--acw": hamburgerBarAcw,
+  "hamburger__bar--hide": hamburgerBarHide,
   nav,
+  "nav--active": navActive,
   nav__list: navList,
   nav__link: navLink,
   cta,
   cta__text: ctaText,
 } = styles;
 
+const linkList = [
+  {
+    href: "/about",
+    text: "About",
+  },
+  {
+    href: "/talent",
+    text: "Talent",
+  },
+  {
+    href: "/shop",
+    text: "Shop",
+  },
+  {
+    href: "/news",
+    text: "News",
+  },
+];
+
+function NavLink({ href, text }) {
+  return (
+    <li>
+      <Link href={href} className={navLink}>
+        {text}
+      </Link>
+    </li>
+  );
+}
+
+NavLink.propTypes = {
+  href: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+};
+
 function Header() {
-  const gsapContainer = useRef();
-  const tl = useRef();
+  const isMobile = useMediaQuery("(width < 1024px)");
+  const [isMenuActive, setIsMenuActive] = useState(!isMobile);
+  const pathname = usePathname();
 
   const toggleMenu = () => {
-    tl.current.reversed(!tl.current.reversed());
+    setIsMenuActive(!isMenuActive);
   };
 
-  useGSAP(
-    () => {
-      tl.current = gsap
-        .timeline()
-        .add("start")
-        .to(
-          "[data-ani='rotate-down']",
-          {
-            translateY: "0.5rem",
-            rotate: 45,
-            duration: 0.1,
-          },
-          "start"
-        )
-        .to(
-          "[data-ani='rotate-reverse']",
-          { rotate: -45, duration: 0.1 },
-          "start"
-        )
-        .to("[data-ani='hide']", { opacity: 0, duration: 0.1 }, "start")
-        .fromTo("[data-ani='scroll']", { height: 0 }, { height: "auto" })
-        .reverse();
-    },
-    { scope: gsapContainer }
-  );
+  // 手機版換頁時關閉選單
+  useEffect(() => {
+    setIsMenuActive(!isMobile);
+  }, [pathname]);
 
   return (
-    <header className={header} ref={gsapContainer}>
+    <header className={header}>
       {/* Logo */}
       <div className={headerBrand}>
-        <Link to="/">
-          <img src={colorLogo} alt="Vlive Lab" />
+        <Link href="/">
+          <img src="/Vlive-Lab-logo.svg" alt="Vlive Lab" />
           <p className={headerTitle}>未來實驗所</p>
         </Link>
       </div>
-      <nav className={nav} data-ani="scroll">
-        <ul className={navList}>
-          <li>
-            <NavLink to="/about" className={navLink}>
-              About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/talent" className={navLink}>
-              Talent
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/shop" className={navLink}>
-              Shop
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/news" className={navLink}>
-              News
-            </NavLink>
-          </li>
-        </ul>
-        <a
-          href="https://vtuberonline.com/"
-          className={cta}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <span className={ctaText}>VTuber Online</span>
-        </a>
-      </nav>
+      {isMenuActive && (
+        <nav className={`${nav} ${isMenuActive && navActive}`}>
+          <ul className={navList}>
+            {linkList.map((link, i) => (
+              <NavLink href={link.href} text={link.text} key={i} />
+            ))}
+          </ul>
+          <Link
+            href="https://vtuberonline.com/"
+            className={cta}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span className={ctaText}>VTuber Online</span>
+          </Link>
+        </nav>
+      )}
       <button
         type="button"
         className={hamburger}
         aria-label="menu"
         aria-controls="navigation"
         tabIndex={0}
-        onPointerDown={toggleMenu}
+        onClick={toggleMenu}
       >
-        <div className={hamburgerBar} data-ani="rotate-down"></div>
-        <div className={hamburgerBar} data-ani="rotate-reverse"></div>
-        <div className={hamburgerBar} data-ani="hide"></div>
+        <div
+          className={`${hamburgerBar} ${isMenuActive && hamburgerBarCw}`}
+        ></div>
+        <div
+          className={`${hamburgerBar} ${isMenuActive && hamburgerBarAcw}`}
+        ></div>
+        <div
+          className={`${hamburgerBar} ${isMenuActive && hamburgerBarHide}`}
+        ></div>
       </button>
     </header>
   );

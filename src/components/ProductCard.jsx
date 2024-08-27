@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import PropTypes from "prop-types";
 import styles from "./ProductCard.module.css";
 
@@ -19,13 +19,9 @@ export default function ProductCard({
 }) {
   return (
     <div className={card}>
-      <Link to={`/product/${productId}`}>
+      <Link href={`/shop/${productId}`}>
         <div className={cardImgWrapper}>
-          <img
-            src={productImg}
-            alt={productName}
-            className={cardImg}
-          />
+          <img src={productImg} alt={productName} className={cardImg} />
         </div>
         <div className={cardBody}>
           <p className={cardTitle}>{productName}</p>

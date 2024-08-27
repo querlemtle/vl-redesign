@@ -121,34 +121,34 @@
 .fb-icon {
   width: 56px;
   height: 56px;
-  background: url("./../assets/icons/fb-icon-default.svg") no-repeat;
+  background: url("/icons/fb-icon-default.svg") no-repeat;
   transition: all 300ms ease;
 }
 
 .yt-icon {
   width: 56px;
   height: 56px;
-  background: url("./../assets/icons/yt-icon-default.svg") no-repeat;
+  background: url("/icons/yt-icon-default.svg") no-repeat;
   transition: all 300ms ease;
 }
 
 .x-icon {
   width: 56px;
   height: 56px;
-  background: url("./../assets/icons/x-icon-default.svg") no-repeat;
+  background: url("/icons/x-icon-default.svg") no-repeat;
   transition: all 300ms ease;
 }
 
 .fb-icon:hover {
-  background: url("./../assets/icons/fb-icon-hover.svg") no-repeat;
+  background: url("/icons/fb-icon-hover.svg") no-repeat;
 }
 
 .yt-icon:hover {
-  background: url("./../assets/icons/yt-icon-hover.svg") no-repeat;
+  background: url("/icons/yt-icon-hover.svg") no-repeat;
 }
 
 .x-icon:hover {
-  background: url("./../assets/icons/x-icon-hover.svg") no-repeat;
+  background: url("/icons/x-icon-hover.svg") no-repeat;
 }
 
 /* Right sidebar */

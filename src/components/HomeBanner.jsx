@@ -1,13 +1,4 @@
-import {
-  heartIcon,
-  yagamiIcon,
-  hanakawaIcon,
-  sandersIcon,
-  pet,
-  streamPreviewImg,
-  ytIconNoBorder,
-  bannerPlaceholder,
-} from "./../assets/images";
+"use client";
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -39,17 +30,17 @@ const {
 const talentsLink = [
   {
     url: "https://twitter.com/nochedioslobo/",
-    icon: yagamiIcon,
+    icon: "/icons/Yagami-chibi-icon.png",
     name: "夜神遂心",
   },
   {
     url: "https://twitter.com/hanakawa0516",
-    icon: hanakawaIcon,
+    icon: "/icons/Hanakawa-chibi-icon.png",
     name: "花川夢姬",
   },
   {
     url: "https://twitter.com/@GameSeasoning66",
-    icon: sandersIcon,
+    icon: "/icons/Sanders-chibi-icon.png",
     name: "魔王桑德斯",
   },
 ];
@@ -102,7 +93,7 @@ function LeftSidebar() {
   return (
     <aside className={sidebarLeft} ref={gsapContainer}>
       <div className={sidebarLeftTitle} data-ani="bounce">
-        <img src={heartIcon} alt="愛心圖標" />
+        <img src="/icons/heart-icon.svg" alt="愛心圖標" />
       </div>
       <ul className={sidebarLeftOptions} data-ani="expand">
         {brandLinks.map((link, i) => {
@@ -172,13 +163,13 @@ function RightSidebar() {
         <div className={cardLower} data-ani="move-lower">
           <div>
             <img
-              src={streamPreviewImg}
+              src="/home/stream-preview.png"
               alt="直播預覽封面"
               className={cardImg}
             />
           </div>
           <div>
-            <img src={ytIconNoBorder} alt="youtube圖標" />
+            <img src="/icons/yt-noborder.svg" alt="youtube圖標" />
             <h3>周年特別直播</h3>
             <p>快進入待機室一起倒數！</p>
             <span className={timestamp}>2024/5/2 8:00pm</span>
@@ -227,7 +218,7 @@ function HomeBanner() {
         className={bannerBg}
       />
       <img
-        src={pet}
+        src="/home/pet.png"
         alt="寵物"
         className={bannerAccessory}
         data-ani="move-in mouse-parallax"

@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+  },
+  "exclude": [
+    ".git",
+    ".app-cache",
+    ".npm",
+    ".npm-tmp",
+    "dist",
+    "dist*",
+    ".next",
+    "build",
+    "node_modules",
+    "subfolder/dist",
+    "subfolder/node_modules",
+    "**/dist/*",
+    "**/node_modules/*",
+  ]
+}

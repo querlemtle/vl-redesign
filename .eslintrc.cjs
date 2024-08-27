@@ -4,9 +4,7 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
+    "next"
   ],
   overrides: [
     {
@@ -28,7 +26,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "@stylistic"],
+  plugins: ["@stylistic"],
   ignorePatterns: ["*.config.js", "assets/*", "public/*", "build/*"],
   rules: {
     "@stylistic/indent": ["error", 2],
@@ -38,5 +36,6 @@ module.exports = {
     "react/no-unknown-property": ["error", { ignore: ["css"] }],
     "@stylistic/object-curly-spacing": ["error", "always"],
     "@stylistic/comma-dangle": ["error", "only-multiline"],
+    "no-unused-vars": "warning",
   },
 };

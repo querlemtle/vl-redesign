@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import PropTypes from "prop-types";
 import styles from "./NewsCard.module.css";
-import getNewsTagStyle from "../utils/getNewsTagStyle";
+import getNewsTagStyle from "@/lib/getNewsTagStyle";
 
 const {
   card,
@@ -16,16 +16,12 @@ export default function NewsCard({ id, image, tagText, title, timestamp }) {
   return (
     <div className={card}>
       <div className={cardImgWrapper}>
-        <Link to={`/article/${id}`} className="card__link">
-          <img
-            src={image}
-            alt="文章縮圖"
-            className={cardImg}
-          />
+        <Link href={`/news/${id}`} className="card__link">
+          <img src={image} alt="文章縮圖" className={cardImg} />
         </Link>
       </div>
       <div>
-        <Link to={`/article/${id}`} className="card__link">
+        <Link href={`/news/${id}`} className="card__link">
           <div className={cardTitleContainer}>
             <span className={`tag ${getNewsTagStyle(tagText)}`}>{tagText}</span>
             <h3 className={cardTitle}>{title}</h3>

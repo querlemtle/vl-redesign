@@ -1,3 +1,4 @@
+"use client";
 import styles from "./Toast.module.css";
 import PropTypes from "prop-types";
 import { useRef } from "react";

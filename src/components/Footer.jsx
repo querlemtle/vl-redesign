@@ -1,9 +1,6 @@
-import { whiteLogo } from "./../assets/images";
-import { YtIcon, FbIcon, XIcon, EmailIcon } from "./../components/IconSvgs";
+import { YtIcon, FbIcon, XIcon, EmailIcon } from "@/components/IconSvgs";
 import styles from "./Footer.module.css";
-import { Link, useLocation } from "react-router-dom";
-import { ScrollToAnchor } from "./../utils/ScrollToPosition";
-import { useEffect } from "react";
+import Link from "next/link";
 
 const {
   footer,
@@ -20,56 +17,52 @@ const {
 } = styles;
 
 function Footer() {
-  const { pathname } = useLocation();
-
-  // <ScrollToTop> 無效，所以這邊另外寫 scrollIntoView
-  useEffect(() => {
-    document.querySelector("body").scrollIntoView(true);
-  }, [pathname]);
-
   return (
     <footer className={footer} id="footer">
-      <ScrollToAnchor />
       <div className={footerContainer}>
         <div>
-          <img alt="Vlive Lab" src={whiteLogo} className={footerLogo} />
+          <img
+            alt="Vlive Lab"
+            src="/Vlive-Lab-logo-white.svg"
+            className={footerLogo}
+          />
           <p>
             We are new VTuber Studio with <br /> MMORPG & VR tech <br /> welcome
             to join!
           </p>
           <div className={footerIcons}>
-            <a
+            <Link
               href="https://www.youtube.com/@VliveLab/about"
               className={icon}
               target="_blank"
               rel="noreferrer"
             >
               <YtIcon size={30} lineFill="#fff" />
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://www.facebook.com/people/Vlive-Lab/100093708878400/"
               className={icon}
               target="_blank"
               rel="noreferrer"
             >
               <FbIcon size={30} lineFill="#fff" />
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://twitter.com/VliveLab"
               className={icon}
               target="_blank"
               rel="noreferrer"
             >
               <XIcon size={30} lineFill="#fff" />
-            </a>
-            <a
+            </Link>
+            <Link
               href="mailto:vlivelab@gmail.com"
               className={icon}
               target="_blank"
               rel="noreferrer"
             >
               <EmailIcon size={30} lineFill="#fff" />
-            </a>
+            </Link>
           </div>
         </div>
         <div>
@@ -78,17 +71,17 @@ function Footer() {
               ABOUT
               <ul>
                 <li className={footerSubitem}>
-                  <Link to="/about#intro" className={footerLink}>
+                  <Link href="/about#intro" className={footerLink}>
                     事務所介紹
                   </Link>
                 </li>
                 <li className={footerSubitem}>
-                  <Link to="/about#mission" className={footerLink}>
+                  <Link href="/about#mission" className={footerLink}>
                     成立宗旨
                   </Link>
                 </li>
                 <li className={footerSubitem}>
-                  <Link to="/about#services" className={footerLink}>
+                  <Link href="/about#services" className={footerLink}>
                     服務項目
                   </Link>
                 </li>
@@ -98,34 +91,34 @@ function Footer() {
               TALENTS
               <ul>
                 <li className={footerSubitem}>
-                  <a
+                  <Link
                     href="https://twitter.com/@GameSeasoning66"
                     className={footerLink}
                     target="_blank"
                     rel="noreferrer"
                   >
                     桑德斯.闇
-                  </a>
+                  </Link>
                 </li>
                 <li className={footerSubitem}>
-                  <a
+                  <Link
                     href="https://twitter.com/hanakawa0516"
                     className={footerLink}
                     target="_blank"
                     rel="noreferrer"
                   >
                     花川夢姬
-                  </a>
+                  </Link>
                 </li>
                 <li className={footerSubitem}>
-                  <a
+                  <Link
                     href="https://twitter.com/nochedioslobo/"
                     className={footerLink}
                     target="_blank"
                     rel="noreferrer"
                   >
                     夜神遂心
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </li>
@@ -133,7 +126,7 @@ function Footer() {
               SHOP
               <ul>
                 <li className={footerSubitem}>
-                  <Link to="/shop" className={footerLink}>
+                  <Link href="/shop" className={footerLink}>
                     線上商店
                   </Link>
                 </li>
@@ -143,7 +136,7 @@ function Footer() {
               NEWS
               <ul>
                 <li className={footerSubitem}>
-                  <Link to="/news" className={footerLink}>
+                  <Link href="/news" className={footerLink}>
                     最新消息
                   </Link>
                 </li>
@@ -153,34 +146,34 @@ function Footer() {
               RESOURCES
               <ul>
                 <li className={footerSubitem}>
-                  <a
+                  <Link
                     href="https://vchama.xyz/"
                     className={footerLink}
                     target="_blank"
                     rel="noreferrer"
                   >
                     Vtuber 統計地圖
-                  </a>
+                  </Link>
                 </li>
                 <li className={footerSubitem}>
-                  <a
+                  <Link
                     href="https://neptunia.github.io/vtubers-data-science/"
                     className={footerLink}
                     target="_blank"
                     rel="noreferrer"
                   >
                     超級聊天數據分析
-                  </a>
+                  </Link>
                 </li>
                 <li className={footerSubitem}>
-                  <a
+                  <Link
                     href="https://streamscharts.com/channels?vtuber=all"
                     className={footerLink}
                     target="_blank"
                     rel="noreferrer"
                   >
                     StreamChart
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </li>
@@ -191,7 +184,7 @@ function Footer() {
         <small>
           © {new Date().getFullYear()} Vlive Lab. All Rights Reserved.
         </small>
-        <Link to="/privacy" className={`${footerLink} ${footerLinkSmall}`}>
+        <Link href="/privacy" className={`${footerLink} ${footerLinkSmall}`}>
           Privacy Policy
         </Link>
       </div>
