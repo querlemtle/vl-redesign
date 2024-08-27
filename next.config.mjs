@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export", // Outputs a Single-Page Application (SPA).
-  distDir: "./build",
+  reactStrictMode: true,
+  compiler: {
+    removeConsole:
+      process.env.NODE_ENV === "production" ? { exclude: ["error"] } : false,
+  },
 };
 
 export default nextConfig;

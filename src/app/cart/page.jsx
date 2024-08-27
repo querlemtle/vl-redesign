@@ -2,8 +2,8 @@
 import Link from "next/link";
 import styles from "./Cart.module.css";
 import PropTypes from "prop-types";
-import { useState, Fragment, useEffect } from "react";
-import getCart from "@/app/utils/getCart";
+import { useState, Fragment } from "react";
+import { getStorage, setStorage } from "@/lib/storage";
 
 const {
   "section-center": sectionCenter,
@@ -97,7 +97,7 @@ function ItemCard({
         className={btn}
         onClick={() => deleteItem(productId)}
       >
-        <img src="/icons/cross.svg" alt="刪除商品按鈕" />
+        <img src="/icons/cross.svg" width={32} height={32} alt="刪除商品按鈕" />
       </button>
     </div>
   );
@@ -113,7 +113,12 @@ ItemCard.propTypes = {
 };
 
 export default function Cart() {
-  const [cart, setCart] = useState(() => getCart());
+  const [cart, setCart] = useState(() =>
+    getStorage("cart", {
+      totalQty: 0,
+      data: null,
+    })
+  );
   const [totalPrice, setTotalPrice] = useState(() => sumTotalPrice(cart.data));
 
   /** sumTotalPrice - 計算購物車內商品總價 */
@@ -145,7 +150,7 @@ export default function Cart() {
       data: newCartData,
     };
 
-    window.localStorage.setItem("cart", JSON.stringify(newCart));
+    setStorage("cart", newCart);
     setCart(newCart);
     setTotalPrice(sumTotalPrice(newCartData));
   }

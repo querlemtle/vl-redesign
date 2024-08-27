@@ -1,10 +1,11 @@
 "use client";
+import Link from "next/link";
+import { useParams } from "next/navigation";
 import styles from "./NewsArticle.module.css";
-import newsData from "@/app/data/newsData";
-import { formatDate } from "@/app/utils/formatDate";
-import { useParams, Link } from "react-router-dom";
+import newsData from "@/lib/data/newsData";
+import formatDate from "@/lib/formatDate";
 import { useState } from "react";
-import getNewsTagStyle from "@/app/utils/getNewsTagStyle";
+import getNewsTagStyle from "@/lib/getNewsTagStyle";
 
 const {
   article,
@@ -21,13 +22,9 @@ const {
 } = styles;
 
 export default function NewsArticle() {
-  const { newsId } = useParams();
+  const { id: newsId } = useParams();
   const selectedNews = newsData.find((news) => news.newsId === newsId);
   const [newsContent, setNewsContent] = useState({ ...selectedNews });
-
-  if (!selectedNews) {
-    return <Error />;
-  }
 
   return (
     <article className={article}>
@@ -36,7 +33,7 @@ export default function NewsArticle() {
           {newsContent.tag}
         </span>
         <span className={articleDate}>
-          {formatDate(newsContent.publishedAt)}
+          {formatDate(newsContent.publishedAt, "num")}
         </span>
       </div>
       <h1 className={articleTitle}>{newsContent.title}</h1>
@@ -54,7 +51,7 @@ export default function NewsArticle() {
       <hr />
       <div className={btn}>
         <Link href="/news" className={btnContainer}>
-          <img src="/icons/left-arror.svg" alt="向左箭頭" className={btnIcon} />
+          <img src="/icons/left-arrow.svg" alt="向左箭頭" className={btnIcon} />
           <span>返回消息總覽</span>
         </Link>
       </div>

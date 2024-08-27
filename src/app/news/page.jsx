@@ -1,9 +1,9 @@
 "use client";
-import NewsCard from "@/app/components/NewsCard";
-import newsData from "@/app/data/newsData";
-import { formatDate } from "@/app/utils/formatDate";
+import NewsCard from "@/components/NewsCard";
+import newsData from "@/lib/data/newsData";
+import formatDate from "@/lib/formatDate";
 import { useState, useMemo } from "react";
-import Pagination from "@/app/components/Pagination";
+import Pagination from "@/components/Pagination";
 import styles from "./News.module.css";
 
 const {
@@ -29,7 +29,7 @@ export default function News() {
 
   function handlePagination(page) {
     setCurrentPage(page);
-    document.querySelector("body").scrollTo({
+    document.querySelector("html").scrollTo({
       top: 0,
       behavior: "smooth",
     });
@@ -57,7 +57,7 @@ export default function News() {
                 tagText={news.tag}
                 title={news.title}
                 image={news.coverImg}
-                timestamp={formatDate(news.publishedAt)}
+                timestamp={formatDate(news.publishedAt, "num")}
               />
             );
           })}

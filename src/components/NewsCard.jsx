@@ -1,7 +1,7 @@
 import Link from "next/link";
 import PropTypes from "prop-types";
 import styles from "./NewsCard.module.css";
-import getNewsTagStyle from "@/app/utils/getNewsTagStyle";
+import getNewsTagStyle from "@/lib/getNewsTagStyle";
 
 const {
   card,

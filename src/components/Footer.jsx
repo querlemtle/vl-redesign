@@ -1,4 +1,4 @@
-import { YtIcon, FbIcon, XIcon, EmailIcon } from "@/app/components/IconSvgs";
+import { YtIcon, FbIcon, XIcon, EmailIcon } from "@/components/IconSvgs";
 import styles from "./Footer.module.css";
 import Link from "next/link";
 

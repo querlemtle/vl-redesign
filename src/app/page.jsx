@@ -1,13 +1,13 @@
 "use client";
 import Link from "next/link";
-import productsData from "@/app/data/productsData";
-import talentsData from "@/app/data/talentsData";
-import newsData from "@/app/data/newsData";
-import HomeBanner from "@/app/components/HomeBanner";
-import TalentCard from "@/app/components/TalentCard";
-import NewsCard from "@/app/components/NewsCard";
-import ProductCard from "@/app/components/ProductCard";
-import { formatDate } from "@/app/utils/formatDate";
+import productsData from "@/lib/data/productsData";
+import talentsData from "@/lib/data/talentsData";
+import newsData from "@/lib/data/newsData";
+import HomeBanner from "@/components/HomeBanner";
+import TalentCard from "@/components/TalentCard";
+import NewsCard from "@/components/NewsCard";
+import ProductCard from "@/components/ProductCard";
+import formatDate from "@/lib/formatDate";
 import styles from "./Home.module.css";
 import { useEffect, useRef, useState, Fragment } from "react";
 import gsap from "gsap";
@@ -59,7 +59,6 @@ const {
 export default function Home() {
   const filteredNews = newsData.filter((_, i) => i <= 1);
   const [displayNews, setDisplayNews] = useState(filteredNews);
-
   const gsapContainer = useRef();
   const swiperRef = useRef(null);
 

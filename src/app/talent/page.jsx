@@ -1,10 +1,11 @@
 "use client";
+import dynamic from "next/dynamic";
 import PropTypes from "prop-types";
 import styles from "./Talent.module.css";
-import talentsData from "@/app/data/talentsData";
-import { formatDateLong } from "@/app/utils/formatDate";
-import { FbIcon, XIcon, YtIcon } from "@/app/components/IconSvgs";
-import { useRef } from "react";
+import talentsData from "@/lib/data/talentsData";
+import formatDate from "@/lib/formatDate";
+import { FbIcon, XIcon, YtIcon } from "@/components/IconSvgs";
+import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -104,7 +105,7 @@ function CharBio({
         <img src={logoUrl} alt="logo" />
         <p className={cardContext}>{charIntro}</p>
         <p>
-          &#9632; 初配信時間： <span>{debutDate}</span>
+          &#9632; 初配信時間： <span>{formatDate(debutDate, "short12")}</span>
         </p>
         <div>
           <IconLinks
@@ -186,7 +187,7 @@ export default function Talent() {
             // index 為偶數 => portrait @left，奇數 => portrait @right
             isPortraitAtRight={i % 2 === 0 ? false : true}
             charIntro={talent.description}
-            debutDate={formatDateLong(talent.debutDate)}
+            debutDate={talent.debutDate}
             ytLink={talent.bioLinks.yt}
             fbLink={talent.bioLinks.fb}
             xLink={talent.bioLinks.x}

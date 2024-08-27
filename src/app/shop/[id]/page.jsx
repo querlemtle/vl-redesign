@@ -1,11 +1,11 @@
 "use client";
-import CartBtn from "@/app/components/CartBtn";
-import Toast from "@/app/components/Toast";
+import { useParams } from "next/navigation";
+import CartBtn from "@/components/CartBtn";
+import Toast from "@/components/Toast";
 import styles from "./ProductDetails.module.css";
-import { useRef, useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import getCart from "@/app/utils/getCart";
-import productsData from "@/app/data/productsData";
+import { useRef, useState } from "react";
+import { getStorage, setStorage } from "@/lib/storage";
+import productsData from "@/lib/data/productsData";
 
 const {
   main,
@@ -29,7 +29,7 @@ const {
 } = styles;
 
 export default function ProductDetails() {
-  const { productId } = useParams();
+  const { id: productId } = useParams();
   const quantitySelect = useRef();
   const targetProduct = productsData.find(
     (item) => item.productId === productId
@@ -55,7 +55,10 @@ export default function ProductDetails() {
   });
   const [isAddBtnDisabled, setIsAddBtnDisabled] = useState(false);
   /** @type {Object} cart - 購物車內容 */
-  const cart = getCart();
+  const cart = getStorage("cart", {
+    totalQty: 0,
+    data: null,
+  });
 
   function changePreviewImg(event) {
     setDisplayImage(event.target.src);
@@ -107,27 +110,45 @@ export default function ProductDetails() {
     try {
       if (!cart.data) {
         // 1. cart 不存在
-        window.localStorage.setItem(
-          "cart",
-          JSON.stringify({
-            totalQty: purchaseQty,
-            data: [
-              {
-                productId: targetProduct.productId,
-                productName: targetProduct.productName,
-                productImage: targetProduct.images[0],
-                price: targetProduct.price,
-                variants: [
-                  {
-                    variantId: selectedVariantId,
-                    name: selectedVariantName,
-                    qty: purchaseQty,
-                  },
-                ],
-              },
-            ],
-          })
-        );
+        setStorage("cart", {
+          totalQty: purchaseQty,
+          data: [
+            {
+              productId: targetProduct.productId,
+              productName: targetProduct.productName,
+              productImage: targetProduct.images[0],
+              price: targetProduct.price,
+              variants: [
+                {
+                  variantId: selectedVariantId,
+                  name: selectedVariantName,
+                  qty: purchaseQty,
+                },
+              ],
+            },
+          ],
+        });
+        //window.localStorage.setItem(
+        //  "cart",
+        //  JSON.stringify({
+        //    totalQty: purchaseQty,
+        //    data: [
+        //      {
+        //        productId: targetProduct.productId,
+        //        productName: targetProduct.productName,
+        //        productImage: targetProduct.images[0],
+        //        price: targetProduct.price,
+        //        variants: [
+        //          {
+        //            variantId: selectedVariantId,
+        //            name: selectedVariantName,
+        //            qty: purchaseQty,
+        //          },
+        //        ],
+        //      },
+        //    ],
+        //  })
+        //);
       } else {
         // 2. cart 存在
         const targetProductIndex = cart.data.findIndex(
@@ -153,7 +174,7 @@ export default function ProductDetails() {
               },
             ]),
           };
-          window.localStorage.setItem("cart", JSON.stringify(newCart));
+          setStorage("cart", newCart);
         } else {
           // 2-2. 已選過此商品
           /** @type {number} targetVariantIndex - 購物車內該商品的指定規格索引值 */
@@ -185,8 +206,7 @@ export default function ProductDetails() {
                 }
               }),
             };
-
-            window.localStorage.setItem("cart", JSON.stringify(newCart));
+            setStorage("cart", newCart);
           } else {
             // 2-2-2. 選過這項商品，且有選過此規格
             const updatedProduct = {
@@ -212,8 +232,7 @@ export default function ProductDetails() {
                 }
               }),
             };
-
-            window.localStorage.setItem("cart", JSON.stringify(newCart));
+            setStorage("cart", newCart);
           }
         }
       }
