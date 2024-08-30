@@ -32,10 +32,10 @@ module.exports = {
     "@stylistic/indent": ["error", 2],
     "@stylistic/quotes": ["error", "double"],
     "@stylistic/semi": ["error", "always"],
-    "no-console": "error",
+    "no-console": ["error", { allow: ["warn", "error"] }],
     "react/no-unknown-property": ["error", { ignore: ["css"] }],
     "@stylistic/object-curly-spacing": ["error", "always"],
     "@stylistic/comma-dangle": ["error", "only-multiline"],
-    "no-unused-vars": "warning",
+    "no-unused-vars": 1,
   },
 };
