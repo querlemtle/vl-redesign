@@ -1,10 +1,10 @@
 "use client";
-import { useState } from "react";
 import productsData from "@/lib/data/productsData";
 import ProductCard from "@/components/ProductCard";
 import CartBtn from "@/components/CartBtn";
+import NoSsr from "@/components/NoSsr";
 import styles from "./Shop.module.css";
-import { getStorage } from "@/lib/storage";
+import useStorage from "@/lib/useStorage";
 
 const {
   banner,
@@ -17,12 +17,11 @@ const {
 } = styles;
 
 export default function Shop() {
-  const [cart, setCart] = useState(
-    getStorage("cart", {
-      totalQty: 0,
-      data: null,
-    })
-  );
+  const [cart, setCart] = useStorage("cart", {
+    totalQty: 0,
+    data: null,
+  });
+
   return (
     <>
       <section className={banner}>
@@ -70,7 +69,9 @@ export default function Shop() {
           </div>
         </div>
       </section>
-      <CartBtn totalQty={cart.totalQty} />
+      <NoSsr>
+        <CartBtn totalQty={cart.totalQty} />
+      </NoSsr>
     </>
   );
 }
