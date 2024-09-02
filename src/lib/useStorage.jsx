@@ -15,7 +15,7 @@ export default function useStorage(key, initValue) {
       const item = window.localStorage.getItem(key);
       return item ? JSON.parse(item) : initValue;
     } catch (error) {
-      console.log(error);
+      throw new Error("Something went wrong when setting localStorage, please try again");
       return initValue;
     }
   });
@@ -30,7 +30,7 @@ export default function useStorage(key, initValue) {
         window.localStorage.setItem(key, JSON.stringify(valueToStore));
       }
     } catch (error) {
-      console.log(error);
+      throw new Error("Something went wrong when updating localStorage, please try again");
     }
   };
 
