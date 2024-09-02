@@ -2,9 +2,10 @@
 import { useParams } from "next/navigation";
 import CartBtn from "@/components/CartBtn";
 import Toast from "@/components/Toast";
+import NoSsr from "@/components/NoSsr";
 import styles from "./ProductDetails.module.css";
 import { useRef, useState } from "react";
-import { getStorage, setStorage } from "@/lib/storage";
+import useStorage from "@/lib/useStorage";
 import productsData from "@/lib/data/productsData";
 
 const {
@@ -54,8 +55,8 @@ export default function ProductDetails() {
     text: null,
   });
   const [isAddBtnDisabled, setIsAddBtnDisabled] = useState(false);
-  /** @type {Object} cart - 購物車內容 */
-  const cart = getStorage("cart", {
+
+  const [cart, setCart] = useStorage("cart", {
     totalQty: 0,
     data: null,
   });
@@ -110,7 +111,7 @@ export default function ProductDetails() {
     try {
       if (!cart.data) {
         // 1. cart 不存在
-        setStorage("cart", {
+        setCart({
           totalQty: purchaseQty,
           data: [
             {
@@ -128,27 +129,6 @@ export default function ProductDetails() {
             },
           ],
         });
-        //window.localStorage.setItem(
-        //  "cart",
-        //  JSON.stringify({
-        //    totalQty: purchaseQty,
-        //    data: [
-        //      {
-        //        productId: targetProduct.productId,
-        //        productName: targetProduct.productName,
-        //        productImage: targetProduct.images[0],
-        //        price: targetProduct.price,
-        //        variants: [
-        //          {
-        //            variantId: selectedVariantId,
-        //            name: selectedVariantName,
-        //            qty: purchaseQty,
-        //          },
-        //        ],
-        //      },
-        //    ],
-        //  })
-        //);
       } else {
         // 2. cart 存在
         const targetProductIndex = cart.data.findIndex(
@@ -174,7 +154,7 @@ export default function ProductDetails() {
               },
             ]),
           };
-          setStorage("cart", newCart);
+          setCart(newCart);
         } else {
           // 2-2. 已選過此商品
           /** @type {number} targetVariantIndex - 購物車內該商品的指定規格索引值 */
@@ -206,7 +186,7 @@ export default function ProductDetails() {
                 }
               }),
             };
-            setStorage("cart", newCart);
+            setCart(newCart);
           } else {
             // 2-2-2. 選過這項商品，且有選過此規格
             const updatedProduct = {
@@ -232,7 +212,7 @@ export default function ProductDetails() {
                 }
               }),
             };
-            setStorage("cart", newCart);
+            setCart(newCart);
           }
         }
       }
@@ -245,98 +225,100 @@ export default function ProductDetails() {
 
   return (
     <main className={main}>
-      <section className={grid}>
-        {/* Left Column */}
-        <aside>
-          <div className={img}>
-            <img src={displayImage} alt={productDetails.name} />
+      <NoSsr>
+        <section className={grid}>
+          {/* Left Column */}
+          <aside>
+            <div className={img}>
+              <img src={displayImage} alt={productDetails.name} />
+            </div>
+            <div className={row}>
+              {/* 商品預覽圖 */}
+              {productDetails.images.map((image, i) => {
+                return (
+                  <img
+                    key={i}
+                    src={image}
+                    alt={`預覽圖${i + 1}`}
+                    className={`${imgS} ${img} ${clickable}`}
+                    onClick={changePreviewImg}
+                  />
+                );
+              })}
+            </div>
+          </aside>
+          {/* Right Column */}
+          <div>
+            <h2 className={title}>{productDetails.productName}</h2>
+            <h3>
+              NT$<span>{productDetails.price}</span>
+            </h3>
+            <ul className={list}>
+              <li>
+                <p className={listTitle}>規格</p>
+                <ul className={sublist}>
+                  {variantsList.map((variant) => {
+                    return (
+                      <li
+                        key={variant.name}
+                        className={`${btn} ${clickable} ${
+                          variant.selected ? btnFill : btnBorder
+                        }`}
+                        onClick={setSelectedVariant}
+                      >
+                        {variant.name}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </li>
+              <li>
+                <p className={listTitle}>數量</p>
+                <div className={`${sublist} ${sublistBetween}`}>
+                  <select
+                    name="quantity"
+                    className={select}
+                    title="選擇購買數量"
+                    ref={quantitySelect}
+                  >
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                  <button
+                    type="button"
+                    className={`${btn} ${btnFill} ${btnStretch} ${clickable} ${
+                      isAddBtnDisabled && "disabled"
+                    }`}
+                    onClick={addToCart}
+                  >
+                    加入購物車
+                  </button>
+                </div>
+              </li>
+            </ul>
+            <h4 className={`${divider} ${listTitle}`}>購買須知</h4>
+            <ul className={listSquare}>
+              <li>該商品為客製化商品，下單後不可取消。敬請於下單前確認。</li>
+              <li>
+                待付費確認完成後，系統才會開始處理您的訂單，約7個工作天內出貨。
+              </li>
+            </ul>
+            <h4 className={`${divider} ${listTitle}`}>商品詳情</h4>
+            <ul className={listSquare}>
+              {productDetails.details.map((point, i) => {
+                return <li key={i}>{point}</li>;
+              })}
+            </ul>
           </div>
-          <div className={row}>
-            {/* 商品預覽圖 */}
-            {productDetails.images.map((image, i) => {
-              return (
-                <img
-                  key={i}
-                  src={image}
-                  alt={`預覽圖${i + 1}`}
-                  className={`${imgS} ${img} ${clickable}`}
-                  onClick={changePreviewImg}
-                />
-              );
-            })}
-          </div>
-        </aside>
-        {/* Right Column */}
-        <div>
-          <h2 className={title}>{productDetails.productName}</h2>
-          <h3>
-            NT$<span>{productDetails.price}</span>
-          </h3>
-          <ul className={list}>
-            <li>
-              <p className={listTitle}>規格</p>
-              <ul className={sublist}>
-                {variantsList.map((variant) => {
-                  return (
-                    <li
-                      key={variant.name}
-                      className={`${btn} ${clickable} ${
-                        variant.selected ? btnFill : btnBorder
-                      }`}
-                      onClick={setSelectedVariant}
-                    >
-                      {variant.name}
-                    </li>
-                  );
-                })}
-              </ul>
-            </li>
-            <li>
-              <p className={listTitle}>數量</p>
-              <div className={`${sublist} ${sublistBetween}`}>
-                <select
-                  name="quantity"
-                  className={select}
-                  title="選擇購買數量"
-                  ref={quantitySelect}
-                >
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-                <button
-                  type="button"
-                  className={`${btn} ${btnFill} ${btnStretch} ${clickable} ${
-                    isAddBtnDisabled && "disabled"
-                  }`}
-                  onClick={addToCart}
-                >
-                  加入購物車
-                </button>
-              </div>
-            </li>
-          </ul>
-          <h4 className={`${divider} ${listTitle}`}>購買須知</h4>
-          <ul className={listSquare}>
-            <li>該商品為客製化商品，下單後不可取消。敬請於下單前確認。</li>
-            <li>
-              待付費確認完成後，系統才會開始處理您的訂單，約7個工作天內出貨。
-            </li>
-          </ul>
-          <h4 className={`${divider} ${listTitle}`}>商品詳情</h4>
-          <ul className={listSquare}>
-            {productDetails.details.map((point, i) => {
-              return <li key={i}>{point}</li>;
-            })}
-          </ul>
-        </div>
-        <CartBtn totalQty={cart.totalQty} />
-        {showToast.isShown && (
-          <Toast text={showToast.text} status={showToast.status} />
-        )}
-      </section>
+          <CartBtn totalQty={cart.totalQty} />
+          {showToast.isShown && (
+            <Toast text={showToast.text} status={showToast.status} />
+          )}
+        </section>
+      </NoSsr>
     </main>
   );
 }

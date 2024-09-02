@@ -2,8 +2,9 @@
 import Link from "next/link";
 import styles from "./Cart.module.css";
 import PropTypes from "prop-types";
-import { useState, Fragment } from "react";
-import { getStorage, setStorage } from "@/lib/storage";
+import { useState, useEffect, Fragment } from "react";
+import useStorage from "@/lib/useStorage";
+import NoSsr from "@/components/NoSsr";
 
 const {
   "section-center": sectionCenter,
@@ -113,13 +114,15 @@ ItemCard.propTypes = {
 };
 
 export default function Cart() {
-  const [cart, setCart] = useState(() =>
-    getStorage("cart", {
-      totalQty: 0,
-      data: null,
-    })
-  );
-  const [totalPrice, setTotalPrice] = useState(() => sumTotalPrice(cart.data));
+  const [cart, setCart] = useStorage("cart", {
+    totalQty: 0,
+    data: null,
+  });
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  useEffect(() => {
+    setTotalPrice(sumTotalPrice(cart.data));
+  }, [cart.data]);
 
   /** sumTotalPrice - 計算購物車內商品總價 */
   function sumTotalPrice(data) {
@@ -150,7 +153,6 @@ export default function Cart() {
       data: newCartData,
     };
 
-    setStorage("cart", newCart);
     setCart(newCart);
     setTotalPrice(sumTotalPrice(newCartData));
   }
@@ -158,42 +160,44 @@ export default function Cart() {
   return (
     <section className={sectionCenter}>
       <h2 className={sectionTitle}>購物車內容</h2>
-      {cart.totalQty === 0 ? (
-        <EmptyCartMsg />
-      ) : (
-        <div className={grid}>
-          {/* Left column - 已選擇商品列表 */}
-          <div>
-            {cart.data.map((item) => {
-              return (
-                <ItemCard
-                  key={item.productId}
-                  {...item}
-                  deleteItem={deleteItem}
-                />
-              );
-            })}
-          </div>
-          {/* Right column - 確認總價與下單 */}
-          <aside className={aside}>
-            <div className={asideContainer}>
-              <p className={asideTitle}>訂單金額確認</p>
-              <div className={`${grid} ${asideBody}`}>
-                <p>購物車總計</p>
-                <p className={asideAccent}>
-                  NT$<span>{totalPrice}</span>
-                </p>
-              </div>
-              <Link href="/checkout" className={`${btn} ${btnFill}`}>
-                前往結帳
-              </Link>
+      <NoSsr>
+        {cart.totalQty === 0 ? (
+          <EmptyCartMsg />
+        ) : (
+          <div className={grid}>
+            {/* Left column - 已選擇商品列表 */}
+            <div>
+              {cart.data.map((item) => {
+                return (
+                  <ItemCard
+                    key={item.productId}
+                    {...item}
+                    deleteItem={deleteItem}
+                  />
+                );
+              })}
             </div>
-            <Link href="/shop" className={link}>
-              繼續選購
-            </Link>
-          </aside>
-        </div>
-      )}
+            {/* Right column - 確認總價與下單 */}
+            <aside className={aside}>
+              <div className={asideContainer}>
+                <p className={asideTitle}>訂單金額確認</p>
+                <div className={`${grid} ${asideBody}`}>
+                  <p>購物車總計</p>
+                  <p className={asideAccent}>
+                    NT$<span>{totalPrice}</span>
+                  </p>
+                </div>
+                <Link href="/checkout" className={`${btn} ${btnFill}`}>
+                  前往結帳
+                </Link>
+              </div>
+              <Link href="/shop" className={link}>
+                繼續選購
+              </Link>
+            </aside>
+          </div>
+        )}
+      </NoSsr>
     </section>
   );
 }
