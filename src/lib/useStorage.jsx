@@ -16,7 +16,6 @@ export default function useStorage(key, initValue) {
       return item ? JSON.parse(item) : initValue;
     } catch (error) {
       throw new Error("Something went wrong when setting localStorage, please try again");
-      return initValue;
     }
   });
 

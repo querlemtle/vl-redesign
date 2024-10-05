@@ -136,7 +136,7 @@ function Footer() {
               NEWS
               <ul>
                 <li className={footerSubitem}>
-                  <Link href="/news" className={footerLink}>
+                  <Link href="/news?page=1" className={footerLink}>
                     最新消息
                   </Link>
                 </li>

@@ -1,7 +1,9 @@
 # Vlive Lab Redesign
 這是 VTuber 事務所 Vlive Lab 的概念形象網站。
 
-[➡️ 進入網站](https://querlemtle.github.io/vl-redesign/)
+🔎 網站連結：
+1. [CSR 版本](https://querlemtle.github.io/vl-redesign/)
+2. [SSR 版本](https://vl-redesign.vercel.app/)
 
 ![demo](demo-min.png)
 
@@ -15,11 +17,13 @@
 - 閱覽 VTuber 相關最新消息
 
 ## 開發使用技術
-- React
+- React (React Router / Next.js)
 - CSS Modules
 - PostCSS
 - webpack
 - GSAP
+- MongoDB
+- Swiper
 
 完整列表請見 [package.json](package.json)。
 
