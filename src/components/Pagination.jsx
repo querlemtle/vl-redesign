@@ -1,4 +1,5 @@
 import styles from "./Pagination.module.css";
+import Link from "next/link";
 import PropTypes from "prop-types";
 
 const {
@@ -8,73 +9,54 @@ const {
   active,
 } = styles;
 
-function Pagination({
-  handlePagination,
-  totalCount,
-  currentPage,
-  itemsPerPage,
-}) {
+export default function Pagination({ page, totalCount, itemsPerPage }) {
   /** paginationRange - 取得分頁範圍陣列 */
   const paginationRange = Array.from(
     { length: Math.ceil(totalCount / itemsPerPage) },
     (_, i) => i + 1
   );
 
-  const onNext = () => {
-    handlePagination(currentPage + 1);
-  };
-
-  const onPrevious = () => {
-    handlePagination(currentPage - 1);
-  };
-
-  let lastPage = paginationRange[paginationRange.length - 1];
+  const lastPage = paginationRange.length;
 
   // 頁數只有一頁時，不顯示分頁器
-  if (currentPage === 0 || paginationRange.length < 2) {
+  if (paginationRange.length < 2) {
     return null;
   }
 
   return (
-    <ul className={pagination}>
+    <div className={pagination}>
       {/* 前一頁按鈕 */}
-      <li
-        className={`${paginationControl} ${currentPage === 1 && "disabled"}`}
-        onClick={onPrevious}
+      <Link
+        href={`/news?page=${page - 1 < 1 ? 1 : page - 1}`}
+        className={`${paginationControl} ${page === 1 && "disabled"}`}
       >
         &#8592;
-      </li>
+      </Link>
       {/* 顯示的分頁按鈕 */}
       {paginationRange.map((pageNum, i) => {
         return (
-          <li
-            className={`${paginationItem} ${currentPage === pageNum && active}`}
+          <Link
             key={i}
-            onClick={() => handlePagination(pageNum)}
+            href={`/news?page=${pageNum}`}
+            className={`${paginationItem} ${page === pageNum && active}`}
           >
             {pageNum}
-          </li>
+          </Link>
         );
       })}
       {/* 下一頁按鈕 */}
-      <li
-        className={`${paginationControl} ${
-          currentPage === lastPage && "disabled"
-        }`}
-        onClick={onNext}
+      <Link
+        href={`news?page=${page + 1 > lastPage ? lastPage : page + 1}`}
+        className={`${paginationControl} ${page === lastPage && "disabled"}`}
       >
         &#8594;
-      </li>
-    </ul>
+      </Link>
+    </div>
   );
 }
 
 Pagination.propTypes = {
-  handlePagination: PropTypes.func.isRequired,
+  page: PropTypes.number.isRequired,
   totalCount: PropTypes.number.isRequired,
-  siblingCount: PropTypes.number,
-  currentPage: PropTypes.number.isRequired,
   itemsPerPage: PropTypes.number.isRequired,
 };
-
-export default Pagination;

@@ -37,7 +37,7 @@ const linkList = [
     text: "Shop",
   },
   {
-    href: "/news",
+    href: "/news?page=1",
     text: "News",
   },
 ];
