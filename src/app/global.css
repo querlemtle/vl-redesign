@@ -15,12 +15,6 @@
   max-width: var(--container-max-width);
 }
 
-/* 導覽列選項 active 狀態 */
-.active {
-  color: rgb(var(--primary-color-dark));
-  border-bottom: 2px solid rgb(var(--primary-color-dark));
-}
-
 /* 新聞標籤 */
 .tag {
   font-weight: 500;
