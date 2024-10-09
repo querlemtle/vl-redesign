@@ -4,6 +4,19 @@ import CartBtn from "@/components/CartBtn";
 import NoSsr from "@/components/NoSsr";
 import styles from "./ProductsOverview.module.css";
 import useStorage from "@/lib/useStorage";
+import Image from "next/image";
+import { CldImage } from "next-cloudinary";
+
+const instructions = [
+  {
+    src: "/shop/shipment.png",
+    alt: "運送說明",
+  },
+  {
+    href: "/shop/event.png",
+    alt: "滿額送贈品",
+  },
+];
 
 const {
   banner,
@@ -15,7 +28,7 @@ const {
   title,
 } = styles;
 
-export default function ProductsOverview({ productsData }) {
+export default function ProductsOverview({ productsData, placeholderCover }) {
   const [cart, setCart] = useStorage("cart", {
     totalQty: 0,
     data: null,
@@ -24,26 +37,33 @@ export default function ProductsOverview({ productsData }) {
   return (
     <>
       <section className={banner}>
-        <img
+        <CldImage
+          width={1439}
+          height={594}
           alt="商店封面"
-          src="https://res.cloudinary.com/dsme7klzf/image/upload/v1717077492/ddk4c4dhatecgvvpv3ht.png"
+          src="ddk4c4dhatecgvvpv3ht"
+          placeholder="blur"
+          blurDataURL={placeholderCover.placeholder}
         />
       </section>
       <section className={`${grid} ${gridInstruction}`}>
-        <a
-          href="https://vtuberonline.com/events/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src="/shop/shipment.png" alt="運送說明" />
-        </a>
-        <a
-          href="https://vtuberonline.com/events/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img width={600} src="/shop/event.png" alt="滿額送贈品" />
-        </a>
+        {instructions.map((item, i) => {
+          return (
+            <a
+              key={i}
+              href="https://vtuberonline.com/events/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Image
+                width={600}
+                height={294}
+                src={item.src}
+                alt={item.alt}
+              />
+            </a>
+          );
+        })}
       </section>
       <section className={bg}>
         <div className={grid}>
