@@ -47,6 +47,11 @@
   border-bottom: 2px solid rgb(var(--primary-color-dark));
 }
 
+.nav__link--active {
+  color: rgb(var(--primary-color-dark));
+  border-bottom: 2px solid rgb(var(--primary-color-dark));
+}
+
 .cta {
   font-weight: 700;
   background: rgb(var(--secondary-color-dark));

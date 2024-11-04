@@ -4,6 +4,7 @@ import formatDate from "@/lib/formatDate";
 import Pagination from "./Pagination";
 import styles from "./NewsOverview.module.css";
 import PropTypes from "prop-types";
+import { CldImage } from "next-cloudinary";
 
 const {
   banner,
@@ -15,14 +16,18 @@ const {
   aside__link: asideLink,
 } = styles;
 
-export default function NewsOverview({ news, totalCount, page, itemsPerPage }) {
+export default function NewsOverview({ news, totalCount, page, itemsPerPage, placeholderCover }) {
   return (
     <>
       <section className={banner}>
-        <img
-          src="https://res.cloudinary.com/dsme7klzf/image/upload/v1717078041/x0dueo3tlmhagltntq5h.png"
+        <CldImage
+          width={1055}
+          height={463}
           alt="最新消息封面圖"
+          src="x0dueo3tlmhagltntq5h"
+          placeholder="blur"
           className={bannerImg}
+          blurDataURL={placeholderCover.placeholder}
         />
       </section>
       <section className={sectionBg}>
@@ -71,4 +76,5 @@ NewsOverview.propTypes = {
   totalCount: PropTypes.number.isRequired,
   page: PropTypes.number.isRequired,
   itemsPerPage: PropTypes.number.isRequired,
+  placeholderCover: PropTypes.string.isRequired,
 };

@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import PropTypes from "prop-types";
 import useMediaQuery from "@/lib/useMediaQuery";
+import useActiveNav from "@/lib/useActiveNav";
 import styles from "./Header.module.css";
 
 const {
@@ -19,6 +20,7 @@ const {
   "nav--active": navActive,
   nav__list: navList,
   nav__link: navLink,
+  "nav__link--active": navLinkActive,
   cta,
   cta__text: ctaText,
 } = styles;
@@ -42,10 +44,13 @@ const linkList = [
   },
 ];
 
-function NavLink({ href, text }) {
+function NavLink({ href, text, checkActiveNav }) {
   return (
     <li>
-      <Link href={href} className={navLink}>
+      <Link
+        href={href}
+        className={`${navLink} ${checkActiveNav(href) ? navLinkActive : ""}`}
+      >
         {text}
       </Link>
     </li>
@@ -55,12 +60,14 @@ function NavLink({ href, text }) {
 NavLink.propTypes = {
   href: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  checkActiveNav: PropTypes.func.isRequired,
 };
 
 function Header() {
   const isMobile = useMediaQuery("(width < 1024px)");
   const [isMenuActive, setIsMenuActive] = useState(!isMobile);
   const pathname = usePathname();
+  const checkActiveNav = useActiveNav();
 
   const toggleMenu = () => {
     setIsMenuActive(!isMenuActive);
@@ -84,7 +91,12 @@ function Header() {
         <nav className={`${nav} ${isMenuActive && navActive}`}>
           <ul className={navList}>
             {linkList.map((link, i) => (
-              <NavLink href={link.href} text={link.text} key={i} />
+              <NavLink
+                checkActiveNav={checkActiveNav}
+                href={link.href}
+                text={link.text}
+                key={i}
+              />
             ))}
           </ul>
           <Link
