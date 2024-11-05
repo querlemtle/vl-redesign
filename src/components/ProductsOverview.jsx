@@ -13,7 +13,7 @@ const instructions = [
     alt: "運送說明",
   },
   {
-    href: "/shop/event.png",
+    src: "/shop/event.png",
     alt: "滿額送贈品",
   },
 ];
